@@ -78,6 +78,23 @@
     note: 'Photos: the Photos tab shows 21 Crease Cam photos with their credits. Full-size originals (all 23 files) are in the project’s files under crease-cam/CreaseCam-all-files, and on GitHub (see Links).',
   };
 
+  // The Crease Cam launch plan: each crew member's first launch tasks as [title, due in N days].
+  const CREASE_CAM_LAUNCH = {
+    title: 'Crease Cam launch plan',
+    url: 'https://claude.ai/artifact/JrNQdxTU5JCXhU6RT41bsJ',
+    goal: 'Goal: launch Crease Cam to the public.\nThis week: 10 cricketers record a session with Crease Cam, and 1 coach or club agrees to a pilot. The full plan is in Links.',
+    tasks: {
+      Nova: [['Answer the open questions in the Crease Cam launch plan', 1], ['Book a real net session to test Crease Cam with 5-10 players', 5], ['Set a date for the Crease Cam public launch', 7]],
+      Forge: [['Confirm the Crease Cam launch feature list (keep / cut)', 3], ['Decide: website, phone app, or printed cards plus website', 3]],
+      Pixel: [['Claim Crease Cam handles on Instagram, TikTok and YouTube', 2], ['Post the first Crease Cam caption with a guide card photo', 4], ['Film a before/after phone placement clip at the nets', 6]],
+      Atlas: [['Recheck competitor prices (Fulltrack, Matcha, StanceBeam) in your currency', 4], ['Ask 5 cricketers how they film their nets now', 6]],
+      Sol: [['Pick the Crease Cam price (free + Pro, club licence)', 4], ['List 5 coaches or clubs to offer a free 4-week pilot', 5], ['Send the first club pilot offer', 9]],
+      Ledger: [['Set up the Crease Cam starter budget (costs vs revenue)', 3], ['Set the first-month Crease Cam revenue goal', 4]],
+      Cog: [['Buy and test 2-3 phone clamps on a net frame', 7], ['Get a quote for laminated guide cards', 7]],
+      Wicket: [['Buy the Crease Cam domain and connect the site', 3], ['Publish a privacy policy covering filming under-18s', 7], ['Add terms of use and privacy-friendly analytics', 8]],
+    },
+  };
+
   /* Buildings added after a city was first saved. Each runs once per city:
    * its id goes into `seeded`, so a building the owner deletes stays deleted. */
   const SEEDS = [
@@ -100,6 +117,31 @@
         if (!b.notes.includes('crease-cam/CreaseCam-all-files')) b.notes = b.notes ? `${b.notes}\n\n${CREASE_CAM_PHOTOS.note}` : CREASE_CAM_PHOTOS.note;
       },
     },
+    {
+      // hands every crew member their Crease Cam launch tasks from the launch plan
+      id: 'crease-cam-launch',
+      apply(s) {
+        const lead = s.buildings.find((b) => b.lead) || s.buildings.find((b) => /^nova$/i.test(b.name));
+        const from = lead ? lead.name : '';
+        Object.entries(CREASE_CAM_LAUNCH.tasks).forEach(([name, list]) => {
+          const b = name === 'Wicket'
+            ? s.buildings.find((x) => x.id === CREASE_CAM_ID || /^wicket$/i.test(x.name))
+            : s.buildings.find((x) => x.name.toLowerCase() === name.toLowerCase());
+          if (!b) return;
+          list.forEach(([title, days]) => {
+            if (b.tasks.some((t) => t.title.toLowerCase() === title.toLowerCase())) return;
+            b.tasks.push(task(title, inDays(days), b === lead ? '' : from));
+          });
+          if ((b === lead || b.id === CREASE_CAM_ID) && !b.links.some((l) => l.url === CREASE_CAM_LAUNCH.url)) {
+            b.links.push(link(CREASE_CAM_LAUNCH.title, CREASE_CAM_LAUNCH.url));
+          }
+        });
+        if (lead) {
+          if (!lead.notes.includes('Goal: launch Crease Cam')) lead.notes = lead.notes ? `${CREASE_CAM_LAUNCH.goal}\n\n${lead.notes}` : CREASE_CAM_LAUNCH.goal;
+          if (!lead.job || lead.job === 'Waiting for today’s plan') lead.job = 'Leading the Crease Cam launch';
+        }
+      },
+    },
   ];
   function applySeeds(s) {
     SEEDS.forEach((seed) => {
@@ -111,7 +153,7 @@
   }
 
   function starter() {
-    return {
+    return applySeeds({
       v: 1,
       starter: true,
       owner: 'nic',
@@ -119,7 +161,8 @@
       goal: { label: 'Monthly revenue', target: 2500, current: 0 },
       brief: { time: '08:00', lastSeen: '' },
       updatedAt: 0,
-      seeded: SEEDS.map((x) => x.id),
+      // the starter already has these buildings; the launch tasks are added below by applySeeds
+      seeded: ['crease-cam', 'crease-cam-photos'],
       buildings: [
         building({
           name: 'Nova', place: 'HQ Tower', style: 'tower', color: '#5ee7ff', ruflo: 'coordinator', lead: true,
@@ -169,7 +212,7 @@
           role: 'Weekly review. The whole crew meets here on Fridays.',
         }),
       ],
-    };
+    });
   }
 
   // Fill in anything missing so imported or older data never breaks the page.
