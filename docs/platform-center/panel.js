@@ -215,7 +215,7 @@
           e.preventDefault();
           const u = PC.ui.safeUrl(url.value);
           if (!u) { PC.ui.toast('That web address doesn’t look right. Try something like shopify.com'); url.focus(); return; }
-          const name = title.value.trim() || new URL(u).hostname.replace(/^www\./, '');
+          const name = title.value.trim() || new URL(u).hostname.replace(/^www\./, '') || u.replace(/^mailto:/, '');
           title.value = ''; url.value = '';
           change((st) => { find(st, b.id).links.push(newLink(name, u)); });
         },

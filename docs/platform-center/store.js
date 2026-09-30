@@ -26,11 +26,30 @@
   const REPEATS = { daily: 'every day', weekdays: 'weekdays', mon: 'Mondays', tue: 'Tuesdays', wed: 'Wednesdays', thu: 'Thursdays', fri: 'Fridays', sat: 'Saturdays', sun: 'Sundays' };
 
   const task = (title, due = '', from = '') => ({ id: uid(), title, due, done: false, doneAt: '', from });
-  const link = (title, url) => ({ id: uid(), title, url });
+  /* The one safe-link check. Every link the city stores or shows goes through
+   * this: typed, imported, restored, synced or seeded. Only http, https and
+   * mailto survive; anything else (javascript:, data:, ...) becomes ''. */
+  function safeUrl(raw) {
+    let s = String(raw || '').trim();
+    if (!s) return '';
+    if (!/^[a-z][a-z0-9+.-]*:/i.test(s)) s = 'https://' + s;
+    try {
+      const u = new URL(s);
+      return ['https:', 'http:', 'mailto:'].includes(u.protocol) ? u.href : '';
+    } catch (e) { return ''; }
+  }
+  PC.safeUrl = safeUrl;
+  const safeLinks = (arr) => (Array.isArray(arr) ? arr : [])
+    .filter((l) => l && typeof l === 'object')
+    .map((l) => ({ ...l, title: String(l.title || ''), url: safeUrl(l.url) }))
+    .filter((l) => l.url);
+  const safeColor = (c) => (typeof c === 'string' && /^#[0-9a-f]{3,8}$/i.test(c) ? c : '');
+
+  const link = (title, url) => ({ id: uid(), title, url: safeUrl(url) });
   const job = (title, time, repeat) => ({ id: uid(), title, time, repeat });
   // A building can look after one website or app: its link, and a short tag like "Test site".
   const site = (o) => (o && typeof o === 'object'
-    ? { label: typeof o.label === 'string' && o.label ? o.label : 'Website/app', url: typeof o.url === 'string' ? o.url : '', tag: typeof o.tag === 'string' ? o.tag : '' }
+    ? { label: typeof o.label === 'string' && o.label ? o.label : 'Website/app', url: safeUrl(o.url), tag: typeof o.tag === 'string' ? o.tag : '' }
     : null);
 
   function building(o) {
@@ -40,14 +59,14 @@
       place: o.place || 'Office',
       role: o.role || 'Describe what this building takes care of.',
       style: STYLES[o.style] ? o.style : 'office',
-      color: o.color || COLORS[0],
+      color: safeColor(o.color) || COLORS[0],
       ruflo: RUFLO_TYPES.includes(o.ruflo) ? o.ruflo : 'analyst',
       lead: !!o.lead,
       hall: !!o.hall,
       status: ['idle', 'working', 'stuck'].includes(o.status) ? o.status : 'idle',
       job: o.job || '',
       tasks: Array.isArray(o.tasks) ? o.tasks : [],
-      links: Array.isArray(o.links) ? o.links : [],
+      links: safeLinks(o.links),
       notes: typeof o.notes === 'string' ? o.notes : '',
       schedule: Array.isArray(o.schedule) ? o.schedule : [],
       chat: Array.isArray(o.chat) ? o.chat.slice(-MAX_CHAT) : [],

@@ -16,6 +16,11 @@
         else if (k === 'svg') el.innerHTML = v; // static icon markup only
         else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2), v);
         else if (k === 'value') el.value = v;
+        else if (k === 'href') {
+          // last line of defence: never render a link that fails the safe-link check
+          const safe = /^blob:/.test(String(v)) ? String(v) : PC.safeUrl(v);
+          if (safe) el.setAttribute('href', safe);
+        }
         else if (v === true) el.setAttribute(k, '');
         else el.setAttribute(k, v);
       }
@@ -146,12 +151,7 @@
     return job.repeat === day;
   }
   const money = (n) => '$' + Math.round(Number(n) || 0).toLocaleString('en-US');
-  function safeUrl(raw) {
-    let s = String(raw || '').trim();
-    if (!s) return '';
-    if (!/^[a-z][a-z0-9+.-]*:/i.test(s)) s = 'https://' + s;
-    try { const u = new URL(s); return u.protocol === 'https:' || u.protocol === 'http:' ? u.href : ''; } catch (e) { return ''; }
-  }
+  const safeUrl = (raw) => PC.safeUrl(raw); // defined in store.js, shared by every path
 
   /* ---------- ruflo commands ---------- */
   const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'agent';
