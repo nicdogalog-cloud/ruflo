@@ -24,7 +24,12 @@
     notify();
   }
 
-  const byName = (s, name) => s.buildings.find((b) => b.name.toLowerCase() === String(name || '').trim().toLowerCase()) || null;
+  // A building can be named by its crew member ("Wicket") or its place ("Crease Cam").
+  function byName(s, name) {
+    const n = String(name || '').trim().toLowerCase();
+    return s.buildings.find((b) => b.name.toLowerCase() === n) || s.buildings.find((b) => b.place.toLowerCase() === n) || null;
+  }
+  const siteLine = (b) => `${b.site.label}${b.site.tag ? ` (${b.site.tag.toLowerCase()})` : ''}: ${b.site.url || 'no link saved yet'}`;
   const leadOf = (s) => s.buildings.find((b) => b.lead) || s.buildings[0];
   const today = () => new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
@@ -43,6 +48,7 @@
         open_tasks: b.tasks.filter((t) => !t.done).slice(0, 12).map((t) => ({ id: t.id, title: t.title, due: t.due || undefined, from: t.from || undefined })),
         done_last_7_days: b.tasks.filter((t) => t.done && t.doneAt && Date.now() - t.doneAt < 7 * 864e5).map((t) => t.title).slice(0, 8),
         schedule: b.schedule.map((j) => `${j.title} at ${j.time}, ${REPEATS[j.repeat] || j.repeat}`),
+        site: b.site ? siteLine(b) : undefined,
         notes: b === focus ? b.notes.slice(0, 1500) || undefined : undefined,
         links: b === focus ? b.links.map((l) => l.title) : undefined,
       })),
@@ -55,14 +61,17 @@
       `You are ${b.name}, the crew member who runs the ${b.place} in ${s.owner}'s Platform Center: a city-shaped command center for a new business called "${s.business}". Each building is one area of the business with one AI crew member.`,
       `Your area: ${b.role}`,
       b.lead
-        ? 'You are the manager. You plan the day, hand out work to the other buildings, run the Friday retro and chair standups in the Meeting Hall.'
+        ? 'You are the manager. You plan the day, hand out work to the other buildings, run the Friday retro and chair standups in the Meeting Hall. Hand each job to the building whose area fits it (see each role in the city JSON).'
         : `The manager is ${lead.name}. You mainly handle your own area, and you can suggest work for other buildings.`,
+      b.site
+        ? `You look after the ${siteLine(b)}. Your open tasks are its update checklist. You cannot open the site or change its code from here, so turn each change ${s.owner} wants into one clear update task, and never claim something is fixed or live unless ${s.owner} says so.`
+        : '',
       'Talk like a friendly, practical teammate. Keep replies short: under 120 words, plain text, "-" lists are fine, no headings or tables. The business is just starting, so keep advice concrete and doable today.',
       tools
         ? `You can change the city with your tools (add_task, complete_task, add_schedule, set_status). Use them when ${s.owner} asks for a change or clearly agrees to one. After using a tool, say in one line what you changed.`
         : `You cannot change the city yourself here, so tell ${s.owner} exactly what to add and where.`,
       `The city right now (JSON): ${cityJSON(s, b)}`,
-    ].join('\n\n');
+    ].filter(Boolean).join('\n\n');
   }
 
   function cityTools(speaker, log) {
@@ -168,8 +177,9 @@
     const prompt = [
       `You are ${lead.name}, the manager of ${s.owner}'s Platform Center for a new business called "${s.business}". Today is ${today()}.`,
       `Write ${s.owner}'s morning brief from the city below. Plain text, under 160 words. Use exactly these three labels, each on its own line and followed by "-" bullets: Focus today, Heads-up, One move for the goal.`,
+      s.buildings.some((b) => b.site) ? `Under Heads-up, give one line to ${s.buildings.filter((b) => b.site).map((b) => `${b.place} (${b.name}'s ${b.site.label} update list)`).join(' and ')}: how many updates are open and the next one.` : '',
       `The city (JSON): ${cityJSON(s, lead)}`,
-    ].join('\n\n');
+    ].filter(Boolean).join('\n\n');
     return sample(prompt, { onText, signal, modelTier: 'default' });
   }
 
@@ -254,6 +264,7 @@
     if (b.lead) return ready
       ? `Hey ${s.owner}. ${b.name} here, ready when you are. I can:\n- plan the day\n- delegate a job to another building\n- run a Friday retro\n- chair a standup\nJust say the word.`
       : `Hey ${s.owner}. ${b.name} here. I can:\n- plan the day\n- delegate a job to another building\n- open the morning brief\nType help to see how to ask.`;
+    if (b.site) return `Hi ${s.owner}, ${b.name} here at ${b.place}. I keep the ${b.site.label} up to date.${b.site.url ? '' : ' Add its link on the Now tab so the crew can find it.'}\nTell me what needs changing and I’ll put it on the update list.`;
     return `Hi ${s.owner}, ${b.name} here from the ${b.place}. I look after this: ${b.role}\nWhat should I work on?`;
   }
 
@@ -261,6 +272,7 @@
     if (b.hall) return ['Chair a standup', 'Run a Friday retro'];
     if (!ready) return b.lead ? ['Plan my day', 'Delegate a job', 'Open the brief'] : ['What should I do next?', 'Plan my day', 'Help'];
     if (b.lead) return ['Plan my day', 'Delegate a job', 'Run a Friday retro', 'Chair a standup'];
+    if (b.site) return ['What needs updating first?', 'Turn my notes into update tasks', 'Break my top task into steps'];
     return ['What should I do next?', 'Break my top task into steps', 'Give me 3 ideas'];
   }
 

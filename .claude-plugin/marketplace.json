@@ -219,7 +219,7 @@
     {
       "name": "ruflo-platform-center",
       "source": "./plugins/ruflo-platform-center",
-      "description": "Platform Center \u2014 run a new business as a neon city of ruflo agents: a manager plus a crew for projects, content, research, sales, money and operations, with /morning-brief and /delegate"
+      "description": "Platform Center \u2014 run a new business as a neon city of ruflo agents: a manager plus a crew for projects, content, research, sales, money and operations, plus Wicket for the Crease Cam cricket website/app, with /morning-brief and /delegate"
     }
   ]
 }

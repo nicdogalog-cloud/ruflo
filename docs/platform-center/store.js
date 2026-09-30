@@ -19,8 +19,8 @@
   const isoDate = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   const inDays = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return isoDate(d); };
 
-  const COLORS = ['#5ee7ff', '#a78bfa', '#ff7ad9', '#60a5fa', '#ffc857', '#7dffb2', '#ff9f5a', '#2dd4bf'];
-  const STYLES = { tower: 'Tower', office: 'Office', studio: 'Studio', lab: 'Lab', shop: 'Shop', bank: 'Bank', depot: 'Depot', hall: 'Hall', house: 'House' };
+  const COLORS = ['#5ee7ff', '#a78bfa', '#ff7ad9', '#60a5fa', '#ffc857', '#7dffb2', '#ff9f5a', '#2dd4bf', '#c3f73a'];
+  const STYLES = { tower: 'Tower', office: 'Office', studio: 'Studio', lab: 'Lab', shop: 'Shop', bank: 'Bank', depot: 'Depot', hall: 'Hall', house: 'House', stadium: 'Stadium' };
   // Agent types accepted by `npx ruflo@latest agent spawn -t <type>`.
   const RUFLO_TYPES = ['coordinator', 'architect', 'researcher', 'analyst', 'coder', 'reviewer', 'tester', 'optimizer'];
   const REPEATS = { daily: 'every day', weekdays: 'weekdays', mon: 'Mondays', tue: 'Tuesdays', wed: 'Wednesdays', thu: 'Thursdays', fri: 'Fridays', sat: 'Saturdays', sun: 'Sundays' };
@@ -28,6 +28,10 @@
   const task = (title, due = '', from = '') => ({ id: uid(), title, due, done: false, doneAt: '', from });
   const link = (title, url) => ({ id: uid(), title, url });
   const job = (title, time, repeat) => ({ id: uid(), title, time, repeat });
+  // A building can look after one website or app: its link, and a short tag like "Test site".
+  const site = (o) => (o && typeof o === 'object'
+    ? { label: typeof o.label === 'string' && o.label ? o.label : 'Website/app', url: typeof o.url === 'string' ? o.url : '', tag: typeof o.tag === 'string' ? o.tag : '' }
+    : null);
 
   function building(o) {
     return {
@@ -47,7 +51,45 @@
       notes: typeof o.notes === 'string' ? o.notes : '',
       schedule: Array.isArray(o.schedule) ? o.schedule : [],
       chat: Array.isArray(o.chat) ? o.chat.slice(-MAX_CHAT) : [],
+      site: site(o.site),
     };
+  }
+
+  /* Crease Cam: nic's cricket project, a stadium on the edge of the city.
+   * Wicket keeps the Crease Cam website/app's update list. The id is fixed so
+   * every load adds the very same building to a city saved before it existed. */
+  const CREASE_CAM_ID = 'crease-cam';
+  function creaseCam() {
+    return building({
+      id: CREASE_CAM_ID,
+      name: 'Wicket', place: 'Crease Cam', style: 'stadium', color: '#c3f73a', ruflo: 'coder',
+      role: 'Crease Cam, your cricket project. Keeps the Crease Cam website/app up to date: what needs updating, fixes and new releases.',
+      site: { label: 'Crease Cam website/app', url: 'https://creasecam-test-u5t8ga.pages.dev/', tag: 'Test site' },
+      tasks: [task('Go through the Crease Cam test site and list what needs updating', inDays(0)), task('Check the Crease Cam test site on a phone', inDays(1))],
+      schedule: [job('Crease Cam update check', '10:00', 'mon')],
+    });
+  }
+
+  /* Buildings added after a city was first saved. Each runs once per city:
+   * its id goes into `seeded`, so a building the owner deletes stays deleted. */
+  const SEEDS = [
+    {
+      id: 'crease-cam',
+      apply(s) {
+        const taken = s.buildings.some((b) => b.id === CREASE_CAM_ID || /^wicket$/i.test(b.name) || /^crease cam$/i.test(b.place));
+        if (taken) return;
+        const hall = s.buildings.findIndex((b) => b.hall);
+        s.buildings.splice(hall < 0 ? s.buildings.length : hall, 0, creaseCam());
+      },
+    },
+  ];
+  function applySeeds(s) {
+    SEEDS.forEach((seed) => {
+      if (s.seeded.includes(seed.id)) return;
+      seed.apply(s);
+      s.seeded.push(seed.id);
+    });
+    return s;
   }
 
   function starter() {
@@ -59,6 +101,7 @@
       goal: { label: 'Monthly revenue', target: 2500, current: 0 },
       brief: { time: '08:00', lastSeen: '' },
       updatedAt: 0,
+      seeded: SEEDS.map((x) => x.id),
       buildings: [
         building({
           name: 'Nova', place: 'HQ Tower', style: 'tower', color: '#5ee7ff', ruflo: 'coordinator', lead: true,
@@ -102,6 +145,7 @@
           role: 'Operations. Tools, accounts, admin and paperwork.',
           tasks: [task('List the apps and accounts the business will use', inDays(5)), task('Check what registration or permits your area needs', inDays(9))],
         }),
+        creaseCam(),
         building({
           name: 'Meeting Hall', place: 'Town square', style: 'hall', color: '#2dd4bf', ruflo: 'coordinator', hall: true,
           role: 'Weekly review. The whole crew meets here on Fridays.',
@@ -114,6 +158,9 @@
   function normalize(s) {
     const base = starter();
     if (!s || typeof s !== 'object' || !Array.isArray(s.buildings)) return base;
+    return applySeeds(clean(s, base));
+  }
+  function clean(s, base) {
     const cleanList = (arr, fields) => (Array.isArray(arr) ? arr : []).filter((x) => x && typeof x === 'object').map((x) => {
       const out = { id: typeof x.id === 'string' ? x.id : uid() };
       for (const [k, def] of Object.entries(fields)) out[k] = typeof x[k] === typeof def ? x[k] : def;
@@ -134,6 +181,7 @@
         lastSeen: s.brief && typeof s.brief.lastSeen === 'string' ? s.brief.lastSeen : '',
       },
       updatedAt: Number.isFinite(+s.updatedAt) ? +s.updatedAt : 0,
+      seeded: Array.isArray(s.seeded) ? s.seeded.filter((x) => typeof x === 'string') : [],
       buildings: s.buildings.filter((b) => b && typeof b === 'object').map((b) => building({
         ...b,
         tasks: cleanList(b.tasks, { title: '', due: '', done: false, doneAt: '', from: '' }),

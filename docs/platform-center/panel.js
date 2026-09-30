@@ -9,7 +9,7 @@
 
   const TABS = [['now', 'Now'], ['tasks', 'Tasks'], ['links', 'Links'], ['notes', 'Notes'], ['schedule', 'Schedule'], ['chat', 'Chat'], ['delegate', 'Delegate'], ['ruflo', 'Ruflo']];
   const HALL_TABS = [['review', 'This week'], ['notes', 'Retro notes']];
-  const PLUGIN_AGENTS = ['nova', 'forge', 'pixel', 'atlas', 'sol', 'ledger', 'cog'];
+  const PLUGIN_AGENTS = ['nova', 'forge', 'pixel', 'atlas', 'sol', 'ledger', 'cog', 'wicket'];
 
   let el = null;
   let currentId = null;
@@ -20,7 +20,8 @@
   const find = (s, id) => s.buildings.find((b) => b.id === id);
   const change = (fn, opts) => PC.app.change(fn, opts);
   const openTasks = (b) => b.tasks.filter((t) => !t.done).sort((a, c) => (a.due || '9999') < (c.due || '9999') ? -1 : 1);
-  const tabsFor = (b) => (b.hall ? HALL_TABS : TABS.filter(([k]) => k !== 'delegate' || b.lead));
+  // a building that looks after a website/app calls its task list the update list
+  const tabsFor = (b) => (b.hall ? HALL_TABS : TABS.filter(([k]) => k !== 'delegate' || b.lead).map(([k, l]) => [k, k === 'tasks' && b.site ? 'Updates' : l]));
 
   /* keep typing, focus and caret across re-renders */
   function preserve() {
@@ -127,8 +128,39 @@
     }, title, due, h('button', { class: 'btn', type: 'submit' }, icon('plus'), 'Add'));
   }
 
+  /* ---------- website/app slot ---------- */
+  let siteEdit = null; // the building whose link form is open
+  function siteSlot(b) {
+    const cur = b.site;
+    const editing = siteEdit === b.id || !cur.url;
+    const head = h('h3', { text: cur.label });
+    if (!editing) {
+      return h('section', { class: 'block site-slot' }, head,
+        h('a', { class: 'site-link', href: cur.url, target: '_blank', rel: 'noopener noreferrer' },
+          h('span', { class: 'url', text: cur.url.replace(/^https?:\/\//, '').replace(/\/$/, '') }),
+          cur.tag ? h('span', { class: 'chip tag', text: cur.tag }) : null, icon('out')),
+        h('div', { class: 'row' },
+          h('button', { class: 'btn ghost small', type: 'button', onclick: () => copy(cur.url) }, icon('copy'), 'Copy link'),
+          h('button', { class: 'btn ghost small', type: 'button', onclick: () => { siteEdit = b.id; render(); } }, icon('edit'), 'Change link')));
+    }
+    const url = h('input', { id: `site-url-${b.id}`, type: 'text', inputmode: 'url', value: cur.url, placeholder: 'Paste the web address or app store link', 'aria-label': `${cur.label} link` });
+    const tag = h('input', { id: `site-tag-${b.id}`, type: 'text', maxlength: '30', value: cur.tag, placeholder: 'What it is, like Test site', 'aria-label': 'What this link is' });
+    const save = (raw) => {
+      const u = raw ? PC.ui.safeUrl(raw) : '';
+      if (raw && !u) { PC.ui.toast('That link doesn’t look right. Copy the full address from your browser.'); url.focus(); return; }
+      siteEdit = null;
+      change((st) => { const x = find(st, b.id); x.site = { ...x.site, url: u, tag: u ? tag.value.trim().slice(0, 30) : '' }; });
+      PC.ui.toast(u ? 'Link saved' : 'Link removed');
+    };
+    return h('section', { class: 'block site-slot empty' }, head,
+      h('p', { class: 'hint', text: cur.url ? 'Change the link or what it is. Leave the link empty to remove it.' : `No link yet. This slot is for the ${cur.label} link.` }),
+      h('form', { class: 'add-row', onsubmit: (e) => { e.preventDefault(); save(url.value.trim()); } },
+        url, tag, h('button', { class: 'btn', type: 'submit' }, icon('check'), 'Save link'),
+        cur.url ? h('button', { class: 'btn ghost', type: 'button', onclick: () => { siteEdit = null; render(); } }, 'Cancel') : null));
+  }
+
   function nowTab(s, b) {
-    const next = openTasks(b).slice(0, 3);
+    const next = openTasks(b).slice(0, b.site ? 4 : 3);
     const jobs = b.schedule.filter((j) => runsOn(j)).sort((a, c) => (a.time < c.time ? -1 : 1));
     const crew = b.lead ? h('section', { class: 'block' },
       h('h3', { text: 'The crew' }),
@@ -139,9 +171,10 @@
           h('span', { class: 'muted', text: x.job ? `on: ${x.job}` : x.place }),
           h('span', { class: 'count', text: `${x.tasks.filter((t) => !t.done).length} open` })))))) : null;
     return [
+      b.site ? siteSlot(b) : null,
       h('section', { class: 'block' },
-        h('h3', { text: 'Next up' }),
-        next.length ? h('ul', { class: 'tasks' }, next.map((t) => taskRow(b, t))) : h('p', { class: 'empty', text: 'Nothing waiting here. Add the next step below.' }),
+        h('h3', { text: b.site ? 'Needs updating' : 'Next up' }),
+        next.length ? h('ul', { class: 'tasks' }, next.map((t) => taskRow(b, t))) : h('p', { class: 'empty', text: b.site ? 'Nothing on the update list. Add the next change below.' : 'Nothing waiting here. Add the next step below.' }),
         addTaskForm(b, true)),
       h('section', { class: 'block' },
         h('h3', { text: 'On the schedule today' }),
@@ -158,6 +191,7 @@
     const open = openTasks(b);
     const done = b.tasks.filter((t) => t.done).sort((a, c) => (c.doneAt || 0) - (a.doneAt || 0));
     return [
+      b.site ? h('p', { class: 'hint', text: `The update list for the ${b.site.label}. Tick a change off once it is live.` }) : null,
       addTaskForm(b, false),
       open.length ? h('ol', { class: 'tasks numbered' }, open.map((t, i) => taskRow(b, t, i + 1))) : h('p', { class: 'empty', text: 'All clear. Add what this building should do next.' }),
       done.length ? h('details', { class: 'done-list' },
@@ -171,6 +205,7 @@
     const title = h('input', { id: `new-link-title-${b.id}`, type: 'text', placeholder: 'Name, like Shopify', maxlength: '60', 'aria-label': 'Link name' });
     const url = h('input', { id: `new-link-url-${b.id}`, type: 'text', inputmode: 'url', placeholder: 'Web address', 'aria-label': 'Web address' });
     return [
+      b.site ? siteSlot(b) : null,
       h('p', { class: 'hint', text: 'Keep every account, dashboard and tool for this area here, so it is one tap away.' }),
       h('form', {
         class: 'add-row', onsubmit: (e) => {

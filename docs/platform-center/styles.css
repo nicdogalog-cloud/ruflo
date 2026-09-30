@@ -272,6 +272,16 @@ textarea { resize: vertical; line-height: 1.5; }
 .count { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .notes { min-height: 260px; }
 
+/* a building's website/app link (Crease Cam) */
+.site-slot { padding: 12px; border-radius: 12px; border: 1px solid color-mix(in srgb, var(--b, #5ee7ff) 45%, transparent); background: color-mix(in srgb, var(--b, #5ee7ff) 8%, transparent); }
+.site-slot.empty { border-style: dashed; }
+.site-slot h3 { margin-bottom: 0; }
+.site-link { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 9px 10px; border-radius: 10px; border: 1px solid var(--line); background: rgba(6, 5, 31, 0.55); color: var(--text); text-decoration: none; }
+.site-link:hover { border-color: var(--b, var(--cyan)); }
+.site-link .url { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-mono); font-size: 13px; }
+.chip.tag { color: var(--b, var(--cyan)); border-color: color-mix(in srgb, var(--b, #5ee7ff) 55%, transparent); }
+.inline-link { color: var(--cyan); text-underline-offset: 3px; }
+
 /* chat */
 .mode { margin: 0; font-size: 12px; padding: 6px 10px; border-radius: 10px; }
 .mode.on { background: rgba(125, 255, 178, 0.08); color: var(--ok); }

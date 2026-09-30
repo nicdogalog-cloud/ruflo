@@ -166,6 +166,7 @@
         open_tasks: b.tasks.filter((t) => !t.done).map((t) => ({ title: t.title, due: t.due, from: t.from })),
         schedule: b.schedule.map((j) => ({ title: j.title, time: j.time, repeat: j.repeat })),
         links: b.links.map((l) => ({ title: l.title, url: l.url })),
+        site: b.site ? { label: b.site.label, url: b.site.url || 'not added yet', tag: b.site.tag || undefined } : undefined,
         notes: b.notes.slice(0, 600),
       })),
     };

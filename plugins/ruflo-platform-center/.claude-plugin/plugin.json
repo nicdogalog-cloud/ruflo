@@ -1,6 +1,6 @@
 {
   "name": "ruflo-platform-center",
-  "description": "Platform Center: run a new business as a neon city of ruflo agents. A manager (Nova) plus a crew for projects, content, research, sales, money and operations, with a morning brief and delegation commands. The city UI lives in docs/platform-center.",
+  "description": "Platform Center: run a new business as a neon city of ruflo agents. A manager (Nova) plus a crew for projects, content, research, sales, money and operations, and Wicket for Crease Cam, a cricket project's website/app, with a morning brief and delegation commands. The city UI lives in docs/platform-center.",
   "version": "0.1.0",
   "author": {
     "name": "nicdogalog-cloud",

@@ -125,7 +125,27 @@
     s.buildings.forEach((b) => b.schedule.forEach((j) => { if (runsOn(j)) jobs.push({ t: j.time, line: `- ${fmtTime(j.time)} ${b.name}: ${j.title}` }); }));
     jobs.sort((a, c) => (a.t < c.t ? -1 : 1));
     lines.push('', 'Scheduled today:', ...(jobs.length ? jobs.map((j) => j.line) : ['- nothing']));
+    s.buildings.filter((b) => b.site).forEach((b) => {
+      const open = byDue(b.tasks.filter((t) => !t.done));
+      lines.push('', `${b.place} updates (${b.name}):`, `- ${b.site.label}${b.site.tag ? ` (${b.site.tag})` : ''}: ${b.site.url || 'no link yet'}`,
+        ...(open.length ? open.slice(0, 3).map((t) => `- ${t.title}`) : ['- nothing on the update list']));
+    });
     return lines.join('\n');
+  }
+  const byDue = (list) => list.slice().sort((a, c) => ((a.due || '9999') < (c.due || '9999') ? -1 : 1));
+
+  // the brief's section for a building that looks after a website/app (Crease Cam)
+  function siteBrief(b, close) {
+    const open = byDue(b.tasks.filter((t) => !t.done));
+    const toTasks = () => { close(); PC.panel.open(b.id, 'tasks'); };
+    return h('section', {}, h('h3', { text: `${b.place} updates` }),
+      b.site.url
+        ? h('p', { class: 'hint' }, h('a', { class: 'inline-link', href: b.site.url, target: '_blank', rel: 'noopener noreferrer', text: b.site.tag || b.site.label }), ` · ${open.length} open update${open.length === 1 ? '' : 's'} with ${b.name}`)
+        : h('p', { class: 'hint', text: `No ${b.site.label} link yet. Add it in ${b.place}.` }),
+      open.length ? h('ul', { class: 'brief-list' }, open.slice(0, 3).map((t) => {
+        const d = dueInfo(t.due);
+        return h('li', {}, h('button', { type: 'button', class: 'link-like', onclick: toTasks }, t.title), d ? h('span', { class: `chip due ${d.cls}`, text: d.text }) : null);
+      })) : h('p', { class: 'empty', text: 'Nothing on the update list.' }));
   }
 
   function openBrief() {
@@ -172,6 +192,7 @@
       h('section', {}, h('h3', { text: 'Scheduled today' }),
         jobs.length ? h('ul', { class: 'jobs' }, jobs.map(({ b, j }) => h('li', {}, h('span', { class: 'time', text: fmtTime(j.time) }), h('strong', { text: b.name }), ` ${j.title}`)))
           : h('p', { class: 'empty', text: 'Nothing scheduled.' })),
+      st.buildings.filter((b) => b.site).map((b) => siteBrief(b, () => close())),
       h('section', {}, h('h3', { text: 'The crew' }),
         h('ul', { class: 'brief-list' }, st.buildings.filter((b) => !b.hall).map((b) => {
           const next = b.tasks.filter((t) => !t.done).sort((a, c) => (a.due || '9999') < (c.due || '9999') ? -1 : 1)[0];
@@ -202,6 +223,7 @@
         if (!low) return;
         b.tasks.forEach((t) => { if (hit(t.title)) out.push({ kind: t.done ? 'Done' : 'Task', title: t.title, sub: b.name, act: go(() => PC.panel.open(b.id, 'tasks')) }); });
         b.links.forEach((l) => { if (hit(l.title) || hit(l.url)) out.push({ kind: 'Link', title: l.title, sub: b.name, href: l.url }); });
+        if (b.site && b.site.url && (hit(b.site.label) || hit(b.site.url) || hit(b.site.tag))) out.push({ kind: 'Link', title: b.site.label, sub: `${b.name}${b.site.tag ? ` · ${b.site.tag}` : ''}`, href: b.site.url });
         b.schedule.forEach((j) => { if (hit(j.title)) out.push({ kind: 'Schedule', title: j.title, sub: `${b.name} · ${fmtTime(j.time)}`, act: go(() => PC.panel.open(b.id, 'schedule')) }); });
         if (hit(b.notes)) {
           const i = b.notes.toLowerCase().indexOf(low);
