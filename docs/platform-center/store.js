@@ -67,8 +67,16 @@
       site: { label: 'Crease Cam website/app', url: 'https://creasecam-test-u5t8ga.pages.dev/', tag: 'Test site' },
       tasks: [task('Go through the Crease Cam test site and list what needs updating', inDays(0)), task('Check the Crease Cam test site on a phone', inDays(1))],
       schedule: [job('Crease Cam update check', '10:00', 'mon')],
+      links: [link(CREASE_CAM_PHOTOS.title, CREASE_CAM_PHOTOS.url)],
+      notes: CREASE_CAM_PHOTOS.note,
     });
   }
+  // The Crease Cam photo folder (full-size originals) on GitHub.
+  const CREASE_CAM_PHOTOS = {
+    title: 'Crease Cam photos (originals)',
+    url: 'https://github.com/nicdogalog-cloud/ruflo/tree/crease-cam-files/crease-cam/CreaseCam-all-files',
+    note: 'Photos: the Photos tab shows 21 Crease Cam photos with their credits. Full-size originals (all 23 files) are in the project’s files under crease-cam/CreaseCam-all-files, and on GitHub (see Links).',
+  };
 
   /* Buildings added after a city was first saved. Each runs once per city:
    * its id goes into `seeded`, so a building the owner deletes stays deleted. */
@@ -80,6 +88,16 @@
         if (taken) return;
         const hall = s.buildings.findIndex((b) => b.hall);
         s.buildings.splice(hall < 0 ? s.buildings.length : hall, 0, creaseCam());
+      },
+    },
+    {
+      // adds the photo folder link and a note to a Crease Cam saved before the photos existed
+      id: 'crease-cam-photos',
+      apply(s) {
+        const b = s.buildings.find((x) => x.id === CREASE_CAM_ID);
+        if (!b) return;
+        if (!b.links.some((l) => l.url === CREASE_CAM_PHOTOS.url)) b.links.push(link(CREASE_CAM_PHOTOS.title, CREASE_CAM_PHOTOS.url));
+        if (!b.notes.includes('crease-cam/CreaseCam-all-files')) b.notes = b.notes ? `${b.notes}\n\n${CREASE_CAM_PHOTOS.note}` : CREASE_CAM_PHOTOS.note;
       },
     },
   ];

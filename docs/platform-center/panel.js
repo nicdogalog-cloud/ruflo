@@ -21,7 +21,9 @@
   const change = (fn, opts) => PC.app.change(fn, opts);
   const openTasks = (b) => b.tasks.filter((t) => !t.done).sort((a, c) => (a.due || '9999') < (c.due || '9999') ? -1 : 1);
   // a building that looks after a website/app calls its task list the update list
-  const tabsFor = (b) => (b.hall ? HALL_TABS : TABS.filter(([k]) => k !== 'delegate' || b.lead).map(([k, l]) => [k, k === 'tasks' && b.site ? 'Updates' : l]));
+  // Crease Cam (Wicket) also gets a Photos tab, right after Links
+  const tabsFor = (b) => (b.hall ? HALL_TABS : TABS.filter(([k]) => k !== 'delegate' || b.lead).map(([k, l]) => [k, k === 'tasks' && b.site ? 'Updates' : l])
+    .flatMap((t) => (t[0] === 'links' && PC.photos && PC.photos.forBuilding(b) ? [t, ['photos', 'Photos']] : [t])));
 
   /* keep typing, focus and caret across re-renders */
   function preserve() {
@@ -87,6 +89,7 @@
     switch (tab) {
       case 'tasks': return tasksTab(b);
       case 'links': return linksTab(b);
+      case 'photos': return PC.photos.tab(b);
       case 'notes': return notesTab(b);
       case 'schedule': return scheduleTab(b);
       case 'chat': return chatTab(s, b);
