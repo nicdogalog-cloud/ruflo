@@ -8,8 +8,8 @@
   'use strict';
   const PC = (window.PC = window.PC || {});
 
-  const HEIGHT = { tower: 1.75, office: 0.95, studio: 0.7, lab: 0.75, shop: 0.55, bank: 0.85, depot: 0.5, hall: 0.55, house: 0.5, stadium: 0.3 };
-  const FOOT = { tower: 0.2, office: 0.25, studio: 0.27, lab: 0.25, shop: 0.29, bank: 0.28, depot: 0.31, hall: 0.3, house: 0.24, stadium: 0.37 };
+  const HEIGHT = { tower: 1.75, office: 0.95, studio: 0.7, lab: 0.75, shop: 0.55, bank: 0.85, depot: 0.5, hall: 0.55, house: 0.5, stadium: 0.3, media: 0.8 };
+  const FOOT = { tower: 0.2, office: 0.25, studio: 0.27, lab: 0.25, shop: 0.29, bank: 0.28, depot: 0.31, hall: 0.3, house: 0.24, stadium: 0.37, media: 0.25 };
   const STATUS_COLOR = { working: '#7dffb2', idle: '#9aa3ff', stuck: '#ff5c7a' };
 
   let canvas, ctx, getState, onPick;
@@ -274,6 +274,16 @@
           ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(top[0], top[1], r, 0, Math.PI * 2); ctx.fill();
           ctx.fillStyle = lamp; ctx.fillRect(top[0] - 3, top[1] - 2, 6, 3);
         });
+        break;
+      }
+      case 'media': {
+        // a rooftop billboard with a play button, blinking while Buzz is working
+        const z0 = h + 0.08, z1 = h + 0.34;
+        [0.2, 0.8].forEach((u0) => { const a = faceQuad('L', x, y, f * 0.7, u0, u0, h, z0); ctx.strokeStyle = 'rgba(210,220,255,0.6)'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(...a[0]); ctx.lineTo(...a[2]); ctx.stroke(); });
+        const on = b.status !== 'working' || motion.matches || Math.floor(t / 600) % 2;
+        poly(faceQuad('L', x, y, f * 0.7, 0.02, 0.98, z0, z1), rgba(c, on ? 0.85 : 0.45), '#ffe6f6', 1.2);
+        const m = faceQuad('L', x, y, f * 0.7, 0.42, 0.58, z0 + 0.06, z1 - 0.06);
+        poly([m[0], m[3], [(m[1][0] + m[2][0]) / 2, (m[1][1] + m[2][1]) / 2]], '#ffffff');
         break;
       }
       case 'tower': {

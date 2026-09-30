@@ -1,6 +1,6 @@
 # ruflo-platform-center
 
-Run a new business as a neon city. Each building is one part of the business, and each has a ruflo crew member who works there. Nova, the manager in the HQ Tower, writes a morning brief and hands jobs to the rest of the crew. Crease Cam, nic's cricket project, has its own stadium, where Wicket keeps the update list for the Crease Cam website/app.
+Run a new business as a neon city. Each building is one part of the business, and each has a ruflo crew member who works there. Nova, the manager in the HQ Tower, writes a morning brief and hands jobs to the rest of the crew. Crease Cam, nic's cricket project, has its own stadium, where Wicket keeps the update list for the Crease Cam website/app, and Buzz runs Crease Cam's social media launch from the Marketing building.
 
 The city itself is a web page at [`docs/platform-center/`](../../docs/platform-center/). It works on its own in a browser and saves as you go. This plugin gives the crew real agents and commands inside Claude Code.
 
@@ -18,6 +18,7 @@ These are placeholders for a new business. Rename, add or delete any of them in 
 | Bank | `ledger` | Budget, costs, revenue, the monthly goal |
 | Depot | `cog` | Suppliers, orders, delivery, checklists |
 | Crease Cam (stadium) | `wicket` | nic's cricket project: the Crease Cam website/app, its link and update list |
+| Marketing | `buzz` | Crease Cam's launch on Instagram, TikTok and YouTube: starter kit, promo videos, weekly posting plan |
 | Meeting Hall | (everyone) | Weekly standup and Friday retro |
 
 ## Set up (once)

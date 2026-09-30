@@ -17,6 +17,7 @@ Write today's morning brief for the Platform Center as **Nova**, the manager in 
    - **Due today or overdue:** each open task with its building. Say "Nothing due" if empty.
    - **On the schedule today:** schedule items that run today (daily, weekdays on Monday to Friday, or today's weekday).
    - **Crease Cam:** Wicket's update list for the Crease Cam website/app: the link from the building's `site` field (say if it is the test site, or that no link is saved yet), how many updates are open, and the next two by due date. Add anything from a `wicket-latest` note. If the saved city has no Crease Cam building, leave this out.
+   - **Marketing:** Buzz's next Crease Cam social task and anything from a `buzz-latest` note. If the saved city has no Buzz building, leave this out.
    - **Crew:** one line per building: status (idle, working, stuck) and current job. Put stuck buildings first.
    - **Top 3 today:** the three most useful things to do, each tied to a building.
 5. Do not invent tasks, numbers or progress. Only use what is in memory.

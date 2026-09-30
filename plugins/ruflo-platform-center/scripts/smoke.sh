@@ -16,9 +16,9 @@ if [[ "$v" != "0.1.0" ]]; then bad "expected 0.1.0, got '$v'"
 elif ! grep -q '"name": "ruflo-platform-center"' "$M"; then bad "name mismatch"
 else ok; fi
 
-step "2. all 8 crew agents have name, description and model"
+step "2. all 9 crew agents have name, description and model"
 miss=""
-for a in nova forge pixel atlas sol ledger cog wicket; do
+for a in nova forge pixel atlas sol ledger cog wicket buzz; do
   f="$ROOT/agents/$a.md"
   [[ -f "$f" ]] || { miss="$miss missing-$a"; continue; }
   for k in "name: $a" 'description:' 'model:'; do

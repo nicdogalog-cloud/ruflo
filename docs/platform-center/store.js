@@ -20,7 +20,7 @@
   const inDays = (n) => { const d = new Date(); d.setDate(d.getDate() + n); return isoDate(d); };
 
   const COLORS = ['#5ee7ff', '#a78bfa', '#ff7ad9', '#60a5fa', '#ffc857', '#7dffb2', '#ff9f5a', '#2dd4bf', '#c3f73a'];
-  const STYLES = { tower: 'Tower', office: 'Office', studio: 'Studio', lab: 'Lab', shop: 'Shop', bank: 'Bank', depot: 'Depot', hall: 'Hall', house: 'House', stadium: 'Stadium' };
+  const STYLES = { tower: 'Tower', office: 'Office', studio: 'Studio', lab: 'Lab', shop: 'Shop', bank: 'Bank', depot: 'Depot', hall: 'Hall', house: 'House', stadium: 'Stadium', media: 'Media' };
   // Agent types accepted by `npx ruflo@latest agent spawn -t <type>`.
   const RUFLO_TYPES = ['coordinator', 'architect', 'researcher', 'analyst', 'coder', 'reviewer', 'tester', 'optimizer'];
   const REPEATS = { daily: 'every day', weekdays: 'weekdays', mon: 'Mondays', tue: 'Tuesdays', wed: 'Wednesdays', thu: 'Thursdays', fri: 'Fridays', sat: 'Saturdays', sun: 'Sundays' };
@@ -114,6 +114,27 @@
     },
   };
 
+  /* Marketing: Buzz runs Crease Cam's launch on Instagram, TikTok and YouTube.
+   * nic makes the accounts himself; Buzz never makes accounts or uses bots. */
+  const MARKETING_ID = 'marketing-buzz';
+  function marketing() {
+    return building({
+      id: MARKETING_ID,
+      name: 'Buzz', place: 'Marketing', style: 'media', color: '#ff3cac', ruflo: 'analyst',
+      role: 'Marketing lead for the Crease Cam launch: Instagram, TikTok and YouTube, the social starter kit, the short promo videos, a weekly posting plan, and promoting the website and app store page. nic creates and runs the accounts; no bots, no automatic posting or following.',
+      tasks: [
+        task('nic: create the Crease Cam Instagram, TikTok and YouTube accounts', inDays(1)),
+        task('Set bios, profile picture and banners from the social starter kit', inDays(2)),
+        task('Post the first 3 Crease Cam videos', inDays(4)),
+        task('Plan the first 9 posts', inDays(5)),
+        task('Start a weekly posting routine', inDays(7)),
+      ],
+      schedule: [job('Plan and post this week’s Crease Cam content', '18:00', 'mon')],
+      links: [link('Instagram', 'https://www.instagram.com/'), link('TikTok', 'https://www.tiktok.com/'), link('YouTube Studio', 'https://studio.youtube.com/')],
+      notes: 'Social starter kit (bios, profile picture, banners, captions): project files, crease-cam/social/crease-cam-social-starter-kit.html\nShort promo videos: project files, crease-cam/social/videos/\nnic creates the accounts and posts by hand. No bots, no automatic posting, following or liking.',
+    });
+  }
+
   /* Buildings added after a city was first saved. Each runs once per city:
    * its id goes into `seeded`, so a building the owner deletes stays deleted. */
   const SEEDS = [
@@ -161,6 +182,15 @@
         }
       },
     },
+    {
+      // adds the Marketing building with Buzz, just before the Meeting Hall
+      id: MARKETING_ID,
+      apply(s) {
+        if (s.buildings.some((b) => b.id === MARKETING_ID || /^buzz$/i.test(b.name))) return;
+        const hall = s.buildings.findIndex((b) => b.hall);
+        s.buildings.splice(hall < 0 ? s.buildings.length : hall, 0, marketing());
+      },
+    },
   ];
   function applySeeds(s) {
     SEEDS.forEach((seed) => {
@@ -181,7 +211,7 @@
       brief: { time: '08:00', lastSeen: '' },
       updatedAt: 0,
       // the starter already has these buildings; the launch tasks are added below by applySeeds
-      seeded: ['crease-cam', 'crease-cam-photos'],
+      seeded: ['crease-cam', 'crease-cam-photos', MARKETING_ID],
       buildings: [
         building({
           name: 'Nova', place: 'HQ Tower', style: 'tower', color: '#5ee7ff', ruflo: 'coordinator', lead: true,
@@ -226,6 +256,7 @@
           tasks: [task('List the apps and accounts the business will use', inDays(5)), task('Check what registration or permits your area needs', inDays(9))],
         }),
         creaseCam(),
+        marketing(),
         building({
           name: 'Meeting Hall', place: 'Town square', style: 'hall', color: '#2dd4bf', ruflo: 'coordinator', hall: true,
           role: 'Weekly review. The whole crew meets here on Fridays.',

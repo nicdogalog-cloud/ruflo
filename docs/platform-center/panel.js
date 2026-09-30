@@ -9,7 +9,7 @@
 
   const TABS = [['now', 'Now'], ['tasks', 'Tasks'], ['links', 'Links'], ['notes', 'Notes'], ['schedule', 'Schedule'], ['chat', 'Chat'], ['delegate', 'Delegate'], ['ruflo', 'Ruflo']];
   const HALL_TABS = [['review', 'This week'], ['notes', 'Retro notes']];
-  const PLUGIN_AGENTS = ['nova', 'forge', 'pixel', 'atlas', 'sol', 'ledger', 'cog', 'wicket'];
+  const PLUGIN_AGENTS = ['nova', 'forge', 'pixel', 'atlas', 'sol', 'ledger', 'cog', 'wicket', 'buzz'];
 
   let el = null;
   let currentId = null;
