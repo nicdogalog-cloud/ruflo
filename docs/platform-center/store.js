@@ -25,7 +25,12 @@
   const RUFLO_TYPES = ['coordinator', 'architect', 'researcher', 'analyst', 'coder', 'reviewer', 'tester', 'optimizer'];
   const REPEATS = { daily: 'every day', weekdays: 'weekdays', mon: 'Mondays', tue: 'Tuesdays', wed: 'Wednesdays', thu: 'Thursdays', fri: 'Fridays', sat: 'Saturdays', sun: 'Sundays' };
 
-  const task = (title, due = '', from = '') => ({ id: uid(), title, due, done: false, doneAt: '', from });
+  /* A task. When a crew member does it (the "Do this task" button) the work is
+   * kept on the task: result (the deliverable), summary (one line), nicStep
+   * (what nic still has to do) and review (true until nic approves it). */
+  const task = (title, due = '', from = '') => ({ id: uid(), title, due, done: false, doneAt: '', from, result: '', summary: '', nicStep: '', review: false, resultAt: 0 });
+  const MAX_RESULT = 6000;
+  const DOING = 'Doing: ';
   /* The one safe-link check. Every link the city stores or shows goes through
    * this: typed, imported, restored, synced or seeded. Only http, https and
    * mailto survive; anything else (javascript:, data:, ...) becomes ''. */
@@ -276,6 +281,8 @@
     const cleanList = (arr, fields) => (Array.isArray(arr) ? arr : []).filter((x) => x && typeof x === 'object').map((x) => {
       const out = { id: typeof x.id === 'string' ? x.id : uid() };
       for (const [k, def] of Object.entries(fields)) out[k] = typeof x[k] === typeof def ? x[k] : def;
+      // a done task's doneAt is a time stamp (a number); keep it, or "done this week" forgets it on reload
+      if ('doneAt' in fields && Number.isFinite(x.doneAt) && x.doneAt > 0) out.doneAt = x.doneAt;
       return out;
     });
     return {
@@ -296,7 +303,10 @@
       seeded: Array.isArray(s.seeded) ? s.seeded.filter((x) => typeof x === 'string') : [],
       buildings: s.buildings.filter((b) => b && typeof b === 'object').map((b) => building({
         ...b,
-        tasks: cleanList(b.tasks, { title: '', due: '', done: false, doneAt: '', from: '' }),
+        // "Doing: ..." is only true while the page that started the work is open; a saved one is stale
+        ...(typeof b.job === 'string' && b.job.startsWith(DOING) ? { job: '', status: 'idle' } : {}),
+        tasks: cleanList(b.tasks, { title: '', due: '', done: false, doneAt: '', from: '', result: '', summary: '', nicStep: '', review: false, resultAt: 0 })
+          .map((t) => ({ ...t, result: t.result.slice(0, MAX_RESULT) })),
         links: cleanList(b.links, { title: '', url: '' }),
         schedule: cleanList(b.schedule, { title: '', time: '09:00', repeat: 'daily' }),
         chat: (Array.isArray(b.chat) ? b.chat : []).filter((m) => m && typeof m.text === 'string').map((m) => ({ role: m.role === 'me' ? 'me' : 'agent', text: m.text, at: m.at || 0 })),
@@ -364,7 +374,7 @@
   }
 
   function trimForSize() {
-    // A db document holds at most 256 KiB; long chats are the only thing that can grow without limit.
+    // A db document holds at most 256 KiB; long chats and the crew's finished work are what can grow.
     let size = JSON.stringify(state).length;
     let keep = MAX_CHAT;
     while (size > 200000 && keep > 4) {
@@ -372,9 +382,19 @@
       state.buildings.forEach((b) => { b.chat = b.chat.slice(-keep); });
       size = JSON.stringify(state).length;
     }
+    if (size <= 200000) return;
+    // then drop the full text of the oldest approved work (its one-line summary stays)
+    const old = [];
+    state.buildings.forEach((b) => b.tasks.forEach((t) => { if (t.done && t.result) old.push(t); }));
+    old.sort((a, c) => (a.resultAt || 0) - (c.resultAt || 0));
+    for (const t of old) {
+      if (size <= 200000) break;
+      size -= t.result.length;
+      t.result = '';
+    }
   }
 
-  PC.util = { uid, isoDate, inDays, clone, COLORS, STYLES, RUFLO_TYPES, REPEATS, task, link, job };
+  PC.util = { uid, isoDate, inDays, clone, COLORS, STYLES, RUFLO_TYPES, REPEATS, task, link, job, MAX_RESULT, DOING };
 
   PC.store = {
     init(remoteCb, statusCb) {

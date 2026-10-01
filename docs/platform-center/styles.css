@@ -327,6 +327,29 @@ textarea { resize: vertical; line-height: 1.5; }
 .chat-form { display: flex; gap: 8px; align-items: flex-end; }
 .chat-form textarea { flex: 1; min-height: 44px; }
 
+/* the crew's work ("Do this task") */
+.small { font-size: 12px; }
+.chip.review { color: var(--warn); border-color: rgba(255, 200, 87, 0.6); }
+.chip.ok { color: var(--ok); border-color: rgba(125, 255, 178, 0.55); }
+.task .btn.small { padding: 4px 10px; font-size: 12px; }
+.working-btn { background: var(--ok); }
+.chip-btn.work-chip { font-size: 12px; padding: 3px 10px; font-weight: 700; }
+.chip-btn.work-chip.review { color: var(--warn); border-color: rgba(255, 200, 87, 0.7); }
+.chip-btn.work-chip.ok { color: var(--ok); border-color: rgba(125, 255, 178, 0.6); }
+.work-note { padding: 8px 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.04); border: 1px dashed var(--line-2); }
+.work-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.work-card { width: 100%; display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); text-align: left; }
+.work-card:hover { border-color: var(--b, var(--cyan)); }
+.work-card .muted { font-size: 13px; }
+.your-part { margin: 0; font-size: 13px; color: var(--warn); }
+.work-view { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.work-view .work-task { font-size: 17px; text-transform: none; letter-spacing: 0; color: var(--text); margin: 0; }
+.work-summary { margin: 0; font-weight: 600; }
+.work-text { margin: 0; padding: 12px; border-radius: 10px; background: var(--ink); border: 1px solid var(--line); font: 14px/1.55 var(--font-body); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 52vh; overflow-y: auto; }
+.work-text.live { border-style: dashed; }
+.brief-list.work-brief li { flex-direction: column; align-items: flex-start; gap: 2px; }
+.add-row > .check { align-items: center; flex: 0 0 auto; }
+
 /* ruflo commands */
 .cmd { display: flex; flex-direction: column; gap: 4px; }
 .cmd-note { margin: 0; font-size: 13px; color: var(--muted); }

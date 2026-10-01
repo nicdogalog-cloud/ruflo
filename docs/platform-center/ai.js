@@ -47,12 +47,105 @@
         job: b.job || undefined,
         open_tasks: b.tasks.filter((t) => !t.done).slice(0, 12).map((t) => ({ id: t.id, title: t.title, due: t.due || undefined, from: t.from || undefined })),
         done_last_7_days: b.tasks.filter((t) => t.done && t.doneAt && Date.now() - t.doneAt < 7 * 864e5).map((t) => t.title).slice(0, 8),
+        work_saved: recentWork(b).slice(0, 5).map((t) => ({ task: t.title, state: t.review ? 'waiting for nic to check' : 'done', summary: t.summary || undefined, nic_step: t.review && t.nicStep ? t.nicStep : undefined })),
         schedule: b.schedule.map((j) => `${j.title} at ${j.time}, ${REPEATS[j.repeat] || j.repeat}`),
         site: b.site ? siteLine(b) : undefined,
         notes: b === focus ? b.notes.slice(0, 1500) || undefined : undefined,
         links: b === focus ? b.links.map((l) => l.title) : undefined,
       })),
     });
+  }
+
+  // the work a crew member has saved on its tasks, newest first
+  const recentWork = (b) => b.tasks.filter((t) => t.resultAt && (t.summary || t.result)).sort((a, c) => c.resultAt - a.resultAt);
+
+  /* ---------- doing a task ---------- */
+  // The main business. Every crew member knows it.
+  const CREASE_CAM = [
+    'The main business is Crease Cam: a phone app that helps cricketers film their own batting and bowling at the nets, with guide cards that show where to put the phone (bowling side view, bowling front view, batting front view, batting side view).',
+    'Players first (then coaches and clubs). UK, prices in GBP: free, Pro £3.99 a month or £39.99 a year. For all ages, so anything about under-18s must be careful and parent-friendly. Videos stay on the player’s phone; nothing is uploaded.',
+  ].join(' ');
+
+  // What a finished piece of work looks like for each crew member (by name, then by ruflo type).
+  const GUIDE = {
+    nova: 'You are the manager. Make a decision memo or plan: the options, your recommendation, and dated next steps. If parts of the job belong to other buildings, hand them out in a HAND OUT block.',
+    forge: 'Product. Make specs, keep/cut feature lists with a reason for each, launch checklists and step-by-step plans.',
+    pixel: 'Content. Make ready-to-use drafts: captions, shot lists, short video scripts and post ideas. Drafts only: nic posts by hand.',
+    atlas: 'Research. You cannot browse the web, so use what you know, put "(check)" after every price, number or fact that may be out of date, and say how nic can check it in a minute. Make competitor notes, comparison lists and interview or survey questions.',
+    sol: 'Sales. Make price comparisons, offers, and outreach messages nic can send himself. For lead lists, list the kinds of clubs and coaches and where to find them; never invent real people, clubs or contact details.',
+    ledger: 'Money, in GBP (£). Make budget tables as lines like "Item: £amount (one-off or monthly)", with totals, break-even sums and every assumption stated.',
+    cog: 'Operations. Make shopping lists (what to look for, rough £ ranges marked "(check)"), quote-request emails nic can send, and admin checklists.',
+    wicket: 'The Crease Cam website/app. Make website checklists, page copy, update lists and policy drafts. You cannot open the site or change its code. Any legal text starts with "DRAFT: have this checked before publishing."',
+    buzz: 'Marketing. Make drafts nic posts by hand: captions with hashtags, 9-post plans, short video scripts, bios. You never post, create accounts, log in, follow, like or use bots. If the task asks for that, prepare everything nic needs and mark it NEEDS NIC.',
+  };
+  const TYPE_GUIDE = {
+    coordinator: GUIDE.nova, architect: GUIDE.forge, researcher: GUIDE.atlas, coder: GUIDE.wicket,
+    analyst: 'Make the actual piece of work the task asks for: a list, a draft, a plan or a table.',
+    reviewer: 'Make a review: what is good, what to fix, in order of importance.',
+    tester: 'Make a test checklist with clear pass/fail steps.',
+    optimizer: GUIDE.cog,
+  };
+  const guideFor = (b) => GUIDE[String(b.name).toLowerCase()] || TYPE_GUIDE[b.ruflo] || TYPE_GUIDE.analyst;
+
+  function workPrompt(s, b, t, redo) {
+    const others = s.buildings.filter((x) => !x.hall && x.id !== b.id).map((x) => `${x.name} (${x.place})`).join(', ');
+    const again = redo
+      ? `You did this task before. Your last version:\n---\n${String(redo.previous || '').slice(0, 3000)}\n---\n${redo.feedback ? `${s.owner} wants this changed: ${redo.feedback}` : `${s.owner} asked for a better version.`}`
+      : '';
+    return [
+      `You are ${b.name}, the crew member who runs the ${b.place} in ${s.owner}'s Platform Center for the business "${s.business}". Your area: ${b.role}`,
+      CREASE_CAM,
+      `How you work: ${guideFor(b)}`,
+      `${s.owner} tapped "Do this task" on your task: "${t.title}"${t.due ? ` (due ${t.due})` : ''}${t.from ? `, handed to you by ${t.from}` : ''}.`,
+      again,
+      `Do the task now and write the actual finished work, not advice on how to do it. You only have this page: you cannot browse, buy, post, send messages, log in or sign up for anything. When a step needs the real world, prepare everything ${s.owner} needs for it (the message to send, the list to buy, the text to paste) and leave that step to ${s.owner}.`,
+      [
+        'Reply in exactly this shape:',
+        'SUMMARY: one line, at most 20 words, saying what you made',
+        '',
+        'The work itself. Plain text. "-" lists and short CAPITALISED headings on their own line are fine. No markdown tables, no ** or #. At most 400 words.',
+        '',
+        'Then one of these two lines:',
+        'STATUS: DONE  (the work above finishes the task)',
+        `STATUS: NEEDS NIC - the one thing ${s.owner} must do, decide or check before the task is finished`,
+        b.lead ? `\nIf other buildings should do part of it, end with:\nHAND OUT:\n- <building name>: <task title, at most 12 words>\n(at most 4 lines; building names: ${others})` : '',
+      ].join('\n'),
+      `The city right now (JSON), so your work fits with the rest of the crew's: ${cityJSON(s, b)}`,
+    ].filter(Boolean).join('\n\n');
+  }
+
+  // Split a reply into summary, work, status and hand-outs. Copes with a reply that was cut short.
+  function parseWork(text) {
+    const lines = String(text || '').replace(/\r/g, '').split('\n');
+    let summary = '';
+    let status = null;
+    let nicStep = '';
+    const body = [];
+    const handout = [];
+    let inHandout = false;
+    for (const raw of lines) {
+      const line = raw.trim().replace(/^\*+|\*+(?=\s*:)/g, '');
+      let m;
+      if (!summary && !body.join('').trim() && (m = line.match(/^SUMMARY\s*:\s*(.+)$/i))) { summary = m[1].trim(); continue; }
+      if ((m = line.match(/^STATUS\s*:\**\s*(DONE|NEEDS\s+\w+)\**[\s:.\-–—]*(.*)$/i))) {
+        status = /^done/i.test(m[1]) ? 'done' : 'review';
+        nicStep = m[2].trim();
+        inHandout = false;
+        continue;
+      }
+      if (/^HAND\s*OUTS?\s*:?\**\s*$/i.test(line)) { inHandout = true; continue; }
+      if (inHandout) {
+        if ((m = line.match(/^[-*•]\s*([^:]{1,40}):\s*(.+)$/))) handout.push({ to: m[1].trim(), title: m[2].trim().slice(0, 200) });
+        continue;
+      }
+      body.push(raw);
+    }
+    const work = body.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    return { summary: summary.slice(0, 200), work, status, nicStep: nicStep.slice(0, 240), handout: handout.slice(0, 4) };
+  }
+
+  function work(b, t, { onText, signal, redo }) {
+    return sample(workPrompt(PC.store.get(), b, t, redo), { onText, signal, modelTier: 'default', cache: false });
   }
 
   function rules(s, b) {
@@ -176,7 +269,8 @@
     const lead = leadOf(s);
     const prompt = [
       `You are ${lead.name}, the manager of ${s.owner}'s Platform Center for a new business called "${s.business}". Today is ${today()}.`,
-      `Write ${s.owner}'s morning brief from the city below. Plain text, under 160 words. Use exactly these three labels, each on its own line and followed by "-" bullets: Focus today, Heads-up, One move for the goal.`,
+      `Write ${s.owner}'s morning brief from the city below. Plain text, under 190 words. Use exactly these four labels, each on its own line and followed by "-" bullets: Work the crew finished, Focus today, Heads-up, One move for the goal.`,
+      `Under "Work the crew finished", go only by each building's work_saved list: name the building, what it made, and for work waiting for ${s.owner} to check, the one thing to do (nic_step). If no building has saved work, say so in one line and suggest one task to tap "Do this task" on. Never say the crew did anything that is not in work_saved, and never say they work while the page is closed.`,
       s.buildings.some((b) => b.site) ? `Under Heads-up, give one line to ${s.buildings.filter((b) => b.site).map((b) => `${b.place} (${b.name}'s ${b.site.label} update list)`).join(' and ')}: how many updates are open and the next one.` : '',
       `The city (JSON): ${cityJSON(s, lead)}`,
     ].filter(Boolean).join('\n\n');
@@ -282,5 +376,6 @@
     canUseTools: () => ready && tools,
     onChange: (fn) => listeners.push(fn),
     chat, brief, meeting, offline, planText, greeting, quickPrompts, errorText,
+    work, parseWork, recentWork,
   };
 })();

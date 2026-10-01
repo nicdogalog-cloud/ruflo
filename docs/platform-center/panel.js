@@ -7,7 +7,7 @@
   const { h, icon, copy, cmd, dueInfo, fmtTime, runsOn } = PC.ui;
   const { REPEATS, RUFLO_TYPES, task: newTask, link: newLink, job: newJob } = PC.util;
 
-  const TABS = [['now', 'Now'], ['tasks', 'Tasks'], ['links', 'Links'], ['notes', 'Notes'], ['schedule', 'Schedule'], ['chat', 'Chat'], ['delegate', 'Delegate'], ['ruflo', 'Ruflo']];
+  const TABS = [['now', 'Now'], ['tasks', 'Tasks'], ['work', 'Work'], ['links', 'Links'], ['notes', 'Notes'], ['schedule', 'Schedule'], ['chat', 'Chat'], ['delegate', 'Delegate'], ['ruflo', 'Ruflo']];
   const HALL_TABS = [['review', 'This week'], ['notes', 'Retro notes']];
   const PLUGIN_AGENTS = ['nova', 'forge', 'pixel', 'atlas', 'sol', 'ledger', 'cog', 'wicket', 'buzz'];
 
@@ -88,6 +88,7 @@
   function body(s, b) {
     switch (tab) {
       case 'tasks': return tasksTab(b);
+      case 'work': return workTab(b);
       case 'links': return linksTab(b);
       case 'photos': return PC.photos.tab(b);
       case 'notes': return notesTab(b);
@@ -106,12 +107,13 @@
     return h('li', { class: 'task' + (t.done ? ' done' : '') },
       h('input', {
         type: 'checkbox', checked: t.done, 'aria-label': `Mark “${t.title}” ${t.done ? 'not done' : 'done'}`,
-        onchange: () => change((st) => { const k = find(st, b.id).tasks.find((x) => x.id === t.id); k.done = !k.done; k.doneAt = k.done ? Date.now() : ''; }),
+        onchange: () => change((st) => { const k = find(st, b.id).tasks.find((x) => x.id === t.id); k.done = !k.done; k.doneAt = k.done ? Date.now() : ''; if (k.done) { k.review = false; k.nicStep = ''; } }),
       }),
       n ? h('span', { class: 'num', text: n }) : null,
       h('span', { class: 'task-title', text: t.title }),
       t.from ? h('span', { class: 'chip from', text: `from ${t.from}` }) : null,
       d && !t.done ? h('span', { class: `chip due ${d.cls}`, text: d.text }) : null,
+      PC.work.taskControl(b, t),
       h('button', { class: 'icon-btn tiny', type: 'button', 'aria-label': `Delete “${t.title}”`, onclick: () => change((st) => { const x = find(st, b.id); x.tasks = x.tasks.filter((k) => k.id !== t.id); }) }, icon('trash')));
   }
 
@@ -175,6 +177,7 @@
           h('span', { class: 'count', text: `${x.tasks.filter((t) => !t.done).length} open` })))))) : null;
     return [
       b.site ? siteSlot(b) : null,
+      waitingBlock(b),
       h('section', { class: 'block' },
         h('h3', { text: b.site ? 'Needs updating' : 'Next up' }),
         next.length ? h('ul', { class: 'tasks' }, next.map((t) => taskRow(b, t))) : h('p', { class: 'empty', text: b.site ? 'Nothing on the update list. Add the next change below.' : 'Nothing waiting here. Add the next step below.' }),
@@ -190,11 +193,20 @@
     ];
   }
 
+  // what "Do this task" can and cannot do, said once wherever it shows
+  function workNote(b) {
+    if (b.hall) return null;
+    return h('p', { class: 'hint work-note', text: PC.ai.available()
+      ? `Tap Do this task and ${b.name} makes the work now (a draft, list, plan or table) and saves it here. ${b.name} only works while this page is open and you tap the button; nothing runs in the background, and ${b.name} never posts, buys or signs up for anything.`
+      : `On claude.ai, with AI answers on, ${b.name} can do these tasks for you. Here you can only tick them off.` });
+  }
+
   function tasksTab(b) {
     const open = openTasks(b);
     const done = b.tasks.filter((t) => t.done).sort((a, c) => (c.doneAt || 0) - (a.doneAt || 0));
     return [
       b.site ? h('p', { class: 'hint', text: `The update list for the ${b.site.label}. Tick a change off once it is live.` }) : null,
+      workNote(b),
       addTaskForm(b, false),
       open.length ? h('ol', { class: 'tasks numbered' }, open.map((t, i) => taskRow(b, t, i + 1))) : h('p', { class: 'empty', text: 'All clear. Add what this building should do next.' }),
       done.length ? h('details', { class: 'done-list' },
@@ -202,6 +214,33 @@
         h('ul', { class: 'tasks' }, done.map((t) => taskRow(b, t))),
         h('button', { class: 'btn ghost small', type: 'button', onclick: () => change((st) => { const x = find(st, b.id); x.tasks = x.tasks.filter((k) => !k.done); }) }, 'Clear done tasks')) : null,
     ];
+  }
+
+  function workTab(b) {
+    const list = PC.ai.recentWork(b);
+    const card = (t) => h('li', {}, h('button', { type: 'button', class: 'work-card', onclick: () => PC.work.open(b.id, t.id) },
+      h('span', { class: 'row' },
+        h('span', { class: 'chip ' + (t.review ? 'review' : 'ok'), text: t.review ? 'Needs your check' : 'Done' }),
+        h('span', { class: 'muted small', text: new Date(t.resultAt).toLocaleDateString(undefined, { day: 'numeric', month: 'short' }) })),
+      h('strong', { text: t.title }),
+      t.summary ? h('span', { class: 'muted', text: t.summary }) : null,
+      t.review && t.nicStep ? h('span', { class: 'your-part', text: `Your part: ${t.nicStep}` }) : null));
+    return [
+      h('p', { class: 'hint', text: `Everything ${b.name} has made for its tasks, newest first. Open one to copy it, approve it or ask for changes.` }),
+      list.length ? h('ul', { class: 'work-list' }, list.map(card))
+        : h('p', { class: 'empty', text: `No work yet. Open Tasks and tap Do this task.` }),
+      workNote(b),
+    ];
+  }
+
+  function waitingBlock(b) {
+    const waiting = PC.ai.recentWork(b).filter((t) => t.review);
+    if (!waiting.length) return null;
+    return h('section', { class: 'block' },
+      h('h3', { text: 'Waiting for your check' }),
+      h('ul', { class: 'tasks' }, waiting.map((t) => h('li', { class: 'task' },
+        h('span', { class: 'task-title', text: t.title }),
+        h('button', { class: 'chip-btn work-chip review', type: 'button', onclick: () => PC.work.open(b.id, t.id) }, 'Check work')))));
   }
 
   function linksTab(b) {
@@ -250,7 +289,9 @@
     const rep = h('select', { id: `new-job-rep-${b.id}`, 'aria-label': 'Repeats' }, Object.entries(REPEATS).map(([k, v]) => h('option', { value: k, text: v })));
     const jobs = b.schedule.slice().sort((a, c) => (a.time < c.time ? -1 : 1));
     return [
-      h('p', { class: 'hint', text: 'Repeating jobs show up in the morning brief on the days they run.' }),
+      h('p', { class: 'hint', text: PC.ai.available()
+        ? 'These are reminders: they show in the morning brief on their days, but nothing runs on its own at these times. Tap Do it now and the job becomes a task that gets done while the page is open.'
+        : 'These are reminders: they show in the morning brief on their days. Nothing runs on its own at these times.' }),
       h('form', {
         class: 'add-row', onsubmit: (e) => {
           e.preventDefault();
@@ -264,6 +305,7 @@
         h('span', { class: 'time', text: fmtTime(j.time) }),
         h('span', { class: 'grow', text: j.title }),
         h('span', { class: 'chip', text: REPEATS[j.repeat] || j.repeat }),
+        PC.ai.available() ? h('button', { class: 'btn ghost small', type: 'button', disabled: PC.work.busy(), onclick: () => PC.work.runJob(b.id, j) }, 'Do it now') : null,
         h('button', { class: 'icon-btn tiny', type: 'button', 'aria-label': `Delete ${j.title}`, onclick: () => change((st) => { const x = find(st, b.id); x.schedule = x.schedule.filter((k) => k.id !== j.id); }) }, icon('trash')))))
         : h('p', { class: 'empty', text: 'No repeating jobs yet.' }),
     ];
@@ -342,25 +384,33 @@
     const who = h('select', { id: 'delegate-to', 'aria-label': 'Hand the job to' }, crew.map((x) => h('option', { value: x.id, text: `${x.name} (${x.place})` })));
     const what = h('input', { id: 'delegate-what', type: 'text', maxlength: '200', placeholder: 'The job, like Find 10 product ideas', 'aria-label': 'Job' });
     const due = h('input', { id: 'delegate-due', type: 'date', 'aria-label': 'Due date' });
+    const startNow = h('input', { id: 'delegate-start', type: 'checkbox', checked: PC.ai.available() && !PC.work.busy() });
+    startNow.dataset.keep = 'no';
     const handed = [];
-    s.buildings.forEach((x) => x.tasks.forEach((t) => { if (!t.done && t.from === b.name) handed.push({ x, t }); }));
+    s.buildings.forEach((x) => x.tasks.forEach((t) => { if (t.from === b.name && (!t.done || (t.resultAt && Date.now() - t.resultAt < 7 * 864e5))) handed.push({ x, t }); }));
     return [
-      h('p', { class: 'hint', text: `Hand a job to another building. While it is open, the wire from ${b.name} to that building lights up.` }),
+      h('p', { class: 'hint', text: `Hand a job to another building: it lands on their task list, and the wire from ${b.name} to that building lights up while it is open.${PC.ai.available() ? ' Tick Start now and they do it straight away, while this page is open.' : ''}` }),
       h('form', {
         class: 'add-row wrap', onsubmit: (e) => {
           e.preventDefault();
           const v = what.value.trim();
           const target = find(state(), who.value);
           if (!v || !target) return;
-          change((st) => { find(st, target.id).tasks.push(newTask(v, due.value, b.name)); });
+          const k = newTask(v, due.value, b.name);
+          const go = startNow.checked && PC.ai.available() && !PC.work.busy();
+          change((st) => { find(st, target.id).tasks.push(k); });
           what.value = ''; due.value = '';
           PC.ui.toast(`Sent to ${target.name}`);
+          if (go) PC.work.run(target.id, k.id);
         },
-      }, who, what, due, h('button', { class: 'btn', type: 'submit' }, icon('send'), 'Hand it over')),
-      h('h3', { text: 'Handed out and still open' }),
-      handed.length ? h('ul', { class: 'tasks' }, handed.map(({ x, t }) => h('li', { class: 'task' },
+      }, who, what, due,
+      PC.ai.available() ? h('label', { class: 'check', for: 'delegate-start' }, startNow, h('span', { text: 'Start now' })) : null,
+      h('button', { class: 'btn', type: 'submit' }, icon('send'), 'Hand it over')),
+      h('h3', { text: 'Handed out' }),
+      handed.length ? h('ul', { class: 'tasks' }, handed.map(({ x, t }) => h('li', { class: 'task' + (t.done ? ' done' : '') },
         h('span', { class: `dot ${x.status}` }), h('strong', { text: x.name }), h('span', { class: 'task-title', text: t.title }),
-        dueInfo(t.due) ? h('span', { class: `chip due ${dueInfo(t.due).cls}`, text: dueInfo(t.due).text }) : null)))
+        !t.done && dueInfo(t.due) ? h('span', { class: `chip due ${dueInfo(t.due).cls}`, text: dueInfo(t.due).text }) : null,
+        PC.work.taskControl(x, t))))
         : h('p', { class: 'empty', text: 'Nothing handed out right now.' }),
     ];
   }
@@ -396,7 +446,8 @@
     return s.buildings.filter((x) => !x.hall).map((x) => {
       const done = x.tasks.filter((t) => t.done && t.doneAt && Date.now() - t.doneAt < week).map((t) => t.title);
       const next = openTasks(x)[0];
-      return `${x.name} (${x.status}): done ${done.length ? done.join('; ') : 'nothing yet'} | next: ${next ? next.title : 'nothing planned'}`;
+      const check = x.tasks.filter((t) => t.review && t.resultAt).length;
+      return `${x.name} (${x.status}): done ${done.length ? done.join('; ') : 'nothing yet'} | next: ${next ? next.title : 'nothing planned'}${check ? ` | work to check: ${check}` : ''}`;
     }).join('\n');
   }
 

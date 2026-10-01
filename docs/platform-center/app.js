@@ -120,6 +120,9 @@
     lines.push(`Goal: ${money(s.goal.current)} of ${money(s.goal.target)} (${s.goal.label})`);
     const due = [];
     s.buildings.forEach((b) => b.tasks.forEach((t) => { const d = dueInfo(t.due); if (!t.done && d && (d.cls === 'today' || d.cls === 'overdue')) due.push(`- ${b.name}: ${t.title} (${d.text.toLowerCase()})`); }));
+    const { check, finished } = crewWork(s);
+    lines.push('', 'Crew work to check:', ...(check.length ? check.map(({ b, t }) => `- ${b.name}: ${t.title}${t.summary ? ` (${t.summary})` : ''}${t.nicStep ? `. Your part: ${t.nicStep}` : ''}`) : ['- nothing waiting']));
+    lines.push('', 'Finished by the crew (last 7 days):', ...(finished.length ? finished.map(({ b, t }) => `- ${b.name}: ${t.title}${t.summary ? ` (${t.summary})` : ''}`) : ['- nothing yet']));
     lines.push('', 'Due today or overdue:', ...(due.length ? due : ['- nothing']));
     const jobs = [];
     s.buildings.forEach((b) => b.schedule.forEach((j) => { if (runsOn(j)) jobs.push({ t: j.time, line: `- ${fmtTime(j.time)} ${b.name}: ${j.title}` }); }));
@@ -131,6 +134,30 @@
         ...(open.length ? open.slice(0, 3).map((t) => `- ${t.title}`) : ['- nothing on the update list']));
     });
     return lines.join('\n');
+  }
+  // real saved work: waiting for nic's check, and finished in the last 7 days
+  function crewWork(s) {
+    const check = [];
+    const finished = [];
+    s.buildings.forEach((b) => PC.ai.recentWork(b).forEach((t) => {
+      if (t.review) check.push({ b, t });
+      else if (Date.now() - t.resultAt < 7 * 864e5) finished.push({ b, t });
+    }));
+    const newest = (a, c) => c.t.resultAt - a.t.resultAt;
+    return { check: check.sort(newest), finished: finished.sort(newest).slice(0, 8) };
+  }
+  function workBrief(s, close) {
+    const { check, finished } = crewWork(s);
+    const item = ({ b, t }) => h('li', {},
+      h('button', { type: 'button', class: 'link-like', onclick: () => { close(); PC.panel.open(b.id, 'work'); PC.work.open(b.id, t.id); } }, h('strong', { text: b.name }), ` ${t.title}`),
+      t.summary ? h('span', { class: 'muted small', text: t.summary }) : null,
+      t.review && t.nicStep ? h('span', { class: 'your-part', text: `Your part: ${t.nicStep}` }) : null);
+    return [
+      h('section', {}, h('h3', { text: 'Crew work to check' }),
+        check.length ? h('ul', { class: 'brief-list work-brief' }, check.map(item))
+          : h('p', { class: 'empty', text: finished.length ? 'Nothing waiting for you.' : 'No crew work yet. Open a building, go to Tasks and tap Do this task. The crew works only while this page is open.' })),
+      finished.length ? h('section', {}, h('h3', { text: 'Finished by the crew this week' }), h('ul', { class: 'brief-list work-brief' }, finished.map(item))) : null,
+    ];
   }
   const byDue = (list) => list.slice().sort((a, c) => ((a.due || '9999') < (c.due || '9999') ? -1 : 1));
 
@@ -185,6 +212,7 @@
         h('span', { text: st.goal.label }),
         h('strong', { text: `${money(st.goal.current)} of ${money(st.goal.target)}` }),
         h('span', { class: 'meter' }, h('span', { style: `width:${pct.toFixed(1)}%` }))),
+      workBrief(st, () => close()),
       h('section', {}, h('h3', { text: 'Due today or overdue' }),
         due.length ? h('ul', { class: 'brief-list' }, due.map(({ b, t, d }) => h('li', {},
           h('button', { type: 'button', class: 'link-like', onclick: () => { close(); PC.panel.open(b.id, 'tasks'); } }, h('strong', { text: b.name }), ` ${t.title}`),
@@ -347,7 +375,7 @@
       h('div', { class: 'row end' }, h('button', { class: 'btn', type: 'submit' }, 'Save'))),
       h('section', { class: 'block' }, h('h3', { text: 'Where your city is saved' }),
         h('p', { class: 'hint', text: `${STATUS_TEXT[PC.store.status()] || ''}. ${window.claude ? 'On claude.ai your city is saved to your account and only you can see it.' : 'Opened outside claude.ai, the city lives in this browser. Copy a backup now and then.'}` }),
-        h('p', { class: 'hint', text: PC.ai.available() ? 'AI answers: on (uses your own claude.ai account).' : 'AI answers: off here. The crew follows simple orders instead.' })),
+        h('p', { class: 'hint', text: PC.ai.available() ? 'AI answers: on (uses your own claude.ai account). The crew does a task when you tap Do this task, only while this page is open. Nothing runs in the background or on a timer.' : 'AI answers: off here. The crew follows simple orders instead, and cannot do tasks.' })),
       h('section', { class: 'block' }, h('h3', { text: 'Backup' }),
         h('div', { class: 'row' },
           h('button', { class: 'btn ghost', type: 'button', onclick: () => copy(backup()) }, icon('copy'), 'Copy backup'),
