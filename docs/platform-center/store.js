@@ -43,7 +43,8 @@
     .filter((l) => l && typeof l === 'object')
     .map((l) => ({ ...l, title: String(l.title || ''), url: safeUrl(l.url) }))
     .filter((l) => l.url);
-  const safeColor = (c) => (typeof c === 'string' && /^#[0-9a-f]{3,8}$/i.test(c) ? c : '');
+  // only #rgb or #rrggbb: what the colour swatches give and what the city can draw ('#12345' is not a colour)
+  const safeColor = (c) => (typeof c === 'string' && /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(c) ? c : '');
 
   const link = (title, url) => ({ id: uid(), title, url: safeUrl(url) });
   const job = (title, time, repeat) => ({ id: uid(), title, time, repeat });

@@ -44,7 +44,7 @@ else ok; fi
 
 step "5. city UI files exist in docs/platform-center"
 miss=""
-for f in index.html styles.css store.js ui.js city.js ai.js panel.js app.js; do
+for f in index.html styles.css store.js ui.js city.js city3d-mesh.js city3d.js ai.js panel.js app.js; do
   [[ -f "$REPO/docs/platform-center/$f" ]] || miss="$miss $f"
 done
 [[ -z "$miss" ]] && ok || bad "missing:$miss"

@@ -1,4 +1,5 @@
-/* Platform Center: the isometric neon city, drawn on a <canvas>.
+/* Platform Center: the flat isometric neon city, drawn on a 2D <canvas>.
+ * city3d.js draws the 3D city and falls back to this one without WebGL.
  * The manager (lead) building stands at the back like an HQ tower, a plaza
  * sits in the middle, and every other building fills the rings around it.
  * Dashed lines run from each beacon to the manager; they flow while the
@@ -77,6 +78,17 @@
     return { placed, bounds, parks, lead };
   }
   const beaconZ = (p) => p.h + (p.b.lead ? 0.75 : 0.5);
+  // the top of a building's own shape (roof, dome, billboard...), for tapping it
+  const ROOF = { hall: 0.28, media: 0.34, tower: 0.55, bank: 0.06, office: 0.12 };
+  const roofZ = (p) => p.h + (p.b.style === 'lab' ? p.f * 0.9 : ROOF[p.b.style] || 0);
+  function inPoly(pts, x, y) {
+    let inside = false;
+    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+      const [xi, yi] = pts[i], [xj, yj] = pts[j];
+      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+  }
 
   function fit(placed, g) {
     const pts = [[g.x0, g.y0, 0], [g.x1, g.y0, 0], [g.x1, g.y1, 0], [g.x0, g.y1, 0]];
@@ -356,33 +368,36 @@
     });
   }
 
-  function label(p, top) {
-    const b = p.b;
-    const fs = Math.round(Math.min(15, Math.max(11, u * 0.2)));
+  // a building's name tag above its beacon; shared with the 3D city. Returns its hit box.
+  function drawLabel(c, b, top, scale, measureOnly) {
+    const fs = Math.round(Math.min(15, Math.max(11, scale * 0.2)));
     const sub = b.job ? `on: ${b.job}` : b.place;
-    ctx.save();
-    ctx.font = `600 ${fs}px "Chakra Petch", "Trebuchet MS", sans-serif`;
-    const nameW = ctx.measureText(b.name).width;
-    ctx.font = `500 ${fs - 3}px Manrope, "Segoe UI", sans-serif`;
+    c.save();
+    c.font = `600 ${fs}px "Chakra Petch", "Trebuchet MS", sans-serif`;
+    const nameW = c.measureText(b.name).width;
+    c.font = `500 ${fs - 3}px Manrope, "Segoe UI", sans-serif`;
     const subText = sub.length > 26 ? sub.slice(0, 25) + '…' : sub;
-    const subW = ctx.measureText(subText).width;
+    const subW = c.measureText(subText).width;
     const w = Math.max(nameW + 14, subW);
     const lx = top[0] - w / 2, ly = top[1] - fs * 2.3;
-    ctx.shadowColor = 'rgba(0,0,20,0.8)'; ctx.shadowBlur = 6;
-    ctx.fillStyle = STATUS_COLOR[b.status] || STATUS_COLOR.idle;
-    ctx.beginPath(); ctx.arc(lx + 4, ly + fs * 0.5, 3.2, 0, Math.PI * 2); ctx.fill();
-    ctx.font = `600 ${fs}px "Chakra Petch", "Trebuchet MS", sans-serif`;
-    ctx.fillStyle = '#f2f4ff'; ctx.textBaseline = 'middle';
-    ctx.fillText(b.name, lx + 12, ly + fs * 0.5);
-    ctx.shadowBlur = 0;
-    ctx.fillStyle = rgba(b.color, 0.9);
-    ctx.fillRect(lx + 12, ly + fs * 1.05, Math.min(nameW, 40), 2);
-    ctx.font = `500 ${fs - 3}px Manrope, "Segoe UI", sans-serif`;
-    ctx.fillStyle = 'rgba(200,206,255,0.85)';
-    ctx.fillText(subText, lx + 12, ly + fs * 1.6);
-    ctx.restore();
-    return [lx - 4, ly - 4, lx + w + 14, ly + fs * 2.1];
+    const box = [lx - 4, ly - 4, lx + w + 14, ly + fs * 2.1];
+    if (measureOnly) { c.restore(); return box; }
+    c.shadowColor = 'rgba(0,0,20,0.8)'; c.shadowBlur = 6;
+    c.fillStyle = STATUS_COLOR[b.status] || STATUS_COLOR.idle;
+    c.beginPath(); c.arc(lx + 4, ly + fs * 0.5, 3.2, 0, Math.PI * 2); c.fill();
+    c.font = `600 ${fs}px "Chakra Petch", "Trebuchet MS", sans-serif`;
+    c.fillStyle = '#f2f4ff'; c.textBaseline = 'middle';
+    c.fillText(b.name, lx + 12, ly + fs * 0.5);
+    c.shadowBlur = 0;
+    c.fillStyle = rgba(b.color, 0.9);
+    c.fillRect(lx + 12, ly + fs * 1.05, Math.min(nameW, 40), 2);
+    c.font = `500 ${fs - 3}px Manrope, "Segoe UI", sans-serif`;
+    c.fillStyle = 'rgba(200,206,255,0.85)';
+    c.fillText(subText, lx + 12, ly + fs * 1.6);
+    c.restore();
+    return box;
   }
+  const label = (p, top) => drawLabel(ctx, p.b, top, u);
 
   /* ---------- frame ---------- */
   function draw(t) {
@@ -407,7 +422,11 @@
       const rect = label(p, tops.get(p.b.id));
       const foot = [P(p.x - 0.4, p.y - 0.4), P(p.x + 0.4, p.y - 0.4), P(p.x + 0.4, p.y + 0.4), P(p.x - 0.4, p.y + 0.4)];
       const xs = foot.map((q) => q[0]), ys = foot.map((q) => q[1]);
-      hits.push({ id: p.b.id, depth: p.x + p.y, body: [Math.min(...xs), tops.get(p.b.id)[1], Math.max(...xs), Math.max(...ys)], rect });
+      // what you can see of the building: its outline, its block and its beacon mast
+      const { x, y, f } = p, zt = roofZ(p), top = tops.get(p.b.id);
+      const shape = [P(x - f, y - f, zt), P(x + f, y - f, zt), P(x + f, y - f, 0), P(x + f, y + f, 0), P(x - f, y + f, 0), P(x - f, y + f, zt)];
+      const mast = [top[0] - 7, top[1] - 7, top[0] + 7, P(x, y, zt)[1]];
+      hits.push({ id: p.b.id, depth: p.x + p.y, body: [Math.min(...xs), top[1], Math.max(...xs), Math.max(...ys)], shape, foot, mast, rect });
     });
   }
 
@@ -438,11 +457,17 @@
     const inside = (b) => mx >= b[0] && mx <= b[2] && my >= b[1] && my <= b[3];
     const byLabel = hits.filter((h) => inside(h.rect));
     if (byLabel.length) return byLabel.sort((a, b) => b.depth - a.depth)[0].id;
+    // a building's own shape first (the front-most wins), then the looser area round it
+    const exact = hits.filter((h) => inPoly(h.shape, mx, my) || inPoly(h.foot, mx, my) || inside(h.mast));
+    if (exact.length) return exact.sort((a, b) => b.depth - a.depth)[0].id;
     const byBody = hits.filter((h) => inside(h.body));
     return byBody.length ? byBody.sort((a, b) => b.depth - a.depth)[0].id : null;
   }
 
-  PC.city = {
+  // shared with the 3D city (city3d.js), which uses this file as its flat fallback
+  PC.cityLayout = { layout, beaconZ, roofZ, HEIGHT, FOOT, STATUS_COLOR, rgb, rgba, hash, drawLabel, motion };
+
+  PC.city2d = {
     mount(el, opts) {
       canvas = el; ctx = el.getContext('2d');
       getState = opts.getState; onPick = opts.onPick;
@@ -462,5 +487,14 @@
     },
     select(id) { selectedId = id; draw(performance.now()); },
     redraw() { draw(performance.now()); },
+    // where a building's body is on screen, for tests
+    where(id, part) {
+      const h = hits.find((x) => x.id === id);
+      if (!h) return null;
+      if (part === 'mast') return [(h.mast[0] + h.mast[2]) / 2, h.mast[1] + 12];
+      if (part === 'labelRect') return h.rect;
+      if (part === 'label') return [(h.rect[0] + h.rect[2]) / 2, (h.rect[1] + h.rect[3]) / 2];
+      const s = h.shape; return [(s[0][0] + s[3][0]) / 2, (s[0][1] + s[3][1]) / 2];
+    },
   };
 })();
