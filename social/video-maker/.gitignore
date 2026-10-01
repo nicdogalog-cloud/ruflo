@@ -1,0 +1,5 @@
+node_modules/
+tts/
+build/
+out/
+public/mix-*.wav

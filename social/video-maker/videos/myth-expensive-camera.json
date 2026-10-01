@@ -1,0 +1,9 @@
+{"id":"myth-expensive-camera","seed":6,"scenes":[
+ {"type":"photo","dur":2.7,"photo":"batter-nets-adult.jpg","look":{"scale":1.1,"zoomTo":1.25,"dim":0.35,"pos":"center 30%"},"style":"white","size":70,"top":1250,"text":"\"You need a £500 camera to analyse your batting\"","vo":"You need an expensive camera to analyse your batting."},
+ {"type":"card","dur":1.2,"bg":"red","size":170,"text":"MYTH ✕","vo":"Myth."},
+ {"type":"split","dur":3.8,"a":{"photo":"batter-nets-adult.jpg","look":{"scale":1.5,"rotate":16,"blur":3,"dim":0.3,"pos":"center 20%"},"label":"Random spot"},"b":{"photo":"guide-3-batting-front.jpg","look":{"scale":1.0,"dim":0.05,"pos":"center 75%"},"label":"Guide card spot"},"vo":"Your phone is enough. It's where you put it that matters."},
+ {"type":"guides","dur":4.0,"guides":[3,4],"caption":"Front on and side on. Mark the spot, hit record.","vo":"Crease Cam shows you the exact spot, front on and side on."},
+ {"type":"checks","dur":4.2,"photo":"batter-side-nets.jpg","text":"Then watch it back:","items":[["✓","Head over the ball"],["✓","Straight backlift"],["✕","Falling to the off side"]],"vo":"Then watch it back, and spot what a coach would spot."},
+ {"type":"card","dur":3.0,"bg":"yellow","text":"Free to start","sub":"Videos never leave your phone 🔒","drop":false,"vo":"It's free to start, and your videos never leave your phone."},
+ {"type":"cta","dur":2.6,"vo":"Follow Crease Cam for the launch."}
+]}

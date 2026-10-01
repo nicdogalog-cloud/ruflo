@@ -1,0 +1,10 @@
+{"id":"bowlers-wrong-spot","seed":11,"scenes":[
+ {"type":"photo","dur":2.0,"photo":"net-lane-empty.jpg","look":{"scale":1.15,"rotate":-6,"shake":22,"dim":0.3},"rec":true,"style":"red","size":84,"text":"Bowlers 🎯 you're filming from the WRONG spot","vo":"Bowlers, you're filming from the wrong spot."},
+ {"type":"photo","dur":1.7,"photo":"nets-indoor-hall.jpg","look":{"scale":0.55,"blur":4,"shake":14,"dim":0.3},"rec":true,"stamp":"x","style":"white","text":"Behind the net = blurry mess","vo":"Behind the net? Blurry mess."},
+ {"type":"photo","dur":1.8,"photo":"net-lane-empty.jpg","look":{"scale":1.9,"rotate":18,"pos":"center 80%","shake":14,"dim":0.3},"rec":true,"stamp":"x","style":"white","size":72,"text":"Too close = no run-up","vo":"Too close? No run-up."},
+ {"type":"card","dur":1.5,"bg":"yellow","text":"Two spots. That's it 👇","vo":"Two spots. That's it."},
+ {"type":"guides","dur":5.0,"guides":[1,2],"caption":"Side on for your action. Front on for your line.","vo":"Side on to check your action. Front on to check your line."},
+ {"type":"checks","dur":4.0,"photo":"nets-indoor-hall.jpg","text":"Side on shows you:","items":[["✓","Front arm up high"],["✓","Back foot landing"],["!","Head falling away"]],"vo":"Front arm, back foot, head position. You'll see all of it."},
+ {"type":"card","dur":3.4,"bg":"navy","text":"Free guide cards","sub":"Videos stay on your phone 🔒","drop":false,"vo":"Crease Cam's guide cards are free, and your videos stay on your phone."},
+ {"type":"cta","dur":2.5,"vo":"Follow for the launch."}
+]}
