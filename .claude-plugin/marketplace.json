@@ -215,6 +215,11 @@
       "name": "ruflo-music",
       "source": "./plugins/ruflo-music",
       "description": "AI music generation via Cognitum Music (cogmusic MCP) \u2014 compose lyrics/prompts, generate tracks, separate stems, extract MIDI, and master through your own music.cognitum.one account"
+    },
+    {
+      "name": "ruflo-platform-center",
+      "source": "./plugins/ruflo-platform-center",
+      "description": "Platform Center \u2014 run a new business as a neon city of ruflo agents: a manager plus a crew for projects, content, research, sales, money and operations, plus Wicket for the Crease Cam cricket website/app, with /morning-brief and /delegate"
     }
   ]
 }
