@@ -5,6 +5,7 @@ import {
   AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile,
   useCurrentFrame, useVideoConfig, random,
 } from "remotion";
+import { PhoneScene, VsScene, PitchScene, StumpsScene, KineticScene, ListScene } from "./Anim";
 
 // Data-driven Crease Cam short. Each video is a JSON spec (videos/*.json):
 // a list of scenes, each with a type, a duration in seconds and its own props.
@@ -20,12 +21,14 @@ const COLORS: Record<string, [string, string]> = {
 
 export type Look = { scale?: number; rotate?: number; blur?: number; pos?: string; shake?: number; dim?: number; zoomTo?: number };
 export type Scene = {
-  type: "photo" | "card" | "guides" | "checks" | "split" | "cta";
+  type: "photo" | "card" | "guides" | "checks" | "split" | "cta" | "phone" | "vs" | "pitch" | "stumps" | "kinetic" | "list";
   dur: number; vo?: string;
   photo?: string; look?: Look; text?: string; sub?: string; style?: string;
   top?: number; size?: number; rec?: boolean; stamp?: "x" | "ok"; thumb?: boolean;
   bg?: string; items?: string[][]; guides?: number[]; caption?: string;
   a?: { photo: string; look?: Look; label: string }; b?: { photo: string; look?: Look; label: string };
+  // animated types (src/Anim.tsx)
+  words?: string[]; mode?: string; spots?: number[];
 };
 export type VideoSpec = { id: string; audio?: string; scenes: Scene[] };
 export const FPS = 30;
@@ -214,6 +217,8 @@ const CTAScene: React.FC<{ s: Scene }> = ({ s }) => {
 
 const RENDER: Record<Scene["type"], React.FC<{ s: Scene }>> = {
   photo: PhotoScene, card: CardScene, guides: GuidesScene, checks: ChecksScene, split: SplitScene, cta: CTAScene,
+  phone: PhoneScene as React.FC<{ s: Scene }>, vs: VsScene as unknown as React.FC<{ s: Scene }>, pitch: PitchScene as React.FC<{ s: Scene }>,
+  stumps: StumpsScene as React.FC<{ s: Scene }>, kinetic: KineticScene as React.FC<{ s: Scene }>, list: ListScene as React.FC<{ s: Scene }>,
 };
 
 export const SpecVideo: React.FC<VideoSpec> = ({ scenes, audio }) => {

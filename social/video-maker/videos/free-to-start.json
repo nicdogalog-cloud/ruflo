@@ -1,0 +1,10 @@
+{"id":"free-to-start","seed":87,"scenes":[
+{"type":"stumps","dur":1.8,"bg":"navy","text":"Better nets videos for £0","vo":"Better nets videos. Zero pounds."},
+{"type":"kinetic","dur":1.8,"bg":"red","size":130,"words":["You","already","own","the","*camera"],"vo":"You already own the camera."},
+{"type":"phone","dur":2.0,"mode":"good","text":"Your phone 📱","vo":"It's your phone."},
+{"type":"phone","dur":1.8,"mode":"shake","text":"No more shaky clips","vo":"No more shaky, wonky clips."},
+{"type":"pitch","dur":4.0,"spots":[1,2,3,4],"text":"Guide cards show the spot","vo":"Guide cards show exactly where it goes."},
+{"type":"vs","dur":3.0,"a":{"mode":"far","label":"Guessing"},"b":{"mode":"good","label":"Guide card"},"text":"Stop guessing","vo":"So you stop guessing."},
+{"type":"list","dur":3.6,"text":"Crease Cam prices","items":[["✓","Free plan to start"],["✓","£3.99 a month"],["✓","£39.99 a year"]],"vo":"Free plan to start. Or three ninety nine a month."},
+{"type":"stumps","dur":1.8,"bg":"red","style":"white","text":"No excuses now 😅","vo":"So, no excuses."},
+{"type":"cta","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

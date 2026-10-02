@@ -1,0 +1,10 @@
+{"id":"before-after-nets","seed":81,"scenes":[
+{"type":"kinetic","dur":1.6,"bg":"yellow","size":120,"words":["BEFORE","vs","*AFTER","👇"],"vo":"Before and after filming your nets."},
+{"type":"phone","dur":1.8,"mode":"thumb","text":"BEFORE: thumb in shot","vo":"Before. Thumb in the shot."},
+{"type":"phone","dur":1.8,"mode":"far","text":"BEFORE: tiny batter","vo":"Batter the size of an ant."},
+{"type":"phone","dur":1.8,"mode":"tilt","text":"BEFORE: wonky angle","vo":"Wonky angle."},
+{"type":"kinetic","dur":1.3,"bg":"navy","size":170,"words":["*AFTER"],"vo":"After."},
+{"type":"pitch","dur":3.6,"spots":[4,3],"text":"Phone on the guide card spot","sub":"Level with the crease","vo":"The phone goes on the exact spot from the guide card."},
+{"type":"phone","dur":2.6,"mode":"good","text":"AFTER: every shot, clear","vo":"Now you can actually see every shot."},
+{"type":"vs","dur":3.4,"a":{"mode":"thumb","label":"Before"},"b":{"mode":"good","label":"After"},"text":"Same phone. Better spot.","vo":"Same phone. Better spot."},
+{"type":"cta","dur":2.4,"vo":"Follow Crease Cam for the launch."}]}

@@ -1,0 +1,10 @@
+{"id":"nets-session-habits","seed":93,"scenes":[
+{"type":"kinetic","dur":1.8,"bg":"red","size":125,"words":["Do","this","*BEFORE","you","pad","up"],"vo":"Do this before you pad up."},
+{"type":"pitch","dur":3.0,"spots":[4],"text":"1. Pick your spot","sub":"Level with the crease","vo":"One. Pick your spot, level with the crease."},
+{"type":"phone","dur":2.4,"mode":"good","text":"2. Whole body in frame","vo":"Two. Check your whole body is in frame."},
+{"type":"phone","dur":1.4,"mode":"far","text":"Not this 🙃","vo":"Not this."},
+{"type":"phone","dur":1.6,"mode":"shake","text":"Shaky = useless","vo":"Shaky clips are useless."},
+{"type":"phone","dur":2.0,"mode":"good","bg":"green","style":"navy","text":"3. Keep it STILL","vo":"Three. Keep it still."},
+{"type":"list","dur":4.0,"text":"After every net:","items":[["1","Watch it back"],["2","Pick ONE fix"],["3","Film again next time"]],"vo":"Then watch it back and pick one thing to fix."},
+{"type":"stumps","dur":2.0,"bg":"navy","text":"Small habits. Big progress.","vo":"Small habits add up."},
+{"type":"cta","dur":2.4,"vo":"Follow Crease Cam for the launch."}]}
