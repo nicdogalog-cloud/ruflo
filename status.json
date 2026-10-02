@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02 19:14 UTC",
+ "updated": "2026-10-02 21:51 UTC",
  "briefing": "Jarvis daily briefing, Fri 2 Oct. What the crew did on their own today: - Buzz: 9 Crease Cam videos have gone out on Instagram since last night (latest: the front-foot drive tip at 13:55). - Atlas: rechecked Fulltrack and StanceBeam prices in pounds. - Sol: drafted the club pilot email in your Gmail drafts, plus 4 places to send it. - Ledger: wrote the...",
  "crew": [
   {
@@ -18,12 +18,12 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Confirm the Crease Cam launch feature list (keep / cut)",
     "Decide: website, phone app, or printed cards plus website",
-    "Add a QR code to the printed guide cards that links to the website"
+    "Add a QR code to the printed guide cards that links to the website",
+    "Design the back of the guide card (QR, Instagram handle, one-line tip)"
    ],
-   "open": 1,
-   "next": "Design the back of the guide card (QR, Instagram handle, one-line tip)",
+   "open": 0,
+   "next": "",
    "latest": ""
   },
   {
@@ -44,7 +44,8 @@
    "status": "working",
    "job": "Watching competitors' prices",
    "done": [
-    "Recheck competitor prices (Fulltrack, Matcha, StanceBeam) in your currency"
+    "Recheck competitor prices (Fulltrack, Matcha, StanceBeam) in your currency",
+    "Track Crease Cam Instagram views each week"
    ],
    "open": 2,
    "next": "Track Crease Cam Instagram views each week",
@@ -59,8 +60,8 @@
     "List 5 coaches or clubs to offer a free 4-week pilot",
     "List what clubs get and what we ask back in the free pilot"
    ],
-   "open": 2,
-   "next": "",
+   "open": 3,
+   "next": "Find 10 cricket clubs near nic to offer the pilot to",
    "latest": ""
   },
   {
@@ -69,7 +70,7 @@
    "status": "working",
    "job": "",
    "done": [],
-   "open": 1,
+   "open": 0,
    "next": "",
    "latest": ""
   },
@@ -80,10 +81,11 @@
    "job": "Sorting kit for the nets",
    "done": [
     "List what goes in a club pilot kit",
-    "Pack and post-ready list for sending a pilot kit"
+    "Pack and post-ready list for sending a pilot kit",
+    "Write the one-page welcome sheet that goes in the pilot kit"
    ],
-   "open": 3,
-   "next": "Write the one-page welcome sheet that goes in the pilot kit",
+   "open": 2,
+   "next": "",
    "latest": ""
   },
   {
@@ -95,8 +97,8 @@
     "Add terms of use and privacy-friendly analytics",
     "Check the website files for anything missing before launch"
    ],
-   "open": 2,
-   "next": "",
+   "open": 3,
+   "next": "Write a short parent consent note for filming under-18s",
    "latest": "Hi nic, sorry about the \"too many requests\" message earlier. Yes, everything's up to date: the website is live with the follow button, and the privacy and terms pages are written. The only gaps are the words in [square..."
   },
   {
@@ -105,9 +107,7 @@
    "status": "working",
    "job": "Posting 9 Crease Cam videos a day on Instagram",
    "done": [
-    "Post the first 3 Crease Cam videos",
-    "Plan the first 9 posts",
-    "Start a weekly posting routine"
+    "Set bios, profile picture and banners from the social starter kit"
    ],
    "open": 0,
    "next": "",
