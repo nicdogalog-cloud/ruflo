@@ -25,7 +25,7 @@ for s in scenes:
     t += round(s["dur"] * 30) / 30
 total = t
 print(f"{vid}: {len(scenes)} scenes, {total:.1f}s")
-assert 15 <= total <= 26, "keep shorts 20-25s"
+assert 15 <= total <= spec.get("max_seconds", 26), "keep shorts 20-25s"
 
 # ---------- beat ----------
 seed = spec.get("seed", abs(hash(vid)) % 1000)
@@ -130,7 +130,7 @@ props_path = os.path.join(HERE, "build", f"{vid}-props.json")
 json.dump(props, open(props_path, "w"))
 chrome = subprocess.run("ls -d /opt/pw-browsers/chromium_headless_shell-*/*/ | head -1", shell=True, capture_output=True, text=True).stdout.strip()
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
-cmd = ["npx", "remotion", "render", "src/index.ts", "Spec", f"out/{vid}.mp4", f"--props={props_path}", "--log=error"]
+cmd = ["npx", "remotion", "render", "src/index.ts", spec.get("composition", "Spec"), f"out/{vid}.mp4", f"--props={props_path}", "--log=error"]
 if chrome: cmd.append(f"--browser-executable={chrome}headless_shell")
 subprocess.run(cmd, cwd=HERE, check=True)
 print("done:", os.path.join(HERE, "out", f"{vid}.mp4"))

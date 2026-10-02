@@ -1,0 +1,19 @@
+{
+  "id": "app-explainer",
+  "composition": "AppExplainer",
+  "max_seconds": 46,
+  "seed": 7,
+  "bpm": 110,
+  "speed": 1.08,
+  "scenes": [
+    {"type": "explainer", "dur": 3.6, "vo": "Here's how the Crease Cam app works."},
+    {"type": "explainer", "dur": 4.6, "vo": "One app for iPhone and Android, built once with Expo."},
+    {"type": "explainer", "dur": 4.4, "vo": "First, pick a drill. Say, bowling, side view."},
+    {"type": "explainer", "dur": 5.6, "vo": "The camera opens with a see-through guide. Line up the stumps and the player, then hit record."},
+    {"type": "explainer", "dur": 5.8, "vo": "Watch it back in slow-mo, frame by frame, and draw lines, like the front arm angle."},
+    {"type": "explainer", "dur": 5.2, "vo": "Videos stay on your phone. Private, safe for under-eighteens, and nothing gets uploaded."},
+    {"type": "explainer", "dur": 5.4, "vo": "It's free to start, or three ninety-nine a month, or thirty-nine ninety-nine a year."},
+    {"type": "explainer", "dur": 6.0, "vo": "The plan: a test version, a club pilot, then payments, then the app stores."},
+    {"type": "explainer", "dur": 3.8, "vo": "Crease Cam. Coming soon."}
+  ]
+}
