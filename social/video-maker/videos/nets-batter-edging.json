@@ -1,0 +1,8 @@
+{"id":"nets-batter-edging","composition":"House","seed":107,"speed":1.08,"scenes":[
+{"type":"nets","dur":3.0,"actor":"batter","outcome":"edge","text":"Nets session. Edging *everything* 😩","vo":"Nets session. Edging everything."},
+{"type":"think","dur":2.2,"actor":"batter","label":"What am I doing wrong?","vo":"What am I doing wrong?"},
+{"type":"guide","dur":3.4,"actor":"batter","text":"Film it *side on*","sub":"The guide card shows the spot","vo":"So you film it side on, from the guide card spot."},
+{"type":"slowmo","dur":3.8,"actor":"batter","label":"Head falling over","text":"Slow-mo shows *why*","vo":"Slow-mo shows why. Your head's falling over."},
+{"type":"nets","dur":3.2,"actor":"batter","outcome":"middle","good":true,"text":"Next net: *head still*","vo":"Next net, keep your head still."},
+{"type":"logo","dur":2.6,"text":"That's how *Crease Cam* helps 🏏","vo":"That's how Crease Cam can help your game."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

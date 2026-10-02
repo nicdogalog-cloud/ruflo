@@ -5,26 +5,26 @@ import "@fontsource/montserrat/900.css";
 import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 
 // "How the Crease Cam app works" explainer for the owner. Fully drawn, no photos.
-const NAVY = "#0f1b2d";
-const NAVY2 = "#18294a";
-const YELLOW = "#f2b705";
-const OFF = "#eef3ec";
-const GREEN = "#2ee66b";
-const RED = "#ff3b3b";
-const TURF = "#1f7a4a";
-const FONT = "Montserrat, sans-serif";
+export const NAVY = "#0f1b2d";
+export const NAVY2 = "#18294a";
+export const YELLOW = "#f2b705";
+export const OFF = "#eef3ec";
+export const GREEN = "#2ee66b";
+export const RED = "#ff3b3b";
+export const TURF = "#1f7a4a";
+export const FONT = "Montserrat, sans-serif";
 
 export const SCENES = [3.6, 4.6, 4.4, 5.6, 5.8, 5.2, 5.4, 6.0, 3.8];
 export const EX_FPS = 30;
 export const EX_TOTAL = SCENES.reduce((a, d) => a + Math.round(d * EX_FPS), 0);
 
-const useSp = (delay = 0, damping = 12, stiffness = 180) => {
+export const useSp = (delay = 0, damping = 12, stiffness = 180) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   return spring({ frame: f - delay, fps, config: { damping, stiffness } });
 };
 
-const Bg: React.FC = () => {
+export const Bg: React.FC = () => {
   const f = useCurrentFrame();
   return (
     <AbsoluteFill style={{ background: `radial-gradient(circle at 50% 40%, ${NAVY2} 0%, ${NAVY} 70%)`, overflow: "hidden" }}>
@@ -34,7 +34,7 @@ const Bg: React.FC = () => {
 };
 
 // Big caption. Words wrapped in *stars* are yellow.
-const Caption: React.FC<{ text: string; top?: number; size?: number; delay?: number }> = ({ text, top = 150, size = 92, delay = 0 }) => {
+export const Caption: React.FC<{ text: string; top?: number; size?: number; delay?: number }> = ({ text, top = 150, size = 92, delay = 0 }) => {
   const sp = useSp(delay, 13, 200);
   const parts = text.split("*");
   return (
@@ -44,13 +44,13 @@ const Caption: React.FC<{ text: string; top?: number; size?: number; delay?: num
   );
 };
 
-const Sub: React.FC<{ text: string; top: number; delay?: number; size?: number; color?: string }> = ({ text, top, delay = 0, size = 52, color = OFF }) => {
+export const Sub: React.FC<{ text: string; top: number; delay?: number; size?: number; color?: string }> = ({ text, top, delay = 0, size = 52, color = OFF }) => {
   const sp = useSp(delay, 14, 200);
   return <div style={{ position: "absolute", top, left: 50, right: 50, textAlign: "center", fontFamily: FONT, fontWeight: 800, fontSize: size, color, opacity: sp, transform: `scale(${0.85 + 0.15 * sp})` }}>{text}</div>;
 };
 
 // Logo: yellow stumps + bails inside white camera-frame corners
-const Logo: React.FC<{ size: number; draw?: number }> = ({ size, draw = 1 }) => {
+export const Logo: React.FC<{ size: number; draw?: number }> = ({ size, draw = 1 }) => {
   const c = interpolate(draw, [0, 0.5], [0, 1], { extrapolateRight: "clamp" });
   const s = interpolate(draw, [0.3, 1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const L = 70 * c;
@@ -71,13 +71,13 @@ const Logo: React.FC<{ size: number; draw?: number }> = ({ size, draw = 1 }) => 
   );
 };
 
-const Wordmark: React.FC<{ size: number; delay?: number }> = ({ size, delay = 0 }) => {
+export const Wordmark: React.FC<{ size: number; delay?: number }> = ({ size, delay = 0 }) => {
   const sp = useSp(delay, 14);
   return <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: size, color: OFF, letterSpacing: size * 0.08, opacity: sp, transform: `translateY(${(1 - sp) * 30}px)` }}>CREASE <span style={{ color: YELLOW }}>CAM</span></div>;
 };
 
 // Phone shell; children render inside the screen
-const Phone: React.FC<{ x: number; y: number; w: number; kind?: "iphone" | "android"; children?: React.ReactNode; rot?: number; scale?: number }> = ({ x, y, w, kind = "iphone", children, rot = 0, scale = 1 }) => {
+export const Phone: React.FC<{ x: number; y: number; w: number; kind?: "iphone" | "android"; children?: React.ReactNode; rot?: number; scale?: number }> = ({ x, y, w, kind = "iphone", children, rot = 0, scale = 1 }) => {
   const h = w * 2.05;
   return (
     <div style={{ position: "absolute", left: x, top: y, width: w, height: h, borderRadius: w * 0.13, background: "#05080f", border: `${w * 0.028}px solid #2a3550`, boxShadow: "0 30px 80px rgba(0,0,0,.55)", transform: `rotate(${rot}deg) scale(${scale})`, overflow: "hidden" }}>
@@ -90,7 +90,7 @@ const Phone: React.FC<{ x: number; y: number; w: number; kind?: "iphone" | "andr
 };
 
 // Stick bowler. arm 0..1 rotates the bowling arm through delivery
-const Bowler: React.FC<{ x: number; y: number; h: number; arm?: number; color?: string; dashed?: boolean; width?: number }> = ({ x, y, h, arm = 0.3, color = OFF, dashed = false, width = 7 }) => {
+export const Bowler: React.FC<{ x: number; y: number; h: number; arm?: number; color?: string; dashed?: boolean; width?: number }> = ({ x, y, h, arm = 0.3, color = OFF, dashed = false, width = 7 }) => {
   const k = h / 100;
   const a = -150 + arm * 200; // bowling arm angle
   const da = dashed ? `${16 / k} ${12 / k}` : undefined;
@@ -108,7 +108,7 @@ const Bowler: React.FC<{ x: number; y: number; h: number; arm?: number; color?: 
   );
 };
 
-const Stumps: React.FC<{ x: number; y: number; h: number; color?: string; dashed?: boolean }> = ({ x, y, h, color = OFF, dashed }) => (
+export const Stumps: React.FC<{ x: number; y: number; h: number; color?: string; dashed?: boolean }> = ({ x, y, h, color = OFF, dashed }) => (
   <g stroke={color} strokeWidth={h * 0.07} strokeLinecap="round" strokeDasharray={dashed ? "8 8" : undefined}>
     {[-1, 0, 1].map((i) => <line key={i} x1={x + i * h * 0.18} y1={y} x2={x + i * h * 0.18} y2={y - h} />)}
     <line x1={x - h * 0.2} y1={y - h - 6} x2={x + h * 0.2} y2={y - h - 6} />
@@ -116,7 +116,7 @@ const Stumps: React.FC<{ x: number; y: number; h: number; color?: string; dashed
 );
 
 // Each scene springs in and pushes out at the end
-const SceneWrap: React.FC<{ d: number; children: React.ReactNode }> = ({ d, children }) => {
+export const SceneWrap: React.FC<{ d: number; children: React.ReactNode }> = ({ d, children }) => {
   const f = useCurrentFrame();
   const inS = interpolate(f, [0, 8], [1.08, 1], { extrapolateRight: "clamp" });
   const outO = interpolate(f, [d - 5, d], [1, 0.0], { extrapolateLeft: "clamp" });

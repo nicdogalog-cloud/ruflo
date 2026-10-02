@@ -1,0 +1,9 @@
+{"id":"nets-bowler-line","composition":"House","seed":113,"speed":1.08,"scenes":[
+{"type":"tracks","dur":3.2,"text":"Bowling in the nets. Spraying it *everywhere*","vo":"Bowling in the nets, spraying it everywhere."},
+{"type":"think","dur":2.2,"actor":"bowler","label":"Why's it going down leg?","vo":"Why does it keep going down leg?"},
+{"type":"drill","dur":2.6,"pick":1,"text":"Pick *bowling side on*","vo":"Pick bowling, side on."},
+{"type":"guide","dur":3.2,"actor":"bowler","text":"Phone on the *guide spot*","vo":"Put the phone on the guide spot, and bowl."},
+{"type":"slowmo","dur":3.6,"actor":"bowler","label":"Front arm drops early","text":"Slow-mo spots the *fault*","vo":"Slow-mo shows your front arm dropping early."},
+{"type":"tracks","dur":3.0,"good":true,"text":"Fix it. *Hit the stumps.*","sub":"Same nets. Better line.","vo":"Fix it, and you're hitting the stumps."},
+{"type":"nets","dur":2.4,"actor":"bowler","outcome":"beaten","text":"Next session 🎯","vo":"Next session, beat the bat."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

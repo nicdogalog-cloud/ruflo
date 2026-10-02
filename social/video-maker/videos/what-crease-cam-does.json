@@ -1,0 +1,9 @@
+{"id":"what-crease-cam-does","composition":"House","max_seconds":27,"seed":101,"speed":1.08,"scenes":[
+{"type":"logo","dur":2.4,"text":"What does *Crease Cam* do?","vo":"What does Crease Cam actually do?"},
+{"type":"spots","dur":4.0,"text":"Shows you *where* to film","vo":"It shows you exactly where to put your phone at the nets."},
+{"type":"drill","dur":3.0,"pick":4,"text":"Pick your *drill*","vo":"Pick a drill. Batting, side on."},
+{"type":"guide","dur":3.6,"actor":"batter","text":"Line up the *guide*","vo":"Line yourself up with the see-through guide, and record."},
+{"type":"slowmo","dur":3.8,"actor":"batter","good":true,"label":"Head still ✓","text":"*Slow-mo* replay","vo":"Watch it back in slow-mo, and draw lines."},
+{"type":"privacy","dur":3.2,"vo":"Your videos stay on your phone."},
+{"type":"pricing","dur":3.0,"vo":"And it's free to start."},
+{"type":"end","dur":2.8,"vo":"Follow Crease Cam for the launch."}]}
