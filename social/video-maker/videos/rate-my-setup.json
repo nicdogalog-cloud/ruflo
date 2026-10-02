@@ -1,0 +1,113 @@
+{
+"id": "rate-my-setup",
+"seed": 58,
+"scenes": [
+{
+"type": "photo",
+"dur": 1.8,
+"photo": "nets-indoor-hall.jpg",
+"look": {
+"scale": 1.2,
+"zoomTo": 1.35,
+"dim": 0.3
+},
+"rec": true,
+"style": "yellow",
+"size": 86,
+"text": "Rating your nets filming setups 📱",
+"vo": "Rating your nets filming setups."
+},
+{
+"type": "photo",
+"dur": 1.8,
+"photo": "nets-indoor-hall.jpg",
+"look": {
+"scale": 0.55,
+"blur": 4,
+"shake": 14,
+"dim": 0.3
+},
+"rec": true,
+"stamp": "x",
+"style": "red",
+"text": "Miles away behind the net: 2/10",
+"vo": "Miles away behind the net. Two."
+},
+{
+"type": "photo",
+"dur": 1.8,
+"photo": "batter-side-nets.jpg",
+"look": {
+"scale": 1.9,
+"rotate": -14,
+"shake": 16,
+"pos": "center 25%",
+"dim": 0.3
+},
+"rec": true,
+"stamp": "x",
+"style": "red",
+"text": "Wonky on your kit bag: 4/10",
+"vo": "Wonky on your kit bag. Four."
+},
+{
+"type": "photo",
+"dur": 2.2,
+"photo": "guide-4-batting-side.jpg",
+"look": {
+"scale": 1.35,
+"dim": 0.05,
+"pos": "center 78%"
+},
+"stamp": "ok",
+"style": "green",
+"text": "Level with the crease: 10/10",
+"vo": "Level with the crease, side on. Ten."
+},
+{
+"type": "guides",
+"dur": 4.2,
+"guides": [
+4,
+3
+],
+"caption": "Every spot, marked for you.",
+"vo": "Crease Cam's guide cards show you every spot, batting and bowling."
+},
+{
+"type": "checks",
+"dur": 4.0,
+"photo": "batter-side-nets.jpg",
+"text": "A 10/10 setup shows:",
+"items": [
+[
+"✓",
+"Your whole body in frame"
+],
+[
+"✓",
+"Feet and crease line"
+],
+[
+"✓",
+"Bat path, start to finish"
+]
+],
+"vo": "Whole body, feet, and your bat path. All in frame."
+},
+{
+"type": "card",
+"dur": 2.6,
+"bg": "navy",
+"text": "What would yours get? 👇",
+"sub": "Tell us in the comments",
+"drop": false,
+"vo": "What would your setup get?"
+},
+{
+"type": "cta",
+"dur": 2.4,
+"vo": "Follow Crease Cam for the launch."
+}
+]
+}

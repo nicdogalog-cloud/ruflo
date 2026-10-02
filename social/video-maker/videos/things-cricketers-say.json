@@ -1,0 +1,11 @@
+{"id":"things-cricketers-say","seed":64,"scenes":[
+ {"type":"card","dur":1.8,"bg":"yellow","size":110,"text":"Things cricketers say at nets 🏏","vo":"Things cricketers say at nets."},
+ {"type":"photo","dur":2.0,"photo":"nets-batter-front.jpg","look":{"scale":1.15,"zoomTo":1.3,"dim":0.35,"pos":"center 30%"},"style":"white","size":78,"text":"\"My head's dead still\"","vo":"My head's dead still."},
+ {"type":"photo","dur":1.6,"photo":"nets-batter-front.jpg","look":{"scale":1.5,"rotate":10,"shake":18,"dim":0.3,"pos":"center 30%"},"rec":true,"stamp":"x","style":"red","text":"The video: 🙃","vo":"The video says no."},
+ {"type":"photo","dur":1.9,"photo":"wicketkeeper-crouch.jpg","look":{"scale":1.15,"zoomTo":1.3,"dim":0.35},"style":"white","size":78,"text":"\"I'll film it next week\"","vo":"I'll film it next week."},
+ {"type":"photo","dur":2.0,"photo":"net-lane-empty.jpg","look":{"scale":1.2,"rotate":-8,"dim":0.3},"style":"white","size":78,"text":"\"Just prop it on my bag\"","vo":"Just prop it on my bag."},
+ {"type":"card","dur":1.6,"bg":"red","size":120,"text":"Please don't 😭","vo":"Please don't."},
+ {"type":"guides","dur":4.4,"guides":[3,1],"caption":"Put the phone here. Hit record.","vo":"Crease Cam shows you exactly where the phone goes."},
+ {"type":"card","dur":2.8,"bg":"navy","text":"Free to start","sub":"Videos stay on your phone 🔒","drop":false,"vo":"Free to start. Videos stay on your phone."},
+ {"type":"cta","dur":2.4,"vo":"Follow for the launch."}
+]}

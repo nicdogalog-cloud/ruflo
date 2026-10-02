@@ -1,0 +1,112 @@
+{
+"id": "one-tip-front-foot",
+"seed": 72,
+"scenes": [
+{
+"type": "photo",
+"dur": 1.9,
+"photo": "match-front-foot-drive.jpg",
+"look": {
+"scale": 1.25,
+"zoomTo": 1.45,
+"dim": 0.3,
+"pos": "center 60%"
+},
+"style": "yellow",
+"size": 84,
+"text": "ONE tip for better drives 👇",
+"vo": "One tip for better drives."
+},
+{
+"type": "card",
+"dur": 1.6,
+"bg": "navy",
+"size": 100,
+"text": "Film it SIDE ON 📱",
+"vo": "Film it side on."
+},
+{
+"type": "photo",
+"dur": 2.6,
+"photo": "match-front-foot-drive.jpg",
+"look": {
+"scale": 1.6,
+"pos": "center 85%",
+"dim": 0.25
+},
+"style": "white",
+"size": 76,
+"text": "Watch where your front foot lands",
+"vo": "Then watch where your front foot lands."
+},
+{
+"type": "split",
+"dur": 3.6,
+"a": {
+"photo": "batter-nets-adult.jpg",
+"look": {
+"scale": 1.4,
+"blur": 3,
+"rotate": -10,
+"dim": 0.3,
+"pos": "center 30%"
+},
+"label": "Front on only"
+},
+"b": {
+"photo": "guide-4-batting-side.jpg",
+"look": {
+"scale": 1.35,
+"dim": 0.05,
+"pos": "center 80%"
+},
+"label": "Side on"
+},
+"vo": "Front on hides it. Side on shows it."
+},
+{
+"type": "checks",
+"dur": 4.0,
+"photo": "match-front-foot-drive.jpg",
+"text": "Side on, look for:",
+"items": [
+[
+"✓",
+"Foot close to the ball"
+],
+[
+"✓",
+"Knee over the toes"
+],
+[
+"✕",
+"Stride too short"
+]
+],
+"vo": "Foot close to the ball, knee over the toes."
+},
+{
+"type": "guides",
+"dur": 3.8,
+"guides": [
+4
+],
+"caption": "Level with the crease. Hit record.",
+"vo": "The guide card shows you the exact spot."
+},
+{
+"type": "card",
+"dur": 3.0,
+"bg": "yellow",
+"text": "Free plan to start",
+"sub": "Or £3.99/month for more",
+"drop": false,
+"vo": "There's a free plan to get started."
+},
+{
+"type": "cta",
+"dur": 2.4,
+"vo": "Follow Crease Cam for the launch."
+}
+]
+}
