@@ -13,6 +13,20 @@
   const LS_KEY = 'platform-center:v1';
   const DOC_PATH = 'data/owner-hub/city/state';
   const MAX_CHAT = 40;
+  /* The Ask Jarvis chat on the Today screen: { chat: [{ role: 'me' | 'jarvis', text, at }] }.
+   * Kept small (24 messages, about 24 KB at most) so the city stays far under the 256 KB limit.
+   * jarvis_shift.py leaves this key alone: it loads the whole document and writes it back. */
+  const JARVIS_KEEP = 24;
+  const JARVIS_MSG = 2500;
+  const JARVIS_BYTES = 24000;
+  function cleanJarvis(j) {
+    let chat = (j && Array.isArray(j.chat) ? j.chat : [])
+      .filter((m) => m && typeof m.text === 'string' && m.text)
+      .map((m) => ({ role: m.role === 'me' ? 'me' : 'jarvis', text: m.text.slice(0, JARVIS_MSG), at: Number.isFinite(m.at) ? m.at : 0 }))
+      .slice(-JARVIS_KEEP);
+    while (chat.length > 2 && JSON.stringify(chat).length > JARVIS_BYTES) chat = chat.slice(2);
+    return { chat };
+  }
 
   const uid = () => Math.random().toString(36).slice(2, 10);
   const pad = (n) => String(n).padStart(2, '0');
@@ -216,6 +230,7 @@
       goal: { label: 'Monthly revenue', target: 2500, current: 0 },
       brief: { time: '08:00', lastSeen: '' },
       updatedAt: 0,
+      jarvis: { chat: [] },
       // the starter already has these buildings; the launch tasks are added below by applySeeds
       seeded: ['crease-cam', 'crease-cam-photos', MARKETING_ID],
       buildings: [
@@ -301,6 +316,7 @@
       },
       updatedAt: Number.isFinite(+s.updatedAt) ? +s.updatedAt : 0,
       seeded: Array.isArray(s.seeded) ? s.seeded.filter((x) => typeof x === 'string') : [],
+      jarvis: cleanJarvis(s.jarvis),
       buildings: s.buildings.filter((b) => b && typeof b === 'object').map((b) => building({
         ...b,
         // "Doing: ..." is only true while the page that started the work is open; a saved one is stale
@@ -394,7 +410,7 @@
     }
   }
 
-  PC.util = { uid, isoDate, inDays, clone, COLORS, STYLES, RUFLO_TYPES, REPEATS, task, link, job, MAX_RESULT, DOING };
+  PC.util = { JARVIS_MSG, uid, isoDate, inDays, clone, COLORS, STYLES, RUFLO_TYPES, REPEATS, task, link, job, MAX_RESULT, DOING };
 
   PC.store = {
     init(remoteCb, statusCb) {
@@ -417,6 +433,7 @@
       state.starter = false;
       state.updatedAt = Date.now();
       state.buildings.forEach((b) => { if (b.chat.length > MAX_CHAT) b.chat = b.chat.slice(-MAX_CHAT); });
+      state.jarvis = cleanJarvis(state.jarvis);
       trimForSize();
       clearTimeout(timer);
       timer = setTimeout(flush, 700);

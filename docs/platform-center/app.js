@@ -30,6 +30,7 @@
   function change(fn, opts = {}) {
     PC.store.commit(fn);
     renderShell();
+    PC.home.render();
     PC.city.redraw();
     if (!opts.quiet) PC.panel.render();
   }
@@ -83,10 +84,33 @@
   }
 
   function setSaveStatus(code) {
-    const el = $('save-status');
-    if (!el) return;
-    el.textContent = STATUS_TEXT[code] || '';
-    el.dataset.state = code;
+    ['save-status', 'save-status-today'].forEach((id) => {
+      const el = $(id);
+      if (!el) return;
+      el.textContent = STATUS_TEXT[code] || '';
+      el.dataset.state = code;
+    });
+  }
+
+  /* ---------- views: Today (home) and City ---------- */
+  let view = 'today';
+  let cityShown = false;
+  function setView(v) {
+    view = v === 'city' ? 'city' : 'today';
+    document.body.classList.toggle('view-today', view === 'today');
+    document.body.classList.toggle('view-city', view === 'city');
+    document.querySelectorAll('[data-view]').forEach((b) => {
+      const on = b.dataset.view === view;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-current', on ? 'page' : 'false');
+    });
+    ls.set('platform-center:view', view);
+    if (view === 'city' && !cityShown) {
+      cityShown = true;
+      window.dispatchEvent(new Event('resize'));
+      if (!PC.panel.current() && window.matchMedia('(min-width: 1100px)').matches) PC.panel.open(lead(state()).id, 'now');
+    }
+    if (view === 'today') PC.home.render();
   }
 
   /* ---------- goal ---------- */
@@ -422,10 +446,12 @@
   }
 
   function boot() {
-    PC.store.init((s) => { renderShell(); PC.city.redraw(); PC.panel.render(); }, setSaveStatus);
+    PC.store.init((s) => { renderShell(); PC.home.render(); PC.city.redraw(); PC.panel.render(); }, setSaveStatus);
     PC.panel.mount($('panel'));
     PC.city.mount($('city'), { getState: state, onPick: (id) => PC.panel.open(id) });
     renderShell();
+    PC.home.mount();
+    document.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => setView(b.dataset.view)));
     $('goal-btn').addEventListener('click', editGoal);
     $('search-btn').addEventListener('click', openSearch);
     $('menu-btn').addEventListener('click', openSettings);
@@ -436,10 +462,10 @@
     document.addEventListener('keydown', (e) => {
       const typing = /^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '');
       if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing)) { e.preventDefault(); openSearch(); }
-      else if (e.key === 'Escape' && $('modal').hidden && PC.panel.current()) PC.panel.close();
+      else if (e.key === 'Escape' && $('modal').hidden && PC.panel.current() && view === 'city') PC.panel.close();
     });
     window.addEventListener('pagehide', () => PC.store.saveNow());
-    PC.ai.onChange(() => { PC.panel.render(); });
+    PC.ai.onChange(() => { PC.panel.render(); PC.home.render(); });
     PC.ai.init();
     if (window.claude && typeof window.claude.use === 'function') {
       window.claude.use('downloads').then((d) => { downloads = d; }).catch(() => { downloads = null; });
@@ -447,12 +473,12 @@
     const hash = (location.hash || '').slice(1).toLowerCase();
     const s = state();
     const deep = hash && s.buildings.find((b) => PC.ruflo.slug(b.name) === hash);
+    if (deep) { cityShown = true; setView('city'); PC.panel.open(deep.id); }
+    else setView(hash === 'city' ? 'city' : hash === 'today' ? 'today' : ls.get('platform-center:view') === 'city' ? 'city' : 'today');
     if (hash === 'brief') openBrief();
-    else if (deep) PC.panel.open(deep.id);
-    else if (window.matchMedia('(min-width: 1100px)').matches) PC.panel.open(lead(s).id, 'now');
   }
 
-  PC.app = { change, editBuilding, openBrief, onPanel };
+  PC.app = { change, editBuilding, openBrief, onPanel, setView };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();

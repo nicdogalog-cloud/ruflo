@@ -291,6 +291,60 @@
     return sample(prompt, { onText, signal, modelTier: 'default' });
   }
 
+  /* ---------- Ask Jarvis (the Today screen) ---------- */
+  // Nova's latest briefing: the newest message from the lead in its chat that says "briefing",
+  // else its newest message. The crew shift (jarvis_shift.py) writes it there every 2 hours.
+  function latestBriefing(s) {
+    const lead = leadOf(s);
+    if (!lead) return null;
+    const said = lead.chat.filter((m) => m.role !== 'me' && m.text);
+    const m = said.slice().reverse().find((x) => /briefing/i.test(x.text.slice(0, 200))) || said[said.length - 1];
+    return m ? { from: lead.name, text: m.text, at: m.at || 0 } : null;
+  }
+  // what nic has to do: crew work waiting for his check
+  function yourPart(s) {
+    const out = [];
+    s.buildings.forEach((b) => b.tasks.forEach((t) => { if (!t.done && t.review) out.push({ b, t }); }));
+    return out.sort((a, c) => (c.t.resultAt || 0) - (a.t.resultAt || 0));
+  }
+
+  function jarvisRules(s, extra) {
+    const brief = latestBriefing(s);
+    return [
+      `You are Jarvis, ${s.owner}'s assistant inside Platform Center, ${s.owner}'s home base for the business. The main business is Crease Cam.`,
+      CREASE_CAM,
+      `${s.owner} is not technical. Answer in plain, friendly British English. Keep it short (under 150 words) unless ${s.owner} asks for a draft. "-" lists are fine; no headings, tables, ** or #. Your replies may be read aloud, so write the way you would say it.`,
+      `What you know: the city JSON below (each crew member, their open tasks, the work they saved, and "nic_step", the part waiting for ${s.owner}), ${brief ? `${brief.from}'s latest briefing,` : ''} and the quick links. A scheduled crew shift updates the city every 2 hours. Go only by this data: never say something happened unless it is in it, and say so when you don't know.`,
+      `What you cannot do: send email or messages, post, buy, log in, sign up, or browse the web. You can draft things for ${s.owner} to send or post himself. If asked to do one of those, say plainly that ${s.owner} has to do it and offer the draft.`,
+      tools
+        ? `You can change the city with your tools: add_task (give a crew member a job for their next shift), complete_task (tick something off by id), add_schedule, set_status. Use them only when ${s.owner} asks for a change or clearly agrees. After using one, say in one line what you changed.`
+        : `You cannot change the city from here, so say exactly what ${s.owner} should add and where.`,
+      `This chat lives only in this page. It is not in ${s.owner}'s Claude app chats or projects, and the crew does not read it unless you add a task.`,
+      `Today is ${today()}.`,
+      brief ? `${brief.from}'s latest briefing:\n---\n${brief.text.slice(0, 3000)}\n---` : '',
+      extra || '',
+      `The city right now (JSON): ${cityJSON(s, leadOf(s))}`,
+    ].filter(Boolean).join('\n\n');
+  }
+
+  // history: [{ role: 'me' | 'jarvis', text }], ending with nic's new message
+  function jarvis(history, { onText, signal, onLog, extra }) {
+    const s = PC.store.get();
+    const turns = [];
+    const push = (role, content) => {
+      const last = turns[turns.length - 1];
+      if (last && last.role === role) last.content += `\n\n${content}`;
+      else turns.push({ role, content });
+    };
+    push('user', jarvisRules(s, extra));
+    push('assistant', `Understood. I'm Jarvis and I'll help ${s.owner} using this data.`);
+    history.slice(-12).forEach((m) => push(m.role === 'me' ? 'user' : 'assistant', m.text));
+    const opts = { onText, signal, modelTier: 'default' };
+    if (tools) opts.tools = cityTools(leadOf(s), onLog || (() => {}));
+    else opts.cache = false;
+    return sample(turns, opts);
+  }
+
   /* ---------- offline helper ---------- */
   const HELP = [
     'Here is what I understand without AI:',
@@ -377,5 +431,6 @@
     onChange: (fn) => listeners.push(fn),
     chat, brief, meeting, offline, planText, greeting, quickPrompts, errorText,
     work, parseWork, recentWork,
+    jarvis, latestBriefing, yourPart,
   };
 })();
