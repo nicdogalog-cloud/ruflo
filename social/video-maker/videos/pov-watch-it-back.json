@@ -1,0 +1,10 @@
+{"id":"pov-watch-it-back","seed":21,"scenes":[
+ {"type":"photo","dur":2.0,"photo":"batter-side-nets.jpg","look":{"scale":1.05,"zoomTo":1.2,"dim":0.3},"style":"white","size":76,"text":"POV: you finally watch your batting back 😳","vo":"P.O.V. You watch your batting back."},
+ {"type":"photo","dur":1.5,"photo":"batter-side-nets.jpg","look":{"scale":1.6,"pos":"center 25%","dim":0.25,"shake":8},"stamp":"x","text":"Head falling over 😬","vo":"Head falling over."},
+ {"type":"photo","dur":1.6,"photo":"match-front-foot-drive.jpg","look":{"scale":1.5,"pos":"center 65%","dim":0.25,"shake":8},"stamp":"x","text":"Feet stuck in the crease","vo":"Feet stuck in the crease."},
+ {"type":"photo","dur":1.6,"photo":"nets-batter-front.jpg","look":{"scale":1.4,"pos":"center 60%","dim":0.25,"shake":8},"stamp":"x","text":"Bat coming down crooked","vo":"Bat coming down crooked."},
+ {"type":"card","dur":2.5,"bg":"yellow","size":96,"text":"You'd never know without filming it 👀","vo":"You'd never know without filming it."},
+ {"type":"guides","dur":4.2,"guides":[3,4],"caption":"Put the phone here. Hit record.","vo":"Crease Cam shows you exactly where to put your phone."},
+ {"type":"checks","dur":4.2,"photo":"batter-nets-adult.jpg","look":{"pos":"center 30%"},"text":"Next session:","items":[["✓","Head still"],["✓","Front foot to the ball"],["✓","Straight bat"]],"vo":"Fix it, film it again, and watch yourself get better."},
+ {"type":"cta","dur":2.6,"vo":"Follow Crease Cam for the launch."}
+]}

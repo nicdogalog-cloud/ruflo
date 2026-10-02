@@ -1,0 +1,10 @@
+{"id":"coach-sees-3-things","seed":33,"scenes":[
+ {"type":"card","dur":2.4,"bg":"navy","size":100,"drop":false,"text":"3 things your coach sees that you don't 👇","vo":"Three things your coach sees that you don't."},
+ {"type":"photo","dur":3.0,"photo":"nets-batter-front.jpg","look":{"scale":1.0,"zoomTo":1.3,"pos":"center 70%","dim":0.2},"style":"yellow","text":"1. Your head position","vo":"One. Your head. Is it still when the ball arrives?"},
+ {"type":"photo","dur":2.6,"photo":"match-front-foot-drive.jpg","look":{"scale":1.0,"zoomTo":1.25,"pos":"center 60%","dim":0.2},"style":"yellow","text":"2. Where your front foot lands","vo":"Two. Where your front foot actually lands."},
+ {"type":"photo","dur":3.0,"photo":"batter-side-nets.jpg","look":{"scale":1.0,"zoomTo":1.25,"dim":0.2},"style":"yellow","text":"3. Your backlift","vo":"Three. Your backlift. Straight, or out towards gully?"},
+ {"type":"card","dur":1.6,"bg":"yellow","text":"Now YOU can see it too","vo":"Now you can see it too."},
+ {"type":"guides","dur":5.0,"guides":[1,2,3,4],"caption":"Four spots. Batting and bowling.","vo":"Four guide cards show you where to put your phone, batting and bowling."},
+ {"type":"card","dur":2.8,"bg":"navy","drop":false,"text":"Free to start","sub":"Videos stay on your phone 🔒","vo":"Free to start. Your videos stay on your phone."},
+ {"type":"cta","dur":2.4,"vo":"Follow for the launch."}
+]}

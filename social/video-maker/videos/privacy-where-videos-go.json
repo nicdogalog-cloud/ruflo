@@ -1,0 +1,10 @@
+{"id":"privacy-where-videos-go","seed":47,"scenes":[
+ {"type":"photo","dur":2.2,"photo":"nets-indoor-hall.jpg","look":{"scale":1.15,"shake":10,"dim":0.35},"rec":true,"style":"white","size":80,"text":"Where do your net videos actually go? 🤔","vo":"Where do your net videos actually go?"},
+ {"type":"card","dur":2.2,"bg":"red","size":96,"text":"Some apps upload everything ☁️","vo":"Some apps want to upload everything."},
+ {"type":"card","dur":2.4,"bg":"navy","size":96,"drop":false,"text":"Crease Cam: stays on your phone 🔒","vo":"Crease Cam keeps your videos on your phone."},
+ {"type":"photo","dur":2.2,"photo":"wicketkeeper-crouch.jpg","look":{"scale":1.1,"zoomTo":1.25,"dim":0.25},"style":"yellow","text":"Your clips. Your phone.","vo":"Your clips. Your phone. Nobody else's."},
+ {"type":"guides","dur":4.0,"guides":[2,4],"caption":"Right spot. Watch it back.","vo":"Film from the right spot, and watch it back straight away."},
+ {"type":"checks","dur":3.6,"photo":"batter-nets-adult.jpg","look":{"pos":"center 30%"},"text":"Perfect for:","items":[["✓","Solo net sessions"],["✓","Club nets night"],["✓","Grinding one shot"]],"vo":"Solo sessions, club nets, or grinding one shot."},
+ {"type":"card","dur":1.8,"bg":"yellow","text":"Free to start","vo":"And it's free to start."},
+ {"type":"cta","dur":2.6,"vo":"Follow Crease Cam for the launch."}
+]}
