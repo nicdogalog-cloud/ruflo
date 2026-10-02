@@ -96,8 +96,11 @@ def apply(state, updates):
 _SCRUB = [
     (re.compile(r'\S+@\S+'), '[email]'),
     (re.compile(r'https?://\S+|www\.\S+'), ''),
+    # bare links such as example.github.io/page or example.co.uk
+    (re.compile(r'\b[\w-]+(?:\.[\w-]+)*\.(?:com|io|co|uk|org|net|app|dev|me|ai|gg|ly)\b\S*', re.I), ''),
     (re.compile(r'[£$€]\s?\d[\d,.]*(?:\s?[kKmM]\b)?|\b\d[\d,.]*\s?(?:GBP|USD|EUR|pounds?|dollars?|euros?)\b'), '[amount]'),
-    (re.compile(r'\+?\d[\d ()-]{8,}\d'), '[number]'),
+    # phone numbers: 10+ digits, so dates like 2026-11-07 stay readable
+    (re.compile(r'\+?\d[\d ()-]{8,}\d'), lambda m: '[number]' if sum(c.isdigit() for c in m.group()) >= 10 else m.group()),
     (re.compile(r'[*_#`>|]+'), ''),
 ]
 
