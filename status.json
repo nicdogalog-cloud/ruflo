@@ -1,0 +1,169 @@
+{
+ "updated": "2026-10-02 19:11 UTC",
+ "briefing": "Jarvis daily briefing, Fri 2 Oct. What the crew did on their own today: - Buzz: 9 Crease Cam videos have gone out on Instagram since last night (latest: the front-foot drive tip at 13:55). - Atlas: rechecked Fulltrack and StanceBeam prices in pounds. - Sol: drafted the club pilot email in your Gmail drafts, plus 4 places to send it. - Ledger: wrote the...",
+ "crew": [
+  {
+   "name": "Nova",
+   "place": "HQ Tower",
+   "status": "working",
+   "job": "Leading the Crease Cam launch (Jarvis runs the crew daily)",
+   "done": [],
+   "open": 2,
+   "next": "",
+   "latest": ""
+  },
+  {
+   "name": "Forge",
+   "place": "Workshop",
+   "status": "working",
+   "job": "Shaping what Crease Cam launches with",
+   "done": [
+    "Confirm the Crease Cam launch feature list (keep / cut)",
+    "Decide: website, phone app, or printed cards plus website",
+    "Add a QR code to the printed guide cards that links to the website"
+   ],
+   "open": 1,
+   "next": "Design the back of the guide card (QR, Instagram handle, one-line tip)",
+   "latest": ""
+  },
+  {
+   "name": "Pixel",
+   "place": "Studio",
+   "status": "working",
+   "job": "Helping Buzz with photos and clips",
+   "done": [
+    "Post the first Crease Cam caption with a guide card photo"
+   ],
+   "open": 2,
+   "next": "",
+   "latest": ""
+  },
+  {
+   "name": "Atlas",
+   "place": "Research Lab",
+   "status": "working",
+   "job": "Watching competitors' prices",
+   "done": [
+    "Recheck competitor prices (Fulltrack, Matcha, StanceBeam) in your currency"
+   ],
+   "open": 2,
+   "next": "Track Crease Cam Instagram views each week",
+   "latest": ""
+  },
+  {
+   "name": "Sol",
+   "place": "Storefront",
+   "status": "working",
+   "job": "Finding clubs for the free pilot",
+   "done": [
+    "List 5 coaches or clubs to offer a free 4-week pilot",
+    "List what clubs get and what we ask back in the free pilot"
+   ],
+   "open": 2,
+   "next": "",
+   "latest": ""
+  },
+  {
+   "name": "Ledger",
+   "place": "Bank",
+   "status": "working",
+   "job": "",
+   "done": [],
+   "open": 1,
+   "next": "",
+   "latest": ""
+  },
+  {
+   "name": "Cog",
+   "place": "Depot",
+   "status": "working",
+   "job": "Sorting kit for the nets",
+   "done": [
+    "List what goes in a club pilot kit",
+    "Pack and post-ready list for sending a pilot kit"
+   ],
+   "open": 3,
+   "next": "Write the one-page welcome sheet that goes in the pilot kit",
+   "latest": ""
+  },
+  {
+   "name": "Wicket",
+   "place": "Crease Cam",
+   "status": "working",
+   "job": "Getting the Crease Cam site ready",
+   "done": [
+    "Add terms of use and privacy-friendly analytics",
+    "Check the website files for anything missing before launch"
+   ],
+   "open": 2,
+   "next": "",
+   "latest": "Hi nic, sorry about the \"too many requests\" message earlier. Yes, everything's up to date: the website is live with the follow button, and the privacy and terms pages are written. The only gaps are the words in [square..."
+  },
+  {
+   "name": "Buzz",
+   "place": "Marketing",
+   "status": "working",
+   "job": "Posting 9 Crease Cam videos a day on Instagram",
+   "done": [
+    "Post the first 3 Crease Cam videos",
+    "Plan the first 9 posts",
+    "Start a weekly posting routine"
+   ],
+   "open": 0,
+   "next": "",
+   "latest": "Got it — I appreciate that! But I should be straight with you: I can't actually post to Instagram myself. I don't have access to your accounts or the ability to publish there. What I can do is have everything ready for..."
+  },
+  {
+   "name": "Meeting Hall",
+   "place": "Town square",
+   "status": "idle",
+   "job": "",
+   "done": [],
+   "open": 0,
+   "next": "",
+   "latest": "Jarvis week review, Fri 2 Oct (Nova) This week: - Buzz posted Crease Cam reels on Instagram every day, now 9 a day through Buffer. - The website went live with a follow button. - The crew now runs itself every 2 hours,..."
+  }
+ ],
+ "waiting_on_nic": [
+  {
+   "crew": "Nova",
+   "task": "Book a real net session to test Crease Cam with 5-10 players",
+   "step": "Pick a night at your club's nets and ask 5-10 players to come along."
+  },
+  {
+   "crew": "Nova",
+   "task": "Set a date for the Crease Cam public launch",
+   "step": "Say yes to 7 November, or pick another date."
+  },
+  {
+   "crew": "Pixel",
+   "task": "Claim Crease Cam handles on Instagram, TikTok and YouTube",
+   "step": "Sign up on TikTok and YouTube, then tell Jarvis the names."
+  },
+  {
+   "crew": "Pixel",
+   "task": "Film a before/after phone placement clip at the nets",
+   "step": "Next time you're at the nets, film these 2 clips (10 seconds each)."
+  },
+  {
+   "crew": "Atlas",
+   "task": "Ask 5 cricketers how they film their nets now",
+   "step": "Send the questions to 5 cricketers."
+  },
+  {
+   "crew": "Sol",
+   "task": "Pick the Crease Cam price (free + Pro, club licence)",
+   "step": "Say yes to [amount] a season, or give another number."
+  },
+  {
+   "crew": "Sol",
+   "task": "Send the first club pilot offer",
+   "step": "Open Gmail drafts, put in the club's name and email, and press send."
+  },
+  {
+   "crew": "Cog",
+   "task": "Buy and test 2-3 phone clamps on a net frame",
+   "step": "Buy 2 to try. Jarvis can't buy things."
+  }
+ ]
+}
