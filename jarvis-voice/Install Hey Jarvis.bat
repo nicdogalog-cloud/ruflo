@@ -3,10 +3,13 @@ setlocal
 title Install Hey Jarvis
 cd /d "%~dp0"
 echo.
-echo  Installing Hey Jarvis. This takes a few minutes the first time.
+echo  Installing Hey Jarvis v2 (talk to Jarvis).
+echo  This takes a few minutes the first time. Re-running it upgrades in place.
 echo.
 
-if not exist "%~dp0hey_jarvis.py" (
+set "MISSING="
+for %%f in (hey_jarvis.py jarvis_brain.py jarvis_voice.py) do if not exist "%~dp0%%f" set "MISSING=1"
+if defined MISSING (
   echo  Please right-click the zip file, choose "Extract All",
   echo  then double-click "Install Hey Jarvis" inside the extracted folder.
   pause
@@ -50,18 +53,26 @@ if not exist "%VPY%" (
   echo  Could not create the Python environment. & pause & exit /b 1
 )
 echo  Downloading packages...
-"%VPY%" -m pip install --disable-pip-version-check -q openwakeword==0.6.0 onnxruntime==1.20.1 sounddevice==0.5.1 numpy==2.1.3 scipy==1.14.1 scikit-learn==1.5.2 pystray==0.19.5 pillow==11.0.0
+"%VPY%" -m pip install --disable-pip-version-check -q openwakeword==0.6.0 onnxruntime==1.20.1 sounddevice==0.5.1 numpy==2.1.3 scipy==1.14.1 scikit-learn==1.5.2 pystray==0.19.5 pillow==11.0.0 faster-whisper==1.2.1 edge-tts==7.2.8
 if errorlevel 1 (
   echo  Package download failed. Check the internet connection and try again.
   pause & exit /b 1
 )
 
 rem --- 4. Copy the program and download the voice model -------------------
-copy /y "%~dp0hey_jarvis.py" "%APPDIR%\hey_jarvis.py" >nul
+for %%f in (hey_jarvis.py jarvis_brain.py jarvis_voice.py) do copy /y "%~dp0%%f" "%APPDIR%\%%f" >nul
 echo  Downloading the "Hey Jarvis" voice model...
 "%VPY%" -c "import openwakeword.utils as u; u.download_models(model_names=['hey_jarvis']); from openwakeword.model import Model; Model(wakeword_models=['hey_jarvis'], inference_framework='onnx'); print('  Model OK')"
 if errorlevel 1 (
   echo  Model download failed. Check the internet connection and try again.
+  pause & exit /b 1
+)
+
+echo  Downloading the speech-to-text model (about 150 MB, once)...
+set "HF_HUB_DISABLE_SYMLINKS_WARNING=1"
+"%VPY%" -c "import os; from faster_whisper import WhisperModel; WhisperModel('base.en', device='cpu', compute_type='int8', download_root=os.path.join(os.environ['LOCALAPPDATA'], 'HeyJarvis', 'models')); print('  Speech model OK')"
+if errorlevel 1 (
+  echo  Speech model download failed. Check the internet connection and try again.
   pause & exit /b 1
 )
 
@@ -72,7 +83,8 @@ rem --- 6. Start it now ------------------------------------------------------
 start "" "%VPYW%" "%APPDIR%\hey_jarvis.py"
 echo.
 echo  Done! Hey Jarvis is running (blue dot near the clock).
-echo  Say "Hey Jarvis" and the Jarvis page will open.
+echo  Say "Hey Jarvis" to start talking. Say "stop" or "that's all" to finish.
+echo  Keep OmniRoute running on this laptop so Jarvis can think.
 echo  It will also start by itself every time you log in.
 echo.
 pause
