@@ -12,10 +12,12 @@ version that was read. updates.json looks like:
 
     {"crew": {"Nova": {"status": "working", "job": "...", "chat": "...",
                        "tasks": [{"title": "...", "result": "...",
-                                  "summary": "...", "nicStep": "..."}]}}}
+                                  "summary": "...", "needsNic": false}]}}}
 
-A task whose title matches an open task fills that task in (nic then sees
-"Check work" in the city); any other title becomes a new task from Jarvis.
+A task whose title matches an open task fills that task in; any other title
+becomes a new task from Jarvis. The crew ticks its own work off ("View work"
+in the city). A task with "needsNic": true stays open with "Your part" so nic
+sees "Check work"; "new": true with no result just adds the task to the list.
 Chat lines land in the crew member's chat, which the city keeps to 40.
 """
 import json
@@ -60,11 +62,19 @@ def apply(state, updates):
                      'doneAt': '', 'from': 'Jarvis', 'result': '', 'summary': '', 'nicStep': '',
                      'review': False, 'resultAt': 0}
                 b['tasks'].append(k)
+            if t.get('new') and not t.get('result'):
+                continue
             k['result'] = str(t.get('result', ''))[:MAX_RESULT]
             k['summary'] = str(t.get('summary', ''))[:200]
-            k['nicStep'] = str(t.get('nicStep') or 'Check this and tick it off.')
-            k['review'] = True
             k['resultAt'] = now
+            if t.get('needsNic'):
+                k['nicStep'] = str(t.get('nicStep') or 'Check this and tick it off.')
+                k['review'] = True
+            else:
+                k['nicStep'] = ''
+                k['review'] = False
+                k['done'] = True
+                k['doneAt'] = now
     state['updatedAt'] = now
     # Keep the document under the db limit: trim the oldest chat first.
     keep = MAX_CHAT
