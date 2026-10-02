@@ -40,9 +40,16 @@ class FakeBrain:
     def __init__(self, offline=False):
         self.offline = offline
         self.calls = []
+        self.sessions = 0
 
-    def chat(self, messages):
-        self.calls.append(messages)
+    def new_session(self):
+        self.sessions += 1
+
+    def reply(self, text, system, history):
+        self.calls.append([{"role": "system", "content": system}]
+                          + list(history) + [{"role": "user", "content": text}])
+        if self.offline == "missing":
+            raise jb.ClaudeMissing("no claude")
         if self.offline:
             raise jb.BrainOffline("down")
         return "reply %d" % len(self.calls)
@@ -87,7 +94,7 @@ class StateMachine(unittest.TestCase):
         self.assertTrue(c.active)                        # no wake word needed
         bye = c.hear("Hey Jarvis, stop conversation.")
         self.assertFalse(c.active)
-        self.assertIn("I'll be here", bye)
+        self.assertIn("going quiet", bye)
         self.assertEqual(len(brain.calls), 2)            # goodbye costs no model call
         self.assertIsNone(c.hear("anything"))
         clock.t += 60
@@ -107,7 +114,9 @@ class StateMachine(unittest.TestCase):
 
     def test_other_stop_phrases(self):
         for phrase in ("Stop.", "That's all, thanks Jarvis.", "Goodbye!",
-                       "OK that's all for now", "Bye Jarvis"):
+                       "OK that's all for now", "Bye Jarvis", "Jarvis off.",
+                       "Stop conversation", "Go to sleep", "Hey Jarvis, turn off",
+                       "Turn off.", "Just turn off", "End conversation."):
             c, _, _ = make()
             c.wake()
             c.hear(phrase)
@@ -115,7 +124,8 @@ class StateMachine(unittest.TestCase):
 
     def test_not_stop(self):
         for phrase in ("We can't stop now", "Stop the TikTok ads for a week",
-                       "That's all I needed on Sol, what about Forge?"):
+                       "That's all I needed on Sol, what about Forge?",
+                       "Turn off the Buffer schedule for Sunday"):
             c, _, _ = make()
             c.wake()
             c.hear(phrase)
@@ -149,14 +159,39 @@ class StateMachine(unittest.TestCase):
         c, _, _ = make(offline=True)
         g = c.wake()
         self.assertTrue(c.active)
-        self.assertIn("OmniRoute isn't running", g)
+        self.assertIn("can't reach my brain", g)
         self.assertIn("Buzz has one video out today", g)
         self.assertIn("Buy the Crease Cam domain", g)
         self.assertIn("Cog is stuck", g)
-        self.assertIn("OmniRoute", c.hear("what now?"))
-        self.assertIn("Still no OmniRoute", c.hear("and now?"))
+        self.assertIn("Still can't think", c.hear("what now?"))
+        self.assertIn("Still can't think", c.hear("and now?"))
         c.hear("goodbye")
         self.assertFalse(c.active)
+
+    def test_claude_missing_says_so(self):
+        c, _, _ = make(offline="missing")
+        g = c.wake()
+        self.assertTrue(g.startswith("I need Claude Code signed in on this laptop."))
+        self.assertIn("Buzz has one video out today", g)
+        self.assertEqual(c.hear("hello there"), jb.NEED_CLAUDE)
+
+    def test_resume_session_handling(self):
+        c, brain, clock = make()
+        c.wake()
+        self.assertEqual(brain.sessions, 1)            # fresh session
+        c.hear("goodbye")
+        clock.t += 29 * 60
+        c.wake()
+        self.assertEqual(brain.sessions, 1)            # within 30 min: resumed
+        c.hear("goodbye")
+        clock.t += 31 * 60
+        c.wake()
+        self.assertEqual(brain.sessions, 2)            # later: fresh again
+
+    def test_persona_is_human(self):
+        for w in ("contractions", "follow-up", "Remember what nic said",
+                  "Never use lists", "drafts only"):
+            self.assertIn(w, jb.SYSTEM_PROMPT)
 
     def test_no_status_at_all(self):
         c, _, _ = make(offline=True, data={})

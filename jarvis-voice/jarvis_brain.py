@@ -5,8 +5,8 @@ library is used.
 
 - Conversation: idle -> (wake) -> talking -> (stop phrase / long silence) -> idle
 - Status: a small public feed the crew shift publishes, plus Buzz's post log
-- Brain: nic's OmniRoute gateway on this laptop (OpenAI-style API), using
-  free non-Claude models only
+- Brain: Claude Code on this laptop under nic's own Claude account (see
+  jarvis_claude.py); nic's OmniRoute gateway is only an optional fallback
 """
 
 import json
@@ -16,12 +16,14 @@ import time
 import urllib.error
 import urllib.request
 
+from jarvis_claude import BrainOffline, ClaudeMissing  # noqa: F401
+
 STATUS_URL = ("https://raw.githubusercontent.com/nicdogalog-cloud/ruflo/"
               "jarvis-status/status.json")
 POSTS_URL = ("https://raw.githubusercontent.com/nicdogalog-cloud/ruflo/"
              "crease-cam-files/social/posted-log.md")
 OMNIROUTE_URL = "http://localhost:20128"
-# Free OpenCode models inside OmniRoute, tried in order. Never Claude.
+# Fallback only: free OpenCode models inside OmniRoute, tried in order.
 FREE_MODELS = ["oc/deepseek-v4-flash-free", "oc/mimo-v2.5-free", "oc/hy3-free"]
 BLOCKED_MODEL_WORDS = ("claude", "anthropic", "opus", "sonnet", "haiku")
 
@@ -37,20 +39,28 @@ CREW = ("Nova runs HQ and writes the briefings. Forge decides the product and "
         "several short videos a day.")
 
 SYSTEM_PROMPT = (
-    "You are Jarvis, nic's business partner and right-hand man, speaking out "
-    "loud through the laptop speakers. You are warm, quick and dryly witty, "
-    "a British butler with a sharp business head. You call him nic. "
+    "You are Jarvis, nic's business partner and right-hand man, talking with "
+    "him out loud through the laptop. Sound like a real person, not an "
+    "assistant: warm, relaxed, quick, with a dry British wit and a bit of "
+    "personality. Use contractions and everyday words, and call him nic. "
     "The business is Crease Cam, an app that helps cricketers film their "
     "net sessions from the right spot with guide cards, then watch it back "
     "in slow motion; it is getting ready to launch. The crew are AI agents "
     "who work a shift every two hours: " + CREW + " "
-    "How to talk: this is a spoken conversation, so reply in one to three "
-    "short sentences, like a person would. No lists, no markdown, no emoji, "
-    "no headings, no links. Ask at most one question at a time. "
-    "Only state company facts that are in the status notes below; if you do "
-    "not know, say so plainly and do not make up numbers. You cannot post, "
-    "send, buy or change anything yourself; if nic wants something done, say "
-    "you will leave it for the crew or point him to the Jarvis page.")
+    "How to talk: it's a spoken conversation, so answer in one to three "
+    "short sentences, the way a friend would across the desk. Never use "
+    "lists, bullet points, markdown, emoji, headings or links, and never "
+    "read out more than two or three items; pick what matters and offer the "
+    "rest. Remember what nic said earlier in this conversation and build on "
+    "it. When it helps, finish with one natural follow-up question, never "
+    "more than one. React like a person (\"Ah, nice.\", \"Hmm, fair point.\") "
+    "rather than repeating his question back. "
+    "Only state company facts that are in the status notes or that you have "
+    "just read from his email, calendar or other tools; if you don't know, "
+    "say so plainly and don't make up numbers. You can check his email, "
+    "calendar and other connected apps when he asks. Email is drafts only: "
+    "you never send, delete, post, publish, buy or change anything; if he "
+    "wants something sent, write a draft and tell him it's in his Drafts.")
 
 STOP_PHRASES = {
     "stop", "stop conversation", "stop the conversation", "stop talking",
@@ -58,6 +68,7 @@ STOP_PHRASES = {
     "that is all", "that's it", "thats it", "goodbye", "good bye", "bye",
     "bye bye", "see you", "see you later", "go to sleep", "sleep",
     "that'll be all", "thatll be all", "that will be all",
+    "off", "turn off", "just turn off", "switch off", "jarvis off",
 }
 _FILLER = {"hey", "hi", "ok", "okay", "jarvis", "please", "thanks", "then",
            "alright", "right", "cheers", "so", "well", "oh", "um", "uh",
@@ -261,10 +272,6 @@ def _join(names):
 
 # ------------------------------------------------------------------ model --
 
-class BrainOffline(Exception):
-    """OmniRoute is not running (or answered with nothing usable)."""
-
-
 def clean_reply(text):
     text = re.sub(r"<think>.*?</think>", " ", text or "", flags=re.S | re.I)
     text = re.sub(r"https?://\S+", "", text)
@@ -332,12 +339,19 @@ def part_of_day(hour):
     return "morning" if hour < 12 else "afternoon" if hour < 18 else "evening"
 
 
+NEED_CLAUDE = "I need Claude Code signed in on this laptop."
+
+
 class Conversation:
     """The state machine. Every method returns the words Jarvis should say.
 
     wake()     idle -> talking (greeting + company rundown)
     hear(text) talking: a reply, or a goodbye that goes back to idle
     silence()  talking -> idle after nic has gone quiet for a while
+
+    brain.reply(text, system, history) answers one turn; brain.new_session()
+    starts a fresh Claude session. A wake within 30 minutes of the last
+    words resumes the same session.
     """
 
     def __init__(self, brain, status, clock=time.time, hour=None):
@@ -355,48 +369,52 @@ class Conversation:
     def active(self):
         return self.state == TALKING
 
-    def _system(self):
-        return {"role": "system",
-                "content": SYSTEM_PROMPT + "\n\nStatus notes: " + self.notes}
+    def system_text(self):
+        return SYSTEM_PROMPT + "\n\nStatus notes: " + self.notes
 
-    def _ask(self, user_text, remember=True):
-        msgs = [self._system()] + self.history[-2 * MAX_TURNS:] + [
-            {"role": "user", "content": user_text}]
-        reply = self.brain.chat(msgs)
+    def _ask(self, user_text):
+        reply = clean_reply(self.brain.reply(
+            user_text, self.system_text(), self.history[-2 * MAX_TURNS:]))
+        if not reply:
+            raise BrainOffline("empty reply")
         self.brain_down = False
-        if remember:
-            self.history += [{"role": "user", "content": user_text},
-                             {"role": "assistant", "content": reply}]
-            self.history = self.history[-2 * MAX_TURNS:]
+        self.history += [{"role": "user", "content": user_text},
+                         {"role": "assistant", "content": reply}]
+        self.history = self.history[-2 * MAX_TURNS:]
         return reply
 
     def wake(self):
         now = self.clock()
-        resumed = self.history and now - self.last_active < RESUME_WINDOW
+        resumed = bool(self.history) and now - self.last_active < RESUME_WINDOW
         if not resumed:
             self.history = []
+            self.brain.new_session()
         self.state = TALKING
         self.last_active = now
         data = self.status.load()
         self.notes = status_notes(data)
         when = part_of_day(self.hour())
         prompt = ("(nic just said 'Hey Jarvis' again to pick the conversation "
-                  "back up. Welcome him back in one short sentence and ask "
-                  "what's on his mind.)" if resumed else
-                  "(nic just said 'Hey Jarvis'. It is %s. Greet him, then give "
-                  "him the company rundown from the status notes: the latest "
-                  "crew updates, what Buzz has posted, and what is waiting on "
-                  "him. Three or four spoken sentences, then ask what he'd "
-                  "like to get into.)" % when)
+                  "back up. Welcome him back in one short, natural sentence "
+                  "that nods to what you were talking about.)" if resumed else
+                  "(nic just said 'Hey Jarvis'. It's %s. Greet him like a "
+                  "friend would, then tell him how the company's doing from "
+                  "the status notes: the main crew news, what Buzz has "
+                  "posted, and anything waiting on him. Two or three spoken "
+                  "sentences, then ask what he'd like to get into.)" % when)
         try:
-            return self._ask(prompt, remember=True)
+            return self._ask(prompt)
+        except ClaudeMissing as e:
+            log("Brain offline: %s" % e)
+            self.brain_down = True
+            return "%s %s" % (NEED_CLAUDE, spoken_summary(data))
         except BrainOffline as e:
             log("Brain offline: %s" % e)
             self.brain_down = True
             if resumed:
-                return "Back again, nic. My thinking's still offline, I'm afraid."
-            return ("Good %s, nic. OmniRoute isn't running on the laptop, so "
-                    "I can only read you the headlines. %s" % (when, spoken_summary(data)))
+                return "Back again, nic. My thinking's offline just now, I'm afraid."
+            return ("Good %s, nic. I can't reach my brain right now, so here "
+                    "are the headlines. %s" % (when, spoken_summary(data)))
 
     def hear(self, text):
         if self.state != TALKING:
@@ -404,20 +422,23 @@ class Conversation:
         self.last_active = self.clock()
         if is_stop(text):
             self.state = IDLE
-            return "Right you are, nic. I'll be here when you need me."
+            return "Okay, going quiet. Say Hey Jarvis when you need me."
         said = strip_wake(text)
         if not said:
             return "Yes, nic?"
         try:
             return self._ask(text.strip())
+        except ClaudeMissing as e:
+            log("Brain offline: %s" % e)
+            self.brain_down = True
+            return NEED_CLAUDE
         except BrainOffline as e:
             log("Brain offline: %s" % e)
             first = not self.brain_down
             self.brain_down = True
             if first:
-                return ("I've lost my train of thought: OmniRoute isn't "
-                        "answering. Start it up and I'm all yours.")
-            return "Still no OmniRoute, I'm afraid. Say stop if you'd like a break."
+                return "Sorry, I lost my train of thought there. Try me again?"
+            return "Still can't think straight, I'm afraid. Say stop if you'd like a break."
 
     def silence(self):
         if self.state != TALKING:
@@ -428,3 +449,24 @@ class Conversation:
     def end(self):
         """Ended from outside (pause/quit): no words."""
         self.state = IDLE
+
+
+def ask_with_filler(fn, say, delay=2.5, filler="One moment."):
+    """Run fn() (the brain); if it takes longer than delay, say a filler."""
+    import threading
+    box = {}
+
+    def work():
+        try:
+            box["out"] = fn()
+        except BaseException as e:  # handed back to the caller
+            box["err"] = e
+    t = threading.Thread(target=work, daemon=True)
+    t.start()
+    t.join(delay)
+    if t.is_alive():
+        say(filler)
+        t.join()
+    if "err" in box:
+        raise box["err"]
+    return box.get("out")

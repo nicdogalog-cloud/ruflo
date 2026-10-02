@@ -1,14 +1,15 @@
-"""Hey Jarvis v2 - say "Hey Jarvis" and talk to Jarvis.
+"""Hey Jarvis v3 - say "Hey Jarvis" and talk to Jarvis.
 
 Runs quietly in the background (tray icon near the clock). "Hey Jarvis"
 opens the Jarvis page and starts a spoken conversation: Jarvis greets nic
 with the company rundown, then it is a normal back-and-forth with no wake
-word needed. "Stop", "that's all" or "goodbye" ends it.
+word needed. "Jarvis off", "turn off", "that's all" or "goodbye" ends it.
+nic can talk over Jarvis to cut him off.
 
 Listening for the wake word and turning speech into text both happen on
 this laptop; audio is never saved or uploaded. Only the text of what nic
-says goes to his OmniRoute gateway (on this laptop), which passes it to a
-free chat model online.
+says goes to Claude, through Claude Code signed in with nic's own account
+(OmniRoute on this laptop is only an optional fallback).
 """
 
 import os
@@ -34,13 +35,22 @@ APP_DIR = os.path.join(
 LOG_PATH = os.path.join(APP_DIR, "hey_jarvis.log")
 CONFIG_PATH = os.path.join(APP_DIR, "config.json")
 SILENCE_TIMEOUT = 45.0   # nic quiet this long -> conversation ends
+BRAIN_DIR = os.path.join(APP_DIR, "brain")
 DEFAULT_CONFIG = {
+    "model": "haiku",
+    "allowed_tools": [],
+    "blocked_tools": [],
+    "omniroute_fallback": True,
     "omniroute_url": "http://localhost:20128",
     "omniroute_key": "",
     "models": ["oc/deepseek-v4-flash-free", "oc/mimo-v2.5-free", "oc/hy3-free"],
     "voice": "en-GB-RyanNeural",
     "whisper_model": "base.en",
     "open_page_on_wake": True,
+    "barge_in": True,
+    "barge_in_level": 1800,
+    "end_silence": 0.6,
+    "filler_after_seconds": 2.5,
 }
 
 
@@ -184,18 +194,48 @@ def flush(stream):
         pass
 
 
-def run_conversation(stream, convo, ears, mouth, trigger, stop_event):
-    """One conversation: greet, then listen/answer until a stop phrase."""
-    from jarvis_voice import Endpointer, FRAME_SECONDS
-    mouth.say(convo.wake())
-    ender = Endpointer()
+def run_conversation(stream, convo, ears, mouth, trigger, stop_event, cfg=None):
+    """One conversation: greet, then listen/answer until a stop phrase.
+
+    While Jarvis speaks the mic keeps listening; if nic talks over him the
+    voice stops and nic's words become the next turn (barge-in).
+    """
+    from jarvis_voice import BargeIn, Endpointer, FRAME_SECONDS
+    from jarvis_brain import ask_with_filler, is_noise
+    cfg = cfg or {}
+    barger = BargeIn(min_level=float(cfg.get("barge_in_level", 1800)))
+    ender = Endpointer(end_silence=float(cfg.get("end_silence", 0.6)))
+
+    def interrupt():
+        data, _ = stream.read(FRAME)
+        return barger.feed(data[:, 0].copy())
+
+    def speak(text):
+        barger.reset()
+        use = interrupt if cfg.get("barge_in", True) else None
+        if mouth.say(text, use):
+            log("nic talked over Jarvis; listening")
+            return list(barger.buffer)
+        return None
+
+    def think(fn):
+        return ask_with_filler(fn, lambda t: mouth.say(t),
+                               float(cfg.get("filler_after_seconds", 2.5)))
+
+    heard = speak(think(convo.wake))
     while convo.active and not stop_event.is_set():
         if trigger.paused:
             convo.end()
             break
-        flush(stream)
         ender.reset()
-        quiet, audio = 0.0, None
+        audio = None
+        if heard:   # barge-in: start from the words already caught
+            for f in heard:
+                audio = ender.feed(f[:, 0].copy() if f.ndim > 1 else f)
+        else:
+            flush(stream)
+        heard = None
+        quiet = 0.0
         while audio is None and not stop_event.is_set() and not trigger.paused:
             data, _ = stream.read(FRAME)
             audio = ender.feed(data[:, 0].copy())
@@ -212,11 +252,10 @@ def run_conversation(stream, convo, ears, mouth, trigger, stop_event):
         except Exception as e:
             log("Speech-to-text failed: %s" % e)
             continue
-        from jarvis_brain import is_noise
         if is_noise(text):
             continue
         log("Heard %d words" % len(text.split()))
-        mouth.say(convo.hear(text))
+        heard = speak(think(lambda: convo.hear(text)))
     log("Conversation over; listening for 'Hey Jarvis' only")
 
 
@@ -285,18 +324,36 @@ def run_tray(trigger, stop_event):
     return True
 
 
+def make_brain(cfg):
+    """Claude Code first (nic's own account); OmniRoute only as a fallback."""
+    from jarvis_brain import OmniRoute, SYSTEM_PROMPT
+    from jarvis_claude import BrainChain, ClaudeBrain, write_brain_dir
+    write_brain_dir(BRAIN_DIR, SYSTEM_PROMPT)
+    claude = ClaudeBrain(BRAIN_DIR, cfg)
+    if claude.exe:
+        log("Brain: Claude Code (%s), model %s" % (claude.exe, cfg.get("model")))
+        tools = claude.discover_tools()
+        log("Found %s tools" % (len(tools) if tools is not None else "no"))
+    else:
+        log("Claude Code not found on this laptop")
+    fallback = None
+    if cfg.get("omniroute_fallback", True):
+        fallback = OmniRoute(cfg.get("omniroute_url", "http://localhost:20128"),
+                             cfg.get("omniroute_key", ""), cfg.get("models"))
+    return BrainChain(claude, fallback)
+
+
 def make_talker(cfg, stop_event):
     """Load the speech model, voice and brain. None if they can't load."""
     try:
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        from jarvis_brain import Conversation, OmniRoute, Status
+        from jarvis_brain import Conversation, Status
         from jarvis_voice import Ears, Mouth
         ears = Ears(cfg.get("whisper_model", "base.en"),
                     download_root=os.path.join(APP_DIR, "models"))
         mouth = Mouth(cfg.get("voice", "en-GB-RyanNeural"), APP_DIR)
-        brain = OmniRoute(cfg.get("omniroute_url", "http://localhost:20128"),
-                          cfg.get("omniroute_key", ""), cfg.get("models"))
-        convo = Conversation(brain, Status(os.path.join(APP_DIR, "status_cache.json")))
+        convo = Conversation(make_brain(cfg),
+                             Status(os.path.join(APP_DIR, "status_cache.json")))
     except Exception as e:
         log("Conversation parts failed to load (%s); wake word will only "
             "open the page" % e)
@@ -304,7 +361,7 @@ def make_talker(cfg, stop_event):
 
     def talk(stream, trigger):
         try:
-            run_conversation(stream, convo, ears, mouth, trigger, stop_event)
+            run_conversation(stream, convo, ears, mouth, trigger, stop_event, cfg)
         except Exception as e:
             convo.end()
             if "stream" in str(e).lower() or "device" in str(e).lower():
@@ -334,7 +391,7 @@ def main():
     if lock is None:
         log("Already running; exiting this copy")
         return 0
-    log("Starting Hey Jarvis v2")
+    log("Starting Hey Jarvis v3")
     cfg = load_config()
     model = load_model()
     stop_event = threading.Event()

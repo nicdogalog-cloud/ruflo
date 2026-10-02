@@ -1,28 +1,38 @@
-HEY JARVIS v2 - talk to Jarvis out loud
+HEY JARVIS v3 - talk to Jarvis out loud, powered by Claude
 
 Install or upgrade
 1. Right-click hey-jarvis.zip, choose "Extract All", open the folder, double-click "Install Hey Jarvis".
-   Already have the old version? Just do the same; it upgrades in place. The first install takes a few minutes (about 300 MB of downloads).
+   Already have an older version? Just do the same; it upgrades in place.
 2. When it says Done, a blue dot near the clock means Jarvis is listening. It starts by itself at every login.
 
-Talking to Jarvis
-- Say "Hey Jarvis". The Jarvis page opens and Jarvis greets you with how the company is doing: the latest crew updates, what Buzz has posted today, and what is waiting on you.
-- Then just talk. No need to say "Hey Jarvis" again; wait for Jarvis to finish speaking before you answer.
-- To finish, say "stop", "that's all", "goodbye" or "Hey Jarvis, stop conversation". Jarvis says goodbye and goes back to waiting for "Hey Jarvis".
-- If you go quiet for about 45 seconds, Jarvis finishes the conversation by itself.
-- Say "Hey Jarvis" again within half an hour and Jarvis remembers what you were talking about.
-
 What Jarvis needs
-- OmniRoute running on this laptop (http://localhost:20128). Jarvis uses its free models, never Claude. If OmniRoute is off, Jarvis tells you and still reads you the company headlines.
-- Internet for the natural British voice. Without it Jarvis uses the built-in Windows voice.
-- If your OmniRoute needs an API key, open %LOCALAPPDATA%\HeyJarvis\config.json in Notepad and put it in "omniroute_key". You can change the models and voice there too. Then use Stop and start Hey Jarvis again (or log out and in).
+- Claude Code installed and signed in on this laptop with your own Claude account (run "claude" once in a terminal and log in). If it isn't, Jarvis says "I need Claude Code signed in on this laptop."
+- Your claude.ai connectors (Gmail, Google Calendar, Slack, Buffer...) are used automatically when Claude Code is signed in with that same account.
+- Internet for Claude and for the natural British voice (without it Jarvis uses the built-in Windows voice).
+- OmniRoute is NOT needed. If it happens to be running, Jarvis only uses it as a backup when Claude can't answer. Turn that off with "omniroute_fallback": false in config.json.
 
-Tray menu (right-click the blue dot)
-- Open Jarvis now, Pause listening, Quit Hey Jarvis.
-- "Stop Hey Jarvis" stops it for now; "Uninstall Hey Jarvis" removes it completely.
+Talking to Jarvis
+- Say "Hey Jarvis". Jarvis greets you with how the company is doing, then just talk, no wake word needed.
+- Ask things like "anything important in my inbox?", "what's on my calendar tomorrow?" or "draft a reply to Sam saying Thursday works".
+- Talk over Jarvis any time to cut him off; he stops and listens. (Headphones make this work best.)
+- If he needs a few seconds to check something he says "One moment".
+- To finish, say "Jarvis off", "turn off", "end conversation", "stop conversation", "that's all", "goodbye" or "go to sleep". He goes quiet and only listens for "Hey Jarvis".
+- Go quiet for about 45 seconds and he finishes by himself. Say "Hey Jarvis" again within half an hour and he picks up where you left off.
+
+What Jarvis can and can't do
+- Can: read and search your email, calendar, Slack and other connected apps, and write Gmail DRAFTS.
+- Can't: send email, delete anything, post or publish (Buffer, Slack, social), buy anything or change accounts. These are blocked in the program itself, not just asked nicely. Nothing goes out unless you send it yourself from your Drafts.
+
+Settings: %LOCALAPPDATA%\HeyJarvis\config.json (open in Notepad)
+- "model": "haiku" keeps usage low; "sonnet" is smarter but uses more of your plan.
+- "allowed_tools" / "blocked_tools": extra tool names to allow or block (blocked always wins).
+- "barge_in", "barge_in_level", "end_silence", "voice". After editing, use Stop and start Hey Jarvis again.
+
+Tray menu (right-click the blue dot): Open Jarvis now, Pause listening, Quit Hey Jarvis.
+"Stop Hey Jarvis" stops it for now; "Uninstall Hey Jarvis" removes it completely.
 
 Privacy
-- Listening for "Hey Jarvis" and turning your speech into text both happen on this laptop. No audio is saved or sent anywhere.
-- The words you say (as text) go to OmniRoute, which passes them to a free online chat model to work out the answer. Jarvis's reply is turned into speech by Microsoft's online voice service.
-- The company status comes from a small public file with crew notes, task titles and post counts only (no emails, money or personal details).
+- Listening for "Hey Jarvis" and turning your speech into text happen on this laptop. No audio is saved or sent anywhere.
+- The words you say (as text) go to Claude through Claude Code on your own account, which may read your connected apps to answer. Replies are spoken by Microsoft's online voice service.
+- Jarvis's Claude Code runs in %LOCALAPPDATA%\HeyJarvis\brain, a folder with only his instructions (CLAUDE.md), never your code.
 - A short log (no conversation text) is kept in %LOCALAPPDATA%\HeyJarvis\hey_jarvis.log.

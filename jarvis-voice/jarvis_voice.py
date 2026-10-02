@@ -40,11 +40,11 @@ class Endpointer:
     """Feeds 80 ms int16 frames; returns the whole utterance when nic stops.
 
     Learns the room's background level, starts when the sound is clearly
-    above it for a moment, ends after ~0.9 s of quiet. Keeps a little audio
+    above it for a moment, ends after ~0.6 s of quiet. Keeps a little audio
     from just before the start so first words are not clipped.
     """
 
-    def __init__(self, start_frames=3, end_silence=0.9, max_seconds=25.0,
+    def __init__(self, start_frames=3, end_silence=0.6, max_seconds=25.0,
                  pre_roll=4, min_start=450.0, min_keep=280.0):
         self.start_frames = start_frames
         self.end_frames = int(round(end_silence / FRAME_SECONDS))
@@ -94,6 +94,41 @@ class Endpointer:
         return None
 
 
+class BargeIn:
+    """Spots nic talking over Jarvis. Feeds 80 ms frames while Jarvis speaks.
+
+    The mic also hears the speakers, so it needs sound clearly louder than
+    the playback level it has seen so far, for ~0.3 s in a row. It keeps the
+    last second of audio so the start of nic's words isn't lost.
+    """
+
+    def __init__(self, min_level=1800.0, ratio=1.8, frames_needed=4, keep=12):
+        self.min_level = min_level
+        self.ratio = ratio
+        self.frames_needed = frames_needed
+        self.keep = keep
+        self.reset()
+
+    def reset(self):
+        self.echo = 0.0
+        self.run = 0
+        self.buffer = []
+        self.triggered = False
+
+    def feed(self, frame):
+        level = rms(frame)
+        self.buffer = (self.buffer + [frame])[-self.keep:]
+        need = max(self.min_level, self.echo * self.ratio)
+        if level >= need:
+            self.run += 1
+        else:
+            self.run = 0
+            self.echo = max(self.echo * 0.98, level)
+        if self.run >= self.frames_needed:
+            self.triggered = True
+        return self.triggered
+
+
 class Ears:
     def __init__(self, model_name="base.en", download_root=None):
         from faster_whisper import WhisperModel
@@ -122,18 +157,30 @@ def _mci(cmd):
     return err, buf.value
 
 
-def play_mp3(path):
-    """Windows' built-in MCI player: plays an mp3 and waits until done."""
+def play_mp3(path, interrupt=None):
+    """Windows' built-in MCI player. Plays an mp3 until done, or until
+    interrupt() returns True. Returns 'done', 'interrupted' or 'failed'."""
     if sys.platform != "win32":
         log("(would play %s)" % path)
-        return True
+        return "done"
     _mci("close jarvis_say")
     err, _ = _mci('open "%s" type mpegvideo alias jarvis_say' % path)
     if err:
-        return False
+        return "failed"
     try:
-        err, _ = _mci("play jarvis_say wait")
-        return not err
+        if interrupt is None:
+            err, _ = _mci("play jarvis_say wait")
+            return "failed" if err else "done"
+        err, _ = _mci("play jarvis_say")
+        if err:
+            return "failed"
+        while True:
+            if interrupt():
+                _mci("stop jarvis_say")
+                return "interrupted"
+            _, mode = _mci("status jarvis_say mode")
+            if mode.strip().lower() != "playing":
+                return "done"
     finally:
         _mci("close jarvis_say")
 
@@ -167,15 +214,18 @@ class Mouth:
             await edge_tts.Communicate(text, self.voice, rate="+4%").save(path)
         asyncio.run(asyncio.wait_for(go(), timeout=12))
 
-    def say(self, text):
+    def say(self, text, interrupt=None):
+        """Speak. interrupt() is polled during playback (it reads the mic);
+        returns True if nic talked over Jarvis and playback was stopped."""
         if not text:
-            return
+            return False
         self.n = (self.n + 1) % 2
         path = os.path.join(self.work_dir, "jarvis_say_%d.mp3" % self.n)
         try:
             self._edge(text, path)
-            if play_mp3(path):
-                return
+            result = play_mp3(path, interrupt)
+            if result != "failed":
+                return result == "interrupted"
             log("Could not play the voice file; using the Windows voice")
         except Exception as e:
             log("Online voice failed (%s); using the Windows voice" % type(e).__name__)
@@ -183,3 +233,4 @@ class Mouth:
             say_sapi(text)
         except Exception as e:
             log("Windows voice failed too: %s" % e)
+        return False

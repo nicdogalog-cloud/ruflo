@@ -3,12 +3,12 @@ setlocal
 title Install Hey Jarvis
 cd /d "%~dp0"
 echo.
-echo  Installing Hey Jarvis v2 (talk to Jarvis).
+echo  Installing Hey Jarvis v3 (talk to Jarvis, powered by Claude).
 echo  This takes a few minutes the first time. Re-running it upgrades in place.
 echo.
 
 set "MISSING="
-for %%f in (hey_jarvis.py jarvis_brain.py jarvis_voice.py) do if not exist "%~dp0%%f" set "MISSING=1"
+for %%f in (hey_jarvis.py jarvis_brain.py jarvis_voice.py jarvis_claude.py) do if not exist "%~dp0%%f" set "MISSING=1"
 if defined MISSING (
   echo  Please right-click the zip file, choose "Extract All",
   echo  then double-click "Install Hey Jarvis" inside the extracted folder.
@@ -60,7 +60,7 @@ if errorlevel 1 (
 )
 
 rem --- 4. Copy the program and download the voice model -------------------
-for %%f in (hey_jarvis.py jarvis_brain.py jarvis_voice.py) do copy /y "%~dp0%%f" "%APPDIR%\%%f" >nul
+for %%f in (hey_jarvis.py jarvis_brain.py jarvis_voice.py jarvis_claude.py) do copy /y "%~dp0%%f" "%APPDIR%\%%f" >nul
 echo  Downloading the "Hey Jarvis" voice model...
 "%VPY%" -c "import openwakeword.utils as u; u.download_models(model_names=['hey_jarvis']); from openwakeword.model import Model; Model(wakeword_models=['hey_jarvis'], inference_framework='onnx'); print('  Model OK')"
 if errorlevel 1 (
@@ -83,8 +83,9 @@ rem --- 6. Start it now ------------------------------------------------------
 start "" "%VPYW%" "%APPDIR%\hey_jarvis.py"
 echo.
 echo  Done! Hey Jarvis is running (blue dot near the clock).
-echo  Say "Hey Jarvis" to start talking. Say "stop" or "that's all" to finish.
-echo  Keep OmniRoute running on this laptop so Jarvis can think.
+echo  Say "Hey Jarvis" to start talking. Say "Jarvis off" or "that's all" to finish.
+where claude >nul 2>nul || if not exist "%USERPROFILE%\.local\bin\claude.exe" if not exist "%APPDATA%\npm\claude.cmd" echo  NOTE: Claude Code was not found. Install it and sign in, or Jarvis can't think.
+echo  Jarvis thinks with Claude Code signed in to your own Claude account.
 echo  It will also start by itself every time you log in.
 echo.
 pause
