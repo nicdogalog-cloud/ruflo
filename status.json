@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03 12:38 UTC",
+ "updated": "2026-10-03 14:38 UTC",
  "briefing": "Jarvis morning briefing, Sat 3 Oct. What the crew did since yesterday: - Buzz: 13 reels went out on Instagram in the last 24 hours, with no errors. - Forge: website QR code, the back of the guide card, and the app store text. - Ledger: HMRC check (nothing due yet), and worked out that the app stores take 15%. - Cog: pilot kit list and welcome sheet. Sol:...",
  "crew": [
   {
@@ -61,8 +61,8 @@
     "List 5 coaches or clubs to offer a free 4-week pilot",
     "List what clubs get and what we ask back in the free pilot"
    ],
-   "open": 3,
-   "next": "",
+   "open": 4,
+   "next": "Draft a follow-up email for clubs that don't reply to the pilot offer",
    "latest": ""
   },
   {
@@ -81,12 +81,12 @@
    "status": "working",
    "job": "Sorting kit for the nets",
    "done": [
-    "List what goes in a club pilot kit",
     "Pack and post-ready list for sending a pilot kit",
-    "Write the one-page welcome sheet that goes in the pilot kit"
+    "Write the one-page welcome sheet that goes in the pilot kit",
+    "Write a one-page net session checklist for coaches"
    ],
-   "open": 3,
-   "next": "Write a one-page net session checklist for coaches",
+   "open": 2,
+   "next": "",
    "latest": ""
   },
   {
