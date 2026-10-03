@@ -1,0 +1,8 @@
+{"id":"nets-batter-short-stride","composition":"House","seed":127,"speed":1.08,"scenes":[
+{"type":"nets","dur":3.2,"actor":"batter","outcome":"beaten","good":true,"text":"Beaten outside off. *Again.* 😩","vo":"Beaten outside off. Again."},
+{"type":"think","dur":2.0,"actor":"batter","label":"Is it my feet?","vo":"Is it my feet?"},
+{"type":"drill","dur":2.6,"pick":4,"text":"Film it *side on*","vo":"Pick batting, side on."},
+{"type":"spots","dur":3.0,"spots":[4],"text":"Phone *level with the crease*","vo":"The phone goes level with the crease."},
+{"type":"slowmo","dur":3.6,"actor":"batter","fault":"foot","label":"Front foot falls short","text":"Slow-mo says *yes*","vo":"Slow-mo shows it. Your front foot's falling short."},
+{"type":"nets","dur":3.0,"actor":"batter","outcome":"middle","good":true,"text":"Big stride. *Middled.*","vo":"Get a big stride in, and you middle it."},
+{"type":"end","dur":2.8,"vo":"Follow Crease Cam for the launch."}]}

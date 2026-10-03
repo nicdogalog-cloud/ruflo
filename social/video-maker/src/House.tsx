@@ -5,10 +5,10 @@ import { NAVY, YELLOW, OFF, GREEN, RED, TURF, FONT, useSp, Caption, Sub, Logo, W
 // House style (from the app explainer), driven by a JSON spec: videos/*.json with "composition": "House".
 // Explainers and "in the nets" stories. Every scene is drawn; no photos.
 export type HScene = {
-  type: "logo" | "nets" | "think" | "drill" | "guide" | "slowmo" | "tracks" | "spots" | "privacy" | "pricing" | "end";
+  type: "logo" | "nets" | "think" | "drill" | "guide" | "slowmo" | "tracks" | "spots" | "privacy" | "pricing" | "end" | "steps";
   dur: number; vo?: string;
   text?: string; sub?: string; actor?: "batter" | "bowler"; outcome?: "edge" | "middle" | "beaten";
-  pick?: number; label?: string; fault?: string; good?: boolean; spots?: number[]; drill?: string;
+  pick?: number; label?: string; items?: string[]; fault?: string; good?: boolean; spots?: number[]; drill?: string;
 };
 export type HouseSpec = { id: string; audio?: string; scenes: HScene[] };
 export const hFrames = (s: HScene) => Math.round(s.dur * 30);
@@ -170,7 +170,8 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
   const good = !!s.good;
   const col = good ? GREEN : YELLOW;
   const k = 4.6, x = 360, y = 1150;
-  const lean = good ? 0 : 0.9;
+  const foot = s.fault === "foot";
+  const lean = good || foot ? 0 : 0.9;
   const headX = x + (-8 + lean * 22) * k, headY = y - 90 * k, footX = x - 30 * k;
   return (
     <>
@@ -183,9 +184,16 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
             {bat ? <>
               <Stumps x={560} y={1060} h={250} color={OFF} />
               <Batter x={x} y={y} h={460} swing={0.15 + step * 0.06} lean={lean} color={OFF} width={16} />
-              <line x1={footX} y1={y} x2={footX} y2={y - (y - headY + 60) * line} stroke={col} strokeWidth={10} strokeDasharray="22 14" />
-              {!good && line > 0.9 && <path d={`M ${footX + 10} ${headY} L ${headX - 20} ${headY}`} stroke={RED} strokeWidth={12} markerEnd="" />}
-              <circle cx={headX} cy={headY} r={70 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              {foot ? <>
+                {/* where the front foot should land vs where it did */}
+                <ellipse cx={good ? footX : footX - 150} cy={y + 6} rx={70 * line} ry={26 * line} fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={8} strokeDasharray="16 10" />
+                {!good && line > 0.6 && <path d={`M ${footX - 10} ${y - 60} L ${footX - 130} ${y - 60} M ${footX - 105} ${y - 80} L ${footX - 132} ${y - 60} L ${footX - 105} ${y - 40}`} stroke={RED} strokeWidth={10} fill="none" strokeLinecap="round" />}
+                <circle cx={footX} cy={y - 4} r={34 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              </> : <>
+                <line x1={footX} y1={y} x2={footX} y2={y - (y - headY + 60) * line} stroke={col} strokeWidth={10} strokeDasharray="22 14" />
+                {!good && line > 0.9 && <path d={`M ${footX + 10} ${headY} L ${headX - 20} ${headY}`} stroke={RED} strokeWidth={12} markerEnd="" />}
+                <circle cx={headX} cy={headY} r={70 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              </>}
             </> : <>
               <Stumps x={520} y={1030} h={250} color={OFF} />
               <Bowler x={250} y={1100} h={430} arm={0.1 + step * 0.07} color={OFF} width={16} />
@@ -336,9 +344,32 @@ const EndScene: React.FC<{ s: HScene }> = ({ s }) => {
   );
 };
 
+// Numbered step cards popping in one after another (items[]); the first `pick` cards only if set
+const StepsScene: React.FC<{ s: HScene }> = ({ s }) => {
+  const f = useCurrentFrame();
+  const items = s.items ?? [];
+  const gap = Math.max(6, Math.floor((s.dur * 30 * 0.55) / Math.max(1, items.length)));
+  return (
+    <>
+      {s.text && <Caption text={s.text} top={170} size={96} />}
+      {items.map((t, i) => {
+        const sp = spring({ frame: f - 6 - i * gap, fps: 30, config: { damping: 11, stiffness: 190 } });
+        const hi = s.pick === i + 1;
+        return (
+          <div key={i} style={{ position: "absolute", left: 90, right: 90, top: 520 + i * 330, height: 270, borderRadius: 40, background: hi ? YELLOW : "#1c2c48", border: hi ? "none" : "3px solid #2f4470", display: "flex", alignItems: "center", gap: 46, padding: "0 50px", transform: `translateX(${(1 - sp) * (i % 2 ? 700 : -700)}px)`, boxShadow: "0 20px 50px rgba(0,0,0,.4)", fontFamily: FONT }}>
+            <div style={{ minWidth: 150, height: 150, borderRadius: "50%", background: hi ? NAVY : YELLOW, color: hi ? YELLOW : NAVY, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 90 }}>{i + 1}</div>
+            <div style={{ fontWeight: 900, fontSize: 68, lineHeight: 1.05, color: hi ? NAVY : OFF }}>{t}</div>
+          </div>
+        );
+      })}
+      {s.sub && <Sub text={s.sub} top={1560} delay={gap * items.length + 6} size={58} color={YELLOW} />}
+    </>
+  );
+};
+
 const RENDER: Record<HScene["type"], React.FC<{ s: HScene }>> = {
   logo: LogoScene, nets: NetsScene, think: ThinkScene, drill: DrillScene, guide: GuideScene, slowmo: SlowmoScene,
-  tracks: TracksScene, spots: SpotsScene, privacy: PrivacyScene, pricing: PricingScene, end: EndScene,
+  tracks: TracksScene, spots: SpotsScene, privacy: PrivacyScene, pricing: PricingScene, end: EndScene, steps: StepsScene,
 };
 
 export const House: React.FC<HouseSpec> = ({ scenes, audio }) => {

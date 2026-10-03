@@ -1,0 +1,8 @@
+{"id":"three-steps-to-film","composition":"House","seed":121,"speed":1.08,"scenes":[
+{"type":"steps","dur":3.2,"text":"Film your nets in *3 steps*","items":["Phone on the spot","Line up + record","Watch it back"],"vo":"Film your nets like a pro, in three steps."},
+{"type":"spots","dur":3.4,"spots":[4,1],"text":"*1.* Phone on the spot","vo":"One. Put your phone on the guide card spot."},
+{"type":"guide","dur":3.4,"actor":"batter","text":"*2.* Line up + record","vo":"Two. Line up with the guide, and hit record."},
+{"type":"slowmo","dur":3.6,"actor":"batter","good":true,"label":"Head still ✓","text":"*3.* Watch it back","vo":"Three. Watch it back in slow-mo, frame by frame."},
+{"type":"steps","dur":2.2,"pick":3,"text":"That's *it*.","items":["Phone on the spot","Line up + record","Watch it back"],"vo":"That's it."},
+{"type":"privacy","dur":3.0,"text":"And it stays *on your phone*","vo":"And your videos never leave your phone."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
