@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03 10:38 UTC",
+ "updated": "2026-10-03 12:38 UTC",
  "briefing": "Jarvis morning briefing, Sat 3 Oct. What the crew did since yesterday: - Buzz: 13 reels went out on Instagram in the last 24 hours, with no errors. - Forge: website QR code, the back of the guide card, and the app store text. - Ledger: HMRC check (nothing due yet), and worked out that the app stores take 15%. - Cog: pilot kit list and welcome sheet. Sol:...",
  "crew": [
   {
@@ -18,12 +18,12 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Design the back of the guide card (QR, Instagram handle, one-line tip)",
     "Write the App Store and Google Play description",
-    "Check the app store screenshot sizes Apple and Google need"
+    "Check the app store screenshot sizes Apple and Google need",
+    "Write the first-time setup screens for the app"
    ],
-   "open": 1,
-   "next": "Write the first-time setup screens for the app",
+   "open": 0,
+   "next": "",
    "latest": ""
   },
   {
@@ -85,8 +85,8 @@
     "Pack and post-ready list for sending a pilot kit",
     "Write the one-page welcome sheet that goes in the pilot kit"
    ],
-   "open": 2,
-   "next": "",
+   "open": 3,
+   "next": "Write a one-page net session checklist for coaches",
    "latest": ""
   },
   {
