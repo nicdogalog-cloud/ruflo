@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03 16:38 UTC",
+ "updated": "2026-10-03 18:39 UTC",
  "briefing": "Jarvis morning briefing, Sat 3 Oct. What the crew did since yesterday: - Buzz: 13 reels went out on Instagram in the last 24 hours, with no errors. - Forge: website QR code, the back of the guide card, and the app store text. - Ledger: HMRC check (nothing due yet), and worked out that the app stores take 15%. - Cog: pilot kit list and welcome sheet. Sol:...",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the App Store and Google Play description",
     "Check the app store screenshot sizes Apple and Google need",
-    "Write the first-time setup screens for the app"
+    "Write the first-time setup screens for the app",
+    "Draft the app store description"
    ],
-   "open": 0,
-   "next": "",
-   "latest": ""
+   "open": 1,
+   "next": "List the phone permissions the app will ask for and why",
+   "latest": "Store description drafted. Next: listing the phone permissions the app needs."
   },
   {
    "name": "Pixel",
@@ -32,7 +32,6 @@
    "status": "working",
    "job": "Helping Buzz with photos and clips",
    "done": [
-    "Post the first Crease Cam caption with a guide card photo",
     "Plan the 5 app store screenshots"
    ],
    "open": 2,
@@ -94,22 +93,20 @@
    "status": "working",
    "job": "Getting the Crease Cam site ready",
    "done": [
-    "Check the website files for anything missing before launch",
     "Write a short parent consent note for filming under-18s",
-    "Draft the Google Play data safety answers"
+    "Draft the Google Play data safety answers",
+    "Write a short FAQ for the Crease Cam website"
    ],
-   "open": 3,
-   "next": "Write a short FAQ for the Crease Cam website",
-   "latest": "Hi nic, sorry about the \"too many requests\" message earlier. Yes, everything's up to date: the website is live with the follow button, and the privacy and terms pages are written. The only gaps are the words in [square..."
+   "open": 2,
+   "next": "",
+   "latest": "FAQ for the website is drafted. Next up for me: the domain and privacy policy, both need nic."
   },
   {
    "name": "Buzz",
    "place": "Marketing",
    "status": "working",
    "job": "Posting 9 Crease Cam videos a day on Instagram",
-   "done": [
-    "Set bios, profile picture and banners from the social starter kit"
-   ],
+   "done": [],
    "open": 0,
    "next": "",
    "latest": "Buffer report, last 24 hours: 13 Crease Cam reels went out on Instagram, all sent with no errors. The first went out at 8:04am yesterday and the last at 8:35pm (the bowling line tip). Topics: watching your batting back,..."
