@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03 18:39 UTC",
+ "updated": "2026-10-03 20:37 UTC",
  "briefing": "Jarvis morning briefing, Sat 3 Oct. What the crew did since yesterday: - Buzz: 13 reels went out on Instagram in the last 24 hours, with no errors. - Forge: website QR code, the back of the guide card, and the app store text. - Ledger: HMRC check (nothing due yet), and worked out that the app stores take 15%. - Cog: pilot kit list and welcome sheet. Sol:...",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Check the app store screenshot sizes Apple and Google need",
     "Write the first-time setup screens for the app",
-    "Draft the app store description"
+    "Draft the app store description",
+    "List the phone permissions the app will ask for and why"
    ],
    "open": 1,
-   "next": "List the phone permissions the app will ask for and why",
-   "latest": "Store description drafted. Next: listing the phone permissions the app needs."
+   "next": "Write the plain-English permission messages shown to players",
+   "latest": "Permissions list done: camera and microphone, plus optional save to Photos. Next: the wording players see."
   },
   {
    "name": "Pixel",
@@ -56,7 +56,6 @@
    "status": "working",
    "job": "Finding clubs for the free pilot",
    "done": [
-    "List what clubs get and what we ask back in the free pilot",
     "Draft a follow-up email for clubs that don't reply to the pilot offer"
    ],
    "open": 3,
@@ -79,7 +78,6 @@
    "status": "working",
    "job": "Sorting kit for the nets",
    "done": [
-    "Pack and post-ready list for sending a pilot kit",
     "Write the one-page welcome sheet that goes in the pilot kit",
     "Write a one-page net session checklist for coaches"
    ],
@@ -119,7 +117,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Jarvis week review, Fri 2 Oct (Nova) This week: - Buzz posted Crease Cam reels on Instagram every day, now 9 a day through Buffer. - The website went live with a follow button. - The crew now runs itself every 2 hours,..."
+   "latest": ""
   }
  ],
  "waiting_on_nic": [
