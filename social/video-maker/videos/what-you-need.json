@@ -1,0 +1,8 @@
+{"id":"what-you-need","composition":"House","seed":137,"speed":1.08,"scenes":[
+{"type":"think","dur":3.0,"actor":"batter","label":"Do I need a fancy camera?","text":"Filming your *nets*?","vo":"Want to film your nets? Think you need a fancy camera?"},
+{"type":"steps","dur":3.2,"text":"All you *need*","items":["Your phone","The right spot","Crease Cam"],"vo":"Nope. All you need is three things."},
+{"type":"spots","dur":3.4,"spots":[2,3],"text":"On the *right spot*","vo":"Your phone, stood on the right spot."},
+{"type":"drill","dur":2.8,"pick":3,"text":"Pick a *drill*","vo":"Then pick a drill in Crease Cam."},
+{"type":"pricing","dur":3.2,"text":"*Free* to start","vo":"And it's free to start."},
+{"type":"steps","dur":2.4,"pick":3,"text":"That's *all*.","items":["Your phone","The right spot","Crease Cam"],"vo":"That's all."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

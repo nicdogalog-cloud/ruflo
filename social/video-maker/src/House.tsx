@@ -197,7 +197,12 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
             </> : <>
               <Stumps x={520} y={1030} h={250} color={OFF} />
               <Bowler x={250} y={1100} h={430} arm={0.1 + step * 0.07} color={OFF} width={16} />
-              <line x1={250 + 4 * 4.3} y1={1100 - 72 * 4.3} x2={250 + 4 * 4.3 + (good ? 180 : 140) * line} y2={1100 - 72 * 4.3 + (good ? -150 : 40) * line} stroke={col} strokeWidth={12} strokeLinecap="round" />
+              {s.fault === "follow" ? <>
+                {/* follow-through: dashed arc where the momentum should carry; red bar where it stops */}
+                <path d="M 400 1085 Q 500 930 620 1085" fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={10} strokeDasharray="20 14" opacity={line} />
+                {good && line > 0.9 && <path d="M 592 1050 L 622 1088 L 576 1092" fill="none" stroke={GREEN} strokeWidth={10} strokeLinecap="round" />}
+                {!good && line > 0.6 && <><line x1={430} y1={960} x2={430} y2={1110} stroke={RED} strokeWidth={16} strokeLinecap="round" /><circle cx={400} cy={1096} r={34 * line} fill="none" stroke={RED} strokeWidth={8} /></>}
+              </> : <line x1={250 + 4 * 4.3} y1={1100 - 72 * 4.3} x2={250 + 4 * 4.3 + (good ? 180 : 140) * line} y2={1100 - 72 * 4.3 + (good ? -150 : 40) * line} stroke={col} strokeWidth={12} strokeLinecap="round" />}
             </>}
           </svg>
           {tag && <div style={{ position: "absolute", left: 40, right: 40, top: bat ? 860 : 300, textAlign: "center" }}><span style={{ padding: "10px 24px", borderRadius: 18, background: good ? GREEN : RED, color: good ? NAVY : "white", fontFamily: FONT, fontWeight: 900, fontSize: 44 }}>{s.label}</span></div>}

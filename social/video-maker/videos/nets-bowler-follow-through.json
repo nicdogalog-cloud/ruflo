@@ -1,0 +1,8 @@
+{"id":"nets-bowler-follow-through","composition":"House","seed":131,"speed":1.08,"scenes":[
+{"type":"nets","dur":3.0,"actor":"bowler","outcome":"middle","text":"Bowling in the nets. Getting *smashed* 😩","vo":"Bowling in the nets, and getting smashed every ball."},
+{"type":"think","dur":2.4,"actor":"bowler","label":"Where's my pace gone?","vo":"Where's my pace gone?"},
+{"type":"guide","dur":3.2,"actor":"bowler","text":"Film it *side on*","vo":"Film it side on, from the guide spot."},
+{"type":"slowmo","dur":3.8,"actor":"bowler","fault":"follow","label":"Stops dead ✗","text":"Slow-mo shows *why*","vo":"Slow-mo shows it. You stop dead at the crease."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","fault":"follow","good":true,"label":"Carry through ✓","text":"Run *through* the ball","vo":"Run through the ball, and let it carry."},
+{"type":"nets","dur":2.8,"actor":"bowler","outcome":"beaten","text":"Next net. *Beaten.* 🔥","vo":"Next net, you beat the bat."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
