@@ -20,6 +20,8 @@ SAMPLE_RATE = 16000
 FRAME = 1280                 # 80 ms
 FRAME_SECONDS = FRAME / SAMPLE_RATE
 VOICE = "en-GB-RyanNeural"
+RATE = "-6%"      # a touch slower: calm and measured
+PITCH = "-4Hz"    # slightly deeper
 HINT = ("Jarvis, Crease Cam, Nova, Forge, Pixel, Atlas, Sol, Ledger, Cog, "
         "Wicket, Buzz, nets, Instagram.")
 
@@ -195,15 +197,17 @@ def say_sapi(text):
           "try{$s.SelectVoiceByHints('Male',"
           "[System.Speech.Synthesis.VoiceAge]::Adult,0,"
           "[Globalization.CultureInfo]'en-GB')}catch{};"
-          "$s.Rate=1;$s.Speak([Console]::In.ReadToEnd())")
+          "$s.Rate=0;$s.Speak([Console]::In.ReadToEnd())")
     subprocess.run(["powershell", "-NoProfile", "-Command", ps],
                    input=text.encode("utf-8"), timeout=120,
                    creationflags=0x08000000)  # no console window
 
 
 class Mouth:
-    def __init__(self, voice=VOICE, work_dir=None):
+    def __init__(self, voice=VOICE, work_dir=None, rate=RATE, pitch=PITCH):
         self.voice = voice
+        self.rate = rate
+        self.pitch = pitch
         self.work_dir = work_dir or tempfile.gettempdir()
         self.n = 0
 
@@ -211,7 +215,8 @@ class Mouth:
         import edge_tts
 
         async def go():
-            await edge_tts.Communicate(text, self.voice, rate="+4%").save(path)
+            await edge_tts.Communicate(text, self.voice, rate=self.rate,
+                                       pitch=self.pitch).save(path)
         asyncio.run(asyncio.wait_for(go(), timeout=12))
 
     def say(self, text, interrupt=None):

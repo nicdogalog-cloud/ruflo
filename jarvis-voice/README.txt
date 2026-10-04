@@ -26,7 +26,7 @@ What Jarvis can and can't do
 Settings: %LOCALAPPDATA%\HeyJarvis\config.json (open in Notepad)
 - "model": "haiku" keeps usage low; "sonnet" is smarter but uses more of your plan.
 - "allowed_tools" / "blocked_tools": extra tool names to allow or block (blocked always wins).
-- "barge_in", "barge_in_level", "end_silence", "voice". After editing, use Stop and start Hey Jarvis again.
+- "barge_in", "barge_in_level", "end_silence", "voice", "voice_rate" (how fast), "voice_pitch" (how deep). After editing, use Stop and start Hey Jarvis again.
 
 Tray menu (right-click the blue dot): Open Jarvis now, Pause listening, Quit Hey Jarvis.
 "Stop Hey Jarvis" stops it for now; "Uninstall Hey Jarvis" removes it completely.

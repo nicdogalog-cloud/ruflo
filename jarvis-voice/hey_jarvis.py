@@ -45,6 +45,8 @@ DEFAULT_CONFIG = {
     "omniroute_key": "",
     "models": ["oc/deepseek-v4-flash-free", "oc/mimo-v2.5-free", "oc/hy3-free"],
     "voice": "en-GB-RyanNeural",
+    "voice_rate": "-6%",
+    "voice_pitch": "-4Hz",
     "whisper_model": "base.en",
     "open_page_on_wake": True,
     "barge_in": True,
@@ -351,7 +353,9 @@ def make_talker(cfg, stop_event):
         from jarvis_voice import Ears, Mouth
         ears = Ears(cfg.get("whisper_model", "base.en"),
                     download_root=os.path.join(APP_DIR, "models"))
-        mouth = Mouth(cfg.get("voice", "en-GB-RyanNeural"), APP_DIR)
+        mouth = Mouth(cfg.get("voice", "en-GB-RyanNeural"), APP_DIR,
+                      rate=cfg.get("voice_rate", "-6%"),
+                      pitch=cfg.get("voice_pitch", "-4Hz"))
         convo = Conversation(make_brain(cfg),
                              Status(os.path.join(APP_DIR, "status_cache.json")))
     except Exception as e:
