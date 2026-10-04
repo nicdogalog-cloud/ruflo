@@ -1,0 +1,8 @@
+{"id":"nets-batter-bat-path","composition":"House","seed":149,"speed":1.08,"scenes":[
+{"type":"think","dur":3.0,"actor":"batter","label":"Why do I keep getting bowled?","text":"Bowled. *Again.* 😩","vo":"Bowled, again. Why does it keep happening?"},
+{"type":"nets","dur":2.6,"actor":"batter","outcome":"beaten","text":"Through the *gate*","vo":"It keeps sneaking through the gate."},
+{"type":"guide","dur":3.2,"actor":"batter","text":"Film it from the *guide spot*","vo":"Film your next net from the guide spot."},
+{"type":"slowmo","dur":3.8,"actor":"batter","fault":"bat","label":"Bat comes across","text":"Slow-mo shows the *gap*","vo":"Slow-mo shows it. Your bat's coming across the line."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"bat","good":true,"label":"Straight bat ✓","text":"Bring it down *straight*","vo":"Bring the bat down straight."},
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"middle","text":"Gate *shut.* 🔒","vo":"Gate shut. Right off the middle."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

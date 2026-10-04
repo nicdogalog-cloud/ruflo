@@ -1,0 +1,8 @@
+{"id":"batting-or-bowling","composition":"House","seed":139,"speed":1.08,"scenes":[
+{"type":"drill","dur":3.0,"pick":4,"text":"Batter or bowler? *Both.* 🏏","vo":"Batter or bowler? Crease Cam has drills for both."},
+{"type":"guide","dur":3.4,"actor":"batter","text":"Batting: film *side on*","vo":"Batting? Film side on, to check your head and feet."},
+{"type":"guide","dur":3.4,"actor":"bowler","text":"Bowling: *side or front*","vo":"Bowling? Film side on for your action, front on for your line."},
+{"type":"spots","dur":3.2,"text":"4 spots. *4 drills.*","vo":"Four guide spots, one for every drill."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","good":true,"label":"Arm high ✓","text":"Watch it in *slow-mo*","vo":"Then watch every ball back in slow-mo."},
+{"type":"privacy","dur":2.8,"text":"Private. *Always.*","vo":"And it all stays on your phone."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

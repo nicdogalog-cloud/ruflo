@@ -184,7 +184,11 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
             {bat ? <>
               <Stumps x={560} y={1060} h={250} color={OFF} />
               <Batter x={x} y={y} h={460} swing={0.15 + step * 0.06} lean={lean} color={OFF} width={16} />
-              {foot ? <>
+              {s.fault === "bat" ? <>
+                {/* bat path: loops across the line (fault) vs comes down straight (fix) */}
+                <path d={good ? "M 330 650 L 330 1120" : "M 480 640 Q 620 920 330 1120"} fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={10} strokeDasharray="20 14" opacity={line} />
+                <circle cx={330} cy={1110} r={36 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              </> : foot ? <>
                 {/* where the front foot should land vs where it did */}
                 <ellipse cx={good ? footX : footX - 150} cy={y + 6} rx={70 * line} ry={26 * line} fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={8} strokeDasharray="16 10" />
                 {!good && line > 0.6 && <path d={`M ${footX - 10} ${y - 60} L ${footX - 130} ${y - 60} M ${footX - 105} ${y - 80} L ${footX - 132} ${y - 60} L ${footX - 105} ${y - 40}`} stroke={RED} strokeWidth={10} fill="none" strokeLinecap="round" />}
@@ -246,7 +250,7 @@ const TracksScene: React.FC<{ s: HScene }> = ({ s }) => {
 };
 
 // Top-down lane with the 4 guide-card phone spots popping in
-const SPOTS: Record<number, [number, number, string]> = { 1: [260, 520, "Bowling side"], 2: [540, 1560, "Bowling front"], 3: [540, 380, "Batting front"], 4: [820, 1400, "Batting side"] };
+const SPOTS: Record<number, [number, number, string]> = { 1: [260, 520, "Bowling side"], 2: [540, 1560, "Bowling front"], 3: [540, 380, "Batting front"], 4: [820, 1300, "Batting side"] };
 const SpotsScene: React.FC<{ s: HScene }> = ({ s }) => {
   const f = useCurrentFrame();
   const list = s.spots ?? [1, 2, 3, 4];
