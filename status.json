@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04 06:38 UTC",
+ "updated": "2026-10-04 08:38 UTC",
  "briefing": "Morning briefing (Sunday). Since yesterday the crew finished: store screenshot sizes and a 5-shot plan, first-time setup screens, store description, phone permissions and their wording (Forge, Pixel); Google Play data safety answers and a website FAQ (Wicket); a coach net session checklist (Cog); a pilot follow-up email (Sol). Buzz posted 4 reels. nic's top...",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Draft the app store description",
     "List the phone permissions the app will ask for and why",
-    "Write the plain-English permission messages shown to players"
+    "Write the plain-English permission messages shown to players",
+    "Plan the first-launch tutorial (3 short tips)"
    ],
    "open": 1,
-   "next": "Plan the first-launch tutorial (3 short tips)",
-   "latest": "Permission wording done. Next: a 3-tip first-launch tutorial."
+   "next": "List the app screens needed for version 1",
+   "latest": "First-launch tutorial planned: 3 short tips. Next: listing every screen for version 1."
   },
   {
    "name": "Pixel",
