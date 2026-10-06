@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06 18:40 UTC",
+ "updated": "2026-10-06 20:38 UTC",
  "briefing": "Briefing (Tue): the crew caught up on Monday jobs. Forge wrote the app error messages, Atlas and Ledger logged the week (views up from 474 to 1,567), Wicket checked the site. Buzz has posted nothing since Sunday morning. nic's top 3: 1) pick a launch date and price, 2) restart Buzz's videos, 3) fill in the privacy page blanks.",
  "crew": [
   {
@@ -18,11 +18,12 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the messages the app shows when something goes wrong"
+    "Write the messages the app shows when something goes wrong",
+    "Write the App Store screenshot captions"
    ],
    "open": 1,
-   "next": "Write the App Store screenshot captions",
-   "latest": "Error messages done. Next: App Store screenshot captions."
+   "next": "Write the App Store description (first 3 lines)",
+   "latest": "Screenshot captions done. Next: the App Store description."
   },
   {
    "name": "Pixel",
@@ -72,10 +73,12 @@
    "place": "Depot",
    "status": "working",
    "job": "Sorting kit for the nets",
-   "done": [],
-   "open": 3,
-   "next": "Write a one-page guide for clamping a phone to a net frame",
-   "latest": "Waiting on nic for clamps and the card quote. Added a clamp guide task I can do myself."
+   "done": [
+    "Write a one-page guide for clamping a phone to a net frame"
+   ],
+   "open": 2,
+   "next": "",
+   "latest": "Clamp guide done. Still waiting on nic for clamps and the card quote."
   },
   {
    "name": "Wicket",
