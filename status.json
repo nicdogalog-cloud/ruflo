@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-04 14:38 UTC",
- "briefing": "Morning briefing (Sunday). Since yesterday the crew finished: store screenshot sizes and a 5-shot plan, first-time setup screens, store description, phone permissions and their wording (Forge, Pixel); Google Play data safety answers and a website FAQ (Wicket); a coach net session checklist (Cog); a pilot follow-up email (Sol). Buzz posted 4 reels. nic's top...",
+ "updated": "2026-10-06 18:40 UTC",
+ "briefing": "Briefing (Tue): the crew caught up on Monday jobs. Forge wrote the app error messages, Atlas and Ledger logged the week (views up from 474 to 1,567), Wicket checked the site. Buzz has posted nothing since Sunday morning. nic's top 3: 1) pick a launch date and price, 2) restart Buzz's videos, 3) fill in the privacy page blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -18,13 +18,11 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "List the app screens needed for version 1",
-    "Sketch a simple wireframe for each version 1 screen",
-    "Write the on-screen words for each version 1 screen"
+    "Write the messages the app shows when something goes wrong"
    ],
    "open": 1,
-   "next": "Write the messages the app shows when something goes wrong",
-   "latest": "On-screen words for all 8 screens are written. Next I'm writing the error messages."
+   "next": "Write the App Store screenshot captions",
+   "latest": "Error messages done. Next: App Store screenshot captions."
   },
   {
    "name": "Pixel",
@@ -41,19 +39,20 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [],
+   "done": [
+    "Track Crease Cam Instagram views each week",
+    "Monday competitor check"
+   ],
    "open": 2,
-   "next": "Track Crease Cam Instagram views each week",
-   "latest": ""
+   "next": "Track Crease Cam Instagram views each week (next Monday)",
+   "latest": "Views tripled this week. Watch time is still short, so hooks need to land in the first second."
   },
   {
    "name": "Sol",
    "place": "Storefront",
    "status": "working",
    "job": "Finding clubs for the free pilot",
-   "done": [
-    "Draft a follow-up email for clubs that don't reply to the pilot offer"
-   ],
+   "done": [],
    "open": 3,
    "next": "",
    "latest": ""
@@ -74,9 +73,9 @@
    "status": "working",
    "job": "Sorting kit for the nets",
    "done": [],
-   "open": 2,
-   "next": "",
-   "latest": ""
+   "open": 3,
+   "next": "Write a one-page guide for clamping a phone to a net frame",
+   "latest": "Waiting on nic for clamps and the card quote. Added a clamp guide task I can do myself."
   },
   {
    "name": "Wicket",
@@ -84,11 +83,11 @@
    "status": "working",
    "job": "Getting the Crease Cam site ready",
    "done": [
-    "Write a short FAQ for the Crease Cam website"
+    "Monday website check"
    ],
    "open": 2,
    "next": "",
-   "latest": "FAQ for the website is drafted. Next up for me: the domain and privacy policy, both need nic."
+   "latest": "Website looks fine. Privacy and terms still need nic's details."
   },
   {
    "name": "Buzz",
@@ -98,7 +97,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Buffer report (last 24h): 4 Instagram reels posted, no errors. Topics: 3 steps to film your nets, short front-foot stride, bowler stopping at the crease, and what you need (just your phone)."
+   "latest": "No posts have gone out since Sunday 11am UK. My video routine looks stopped."
   },
   {
    "name": "Meeting Hall",
