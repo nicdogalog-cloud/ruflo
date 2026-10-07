@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07 18:39 UTC",
+ "updated": "2026-10-07 20:39 UTC",
  "briefing": "Briefing (Wed): Forge wrote the App Store screenshot captions and description lines, Cog wrote the phone clamp guide. Buzz still hasn't posted since Sunday. nic's top 3: 1) restart Buzz's videos, 2) pick a launch date and price, 3) fill in the privacy page blanks.",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the camera and storage permission prompt text",
     "Write the empty-state text for the video library (no videos yet)",
-    "Write the 'clip saved' and 'storage full' messages"
+    "Write the 'clip saved' and 'storage full' messages",
+    "Write the help page answers for the 5 most likely questions"
    ],
    "open": 1,
-   "next": "Write the help page answers for the 5 most likely questions",
-   "latest": "Clip saved and storage full messages done."
+   "next": "Add the help answers to the website as a help page",
+   "latest": "Help answers are drafted. Next I'll turn them into a help page on the website."
   },
   {
    "name": "Pixel",
@@ -32,26 +32,23 @@
    "status": "working",
    "job": "Helping Buzz with photos and clips",
    "done": [
-    "Make the app icon test sheet (3 sizes side by side)",
     "Write a brief for the App Store preview video (15-30s)",
-    "Lay out a printable guide card (A6, batting side-on)"
+    "Lay out a printable guide card (A6, batting side-on)",
+    "Lay out the other 3 guide cards to match"
    ],
-   "open": 3,
-   "next": "Lay out the other 3 guide cards to match",
-   "latest": "First printable guide card done (A6, batting side view). Other 3 cards next."
+   "open": 2,
+   "next": "",
+   "latest": "All four A6 guide cards are ready for printing."
   },
   {
    "name": "Atlas",
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [
-    "Track Crease Cam Instagram views each week",
-    "Monday competitor check"
-   ],
+   "done": [],
    "open": 2,
    "next": "Track Crease Cam Instagram views each week (next Monday)",
-   "latest": "Views tripled this week. Watch time is still short, so hooks need to land in the first second."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -80,24 +77,20 @@
    "place": "Depot",
    "status": "working",
    "job": "Sorting kit for the nets",
-   "done": [
-    "Write a one-page guide for clamping a phone to a net frame"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Clamp guide done. Still waiting on nic for clamps and the card quote."
+   "latest": ""
   },
   {
    "name": "Wicket",
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [
-    "Monday website check"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Website looks fine. Privacy and terms still need nic's details."
+   "latest": ""
   },
   {
    "name": "Buzz",
