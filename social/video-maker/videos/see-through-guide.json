@@ -1,0 +1,8 @@
+{"id":"see-through-guide","composition":"House","seed":169,"speed":1.08,"scenes":[
+{"type":"think","dur":2.6,"actor":"batter","label":"Where do I stand?","text":"The *guide* does it 📱","vo":"Where do I even stand? The guide does it for you."},
+{"type":"drill","dur":3.2,"pick":4,"text":"1. Pick your *drill*","vo":"Pick your drill."},
+{"type":"spots","dur":3.6,"spots":[4],"text":"2. Phone on the *spot*","vo":"The card shows exactly where the phone goes."},
+{"type":"guide","dur":3.8,"actor":"batter","text":"3. Step into the *outline*","vo":"A see-through outline appears. Step into it and you are lined up."},
+{"type":"slowmo","dur":3.4,"actor":"batter","fault":"bat","label":"Same angle, every net ✓","good":true,"text":"Same angle *every time*","vo":"Same angle every net, so you can actually compare."},
+{"type":"pricing","dur":2.8,"text":"*Free* to start","vo":"Free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

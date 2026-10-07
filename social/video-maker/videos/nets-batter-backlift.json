@@ -1,0 +1,8 @@
+{"id":"nets-batter-backlift","composition":"House","seed":163,"speed":1.08,"scenes":[
+{"type":"nets","dur":3.0,"actor":"batter","outcome":"beaten","text":"Always *late* on it 😩","vo":"Every ball, late. Beaten for pace."},
+{"type":"think","dur":2.4,"actor":"batter","label":"Why am I so late?","vo":"Why am I always so late?"},
+{"type":"guide","dur":3.0,"actor":"batter","text":"Film from the *side spot*","vo":"Film one net from the batting side spot."},
+{"type":"slowmo","dur":3.8,"actor":"batter","fault":"backlift","label":"Bat still down ✗","text":"Your *backlift* is late","vo":"There it is. Your bat is still down when the ball is released."},
+{"type":"slowmo","dur":3.4,"actor":"batter","fault":"backlift","good":true,"label":"Bat up early ✓","text":"Get it *up early*","vo":"Lift it as the bowler loads up."},
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"middle","text":"Early. *Middled.* 🔥","vo":"Ready early. Straight back past him."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

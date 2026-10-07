@@ -183,8 +183,13 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
             <polygon points="260,700 430,700 620,1470 70,1470" fill="#c9b27a" opacity={0.55} />
             {bat ? <>
               <Stumps x={560} y={1060} h={250} color={OFF} />
-              <Batter x={x} y={y} h={460} swing={0.15 + step * 0.06} lean={lean} color={OFF} width={16} />
-              {s.fault === "bat" ? <>
+              <Batter x={x} y={y} h={460} swing={s.fault === "backlift" ? (good ? 0 : 0.35) : 0.15 + step * 0.06} lean={lean} color={OFF} width={16} />
+              {s.fault === "backlift" ? <>
+                {/* backlift: bat starts down by the pads (fault) vs up high, ready early (fix) */}
+                <path d="M 475 1026 Q 560 840 433 708" fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={10} strokeDasharray="20 14" opacity={line} />
+                {!good && line > 0.9 && <path d="M 410 735 L 433 706 L 460 732" fill="none" stroke={YELLOW} strokeWidth={10} strokeLinecap="round" />}
+                <circle cx={good ? 433 : 475} cy={good ? 708 : 1026} r={40 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              </> : s.fault === "bat" ? <>
                 {/* bat path: loops across the line (fault) vs comes down straight (fix) */}
                 <path d={good ? "M 330 650 L 330 1120" : "M 480 640 Q 620 920 330 1120"} fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={10} strokeDasharray="20 14" opacity={line} />
                 <circle cx={330} cy={1110} r={36 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
