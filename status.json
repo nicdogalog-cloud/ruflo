@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07 16:39 UTC",
+ "updated": "2026-10-07 17:53 UTC",
  "briefing": "Briefing (Wed): Forge wrote the App Store screenshot captions and description lines, Cog wrote the phone clamp guide. Buzz still hasn't posted since Sunday. nic's top 3: 1) restart Buzz's videos, 2) pick a launch date and price, 3) fill in the privacy page blanks.",
  "crew": [
   {
@@ -58,10 +58,12 @@
    "place": "Storefront",
    "status": "working",
    "job": "Finding clubs for the free pilot",
-   "done": [],
-   "open": 3,
+   "done": [
+    "Find 10 cricket clubs near nic to offer the pilot to"
+   ],
+   "open": 2,
    "next": "",
-   "latest": ""
+   "latest": "Found 10 clubs around Alton for the pilot. Alton CC first: closest, biggest, and runs junior teams. The pilot offer still needs nic to send it."
   },
   {
    "name": "Ledger",
@@ -155,9 +157,9 @@
    "step": "Open Gmail drafts, put in the club's name and email, and press send."
   },
   {
-   "crew": "Sol",
-   "task": "Find 10 cricket clubs near nic to offer the pilot to",
-   "step": "Tell Sol your town or postcode area so it can find clubs near you."
+   "crew": "Cog",
+   "task": "Buy and test 2-3 phone clamps on a net frame",
+   "step": "Buy 2 to try. Jarvis can't buy things."
   }
  ]
 }
