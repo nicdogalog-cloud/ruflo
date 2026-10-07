@@ -1,0 +1,8 @@
+{"id":"nets-bowler-no-ball","composition":"House","seed":151,"speed":1.08,"scenes":[
+{"type":"nets","dur":3.0,"actor":"bowler","outcome":"beaten","text":"Beat the bat... *NO BALL* 😩","vo":"Beat the bat, and it's a no ball. Again."},
+{"type":"think","dur":2.4,"actor":"bowler","label":"Am I over the line?","vo":"Am I really over the line?"},
+{"type":"guide","dur":3.0,"actor":"bowler","text":"Film from the *guide spot*","vo":"Film your run up from the guide spot."},
+{"type":"slowmo","dur":3.8,"actor":"bowler","fault":"noball","label":"Front foot over ✗","text":"Slow-mo *settles it*","vo":"Slow-mo settles it. Your front foot's over."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","fault":"noball","good":true,"label":"Behind the line ✓","text":"Start *a step back*","vo":"Start your run up one step back."},
+{"type":"nets","dur":2.8,"actor":"bowler","outcome":"beaten","text":"Legal. *Beaten.* 🔥","vo":"Legal ball. Beat the bat."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

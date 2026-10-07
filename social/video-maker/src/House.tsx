@@ -201,7 +201,11 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
             </> : <>
               <Stumps x={520} y={1030} h={250} color={OFF} />
               <Bowler x={250} y={1100} h={430} arm={0.1 + step * 0.07} color={OFF} width={16} />
-              {s.fault === "follow" ? <>
+              {s.fault === "noball" ? <>
+                {/* popping crease: front foot lands over it (fault) or behind it (fix) */}
+                <line x1={good ? 440 : 370} y1={1050} x2={good ? 420 : 350} y2={1150} stroke="white" strokeWidth={10} strokeLinecap="round" opacity={0.4 + 0.6 * line} />
+                <circle cx={396} cy={1096} r={36 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              </> : s.fault === "follow" ? <>
                 {/* follow-through: dashed arc where the momentum should carry; red bar where it stops */}
                 <path d="M 400 1085 Q 500 930 620 1085" fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={10} strokeDasharray="20 14" opacity={line} />
                 {good && line > 0.9 && <path d="M 592 1050 L 622 1088 L 576 1092" fill="none" stroke={GREEN} strokeWidth={10} strokeLinecap="round" />}

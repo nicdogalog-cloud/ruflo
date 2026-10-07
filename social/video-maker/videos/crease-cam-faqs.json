@@ -1,0 +1,8 @@
+{"id":"crease-cam-faqs","composition":"House","seed":157,"speed":1.08,"scenes":[
+{"type":"think","dur":3.2,"actor":"batter","label":"Is it free?","text":"Crease Cam *FAQs* 🤔","vo":"Your Crease Cam questions, answered. Is it free?"},
+{"type":"pricing","dur":3.0,"text":"*Yes.* Free to start","vo":"Yes. It's free to start."},
+{"type":"think","dur":2.6,"actor":"bowler","label":"Do my videos get uploaded?","text":"Question *2*","vo":"Do my videos get uploaded?"},
+{"type":"privacy","dur":3.0,"text":"*No.* They stay on your phone","vo":"No. They stay on your phone."},
+{"type":"think","dur":2.6,"actor":"batter","label":"Do I need a coach?","text":"Question *3*","vo":"Do I need a coach to film me?"},
+{"type":"guide","dur":3.4,"actor":"batter","text":"*No.* The guide lines you up","vo":"No. The guide lines you up, all on your own."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
