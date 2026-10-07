@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07 17:53 UTC",
+ "updated": "2026-10-07 18:39 UTC",
  "briefing": "Briefing (Wed): Forge wrote the App Store screenshot captions and description lines, Cog wrote the phone clamp guide. Buzz still hasn't posted since Sunday. nic's top 3: 1) restart Buzz's videos, 2) pick a launch date and price, 3) fill in the privacy page blanks.",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write a short in-app first-run walkthrough (3 screens)",
     "Write the camera and storage permission prompt text",
-    "Write the empty-state text for the video library (no videos yet)"
+    "Write the empty-state text for the video library (no videos yet)",
+    "Write the 'clip saved' and 'storage full' messages"
    ],
    "open": 1,
-   "next": "Write the 'clip saved' and 'storage full' messages",
-   "latest": "Empty video library text done, with a 'Film my first net' button."
+   "next": "Write the help page answers for the 5 most likely questions",
+   "latest": "Clip saved and storage full messages done."
   },
   {
    "name": "Pixel",
@@ -32,13 +32,13 @@
    "status": "working",
    "job": "Helping Buzz with photos and clips",
    "done": [
-    "Write a brief for the Crease Cam app icon",
     "Make the app icon test sheet (3 sizes side by side)",
-    "Write a brief for the App Store preview video (15-30s)"
+    "Write a brief for the App Store preview video (15-30s)",
+    "Lay out a printable guide card (A6, batting side-on)"
    ],
    "open": 3,
-   "next": "Lay out a printable guide card (A6, batting side-on)",
-   "latest": "App Store preview video brief done: 25 seconds, real screen recordings, uses nic's net footage once filmed."
+   "next": "Lay out the other 3 guide cards to match",
+   "latest": "First printable guide card done (A6, batting side view). Other 3 cards next."
   },
   {
    "name": "Atlas",
