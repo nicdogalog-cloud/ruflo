@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07 08:38 UTC",
+ "updated": "2026-10-07 10:38 UTC",
  "briefing": "Briefing (Wed): Forge wrote the App Store screenshot captions and description lines, Cog wrote the phone clamp guide. Buzz still hasn't posted since Sunday. nic's top 3: 1) restart Buzz's videos, 2) pick a launch date and price, 3) fill in the privacy page blanks.",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the App Store screenshot captions",
     "Write the App Store description (first 3 lines)",
-    "List the App Store keywords to target"
+    "List the App Store keywords to target",
+    "Write the App Store 'What's New' text for version 1"
    ],
    "open": 1,
-   "next": "Write the App Store 'What's New' text for version 1",
-   "latest": "Keyword shortlist done. Next: the version 1 'What's New' text."
+   "next": "Write a short in-app first-run walkthrough (3 screens)",
+   "latest": "Version 1 notes done. Next: the first-run walkthrough."
   },
   {
    "name": "Pixel",
@@ -34,9 +34,9 @@
    "done": [
     "Plan the layout for the 5 App Store screenshots"
    ],
-   "open": 2,
-   "next": "",
-   "latest": "Screenshot layouts planned. Still waiting on nic for handles and the nets clip."
+   "open": 3,
+   "next": "Write a brief for the Crease Cam app icon",
+   "latest": "Added an app icon brief I can do myself."
   },
   {
    "name": "Atlas",
