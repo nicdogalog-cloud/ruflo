@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08 06:39 UTC",
+ "updated": "2026-10-08 08:38 UTC",
  "briefing": "Morning briefing. Since yesterday: Sol made the Alton pilot club list, Pixel finished all 4 A6 guide cards, Forge wrote the help answers and built a help page, and Buzz posted 4 reels. nic's top 3: 1) say yes or no to the club licence price, 2) send the Alton CC pilot email (draft is in Gmail), 3) book a net session to test with 5-10 players.",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the 'clip saved' and 'storage full' messages",
     "Write the help page answers for the 5 most likely questions",
-    "Add the help answers to the website as a help page"
+    "Add the help answers to the website as a help page",
+    "Add the 4 guide cards to the help page"
    ],
    "open": 1,
-   "next": "Add the 4 guide cards to the help page",
-   "latest": "The help page is built and linked from the footer."
+   "next": "Check the website and help page look right on a phone screen",
+   "latest": "The help page now shows all 4 guide cards."
   },
   {
    "name": "Pixel",
