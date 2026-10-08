@@ -1,0 +1,8 @@
+{"id":"four-guide-spots","composition":"House","seed":183,"speed":1.08,"scenes":[
+{"type":"spots","dur":3.0,"text":"*4 spots*. That's it.","vo":"Four spots at the nets. That's all you need."},
+{"type":"spots","dur":3.0,"spots":[1,2],"text":"Bowlers: *2 spots*","vo":"Bowling? Film from the side, or straight behind."},
+{"type":"spots","dur":3.0,"spots":[3,4],"text":"Batters: *2 spots*","vo":"Batting? Front on, or side on."},
+{"type":"guide","dur":3.2,"actor":"bowler","text":"Each spot has a *guide card*","vo":"Each spot has a guide card, so the phone goes in the right place."},
+{"type":"slowmo","dur":3.6,"actor":"batter","good":true,"label":"Same angle ✓","text":"*Same view* always","vo":"Same angle every net, so you can compare."},
+{"type":"pricing","dur":2.8,"text":"*Free* to start","vo":"And it's free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

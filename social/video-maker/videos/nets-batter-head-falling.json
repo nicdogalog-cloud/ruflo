@@ -1,0 +1,9 @@
+{"id":"nets-batter-head-falling","composition":"House","seed":181,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"edge","text":"Nicked it *again* 😤","vo":"Nicked it again. Every net, same thing."},
+{"type":"think","dur":2.4,"actor":"batter","label":"Why do I keep edging?","vo":"Why do I keep edging these?"},
+{"type":"drill","dur":2.4,"pick":3,"text":"Pick *batting front on*","vo":"Pick batting, front on."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"*Front spot*. Record.","vo":"Phone on the front spot. Have a hit."},
+{"type":"slowmo","dur":3.6,"actor":"batter","label":"Head falling over ✗","text":"Your *head* falls over","vo":"Slow-mo shows it. Your head falls over to the off side."},
+{"type":"slowmo","dur":3.2,"actor":"batter","good":true,"label":"Head over the ball ✓","text":"Keep it *still*","vo":"Keep it still, right over the ball."},
+{"type":"nets","dur":2.6,"actor":"batter","outcome":"middle","text":"Next net: *middled*","vo":"Next net, middle of the bat."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
