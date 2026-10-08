@@ -1,0 +1,8 @@
+{"id":"nets-bowler-run-up","composition":"House","seed":179,"speed":1.08,"scenes":[
+{"type":"nets","dur":3.0,"actor":"bowler","outcome":"middle","text":"Every ball *different* 😩","vo":"Every ball comes out different. Then it gets smashed."},
+{"type":"tracks","dur":2.8,"text":"All over the *place*","vo":"Short, full, wide. All over the place."},
+{"type":"guide","dur":3.0,"actor":"bowler","text":"Film from the *side spot*","vo":"Film your run-up from the bowling side spot."},
+{"type":"slowmo","dur":3.8,"actor":"bowler","fault":"runup","label":"Stuttering run-up ✗","text":"Your *run-up* stutters","vo":"There it is. Your run-up stutters and wanders."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","fault":"runup","good":true,"label":"Same steps every ball ✓","text":"Mark it. *Same every time*","vo":"Mark it out. Same steps, every ball."},
+{"type":"tracks","dur":2.8,"good":true,"text":"Now it's *on the spot* 🎯","vo":"Now it lands on the spot."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

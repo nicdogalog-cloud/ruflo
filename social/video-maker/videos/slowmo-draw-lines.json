@@ -1,0 +1,8 @@
+{"id":"slowmo-draw-lines","composition":"House","seed":173,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"edge","text":"Felt *fine*. Wasn't. 🤔","vo":"It felt fine in the net. It wasn't."},
+{"type":"slowmo","dur":3.8,"actor":"batter","label":"Head falling over ✗","text":"Slow it down to *0.25×*","vo":"Slow it right down, frame by frame."},
+{"type":"steps","dur":3.4,"text":"Then *draw on it*","items":["Line from your foot","Circle your head","Spot the gap"],"vo":"Then draw on it. A line from your front foot. A circle round your head."},
+{"type":"slowmo","dur":3.6,"actor":"batter","good":true,"label":"Head over the ball ✓","text":"Now you can *see it*","vo":"Now you can see it, and fix it next net."},
+{"type":"privacy","dur":3.0,"text":"All *on your phone*","vo":"All on your phone. Nothing uploaded."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"Free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
