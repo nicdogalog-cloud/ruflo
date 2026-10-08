@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08 12:38 UTC",
+ "updated": "2026-10-08 14:39 UTC",
  "briefing": "Morning briefing. Since yesterday: Sol made the Alton pilot club list, Pixel finished all 4 A6 guide cards, Forge wrote the help answers and built a help page, and Buzz posted 4 reels. nic's top 3: 1) say yes or no to the club licence price, 2) send the Alton CC pilot email (draft is in Gmail), 3) book a net session to test with 5-10 players.",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Add the 4 guide cards to the help page",
     "Check the website and help page look right on a phone screen",
-    "Draft the App Store and Google Play description"
+    "Draft the App Store and Google Play description",
+    "Plan the 5 app store screenshots and their captions"
    ],
    "open": 1,
-   "next": "Plan the 5 app store screenshots and their captions",
-   "latest": "The app store listing is drafted. Next up: planning the store screenshots."
+   "next": "Write the app's first-run steps (welcome, pick batting or bowling, first guide card)",
+   "latest": "Screenshot plan done. Next: the app's first-run steps."
   },
   {
    "name": "Pixel",
