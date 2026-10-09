@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09 16:38 UTC",
+ "updated": "2026-10-09 18:39 UTC",
  "briefing": "Morning briefing, Fri 9 Oct. Yesterday Forge finished the app store screenshot plan, first-run steps, error messages, settings screen and a one-page app spec. Buzz posted 4 reels. Everyone else is waiting on nic. Your top 3: 1) pick a date for a net session test, 2) yes or no to the club licence price, 3) send the Alton CC pilot email (draft is in Gmail).",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write a one-page 'how the app keeps videos private' note for parents (from the website...",
     "Turn the parents note into a printable A5 handout for club noticeboards (same words, logo...",
-    "Write a short 'how to use the guide cards' sheet for coaches running junior nets (website..."
+    "Write a short 'how to use the guide cards' sheet for coaches running junior nets (website...",
+    "Make an A5 print version of the coaches sheet to go with the parents handout"
    ],
    "open": 2,
-   "next": "Make an A5 print version of the coaches sheet to go with the parents handout",
-   "latest": "Coaches guide card sheet done; pairs with the parents handout."
+   "next": "Make a one-page net-session plan for the test session (what to film, who, which card)",
+   "latest": "Coaches A5 sheet done to pair with the parents note. Next: a simple plan for the test net session."
   },
   {
    "name": "Pixel",
@@ -104,7 +104,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": ""
+   "latest": "Nova's week review (Fri 9 Oct). Done this week: Forge wrote the app-store pack (spec, store listing, screenshots plan, first-run and settings screens), a developer brief, a test checklist, help answers, a parents note,..."
   }
  ],
  "waiting_on_nic": [
