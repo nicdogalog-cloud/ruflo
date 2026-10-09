@@ -1,0 +1,9 @@
+{"id":"picking-a-drill","composition":"House","seed":191,"speed":1.08,"scenes":[
+{"type":"think","dur":2.4,"actor":"batter","label":"Front? Side? Behind?","text":"*Phone* where? 🤔","vo":"Where do you even put your phone?"},
+{"type":"drill","dur":2.8,"pick":1,"text":"Bowling: *side*","vo":"Bowler? Pick bowling, side view."},
+{"type":"drill","dur":2.8,"pick":3,"text":"Batting: *front*","vo":"Batter? Try batting, front view."},
+{"type":"spots","dur":3.0,"spots":[3],"text":"It shows *the spot*","vo":"Each drill shows you the exact spot."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"Line up. *Record.*","vo":"Line up with the guide, and record."},
+{"type":"slowmo","dur":3.2,"actor":"batter","good":true,"label":"Head still ✓","text":"Then *slow-mo* it","vo":"Then watch it back in slow-mo."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"Free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

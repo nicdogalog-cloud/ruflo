@@ -1,0 +1,8 @@
+{"id":"nets-keeper-gloves","composition":"House","seed":189,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"edge","text":"Edged... *dropped* 😩","vo":"Edged it. And dropped it. Again."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"Film your *keeping*","vo":"Film your keeping from the side spot."},
+{"type":"slowmo","dur":3.8,"actor":"keeper","fault":"gloves","label":"Up too early ✗","text":"*Up* too soon","vo":"Slow-mo shows it. You stand up before the ball arrives."},
+{"type":"steps","dur":3.2,"text":"*Slow it down*","items":["Watch your gloves","Stay low","Rise with the ball"],"vo":"Watch your gloves. Stay low. Rise with the ball."},
+{"type":"slowmo","dur":3.2,"actor":"keeper","fault":"gloves","good":true,"label":"Stay low ✓","text":"Stay *low*","vo":"Stay down, and let it come to you."},
+{"type":"nets","dur":2.6,"actor":"batter","outcome":"beaten","text":"*Clean takes* 🧤","vo":"Next net, clean takes."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

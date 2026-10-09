@@ -7,7 +7,7 @@ import { NAVY, YELLOW, OFF, GREEN, RED, TURF, FONT, useSp, Caption, Sub, Logo, W
 export type HScene = {
   type: "logo" | "nets" | "think" | "drill" | "guide" | "slowmo" | "tracks" | "spots" | "privacy" | "pricing" | "end" | "steps";
   dur: number; vo?: string;
-  text?: string; sub?: string; actor?: "batter" | "bowler"; outcome?: "edge" | "middle" | "beaten";
+  text?: string; sub?: string; actor?: "batter" | "bowler" | "keeper"; outcome?: "edge" | "middle" | "beaten";
   pick?: number; label?: string; items?: string[]; fault?: string; good?: boolean; spots?: number[]; drill?: string;
 };
 export type HouseSpec = { id: string; audio?: string; scenes: HScene[] };
@@ -166,7 +166,8 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
   const step = Math.min(6, Math.floor(f / 8));
   const line = interpolate(f, [30, 54], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const tag = f > 56;
-  const bat = s.actor !== "bowler";
+  const keeper = s.actor === "keeper";
+  const bat = s.actor !== "bowler" && !keeper;
   const good = !!s.good;
   const col = good ? GREEN : YELLOW;
   const k = 4.6, x = 360, y = 1150;
@@ -181,7 +182,26 @@ const SlowmoScene: React.FC<{ s: HScene }> = ({ s }) => {
           <AbsoluteFill style={{ background: `linear-gradient(#26406b 0%, #2c4d7a 45%, ${TURF} 45%, #18603a 100%)` }} />
           <svg width={690} height={1470} viewBox="0 0 690 1470" style={{ position: "absolute", inset: 0 }}>
             <polygon points="260,700 430,700 620,1470 70,1470" fill="#c9b27a" opacity={0.55} />
-            {bat ? <>
+            {keeper ? (() => {
+              // keeper side-on behind the stumps: stands up too early (fault) vs stays low and rises with the ball (fix)
+              const rise = good ? 0 : -150 * line;
+              const hy = 820 + rise, hip = 950 + rise * 0.8;
+              const gx = good ? 395 : 360, gy = good ? 1010 : 860 + rise * 0.5;
+              return <>
+                <Stumps x={250} y={1060} h={250} color={OFF} />
+                <g stroke={OFF} strokeWidth={16} strokeLinecap="round" fill="none">
+                  <circle cx={470} cy={hy} r={44} fill={OFF} />
+                  <line x1={470} y1={hy + 44} x2={480} y2={hip} />
+                  <line x1={480} y1={hip} x2={good ? 400 : 440} y2={good ? 1040 : 1010} /><line x1={good ? 400 : 440} y1={good ? 1040 : 1010} x2={430} y2={1100} />
+                  <line x1={480} y1={hip} x2={good ? 540 : 510} y2={good ? 1030 : 1010} /><line x1={good ? 540 : 510} y1={good ? 1030 : 1010} x2={540} y2={1100} />
+                  <line x1={470} y1={hy + 70} x2={gx + 20} y2={gy} />
+                </g>
+                <rect x={gx - 24} y={gy - 30} width={52} height={60} rx={18} fill={YELLOW} transform={good ? undefined : `rotate(-35 ${gx} ${gy})`} />
+                <path d="M 60 760 Q 260 900 395 1005" fill="none" stroke={good ? GREEN : YELLOW} strokeWidth={10} strokeDasharray="20 14" opacity={line} />
+                <circle cx={395 * Math.min(1, line) + 60 * (1 - Math.min(1, line))} cy={1005 * Math.min(1, line) + 760 * (1 - Math.min(1, line))} r={16} fill="#e33" />
+                <circle cx={395} cy={1005} r={50 * line} fill="none" stroke={good ? GREEN : RED} strokeWidth={8} />
+              </>;
+            })() : bat ? <>
               <Stumps x={560} y={1060} h={250} color={OFF} />
               <Batter x={x} y={y} h={460} swing={s.fault === "backlift" ? (good ? 0 : 0.35) : 0.15 + step * 0.06} lean={lean} color={OFF} width={16} />
               {s.fault === "backlift" ? <>
