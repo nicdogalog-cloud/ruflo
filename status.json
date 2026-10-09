@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09 08:39 UTC",
+ "updated": "2026-10-09 10:38 UTC",
  "briefing": "Morning briefing, Fri 9 Oct. Yesterday Forge finished the app store screenshot plan, first-run steps, error messages, settings screen and a one-page app spec. Buzz posted 4 reels. Everyone else is waiting on nic. Your top 3: 1) pick a date for a net session test, 2) yes or no to the club licence price, 3) send the Alton CC pilot email (draft is in Gmail).",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the app's empty-state and error messages (no camera access, storage full)",
     "List the app's settings screen options (only features already promised)",
-    "Write a one-page app spec that joins the first-run, settings and error drafts"
+    "Write a one-page app spec that joins the first-run, settings and error drafts",
+    "Write a simple test checklist for the first app build (each screen, each guide card)"
    ],
    "open": 2,
-   "next": "Write a simple test checklist for the first app build (each screen, each guide card)",
-   "latest": "Developer brief is ready: everything a builder needs is in one folder, plus 7 questions for nic."
+   "next": "Write a one-page 'how the app keeps videos private' note for parents (from the website...",
+   "latest": "Test checklist for the first build is ready in the app-store folder."
   },
   {
    "name": "Pixel",
