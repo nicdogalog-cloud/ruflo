@@ -1,0 +1,10 @@
+{"id":"nets-bowler-front-arm","composition":"House","seed":187,"speed":1.08,"scenes":[
+{"type":"tracks","dur":2.4,"text":"Wide. *Down leg.* 😩","vo":"Wide. Wide. Down leg again."},
+{"type":"nets","dur":2.2,"actor":"bowler","outcome":"middle","text":"Getting *smashed*","vo":"And the batter's loving it."},
+{"type":"think","dur":2.2,"actor":"bowler","label":"Is it my grip?","vo":"Is it my grip? My run-up?"},
+{"type":"drill","dur":2.2,"pick":2,"text":"Pick *bowling front on*","vo":"Pick bowling, front view."},
+{"type":"guide","dur":2.6,"actor":"bowler","text":"Phone *on the card*","vo":"Phone on the guide card. Bowl."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","label":"Arm flies out ✗","text":"*Front arm* flies out","vo":"Slow-mo shows it. Your front arm pulls away early."},
+{"type":"slowmo","dur":3.0,"actor":"bowler","good":true,"label":"Arm pulls down ✓","text":"Pull it *down*, tight","vo":"Pull it down, tight to your side."},
+{"type":"tracks","dur":2.6,"good":true,"text":"*On the stumps* 🎯","vo":"Next net, it's on the stumps."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

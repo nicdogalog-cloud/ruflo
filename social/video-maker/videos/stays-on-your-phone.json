@@ -1,0 +1,8 @@
+{"id":"stays-on-your-phone","composition":"House","seed":185,"speed":1.08,"scenes":[
+{"type":"logo","dur":2.6,"text":"Where do your *net videos* go?","vo":"Where do your net videos actually go?"},
+{"type":"guide","dur":2.8,"actor":"batter","text":"You *film* at the nets","vo":"You film at the nets, from the guide spot."},
+{"type":"privacy","dur":3.4,"text":"*Your phone* only","vo":"And they stay on your phone. Nothing gets uploaded."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","good":true,"label":"Watch it now ✓","text":"*Replay* it right there","vo":"Watch it back right there, in slow-mo."},
+{"type":"steps","dur":3.4,"text":"*Private* by default","items":["Stays on your phone","Nothing uploaded","You choose what to share"],"vo":"Private by default. You choose what to share."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"And it's free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
