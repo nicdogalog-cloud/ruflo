@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09 06:38 UTC",
+ "updated": "2026-10-09 08:39 UTC",
  "briefing": "Morning briefing, Fri 9 Oct. Yesterday Forge finished the app store screenshot plan, first-run steps, error messages, settings screen and a one-page app spec. Buzz posted 4 reels. Everyone else is waiting on nic. Your top 3: 1) pick a date for a net session test, 2) yes or no to the club licence price, 3) send the Alton CC pilot email (draft is in Gmail).",
  "crew": [
   {
@@ -22,9 +22,9 @@
     "List the app's settings screen options (only features already promised)",
     "Write a one-page app spec that joins the first-run, settings and error drafts"
    ],
-   "open": 1,
-   "next": "List what a developer needs to start building the app (questions for nic)",
-   "latest": "One-page app spec done. Next: what a developer needs to start."
+   "open": 2,
+   "next": "Write a simple test checklist for the first app build (each screen, each guide card)",
+   "latest": "Developer brief is ready: everything a builder needs is in one folder, plus 7 questions for nic."
   },
   {
    "name": "Pixel",
@@ -119,6 +119,11 @@
    "step": "Say yes to 7 November, or pick another date."
   },
   {
+   "crew": "Forge",
+   "task": "List what a developer needs to start building the app (questions for nic)",
+   "step": "Answer the 7 questions in developer-brief.md (start with: iPhone, Android or both?)"
+  },
+  {
    "crew": "Pixel",
    "task": "Claim Crease Cam handles on Instagram, TikTok and YouTube",
    "step": "Sign up on TikTok and YouTube, then tell Jarvis the names."
@@ -142,11 +147,6 @@
    "crew": "Sol",
    "task": "Send the first club pilot offer",
    "step": "Open Gmail drafts, put in the club's name and email, and press send."
-  },
-  {
-   "crew": "Cog",
-   "task": "Buy and test 2-3 phone clamps on a net frame",
-   "step": "Buy 2 to try. Jarvis can't buy things."
   }
  ]
 }
