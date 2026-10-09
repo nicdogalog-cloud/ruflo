@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-08 20:38 UTC",
- "briefing": "Morning briefing. Since yesterday: Sol made the Alton pilot club list, Pixel finished all 4 A6 guide cards, Forge wrote the help answers and built a help page, and Buzz posted 4 reels. nic's top 3: 1) say yes or no to the club licence price, 2) send the Alton CC pilot email (draft is in Gmail), 3) book a net session to test with 5-10 players.",
+ "updated": "2026-10-09 06:38 UTC",
+ "briefing": "Morning briefing, Fri 9 Oct. Yesterday Forge finished the app store screenshot plan, first-run steps, error messages, settings screen and a one-page app spec. Buzz posted 4 reels. Everyone else is waiting on nic. Your top 3: 1) pick a date for a net session test, 2) yes or no to the club licence price, 3) send the Alton CC pilot email (draft is in Gmail).",
  "crew": [
   {
    "name": "Nova",
@@ -18,25 +18,23 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the app's first-run steps (welcome, pick batting or bowling, first guide card)",
     "Write the app's empty-state and error messages (no camera access, storage full)",
-    "List the app's settings screen options (only features already promised)"
+    "List the app's settings screen options (only features already promised)",
+    "Write a one-page app spec that joins the first-run, settings and error drafts"
    ],
    "open": 1,
-   "next": "Write a one-page app spec that joins the first-run, settings and error drafts",
-   "latest": "Settings screen listed. Next: one-page app spec joining all the drafts."
+   "next": "List what a developer needs to start building the app (questions for nic)",
+   "latest": "One-page app spec done. Next: what a developer needs to start."
   },
   {
    "name": "Pixel",
    "place": "Studio",
    "status": "working",
    "job": "Helping Buzz with photos and clips",
-   "done": [
-    "Lay out the other 3 guide cards to match"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "All four A6 guide cards are ready for printing."
+   "latest": ""
   },
   {
    "name": "Atlas",
@@ -96,7 +94,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24h on Buffer: 4 Instagram reels sent (FAQs, no-ball, backlift, see-through guide). Videos are flowing again."
+   "latest": "Last 24h on Instagram via Buffer: 4 reels sent, 0 errors. Run-up stutter, head falling over at the crease, slow-mo draw lines, and the 4 guide spots."
   },
   {
    "name": "Meeting Hall",
