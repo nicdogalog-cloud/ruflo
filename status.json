@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10 18:38 UTC",
+ "updated": "2026-10-10 20:38 UTC",
  "briefing": "Saturday briefing. Since yesterday: Forge finished the test night pack (A5 coaches sheet, session plan, notes sheet). Buzz posted 4 reels, no errors. I wrote the week review in the Meeting Hall. nic's top 3: 1) pick a net session night (the pack is ready), 2) yes or no to the club licence price, 3) send the Alton CC pilot email from Gmail drafts.",
  "crew": [
   {
@@ -18,9 +18,9 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the Pro upgrade screen wording (what Free gets, what Pro adds, buttons)",
     "Write the App Store 'What's New' and review notes for the first version",
-    "Make a one-page launch-day checklist for the app (store, website, Instagram, coaches)"
+    "Make a one-page launch-day checklist for the app (store, website, Instagram, coaches)",
+    "Draft the 'Out now' website changes (store badges and coming-soon note) ready to switch..."
    ],
    "open": 3,
    "next": "Turn test-night notes into changes for the guide cards and help answers (after the...",
@@ -104,7 +104,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Nova's week review (Fri 9 Oct). Done this week: Forge wrote the app-store pack (spec, store listing, screenshots plan, first-run and settings screens), a developer brief, a test checklist, help answers, a parents note,..."
+   "latest": ""
   }
  ],
  "waiting_on_nic": [
