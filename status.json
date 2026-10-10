@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10 08:38 UTC",
+ "updated": "2026-10-10 10:38 UTC",
  "briefing": "Saturday briefing. Since yesterday: Forge finished the test night pack (A5 coaches sheet, session plan, notes sheet). Buzz posted 4 reels, no errors. I wrote the week review in the Meeting Hall. nic's top 3: 1) pick a net session night (the pack is ready), 2) yes or no to the club licence price, 3) send the Alton CC pilot email from Gmail drafts.",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Make a one-page net-session plan for the test session (what to film, who, which card)",
     "Make a printable A5 notes sheet from the net-session table",
-    "Draft the App Store and Google Play privacy label answers from the app spec"
+    "Draft the App Store and Google Play privacy label answers from the app spec",
+    "Write a one-page 'what to send the developer' pack list linking all app-store drafts"
    ],
    "open": 3,
    "next": "Turn test-night notes into changes for the guide cards and help answers (after the...",
-   "latest": "Drafted the store privacy label answers so they match the privacy promises. A developer still has to confirm them before submitting."
+   "latest": "Developer pack list done. When nic picks a developer, it's one list to send."
   },
   {
    "name": "Pixel",
