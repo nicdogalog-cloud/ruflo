@@ -1,0 +1,8 @@
+{"id":"why-crease-cam","composition":"House","seed":199,"speed":1.08,"scenes":[
+{"type":"think","dur":2.6,"actor":"batter","label":"Why \"Crease Cam\"?","text":"Ever *wondered*?","vo":"Ever wondered why it's called Crease Cam?"},
+{"type":"spots","dur":3.0,"spots":[1,2,3,4],"text":"It's all at the *crease*","vo":"Every guide spot is set from the crease."},
+{"type":"logo","dur":3.0,"text":"*Stumps* in a frame","vo":"The logo is the stumps, framed like a camera shot."},
+{"type":"steps","dur":3.4,"text":"The *idea*","items":["Your phone","The right spot","Your game, framed"],"vo":"Your phone, on the right spot, framing your game."},
+{"type":"slowmo","dur":3.2,"actor":"bowler","good":true,"label":"Framed right ✓","text":"*Framed* right","vo":"So every net is framed right."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"And it's free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

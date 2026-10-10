@@ -1,0 +1,8 @@
+{"id":"nets-batter-reaching","composition":"House","seed":197,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"edge","text":"Fishing *again* 😤","vo":"Reaching for another drive. Edged again."},
+{"type":"think","dur":2.4,"actor":"batter","label":"Why am I reaching?","vo":"Why am I always reaching for it?"},
+{"type":"spots","dur":2.8,"spots":[4],"text":"Film it *side on*","vo":"Put your phone side on, level with the crease."},
+{"type":"slowmo","dur":3.6,"actor":"batter","fault":"foot","label":"Feet stuck ✗","text":"Your *feet* don't move","vo":"Slow-mo shows it. Your front foot barely moves."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"foot","good":true,"label":"Foot to the ball ✓","text":"Get *to the ball*","vo":"Step your front foot right to the ball."},
+{"type":"nets","dur":2.6,"actor":"batter","outcome":"middle","text":"Next net: *driven* 🔥","vo":"Next net, it's driven out the middle."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
