@@ -1,0 +1,8 @@
+{"id":"nets-bowler-creeping-over","composition":"House","seed":205,"speed":1.08,"scenes":[
+{"type":"think","dur":2.6,"actor":"bowler","label":"Was I over?","text":"\"*No ball!*\" 😤","vo":"No ball! Your mates keep shouting it."},
+{"type":"nets","dur":2.6,"actor":"bowler","outcome":"beaten","text":"Quicker... but *over*?","vo":"You're bowling quicker, but are you over the line?"},
+{"type":"spots","dur":2.8,"spots":[1],"text":"Film it *side on*","vo":"Put your phone on the bowling side spot."},
+{"type":"slowmo","dur":3.6,"actor":"bowler","fault":"noball","label":"Creeping over ✗","text":"Your foot *creeps* over","vo":"Slow-mo shows it. As you speed up, your foot creeps over."},
+{"type":"slowmo","dur":3.2,"actor":"bowler","fault":"noball","good":true,"label":"Behind the line ✓","text":"Mark it *out again*","vo":"Mark your run-up out again, a step further back."},
+{"type":"tracks","dur":2.6,"good":true,"text":"Legal. *On the stumps* 🎯","vo":"Next net, legal and on the stumps."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

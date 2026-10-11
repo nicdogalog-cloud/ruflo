@@ -1,0 +1,8 @@
+{"id":"what-it-costs","composition":"House","seed":207,"speed":1.08,"scenes":[
+{"type":"logo","dur":2.6,"text":"What does it *cost*?","vo":"So, what does Crease Cam cost?"},
+{"type":"pricing","dur":3.6,"text":"*Free* to start","vo":"It's free to start. Then three ninety nine a month, or thirty nine ninety nine a year."},
+{"type":"think","dur":2.6,"actor":"batter","label":"Need a fancy camera?","text":"No *extra kit*","vo":"And no fancy camera. Just the phone you've got."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"*Your phone*. The right spot.","vo":"Put it on the right spot, and record."},
+{"type":"slowmo","dur":3.2,"actor":"batter","good":true,"label":"Watch it back ✓","text":"*Slow-mo* replay","vo":"Watch it back in slow-mo."},
+{"type":"privacy","dur":3.0,"text":"*Your phone* only","vo":"And your videos stay on your phone."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
