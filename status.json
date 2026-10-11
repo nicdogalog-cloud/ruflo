@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11 08:38 UTC",
+ "updated": "2026-10-11 10:38 UTC",
  "briefing": "Sunday briefing. Since yesterday: Forge finished 6 launch drafts (settings wording, wording check, Pro screen, store notes, launch-day checklist, 'Out now' site changes) and listed the privacy/terms blanks. Buzz posted 4 reels on Instagram, 0 errors. nic's top 3: 1) pick a net session night, 2) send the Alton CC email from Gmail drafts, 3) fill in the...",
  "crew": [
   {
@@ -18,13 +18,13 @@
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
    "done": [
-    "Write the App Store 'What's New' and review notes for the first version",
     "Make a one-page launch-day checklist for the app (store, website, Instagram, coaches)",
-    "Draft the 'Out now' website changes (store badges and coming-soon note) ready to switch..."
+    "Draft the 'Out now' website changes (store badges and coming-soon note) ready to switch...",
+    "Write the clip-storage wording for both choices (camera roll or inside the app) so either..."
    ],
-   "open": 4,
+   "open": 5,
    "next": "Turn test-night notes into changes for the guide cards and help answers (after the...",
-   "latest": "Wrote the law and hosting wording fixes for the privacy and terms pages, ready to paste once nic says OK."
+   "latest": "Wrote the clip wording for both storage choices, so the developer's answer can go straight in. Next: support reply templates."
   },
   {
    "name": "Pixel",
