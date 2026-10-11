@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11 06:39 UTC",
+ "updated": "2026-10-11 08:38 UTC",
  "briefing": "Sunday briefing. Since yesterday: Forge finished 6 launch drafts (settings wording, wording check, Pro screen, store notes, launch-day checklist, 'Out now' site changes) and listed the privacy/terms blanks. Buzz posted 4 reels on Instagram, 0 errors. nic's top 3: 1) pick a net session night, 2) send the Alton CC email from Gmail drafts, 3) fill in the...",
  "crew": [
   {
@@ -24,7 +24,7 @@
    ],
    "open": 4,
    "next": "Turn test-night notes into changes for the guide cards and help answers (after the...",
-   "latest": "Listed every blank on the privacy and terms pages for nic. Next: draft the governing-law and hosting wording."
+   "latest": "Wrote the law and hosting wording fixes for the privacy and terms pages, ready to paste once nic says OK."
   },
   {
    "name": "Pixel",
@@ -129,6 +129,11 @@
    "step": "Fill in company name, address, contact email and date for the privacy and terms pages"
   },
   {
+   "crew": "Forge",
+   "task": "Draft the governing-law and hosting wording fixes for privacy and terms (England and...",
+   "step": "Say OK and the crew will put the law and hosting wording on the privacy and terms pages"
+  },
+  {
    "crew": "Pixel",
    "task": "Claim Crease Cam handles on Instagram, TikTok and YouTube",
    "step": "Sign up on TikTok and YouTube, then tell Jarvis the names."
@@ -142,11 +147,6 @@
    "crew": "Atlas",
    "task": "Ask 5 cricketers how they film their nets now",
    "step": "Send the questions to 5 cricketers."
-  },
-  {
-   "crew": "Sol",
-   "task": "Pick the Crease Cam price (free + Pro, club licence)",
-   "step": "Say yes to [amount] a season, or give another number."
   }
  ]
 }
