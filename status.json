@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-10 20:38 UTC",
- "briefing": "Saturday briefing. Since yesterday: Forge finished the test night pack (A5 coaches sheet, session plan, notes sheet). Buzz posted 4 reels, no errors. I wrote the week review in the Meeting Hall. nic's top 3: 1) pick a net session night (the pack is ready), 2) yes or no to the club licence price, 3) send the Alton CC pilot email from Gmail drafts.",
+ "updated": "2026-10-11 06:39 UTC",
+ "briefing": "Sunday briefing. Since yesterday: Forge finished 6 launch drafts (settings wording, wording check, Pro screen, store notes, launch-day checklist, 'Out now' site changes) and listed the privacy/terms blanks. Buzz posted 4 reels on Instagram, 0 errors. nic's top 3: 1) pick a net session night, 2) send the Alton CC email from Gmail drafts, 3) fill in the...",
  "crew": [
   {
    "name": "Nova",
@@ -22,9 +22,9 @@
     "Make a one-page launch-day checklist for the app (store, website, Instagram, coaches)",
     "Draft the 'Out now' website changes (store badges and coming-soon note) ready to switch..."
    ],
-   "open": 3,
+   "open": 4,
    "next": "Turn test-night notes into changes for the guide cards and help answers (after the...",
-   "latest": "Developer pack list done. When nic picks a developer, it's one list to send."
+   "latest": "Listed every blank on the privacy and terms pages for nic. Next: draft the governing-law and hosting wording."
   },
   {
    "name": "Pixel",
@@ -94,7 +94,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24h on Instagram via Buffer: 4 reels posted, 0 errors (videos stay on your phone; bowler front arm; keeper gloves; picking a drill)."
+   "latest": ""
   },
   {
    "name": "Meeting Hall",
@@ -124,6 +124,11 @@
    "step": "Answer the 7 questions in developer-brief.md (start with: iPhone, Android or both?)"
   },
   {
+   "crew": "Forge",
+   "task": "Check the website privacy and terms pages for blanks and list what nic must fill in",
+   "step": "Fill in company name, address, contact email and date for the privacy and terms pages"
+  },
+  {
    "crew": "Pixel",
    "task": "Claim Crease Cam handles on Instagram, TikTok and YouTube",
    "step": "Sign up on TikTok and YouTube, then tell Jarvis the names."
@@ -142,11 +147,6 @@
    "crew": "Sol",
    "task": "Pick the Crease Cam price (free + Pro, club licence)",
    "step": "Say yes to [amount] a season, or give another number."
-  },
-  {
-   "crew": "Sol",
-   "task": "Send the first club pilot offer",
-   "step": "Open Gmail drafts, put in the club's name and email, and press send."
   }
  ]
 }
