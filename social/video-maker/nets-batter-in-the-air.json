@@ -1,0 +1,9 @@
+{"id":"nets-batter-in-the-air","composition":"House","seed":203,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"edge","text":"Up in the *air* 😬","vo":"Another drive, straight up in the air."},
+{"type":"think","dur":2.4,"actor":"batter","label":"Why won't it stay down?","vo":"Why won't it stay on the ground?"},
+{"type":"drill","dur":2.4,"pick":3,"text":"Pick *batting front on*","vo":"Pick batting, front on."},
+{"type":"guide","dur":2.6,"actor":"batter","text":"*Front spot*. Record.","vo":"Phone on the front spot. Have a hit."},
+{"type":"slowmo","dur":3.6,"actor":"batter","fault":"bat","label":"Bat comes across ✗","text":"Bat comes *across*","vo":"Slow-mo shows it. Your bat comes across the line."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"bat","good":true,"label":"Straight bat ✓","text":"Bring it down *straight*","vo":"Bring it down straight, through the line."},
+{"type":"nets","dur":2.6,"actor":"batter","outcome":"middle","text":"Next net: *kept down* 🔥","vo":"Next net, driven along the floor."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

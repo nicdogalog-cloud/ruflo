@@ -1,0 +1,9 @@
+{"id":"batters-and-bowlers","composition":"House","seed":201,"speed":1.08,"scenes":[
+{"type":"think","dur":2.6,"actor":"bowler","label":"Is it just for batters?","text":"Batter or *bowler*?","vo":"Batter or bowler? Crease Cam works for both."},
+{"type":"drill","dur":2.6,"pick":1,"text":"Bowlers: *side on*","vo":"Bowlers, pick a side on drill."},
+{"type":"guide","dur":2.8,"actor":"bowler","text":"*Bowling* spot","vo":"The guide shows where your phone goes."},
+{"type":"drill","dur":2.6,"pick":3,"text":"Batters: *front on*","vo":"Batters, pick front on."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"*Batting* spot","vo":"Same idea. Line up and record."},
+{"type":"slowmo","dur":3.2,"actor":"batter","good":true,"label":"Watch it back ✓","text":"Both in *slow-mo*","vo":"Then watch it back in slow-mo."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"And it's free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
