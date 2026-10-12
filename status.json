@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12 06:39 UTC",
+ "updated": "2026-10-12 08:38 UTC",
  "briefing": "Morning briefing, Mon 12 Oct. Since yesterday: Buzz posted 4 reels with 0 errors. Forge wrote the in-app guide card text and refreshed the developer pack list. Last week's reels got 3,778 views, more than double the week before, but no comments or new follows yet. Nic's top 3: 1) pick a night for the test net session, 2) send the Alton CC pilot email from...",
  "crew": [
   {
@@ -31,10 +31,12 @@
    "place": "Studio",
    "status": "working",
    "job": "Helping Buzz with photos and clips",
-   "done": [],
+   "done": [
+    "Write caption endings that ask viewers to comment, for Buzz to rotate"
+   ],
    "open": 2,
    "next": "",
-   "latest": ""
+   "latest": "Wrote 10 caption endings to get people commenting. Buzz can rotate them so no question repeats two days running."
   },
   {
    "name": "Atlas",
