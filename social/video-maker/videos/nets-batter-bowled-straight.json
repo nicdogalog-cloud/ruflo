@@ -1,0 +1,8 @@
+{"id":"nets-batter-bowled-straight","composition":"House","seed":213,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"beaten","text":"Bowled by a *straight one* 🤦","vo":"Bowled. By a straight one. Again."},
+{"type":"think","dur":2.4,"actor":"batter","label":"How did I miss that?","text":"Missing the *easy* ones","vo":"How did I miss that?"},
+{"type":"guide","dur":2.8,"actor":"batter","text":"Film from the *front*","vo":"Film one net from the batting front spot."},
+{"type":"slowmo","dur":3.8,"actor":"batter","label":"Head falling over ✗","text":"Head falls *over*","vo":"Slow it down. Your head falls over to the off side."},
+{"type":"slowmo","dur":3.2,"actor":"batter","good":true,"label":"Head still ✓","text":"Head *still*. Eyes level.","vo":"Keep your head still, right over the ball."},
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"middle","text":"Straight one? *Middled* 🔥","vo":"Next straight one, out of the middle."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
