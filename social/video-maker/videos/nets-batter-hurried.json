@@ -1,0 +1,8 @@
+{"id":"nets-batter-hurried","composition":"House","seed":211,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"beaten","text":"*Hurried* again 😤","vo":"Hurried again. Through me before I'd moved."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"Film it from the *side*","vo":"So film one net from the side spot."},
+{"type":"slowmo","dur":3.8,"actor":"batter","fault":"backlift","label":"Bat not ready ✗","text":"Bat's still *down*","vo":"Slow it down. The ball's coming and the bat's still down."},
+{"type":"steps","dur":3.2,"text":"The *fix*","items":["Watch the bowler load","Bat up early","Then react"],"vo":"Watch the bowler load up. Bat up early. Then react."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"backlift","good":true,"label":"Ready in time ✓","text":"*Ready* in time","vo":"Now you're ready in time."},
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"middle","text":"Time to *play* 🔥","vo":"Next net, all the time in the world."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
