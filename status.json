@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-11 18:38 UTC",
- "briefing": "Sunday briefing. Since yesterday: Forge finished 6 launch drafts (settings wording, wording check, Pro screen, store notes, launch-day checklist, 'Out now' site changes) and listed the privacy/terms blanks. Buzz posted 4 reels on Instagram, 0 errors. nic's top 3: 1) pick a net session night, 2) send the Alton CC email from Gmail drafts, 3) fill in the...",
+ "updated": "2026-10-12 06:39 UTC",
+ "briefing": "Morning briefing, Mon 12 Oct. Since yesterday: Buzz posted 4 reels with 0 errors. Forge wrote the in-app guide card text and refreshed the developer pack list. Last week's reels got 3,778 views, more than double the week before, but no comments or new follows yet. Nic's top 3: 1) pick a night for the test net session, 2) send the Alton CC pilot email from...",
  "crew": [
   {
    "name": "Nova",
@@ -41,10 +41,13 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [],
+   "done": [
+    "Track Crease Cam Instagram views each week (next Monday)",
+    "Monday competitor check (12 Oct)"
+   ],
    "open": 2,
-   "next": "Track Crease Cam Instagram views each week (next Monday)",
-   "latest": ""
+   "next": "Track Crease Cam Instagram views each week (next Monday 19 Oct)",
+   "latest": "Views more than doubled last week to 3,778. Still no comments or new follows, so the next step is getting people to talk and follow."
   },
   {
    "name": "Sol",
@@ -81,10 +84,12 @@
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [],
+   "done": [
+    "Monday website check (12 Oct)"
+   ],
    "open": 2,
    "next": "",
-   "latest": ""
+   "latest": "Website checked: everything loads, only the privacy and terms blanks are left."
   },
   {
    "name": "Buzz",
