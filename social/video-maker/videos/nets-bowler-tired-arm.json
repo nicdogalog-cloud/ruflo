@@ -1,0 +1,9 @@
+{"id":"nets-bowler-tired-arm","composition":"House","seed":221,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.6,"actor":"bowler","outcome":"middle","text":"Last over? *Spraying*","vo":"Last over of the session, and it's going everywhere."},
+{"type":"tracks","dur":2.4,"text":"Fine at the *start*","vo":"First over? Fine. Now it's all over the place."},
+{"type":"think","dur":2.2,"actor":"bowler","label":"Just tired?","text":"What's *changing*?","vo":"Is it just tiredness?"},
+{"type":"guide","dur":2.6,"actor":"bowler","text":"Film the *last over*","vo":"Film your last over, phone on the guide spot."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","label":"Arm drops ✗","text":"Front arm *drops*","vo":"Slow-mo shows it. When you tire, your front arm drops."},
+{"type":"slowmo","dur":3.0,"actor":"bowler","good":true,"label":"Arm up ✓","text":"Keep it *up*, then pull","vo":"Keep it up, then pull it down."},
+{"type":"tracks","dur":2.6,"good":true,"text":"Last over. *On target*","vo":"Next session, the last over hits the stumps."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
