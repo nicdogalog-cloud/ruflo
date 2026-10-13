@@ -1,0 +1,8 @@
+{"id":"draw-on-your-replay","composition":"House","seed":217,"speed":1.08,"scenes":[
+{"type":"slowmo","dur":3.0,"actor":"bowler","good":true,"label":"Paused ✓","text":"Pause. *Draw on it.*","vo":"Pause your net, and draw right on it."},
+{"type":"think","dur":2.4,"actor":"bowler","label":"What went wrong?","text":"Feels right. *Looks* wrong?","vo":"It felt right. So what went wrong?"},
+{"type":"steps","dur":3.4,"text":"Mark it *up*","items":["Line down your spine","Circle your front arm","Tick where you land"],"vo":"Draw a line down your spine. Circle your front arm. Mark where you land."},
+{"type":"slowmo","dur":3.4,"actor":"bowler","good":true,"label":"Front arm tight ✓","text":"Now you *see* it","vo":"Now you can actually see it."},
+{"type":"spots","dur":3.0,"spots":[1],"text":"Same *spot* next week","vo":"Film from the same spot next week, and compare."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"Free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

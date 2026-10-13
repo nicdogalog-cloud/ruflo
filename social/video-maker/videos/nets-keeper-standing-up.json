@@ -1,0 +1,8 @@
+{"id":"nets-keeper-standing-up","composition":"House","seed":219,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"beaten","text":"Through the *gloves*","vo":"Beat the bat. And beat the keeper too."},
+{"type":"think","dur":2.4,"actor":"keeper","label":"Where did that go?","text":"Keeper, *what happened?*","vo":"Where did that one go?"},
+{"type":"guide","dur":2.8,"actor":"batter","text":"Film it from the *side*","vo":"Film one net of keeping, side on."},
+{"type":"slowmo","dur":3.6,"actor":"keeper","fault":"gloves","label":"Up too early ✗","text":"Gloves come up *early*","vo":"Slow-mo shows it. You're up before the ball gets there."},
+{"type":"slowmo","dur":3.4,"actor":"keeper","fault":"gloves","good":true,"label":"Low and late ✓","text":"Stay *low*. Rise *late*.","vo":"Stay low, and rise with the bounce."},
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"beaten","text":"Beaten. *Caught clean* 🧤","vo":"Next net, clean in the gloves."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
