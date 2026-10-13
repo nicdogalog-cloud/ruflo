@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-12 08:38 UTC",
- "briefing": "Morning briefing, Mon 12 Oct. Since yesterday: Buzz posted 4 reels with 0 errors. Forge wrote the in-app guide card text and refreshed the developer pack list. Last week's reels got 3,778 views, more than double the week before, but no comments or new follows yet. Nic's top 3: 1) pick a night for the test net session, 2) send the Alton CC pilot email from...",
+ "updated": "2026-10-13 06:39 UTC",
+ "briefing": "Morning briefing (Tue 13 Oct). Since yesterday: Buzz posted 4 reels to Instagram via Buffer, all sent with no errors. Monday checks done; every other open task is waiting on nic or a later date. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy/terms blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -17,14 +17,10 @@
    "place": "Workshop",
    "status": "working",
    "job": "Shaping what Crease Cam launches with",
-   "done": [
-    "Add App Store keywords and promotional text to the store listing, and check every field...",
-    "Write the in-app guide card screen text for all 4 spots (where, height, facing, distance)",
-    "Bring the developer pack list up to date with the newest app drafts"
-   ],
+   "done": [],
    "open": 4,
    "next": "Turn test-night notes into changes for the guide cards and help answers (after the...",
-   "latest": "Developer pack list is current again, 15 files in reading order."
+   "latest": ""
   },
   {
    "name": "Pixel",
