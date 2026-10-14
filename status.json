@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-13 06:39 UTC",
- "briefing": "Morning briefing (Tue 13 Oct). Since yesterday: Buzz posted 4 reels to Instagram via Buffer, all sent with no errors. Monday checks done; every other open task is waiting on nic or a later date. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy/terms blanks.",
+ "updated": "2026-10-14 06:38 UTC",
+ "briefing": "Morning briefing (Wed 14 Oct). Since yesterday: Buzz posted 4 reels to Instagram via Buffer (draw on your replay, keeper standing up, tired bowling arm, FAQs), all sent with no errors. Every other open task is waiting on nic or a later date. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the...",
  "crew": [
   {
    "name": "Nova",
@@ -27,25 +27,20 @@
    "place": "Studio",
    "status": "working",
    "job": "Helping Buzz with photos and clips",
-   "done": [
-    "Write caption endings that ask viewers to comment, for Buzz to rotate"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Wrote 10 caption endings to get people commenting. Buzz can rotate them so no question repeats two days running."
+   "latest": ""
   },
   {
    "name": "Atlas",
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [
-    "Track Crease Cam Instagram views each week (next Monday)",
-    "Monday competitor check (12 Oct)"
-   ],
+   "done": [],
    "open": 2,
    "next": "Track Crease Cam Instagram views each week (next Monday 19 Oct)",
-   "latest": "Views more than doubled last week to 3,778. Still no comments or new follows, so the next step is getting people to talk and follow."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -82,12 +77,10 @@
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [
-    "Monday website check (12 Oct)"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Website checked: everything loads, only the privacy and terms blanks are left."
+   "latest": ""
   },
   {
    "name": "Buzz",
