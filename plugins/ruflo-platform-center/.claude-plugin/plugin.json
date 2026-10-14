@@ -1,0 +1,21 @@
+{
+  "name": "ruflo-platform-center",
+  "description": "Platform Center: run a new business as a neon city of ruflo agents. A manager (Nova) plus a crew for projects, content, research, sales, money and operations, and Wicket for Crease Cam, a cricket project's website/app, with a morning brief and delegation commands. The city UI lives in docs/platform-center.",
+  "version": "0.1.0",
+  "author": {
+    "name": "nicdogalog-cloud",
+    "url": "https://github.com/nicdogalog-cloud"
+  },
+  "homepage": "https://github.com/nicdogalog-cloud/ruflo/tree/main/docs/platform-center",
+  "license": "MIT",
+  "keywords": [
+    "ruflo",
+    "platform-center",
+    "business",
+    "command-center",
+    "agents",
+    "morning-brief",
+    "delegation",
+    "dashboard"
+  ]
+}

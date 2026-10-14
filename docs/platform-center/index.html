@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Platform Center</title>
+<meta name="description" content="A neon city command center for a new business. Each building is one area of the business, run by a ruflo crew member.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <strong>Platform Center</strong>
+        <span id="business-name">My new business</span>
+      </div>
+    </div>
+    <nav class="chips" id="chips" aria-label="Crew"></nav>
+    <div class="top-actions">
+      <button type="button" class="goal" id="goal-btn">Goal</button>
+      <button type="button" class="icon-btn" id="search-btn" aria-label="Search (press /)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button type="button" class="icon-btn" id="menu-btn" aria-label="Settings"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </header>
+
+  <div class="starter-note" id="starter-note" hidden>
+    <p><strong>Starter city.</strong> The buildings, tasks and links are examples for a new business. Rename, add or delete anything. It saves as you go.</p>
+    <button type="button" class="btn ghost small" id="starter-hide">Got it</button>
+  </div>
+
+  <div class="main">
+    <aside class="sidebar" aria-labelledby="ws-head">
+      <h2 class="side-head" id="ws-head">Workspaces</h2>
+      <ul class="ws-list" id="workspace-list"></ul>
+      <button type="button" class="btn ghost add" id="add-building">+ Add building</button>
+      <button type="button" class="brief-row" id="brief-row"><span>Morning Brief</span><span class="mono" id="brief-time">8:00 AM</span></button>
+    </aside>
+
+    <section class="city-wrap" aria-label="City">
+      <canvas id="city" role="img" aria-label="Your business as a 3D neon city. Each building is one area of the business. Drag to turn it, scroll or pinch to zoom. Use the Workspaces list to open a building."></canvas>
+      <div class="brief-ready" id="brief-ready" hidden>
+        <span>Your morning brief is ready</span>
+        <button type="button" class="btn small" id="brief-ready-open">Open</button>
+      </div>
+      <p class="save-status" id="save-status" role="status"></p>
+    </section>
+
+    <section class="panel" id="panel" hidden aria-labelledby="panel-title"></section>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modal" hidden><div class="modal" id="modal-card" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="store.js"></script>
+<script src="ui.js"></script>
+<script src="city.js"></script>
+<script src="city3d-mesh.js"></script>
+<script src="city3d.js"></script>
+<script src="ai.js"></script>
+<script src="work.js"></script>
+<script src="crease-cam/photos.js"></script>
+<script src="panel.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
