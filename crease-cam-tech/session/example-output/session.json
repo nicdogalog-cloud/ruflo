@@ -1,0 +1,251 @@
+{
+  "video": "net.mp4",
+  "modes": [
+    "batting",
+    "bowling"
+  ],
+  "fps": 25.0,
+  "balls": [
+    {
+      "n": 1,
+      "time_s": 5.64,
+      "clip": "clips/ball01.mp4",
+      "batting": {
+        "overall": 60,
+        "scores": [
+          {
+            "name": "Head still",
+            "score": 0,
+            "measured": "head moved 37 cm sideways",
+            "tip": "Your head moved about 37 cm across - keep it still as the ball arrives."
+          },
+          {
+            "name": "Balance",
+            "score": 100,
+            "measured": "hips 0 cm outside feet",
+            "tip": "Weight stayed between your feet."
+          },
+          {
+            "name": "Upright body",
+            "score": 100,
+            "measured": "body lean 7 deg",
+            "tip": "Good upright shape."
+          },
+          {
+            "name": "Foot movement",
+            "score": 40,
+            "measured": "feet moved 9 cm",
+            "tip": "Your feet barely moved - get a step in towards the ball."
+          }
+        ],
+        "good": [
+          "Weight stayed between your feet.",
+          "Good upright shape."
+        ],
+        "work_on": [
+          "Your head moved about 37 cm across - keep it still as the ball arrives.",
+          "Your feet barely moved - get a step in towards the ball."
+        ]
+      },
+      "bowling": {
+        "overall": 67,
+        "scores": [
+          {
+            "name": "Side lean at release",
+            "score": 0,
+            "measured": "32 deg lean",
+            "tip": "You fall away at release - keep your head over your front foot."
+          },
+          {
+            "name": "High arm",
+            "score": 100,
+            "measured": "hand above head",
+            "tip": "Bowling arm came over high."
+          },
+          {
+            "name": "Straight run-up",
+            "score": 68,
+            "measured": "drifted 69 cm sideways",
+            "tip": "Your run-up drifts sideways - run straight at the target."
+          },
+          {
+            "name": "Landing line",
+            "score": 100,
+            "measured": "feet 0 cm apart sideways",
+            "tip": "Feet landed in line with the stumps."
+          }
+        ],
+        "good": [
+          "Bowling arm came over high.",
+          "Feet landed in line with the stumps."
+        ],
+        "work_on": [
+          "You fall away at release - keep your head over your front foot.",
+          "Your run-up drifts sideways - run straight at the target."
+        ]
+      }
+    },
+    {
+      "n": 2,
+      "time_s": 13.64,
+      "clip": "clips/ball02.mp4",
+      "batting": {
+        "overall": 75,
+        "scores": [
+          {
+            "name": "Head still",
+            "score": 0,
+            "measured": "head moved 36 cm sideways",
+            "tip": "Your head moved about 36 cm across - keep it still as the ball arrives."
+          },
+          {
+            "name": "Balance",
+            "score": 100,
+            "measured": "hips 0 cm outside feet",
+            "tip": "Weight stayed between your feet."
+          },
+          {
+            "name": "Upright body",
+            "score": 100,
+            "measured": "body lean 7 deg",
+            "tip": "Good upright shape."
+          },
+          {
+            "name": "Foot movement",
+            "score": 100,
+            "measured": "feet moved 16 cm",
+            "tip": "You moved your feet to the ball."
+          }
+        ],
+        "good": [
+          "Weight stayed between your feet.",
+          "Good upright shape.",
+          "You moved your feet to the ball."
+        ],
+        "work_on": [
+          "Your head moved about 36 cm across - keep it still as the ball arrives."
+        ]
+      },
+      "bowling": {
+        "overall": 66,
+        "scores": [
+          {
+            "name": "Side lean at release",
+            "score": 0,
+            "measured": "33 deg lean",
+            "tip": "You fall away at release - keep your head over your front foot."
+          },
+          {
+            "name": "High arm",
+            "score": 100,
+            "measured": "hand above head",
+            "tip": "Bowling arm came over high."
+          },
+          {
+            "name": "Straight run-up",
+            "score": 66,
+            "measured": "drifted 71 cm sideways",
+            "tip": "Your run-up drifts sideways - run straight at the target."
+          },
+          {
+            "name": "Landing line",
+            "score": 100,
+            "measured": "feet 4 cm apart sideways",
+            "tip": "Feet landed in line with the stumps."
+          }
+        ],
+        "good": [
+          "Bowling arm came over high.",
+          "Feet landed in line with the stumps."
+        ],
+        "work_on": [
+          "You fall away at release - keep your head over your front foot.",
+          "Your run-up drifts sideways - run straight at the target."
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "time_s": 21.64,
+      "clip": "clips/ball03.mp4",
+      "batting": {
+        "overall": 60,
+        "scores": [
+          {
+            "name": "Head still",
+            "score": 0,
+            "measured": "head moved 36 cm sideways",
+            "tip": "Your head moved about 36 cm across - keep it still as the ball arrives."
+          },
+          {
+            "name": "Balance",
+            "score": 100,
+            "measured": "hips 0 cm outside feet",
+            "tip": "Weight stayed between your feet."
+          },
+          {
+            "name": "Upright body",
+            "score": 100,
+            "measured": "body lean 9 deg",
+            "tip": "Good upright shape."
+          },
+          {
+            "name": "Foot movement",
+            "score": 40,
+            "measured": "feet moved 8 cm",
+            "tip": "Your feet barely moved - get a step in towards the ball."
+          }
+        ],
+        "good": [
+          "Weight stayed between your feet.",
+          "Good upright shape."
+        ],
+        "work_on": [
+          "Your head moved about 36 cm across - keep it still as the ball arrives.",
+          "Your feet barely moved - get a step in towards the ball."
+        ]
+      },
+      "bowling": {
+        "overall": 67,
+        "scores": [
+          {
+            "name": "Side lean at release",
+            "score": 0,
+            "measured": "33 deg lean",
+            "tip": "You fall away at release - keep your head over your front foot."
+          },
+          {
+            "name": "High arm",
+            "score": 100,
+            "measured": "hand above head",
+            "tip": "Bowling arm came over high."
+          },
+          {
+            "name": "Straight run-up",
+            "score": 69,
+            "measured": "drifted 68 cm sideways",
+            "tip": "Your run-up drifts sideways - run straight at the target."
+          },
+          {
+            "name": "Landing line",
+            "score": 100,
+            "measured": "feet 2 cm apart sideways",
+            "tip": "Feet landed in line with the stumps."
+          }
+        ],
+        "good": [
+          "Bowling arm came over high.",
+          "Feet landed in line with the stumps."
+        ],
+        "work_on": [
+          "You fall away at release - keep your head over your front foot.",
+          "Your run-up drifts sideways - run straight at the target."
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "batting": 65,
+    "bowling": 67
+  }
+}

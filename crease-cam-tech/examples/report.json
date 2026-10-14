@@ -1,0 +1,32 @@
+{
+  "batter-front-foot-drive": {
+    "view": "batting-side",
+    "overall": 57,
+    "scores": [
+      {
+        "name": "Head position",
+        "score": 0,
+        "value": "63 cm from centre",
+        "feedback": "Your head is 63 cm outside your feet - you're falling over; get your head over the front foot."
+      },
+      {
+        "name": "Foot movement (stride)",
+        "score": 100,
+        "value": "81 cm",
+        "feedback": "Good positive stride of 81 cm toward the ball."
+      },
+      {
+        "name": "Head over front knee",
+        "score": 74,
+        "value": "14 cm",
+        "feedback": "Head is over the front knee - great for control."
+      },
+      {
+        "name": "Body balance",
+        "score": 54,
+        "value": "17 cm hips off-centre",
+        "feedback": "Your hips are drifting outside your base - stay balanced so you can hold your finish."
+      }
+    ]
+  }
+}
