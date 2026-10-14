@@ -1,0 +1,8 @@
+{"id":"nets-bowler-floating-up","composition":"House","seed":227,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"bowler","outcome":"middle","text":"It's *floating* up","vo":"You're running in hard, but it's floating up."},
+{"type":"think","dur":2.4,"actor":"batter","label":"Too easy","text":"Batter's got *all day*","vo":"And the batter's got all day to hit it."},
+{"type":"spots","dur":2.6,"spots":[1],"text":"Film from the *side*","vo":"Phone on the bowling side spot. Bowl an over."},
+{"type":"slowmo","dur":3.6,"actor":"bowler","fault":"follow","label":"Stops dead ✗","text":"You *stop* at the crease","vo":"Slow-mo shows it. You put the brakes on at the crease."},
+{"type":"slowmo","dur":3.2,"actor":"bowler","fault":"follow","good":true,"label":"Run through ✓","text":"Keep *running through*","vo":"Keep running through after you let go."},
+{"type":"nets","dur":3.0,"actor":"bowler","outcome":"beaten","text":"Hurried. *Beaten.*","vo":"Next net, the batter's hurried and beaten."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

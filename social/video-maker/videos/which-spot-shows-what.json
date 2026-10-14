@@ -1,0 +1,9 @@
+{"id":"which-spot-shows-what","composition":"House","seed":225,"speed":1.08,"scenes":[
+{"type":"think","dur":2.4,"actor":"batter","label":"Where do I film from?","text":"Which *angle*?","vo":"Filming your nets? Which angle do you pick?"},
+{"type":"spots","dur":2.6,"spots":[4],"text":"Side on: your *feet*","vo":"Side on shows your feet and your stride."},
+{"type":"slowmo","dur":2.8,"actor":"batter","fault":"foot","good":true,"label":"Big stride ✓","text":"See your *stride*","vo":"See exactly how far you get to the ball."},
+{"type":"spots","dur":2.6,"spots":[3],"text":"Front on: your *head*","vo":"Front on shows your head and your bat."},
+{"type":"slowmo","dur":2.8,"actor":"batter","good":true,"label":"Head still ✓","text":"See your *head*","vo":"See if your head stays still."},
+{"type":"spots","dur":2.6,"spots":[1,2],"text":"Bowlers: *2 spots*","vo":"Bowlers get two spots too."},
+{"type":"drill","dur":2.6,"pick":1,"text":"Pick a drill, it *picks the spot*","vo":"Pick a drill, and Crease Cam shows you the spot."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
