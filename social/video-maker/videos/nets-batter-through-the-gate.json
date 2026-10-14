@@ -1,0 +1,8 @@
+{"id":"nets-batter-through-the-gate","composition":"House","seed":229,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"beaten","text":"Bowled. *Through the gate*","vo":"Bowled again. Straight through the gate."},
+{"type":"think","dur":2.4,"actor":"batter","label":"How did that get through?","text":"Bat *and* pad?","vo":"How did that get between bat and pad?"},
+{"type":"guide","dur":2.6,"actor":"batter","text":"Film it *front on*","vo":"Film one net front on, from the guide spot."},
+{"type":"slowmo","dur":3.6,"actor":"batter","fault":"bat","label":"Bat from gully ✗","text":"Bat comes *across*","vo":"Slow-mo shows it. Your bat comes down from gully."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"bat","good":true,"label":"Straight bat ✓","text":"Bring it down *straight*","vo":"Bring it down straight, next to your pad."},
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"middle","text":"Gate *shut*","vo":"Next net, the gate is shut."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
