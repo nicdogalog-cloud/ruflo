@@ -1,0 +1,9 @@
+{"id":"the-four-drills","composition":"House","seed":233,"speed":1.08,"scenes":[
+{"type":"drill","dur":2.6,"text":"*4 drills*. Pick one.","vo":"Four drills in Crease Cam. Pick one."},
+{"type":"drill","dur":2.4,"pick":1,"text":"Bowling, *side on*","vo":"Bowling side on. See your run-up and stride."},
+{"type":"drill","dur":2.4,"pick":2,"text":"Bowling, *front on*","vo":"Bowling front on. See your line and arm."},
+{"type":"drill","dur":2.4,"pick":3,"text":"Batting, *front on*","vo":"Batting front on. See your head and bat."},
+{"type":"drill","dur":2.4,"pick":4,"text":"Batting, *side on*","vo":"Batting side on. See your feet."},
+{"type":"guide","dur":2.8,"actor":"bowler","text":"Each has a *guide*","vo":"Each drill shows where your phone goes."},
+{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"Free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

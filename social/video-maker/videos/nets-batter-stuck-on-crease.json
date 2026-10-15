@@ -1,0 +1,8 @@
+{"id":"nets-batter-stuck-on-crease","composition":"House","seed":235,"speed":1.08,"scenes":[
+{"type":"think","dur":2.4,"actor":"batter","label":"Rooted again","text":"Stuck on the *crease*","vo":"Full ball, and you're stuck on the crease."},
+{"type":"nets","dur":2.6,"actor":"batter","outcome":"beaten","text":"*Beaten* on the pad","vo":"Beaten again, and it's thumping the pad."},
+{"type":"spots","dur":2.6,"spots":[4],"text":"Film it *side on*","vo":"Put your phone on the batting side spot."},
+{"type":"slowmo","dur":3.6,"actor":"batter","fault":"foot","label":"Feet stuck ✗","text":"Foot *stays home*","vo":"Slow-mo shows it. Your front foot never leaves home."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"foot","good":true,"label":"Step in ✓","text":"Step *in* to it","vo":"Step in, and meet the ball."},
+{"type":"nets","dur":3.1,"actor":"batter","outcome":"middle","text":"Next net. *Driven.*","vo":"Next net, it's driven back past the bowler."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
