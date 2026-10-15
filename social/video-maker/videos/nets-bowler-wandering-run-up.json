@@ -1,0 +1,9 @@
+{"id":"nets-bowler-wandering-run-up","composition":"House","seed":237,"speed":1.08,"scenes":[
+{"type":"think","dur":2.4,"actor":"bowler","label":"Why so wide?","text":"Drifting *down leg*","vo":"Running in hard, and it's drifting down leg."},
+{"type":"tracks","dur":2.6,"text":"*Wide* again 😩","vo":"Wide again. And again."},
+{"type":"spots","dur":2.6,"spots":[2],"text":"Film it *front on*","vo":"Put your phone on the bowling front spot."},
+{"type":"slowmo","dur":3.6,"actor":"bowler","fault":"runup","label":"Run-up wanders ✗","text":"It *wanders*","vo":"Slow-mo shows it. Your run-up curves off line."},
+{"type":"steps","dur":3.0,"text":"*Straighten* it","items":["Mark your start","Run at the stumps","Same line every ball"],"vo":"Mark your start. Run at the stumps. Same line, every ball."},
+{"type":"slowmo","dur":3.0,"actor":"bowler","fault":"runup","good":true,"label":"Straight in ✓","text":"Straight *in*","vo":"Straight in, all the way."},
+{"type":"nets","dur":2.8,"actor":"bowler","outcome":"beaten","text":"Now *on target*","vo":"Next net, it's on the stumps."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

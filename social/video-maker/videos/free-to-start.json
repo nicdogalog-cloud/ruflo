@@ -1,10 +1,8 @@
-{"id":"free-to-start","seed":87,"scenes":[
-{"type":"stumps","dur":1.8,"bg":"navy","text":"Better nets videos for £0","vo":"Better nets videos. Zero pounds."},
-{"type":"kinetic","dur":1.8,"bg":"red","size":130,"words":["You","already","own","the","*camera"],"vo":"You already own the camera."},
-{"type":"phone","dur":2.0,"mode":"good","text":"Your phone 📱","vo":"It's your phone."},
-{"type":"phone","dur":1.8,"mode":"shake","text":"No more shaky clips","vo":"No more shaky, wonky clips."},
-{"type":"pitch","dur":4.0,"spots":[1,2,3,4],"text":"Guide cards show the spot","vo":"Guide cards show exactly where it goes."},
-{"type":"vs","dur":3.0,"a":{"mode":"far","label":"Guessing"},"b":{"mode":"good","label":"Guide card"},"text":"Stop guessing","vo":"So you stop guessing."},
-{"type":"list","dur":3.6,"text":"Crease Cam prices","items":[["✓","Free plan to start"],["✓","£3.99 a month"],["✓","£39.99 a year"]],"vo":"Free plan to start. Or three ninety nine a month."},
-{"type":"stumps","dur":1.8,"bg":"red","style":"white","text":"No excuses now 😅","vo":"So, no excuses."},
-{"type":"cta","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
+{"id":"free-to-start","composition":"House","seed":239,"speed":1.08,"scenes":[
+{"type":"pricing","dur":3.2,"text":"Start for *free*","vo":"Crease Cam is free to start."},
+{"type":"drill","dur":2.8,"pick":1,"text":"Pick a *drill*","vo":"Pick a drill for your batting or bowling."},
+{"type":"guide","dur":2.8,"actor":"bowler","text":"Line up the *guide*","vo":"Put your phone on the spot, and line up the guide."},
+{"type":"slowmo","dur":3.0,"actor":"bowler","good":true,"label":"Watch it back ✓","text":"*Slow-mo* replay","vo":"Then watch it back in slow-mo."},
+{"type":"steps","dur":3.4,"text":"*Your call*","items":["Free to start","£3.99 a month","£39.99 a year"],"vo":"Want more? Three ninety nine a month, or thirty nine ninety nine a year."},
+{"type":"privacy","dur":2.8,"text":"Kept *private*","vo":"And your videos stay on your phone."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
