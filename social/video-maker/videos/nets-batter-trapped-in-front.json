@@ -1,0 +1,8 @@
+{"id":"nets-batter-trapped-in-front","composition":"House","seed":243,"speed":1.08,"scenes":[
+{"type":"nets","dur":2.8,"actor":"batter","outcome":"beaten","text":"Trapped *in front*","vo":"It nips back in, and you're trapped in front. Again."},
+{"type":"think","dur":2.4,"actor":"batter","label":"Am I falling over?","text":"Every *net*","vo":"Every net, the same ball gets you."},
+{"type":"spots","dur":2.6,"spots":[3],"text":"Film it *front on*","vo":"Put your phone on the batting front spot."},
+{"type":"slowmo","dur":3.6,"actor":"batter","fault":"head","label":"Head falls over ✗","text":"Head *falls over*","vo":"Slow-mo shows it. Your head falls over to the off side."},
+{"type":"slowmo","dur":3.2,"actor":"batter","fault":"head","good":true,"label":"Head still ✓","text":"Keep it *still*","vo":"Keep your head still, over the ball."},
+{"type":"nets","dur":3.0,"actor":"batter","outcome":"middle","text":"Now it's *middled*","vo":"Next net, it's middled straight back."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}

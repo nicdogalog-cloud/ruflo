@@ -1,0 +1,8 @@
+{"id":"filming-your-kid","composition":"House","seed":241,"speed":1.08,"scenes":[
+{"type":"think","dur":2.6,"actor":"batter","label":"Is it private?","text":"Filming your *kid*?","vo":"Filming your kid at the nets?"},
+{"type":"privacy","dur":3.4,"text":"*Nothing* uploaded","vo":"Crease Cam keeps every video on your phone. Nothing gets uploaded."},
+{"type":"spots","dur":2.8,"spots":[3,4],"text":"Phone on the *spot*","vo":"Put the phone on the batting guide spot."},
+{"type":"guide","dur":2.8,"actor":"batter","text":"Line it *up*","vo":"Line it up, and press record."},
+{"type":"slowmo","dur":3.2,"actor":"batter","good":true,"label":"Watch it back ✓","text":"Watch it *together*","vo":"Then watch it back together, in slow-mo."},
+{"type":"pricing","dur":2.8,"text":"*Free* to start","vo":"And it's free to start."},
+{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
