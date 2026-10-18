@@ -1,10 +1,1 @@
-{"id":"crease-cam-faqs","composition":"House","seed":223,"speed":1.08,"scenes":[
-{"type":"logo","dur":2.2,"text":"Your *questions*, answered","vo":"Crease Cam. Your questions, answered."},
-{"type":"think","dur":2.4,"actor":"batter","label":"Where's my phone go?","text":"Where does it *go*?","vo":"Where does my phone go?"},
-{"type":"spots","dur":2.8,"spots":[1,2,3,4],"text":"The *guide card* shows you","vo":"The guide card shows you the spot."},
-{"type":"think","dur":2.2,"actor":"bowler","label":"Bowlers too?","text":"Just for *batters*?","vo":"Is it just for batters?"},
-{"type":"drill","dur":2.6,"pick":1,"text":"Batting *and* bowling","vo":"No. There are batting and bowling drills."},
-{"type":"think","dur":2.2,"actor":"keeper","label":"Who sees my videos?","text":"Who *sees* them?","vo":"Who sees my videos?"},
-{"type":"privacy","dur":2.6,"text":"They stay on *your phone*","vo":"Just you. They stay on your phone."},
-{"type":"pricing","dur":2.8,"text":"*Free* to start","vo":"And yes, it's free to start."},
-{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
+{"id": "crease-cam-faqs", "composition": "House", "seed": 263, "speed": 1.08, "scenes": [{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Is it just for batters?", "text": "Just for *batters*?", "vo": "Is Crease Cam just for batters?"}, {"type": "drill", "dur": 3.0, "pick": 1, "text": "No. *Four* drills", "vo": "No. Four drills, two for batting and two for bowling."}, {"type": "think", "dur": 2.4, "actor": "batter", "label": "Where do my videos go?", "text": "Where do they *go*?", "vo": "Where do my videos go?"}, {"type": "privacy", "dur": 2.8, "text": "*Your phone* only", "vo": "They stay on your phone. Nothing is uploaded."}, {"type": "think", "dur": 2.4, "actor": "batter", "label": "Do I need a coach?", "text": "Need a *coach*?", "vo": "Do I need a coach?"}, {"type": "tracks", "dur": 3.2, "text": "Draw the *lines*", "vo": "No. Watch it back in slow-mo and draw the lines yourself."}, {"type": "pricing", "dur": 3.4, "text": "Free to *start*", "vo": "Is it free? Free to start, then three ninety-nine a month."}, {"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
