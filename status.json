@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-18 06:38 UTC",
- "briefing": "Morning briefing, Sun 18 Oct. Since yesterday: Buzz posted 4 Instagram reels through Buffer (your first net session, best ball was a no-ball, late on the quick one, camera app vs Crease Cam), all sent with no errors. Every other building is waiting on nic or a later date. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail...",
+ "updated": "2026-10-19 06:39 UTC",
+ "briefing": "Morning briefing, Mon 19 Oct. Since yesterday: Buzz posted 4 reels with 0 errors. Ledger and Atlas did the weekly numbers: 28 reels last week, 6,673 views (up 77%), but still 0 comments and 0 new follows. Atlas spotted two newer cricket apps (Trackman Cricket, Clean Bowled). Wicket checked the website: all fine apart from the privacy and terms blanks. nic's...",
  "crew": [
   {
    "name": "Nova",
@@ -37,10 +37,13 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [],
+   "done": [
+    "Track Crease Cam Instagram views each week (next Monday 19 Oct)",
+    "Competitor and trend check, 19 Oct"
+   ],
    "open": 2,
-   "next": "Track Crease Cam Instagram views each week (next Monday 19 Oct)",
-   "latest": ""
+   "next": "Track Crease Cam Instagram views each week (next Monday 26 Oct)",
+   "latest": "Views up 77% to 6,673, but nobody comments or follows yet, and people leave after about 4.7 seconds. Two newer cricket apps spotted on the App Store."
   },
   {
    "name": "Sol",
@@ -77,10 +80,12 @@
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [],
+   "done": [
+    "Website check, 19 Oct"
+   ],
    "open": 2,
    "next": "",
-   "latest": ""
+   "latest": "Website checked: every page and picture link works, nothing changed since 14 Oct. Only the privacy and terms blanks are left."
   },
   {
    "name": "Buzz",
@@ -90,7 +95,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": ""
+   "latest": "Last 24 hours: 4 Instagram reels sent through Buffer with no errors (week 1 vs week 4, stopping at release, across the line, your questions answered)."
   },
   {
    "name": "Meeting Hall",
