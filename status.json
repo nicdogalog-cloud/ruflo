@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-19 06:39 UTC",
- "briefing": "Morning briefing, Mon 19 Oct. Since yesterday: Buzz posted 4 reels with 0 errors. Ledger and Atlas did the weekly numbers: 28 reels last week, 6,673 views (up 77%), but still 0 comments and 0 new follows. Atlas spotted two newer cricket apps (Trackman Cricket, Clean Bowled). Wicket checked the website: all fine apart from the privacy and terms blanks. nic's...",
+ "updated": "2026-10-20 06:39 UTC",
+ "briefing": "Tuesday briefing. Since yesterday: Ledger's weekly numbers, Atlas's competitor check and Wicket's website check are done; Buzz posted 4 reels with no errors. Every other open task is waiting on you. Your top 3 today: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy/terms blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -37,13 +37,10 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [
-    "Track Crease Cam Instagram views each week (next Monday 19 Oct)",
-    "Competitor and trend check, 19 Oct"
-   ],
+   "done": [],
    "open": 2,
    "next": "Track Crease Cam Instagram views each week (next Monday 26 Oct)",
-   "latest": "Views up 77% to 6,673, but nobody comments or follows yet, and people leave after about 4.7 seconds. Two newer cricket apps spotted on the App Store."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -80,12 +77,10 @@
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [
-    "Website check, 19 Oct"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Website checked: every page and picture link works, nothing changed since 14 Oct. Only the privacy and terms blanks are left."
+   "latest": ""
   },
   {
    "name": "Buzz",
@@ -95,7 +90,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24 hours: 4 Instagram reels sent through Buffer with no errors (week 1 vs week 4, stopping at release, across the line, your questions answered)."
+   "latest": "Last 24h: 4 reels posted to Instagram, no errors (guide lining-up, bowler front arm, batter chipping the drive, batting vs bowling drills)."
   },
   {
    "name": "Meeting Hall",
