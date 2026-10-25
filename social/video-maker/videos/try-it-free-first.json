@@ -1,0 +1,55 @@
+{
+ "id": "try-it-free-first",
+ "composition": "House",
+ "seed": 319,
+ "speed": 1.08,
+ "scenes": [
+  {
+   "type": "think",
+   "dur": 2.9,
+   "actor": "bowler",
+   "label": "Is it worth paying for?",
+   "text": "Worth *paying*?",
+   "vo": "Not sure if it's worth paying for?"
+  },
+  {
+   "type": "pricing",
+   "dur": 3.0,
+   "text": "Try it *free*",
+   "vo": "You don't have to. Crease Cam is free to start."
+  },
+  {
+   "type": "drill",
+   "dur": 2.6,
+   "pick": 1,
+   "text": "Pick a *drill*",
+   "vo": "Pick a drill."
+  },
+  {
+   "type": "spots",
+   "dur": 2.6,
+   "spots": [
+    1
+   ],
+   "text": "Find the *spot*",
+   "vo": "Put your phone on the spot."
+  },
+  {
+   "type": "tracks",
+   "dur": 2.8,
+   "text": "See your *lines*",
+   "vo": "Watch it back and draw your lines."
+  },
+  {
+   "type": "pricing",
+   "dur": 3.6,
+   "text": "Then *decide*",
+   "vo": "Like it? Three ninety-nine a month, or thirty-nine ninety-nine a year."
+  },
+  {
+   "type": "end",
+   "dur": 2.6,
+   "vo": "Follow Crease Cam for the launch."
+  }
+ ]
+}
