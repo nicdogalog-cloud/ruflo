@@ -1,0 +1,56 @@
+{
+ "id": "who-sees-your-clips",
+ "composition": "House",
+ "seed": 321,
+ "speed": 1.08,
+ "scenes": [
+  {
+   "type": "think",
+   "dur": 2.6,
+   "actor": "batter",
+   "label": "Who sees it?",
+   "text": "Who *sees* it?",
+   "vo": "Ever wonder who sees your net videos?"
+  },
+  {
+   "type": "privacy",
+   "dur": 3.0,
+   "text": "Only *you*",
+   "vo": "With Crease Cam, your clips stay on your phone."
+  },
+  {
+   "type": "guide",
+   "dur": 3.0,
+   "actor": "bowler",
+   "text": "Film your *spell*",
+   "vo": "Film your spell from the guide spot."
+  },
+  {
+   "type": "tracks",
+   "dur": 3.0,
+   "text": "Watch it *back*",
+   "vo": "Watch it back and draw your lines."
+  },
+  {
+   "type": "spots",
+   "dur": 2.8,
+   "spots": [
+    1,
+    2
+   ],
+   "text": "Same *spot*",
+   "vo": "Same spot every net, so every clip lines up."
+  },
+  {
+   "type": "pricing",
+   "dur": 3.2,
+   "text": "Free to *start*",
+   "vo": "And it's free to start."
+  },
+  {
+   "type": "end",
+   "dur": 2.6,
+   "vo": "Follow Crease Cam for the launch."
+  }
+ ]
+}
