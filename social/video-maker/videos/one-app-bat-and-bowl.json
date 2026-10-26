@@ -1,0 +1,9 @@
+{"id": "one-app-bat-and-bowl", "composition": "House", "seed": 327, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Bat or bowl?", "text": "Bat or *bowl*?", "vo": "Batter, bowler, or a bit of both?"},
+{"type": "drill", "dur": 2.8, "pick": 3, "text": "Batting *drills*", "vo": "Pick a batting drill."},
+{"type": "spots", "dur": 2.8, "spots": [3, 4], "text": "Two batting *spots*", "vo": "Two spots for filming your batting."},
+{"type": "drill", "dur": 2.8, "pick": 1, "text": "Bowling *drills*", "vo": "Or pick a bowling drill."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2], "text": "Two bowling *spots*", "vo": "And two spots for your bowling."},
+{"type": "tracks", "dur": 3.0, "text": "See your *lines*", "vo": "Then watch it back and see your lines."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "It's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

@@ -1,0 +1,9 @@
+{"id": "nets-keeper-fumbling", "composition": "House", "seed": 325, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.6, "actor": "keeper", "outcome": "beaten", "text": "*Fumbled* it again", "vo": "Keeper, that's another one on the floor."},
+{"type": "spots", "dur": 2.8, "spots": [4], "text": "Film from the *side*", "vo": "Prop your phone on the side-on spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "keeper", "fault": "gloves", "label": "Up too soon ✗", "text": "Up *too soon*", "vo": "Slow-mo shows you standing up before the ball arrives."},
+{"type": "steps", "dur": 3.2, "text": "Low and *late*", "items": ["Stay down", "Watch it in", "Rise with it"], "vo": "Stay down. Watch it in. Rise with the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Rise with it ✓", "text": "Rise *with it*", "vo": "Now you rise with the bounce."},
+{"type": "think", "dur": 2.4, "actor": "keeper", "label": "Got it!", "text": "*Easy* now", "vo": "Suddenly it feels easy."},
+{"type": "nets", "dur": 2.6, "actor": "keeper", "outcome": "beaten", "text": "*Clean* take", "vo": "Next net, clean take."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
