@@ -1,0 +1,8 @@
+{"id": "match-the-outline", "composition": "House", "seed": 329, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Wonky video?", "text": "*Wonky* videos?", "vo": "Your net videos always come out wonky?"},
+{"type": "drill", "dur": 2.8, "pick": 4, "text": "Pick a *drill*", "vo": "Pick a drill in Crease Cam."},
+{"type": "spots", "dur": 2.8, "spots": [4], "text": "Card shows the *spot*", "vo": "The guide card shows where the phone goes."},
+{"type": "guide", "dur": 3.4, "actor": "batter", "text": "Match the *outline*", "vo": "Then match the see-through outline on screen."},
+{"type": "tracks", "dur": 3.0, "text": "Same view *every* net", "vo": "Same view every net, so you can compare."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

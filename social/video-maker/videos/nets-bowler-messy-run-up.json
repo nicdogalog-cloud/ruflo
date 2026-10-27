@@ -1,0 +1,9 @@
+{"id": "nets-bowler-messy-run-up", "composition": "House", "seed": 331, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "middle", "text": "Smashed *again*", "vo": "Another one sails back over your head."},
+{"type": "think", "dur": 2.4, "actor": "bowler", "label": "Out of rhythm", "text": "No *rhythm*", "vo": "It just feels out of rhythm."},
+{"type": "spots", "dur": 2.8, "spots": [1], "text": "Film it *side on*", "vo": "Put your phone on the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "runup", "label": "Choppy run-up ✗", "text": "Choppy *run-up*", "vo": "Slow-mo shows the run-up chopping and changing."},
+{"type": "steps", "dur": 3.2, "text": "Smooth it *out*", "items": ["Mark your start", "Same steps", "Build up speed"], "vo": "Mark your start. Same steps each time. Build up speed."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Smooth ✓", "text": "Nice and *smooth*", "vo": "Now it's smooth all the way in."},
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "beaten", "text": "Beat the *bat*", "vo": "Next net, straight past the bat."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
