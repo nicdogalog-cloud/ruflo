@@ -1,0 +1,8 @@
+{"id": "quick-answers", "composition": "House", "seed": 335, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "How?", "text": "Got *questions*?", "vo": "Got questions about Crease Cam?"},
+{"type": "steps", "dur": 3.8, "text": "Quick *answers*", "items": ["Just a phone", "Any age", "Free to start"], "vo": "You just need your phone. It's for any age. And it's free to start."},
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "Four *spots*", "vo": "Guide cards show four spots for the phone."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Slow-mo ✓", "text": "Watch it *slow*", "vo": "Watch it back in slow-mo."},
+{"type": "privacy", "dur": 2.8, "text": "Stays *private*", "vo": "And your videos stay on your phone."},
+{"type": "pricing", "dur": 3.0, "text": "Pick a *plan*", "vo": "Go free, or upgrade when you're ready."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

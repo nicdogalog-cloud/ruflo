@@ -1,0 +1,9 @@
+{"id": "nets-bowler-front-arm-drops", "composition": "House", "seed": 333, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "middle", "text": "*Wide* again", "vo": "Another one drifts wide and gets cut away."},
+{"type": "spots", "dur": 2.8, "spots": [2], "text": "Film it *front on*", "vo": "Set your phone on the front-on bowling spot."},
+{"type": "think", "dur": 2.4, "actor": "bowler", "label": "Why wide?", "text": "Where's it *going*?", "vo": "So where's it going wrong?"},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "arm", "label": "Arm drops ✗", "text": "Front arm *drops*", "vo": "Slow-mo shows the front arm dropping early."},
+{"type": "steps", "dur": 3.2, "text": "Arm *up*", "items": ["Arm up high", "Look past it", "Pull it down"], "vo": "Arm up high. Look past it. Then pull it down."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Strong arm ✓", "text": "*Strong* front arm", "vo": "Now the front arm leads the way."},
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "beaten", "text": "On the *stumps*", "vo": "Next net, right on the stumps."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
