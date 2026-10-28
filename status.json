@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-27 07:38 UTC",
- "briefing": "Tuesday briefing, 27 Oct. Since yesterday: Buzz posted 4 reels with no errors. Yesterday's Monday checks are done: views 5,981 last week, watch time up, website fine. The rest of the crew is still waiting on you. Your top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy/terms blanks.",
+ "updated": "2026-10-28 07:39 UTC",
+ "briefing": "Wednesday briefing, 28 Oct. Since yesterday: Buzz posted 4 reels with no errors. The rest of the crew is waiting on you for its next steps. Your top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy/terms blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -37,12 +37,10 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [
-    "Monday competitor and trend check (26 Oct)"
-   ],
+   "done": [],
    "open": 2,
    "next": "Track Crease Cam Instagram views each week (next Monday 26 Oct)",
-   "latest": "Watch time is up 38% week on week. Still 0 comments and 0 follows, so the next push is a question at the end of each reel."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -79,12 +77,10 @@
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [
-    "Monday website check (26 Oct)"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Website checked: all fine, only the privacy and terms blanks are left."
+   "latest": ""
   },
   {
    "name": "Buzz",
@@ -94,7 +90,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Since yesterday morning: 4 reels posted to Instagram, no errors (who sees your clips, skying your drives, keeper fumbling, one app for bat and ball)."
+   "latest": "Since yesterday morning: 4 reels posted to Instagram, no errors (match the outline, messy run-up, front arm dropping, quick answers)."
   },
   {
    "name": "Meeting Hall",
