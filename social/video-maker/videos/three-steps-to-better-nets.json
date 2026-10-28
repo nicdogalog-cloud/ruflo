@@ -1,0 +1,9 @@
+{"id": "three-steps-to-better-nets", "composition": "House", "seed": 343, "speed": 1.08, "scenes": [
+{"type": "steps", "dur": 3.4, "text": "Nets in *3 steps*", "items": ["Pick a drill", "Find the spot", "Watch it back"], "vo": "Better nets in three steps."},
+{"type": "drill", "dur": 2.8, "pick": 4, "text": "1. Pick a *drill*", "vo": "One. Pick a drill."},
+{"type": "spots", "dur": 2.8, "spots": [4], "text": "2. Find the *spot*", "vo": "Two. The card shows where your phone goes."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Line it *up*", "vo": "Line up the outline and press record."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "backlift", "good": true, "label": "Nice ✓", "text": "3. Watch it *back*", "vo": "Three. Watch it back in slow-mo."},
+{"type": "privacy", "dur": 2.8, "text": "Stays *private*", "vo": "Your videos stay on your phone."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
