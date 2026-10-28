@@ -1,0 +1,8 @@
+{"id": "slow-it-down", "composition": "House", "seed": 337, "speed": 1.08, "scenes": [
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "label": "Head falling ✗", "text": "Slow it *down*", "vo": "Slow your batting right down."},
+{"type": "tracks", "dur": 3.0, "text": "Draw your *lines*", "vo": "Draw lines to see exactly what happened."},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Aha!", "text": "*Spot* it", "vo": "Spot the fault you can't feel."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Film from the *spot*", "vo": "Just film from the guide spot."},
+{"type": "drill", "dur": 2.8, "pick": 2, "text": "Any *drill*", "vo": "Batting or bowling, any drill."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

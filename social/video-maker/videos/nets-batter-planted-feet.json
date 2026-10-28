@@ -1,0 +1,9 @@
+{"id": "nets-batter-planted-feet", "composition": "House", "seed": 339, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "beaten", "text": "Beaten *outside off*", "vo": "Beaten outside off, again and again."},
+{"type": "think", "dur": 2.4, "actor": "batter", "label": "Reaching?", "text": "*Reaching* for it", "vo": "Why does it feel so far away?"},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Film it *front on*", "vo": "Set your phone on the front-on batting spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "foot", "label": "Feet planted ✗", "text": "Feet *planted*", "vo": "Slow-mo shows your feet never move."},
+{"type": "steps", "dur": 3.2, "text": "Get *forward*", "items": ["Watch the ball", "Step to it", "Bat with pad"], "vo": "Watch the ball. Step to it. Bat beside the pad."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Big stride ✓", "text": "Big *stride*", "vo": "Now you get right to the pitch."},
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "middle", "text": "Pure *timing*", "vo": "Next net, pure timing."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
