@@ -1,0 +1,9 @@
+{"id": "nets-bowler-stopping-short", "composition": "House", "seed": 349, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "middle", "text": "Too *slow*", "vo": "Every ball sits up to be hit."},
+{"type": "think", "dur": 2.4, "actor": "bowler", "label": "No pace?", "text": "Where's the *pace*?", "vo": "So where's the pace gone?"},
+{"type": "drill", "dur": 2.6, "pick": 2, "text": "Film it *front on*", "vo": "Pick the front-on bowling drill."},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "follow", "label": "Stops dead ✗", "text": "You *stop dead*", "vo": "Slow-mo shows you stopping dead at release."},
+{"type": "steps", "dur": 3.2, "text": "Keep *going*", "items": ["Arm through", "Chest drives on", "Run past it"], "vo": "Arm through. Chest drives on. Run past it."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Follows through ✓", "text": "All the *way* through", "vo": "Now you follow all the way through."},
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "beaten", "text": "Hurries the *batter*", "vo": "Next net, it hurries the batter."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

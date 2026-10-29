@@ -1,0 +1,9 @@
+{"id": "four-drills-one-tap", "composition": "House", "seed": 351, "speed": 1.08, "scenes": [
+{"type": "drill", "dur": 3.0, "pick": 3, "text": "*One tap* to start", "vo": "One tap and you're ready to film."},
+{"type": "think", "dur": 2.4, "actor": "batter", "label": "Which one?", "text": "Which *drill*?", "vo": "Not sure which drill to pick?"},
+{"type": "spots", "dur": 3.0, "spots": [3, 4], "text": "Batting? *Two* views", "vo": "Batting has two. Front on and side on."},
+{"type": "spots", "dur": 3.0, "spots": [1, 2], "text": "Bowling? *Two* more", "vo": "Bowling has two more."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Card shows the *spot*", "vo": "Each one tells you exactly where the phone goes."},
+{"type": "privacy", "dur": 2.6, "text": "Kept *private*", "vo": "And your clips stay on your phone."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "And it is free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
