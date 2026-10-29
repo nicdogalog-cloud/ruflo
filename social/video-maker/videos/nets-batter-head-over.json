@@ -1,0 +1,9 @@
+{"id": "nets-batter-head-over", "composition": "House", "seed": 347, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "beaten", "text": "Bowled *again*", "vo": "Bowled through the gap. Again."},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "So you film it from the front-on spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "head", "label": "Head falling ✗", "text": "Head falls *over*", "vo": "Slow-mo shows your head falling to the off side."},
+{"type": "think", "dur": 2.4, "actor": "batter", "label": "Aha!", "text": "*That's* why", "vo": "That's why you miss the straight ones."},
+{"type": "steps", "dur": 3.2, "text": "Stay *still*", "items": ["Eyes level", "Head over toe", "Wait for it"], "vo": "Eyes level. Head over your front toe. Wait for it."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Head *still*", "vo": "Now your head stays still."},
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "middle", "text": "Straight *back*", "vo": "Next net, straight back past the bowler."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

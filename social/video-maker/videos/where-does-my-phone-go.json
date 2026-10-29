@@ -1,0 +1,9 @@
+{"id": "where-does-my-phone-go", "composition": "House", "seed": 345, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Where?", "text": "Where does my *phone* go?", "vo": "Where does your phone actually go?"},
+{"type": "spots", "dur": 3.4, "spots": [1, 2, 3, 4], "text": "*Four* spots", "vo": "Crease Cam gives you four spots. Two for bowling, two for batting."},
+{"type": "drill", "dur": 2.8, "pick": 1, "text": "Side on for *bowling*", "vo": "Side on shows your run-up and stride."},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Front on for *batting*", "vo": "Front on shows your head and bat path."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Match the *card*", "vo": "The card shows exactly where to stand it."},
+{"type": "tracks", "dur": 2.8, "text": "*Every* net", "vo": "Same view every net, so you can compare."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "Free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
