@@ -1,0 +1,9 @@
+{"id": "nets-batter-late-bat", "composition": "House", "seed": 355, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.4, "actor": "batter", "label": "Too quick!", "text": "Always *late*", "vo": "Always late on the quick ones?"},
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "edge", "text": "Nicked *again*", "vo": "Another thin edge."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Film it *side on*", "vo": "Film it from the side-on batting spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "backlift", "label": "Bat still down ✗", "text": "Bat still *down*", "vo": "Slow-mo shows your bat still down as it's bowled."},
+{"type": "steps", "dur": 3.2, "text": "Get *ready* early", "items": ["Lift early", "Bat up high", "Then go to it"], "vo": "Lift early. Bat up high. Then go to the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Ready ✓", "text": "*Ready* in time", "vo": "Now you're ready in time."},
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "middle", "text": "Right off the *middle*", "vo": "Next net, right off the middle."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

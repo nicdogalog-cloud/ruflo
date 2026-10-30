@@ -1,0 +1,9 @@
+{"id": "all-you-bring-is-a-phone", "composition": "House", "seed": 353, "speed": 1.08, "scenes": [
+{"type": "privacy", "dur": 2.6, "text": "No *tripod* needed", "vo": "No tripod. No coach. No problem."},
+{"type": "think", "dur": 2.4, "actor": "bowler", "label": "Need what?", "text": "What do I *need*?", "vo": "So what do you actually need?"},
+{"type": "drill", "dur": 2.8, "pick": 1, "text": "Just your *phone*", "vo": "Just your phone and the Crease Cam app."},
+{"type": "spots", "dur": 2.8, "spots": [1], "text": "Stand it on the *spot*", "vo": "Stand it on the guide spot."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Match the *outline*", "vo": "Match the outline, then bowl."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Looks good ✓", "text": "Watch it *slow*", "vo": "Watch it back slowly between overs."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
