@@ -1,0 +1,8 @@
+{"id": "nets-keeper-snatching-at-it", "composition": "House", "seed": 357, "speed": 1.08, "scenes": [
+{"type": "slowmo", "dur": 3.6, "actor": "keeper", "fault": "gloves", "label": "Snatching ✗", "text": "Keepers, *watch this*", "vo": "Keepers, why does it keep popping out?"},
+{"type": "nets", "dur": 2.6, "actor": "keeper", "outcome": "edge", "text": "*Dropped* again", "vo": "A thin edge, and it's on the floor."},
+{"type": "spots", "dur": 2.6, "spots": [2], "text": "Film from the *front*", "vo": "Film from the front-on bowling spot, facing you."},
+{"type": "steps", "dur": 3.6, "text": "Soft *hands*", "items": ["Fingers down", "Let it come", "Give with it"], "vo": "Fingers down. Let it come. Give with the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Soft hands ✓", "text": "Let it *come*", "vo": "Now your gloves let it come to you."},
+{"type": "nets", "dur": 3.0, "actor": "keeper", "outcome": "middle", "text": "Clean *take*", "vo": "Next net, a clean take."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

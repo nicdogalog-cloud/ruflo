@@ -1,0 +1,9 @@
+{"id": "why-the-name-crease-cam", "composition": "House", "seed": 359, "speed": 1.08, "scenes": [
+{"type": "logo", "dur": 3.0, "text": "Why the *name*?", "vo": "Ever wondered why it's called Crease Cam?"},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "The *crease*", "vo": "The crease is where every ball starts and finishes."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "The *cam*", "vo": "The cam is the phone you already own."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2, 3, 4], "text": "Point it *right*", "vo": "Crease Cam shows you where to point it."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Straight bat ✓", "text": "Then watch it *back*", "vo": "Then you watch it back, slowed right down."},
+{"type": "privacy", "dur": 2.6, "text": "Stays *yours*", "vo": "And every clip stays on your phone."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "Free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
