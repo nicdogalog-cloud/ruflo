@@ -1,0 +1,9 @@
+{"id": "nets-bowler-dropping-arm", "composition": "House", "seed": 363, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 3.0, "actor": "bowler", "outcome": "beaten", "text": "Spraying it *wide*?", "vo": "Bowlers, spraying it down the leg side?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Why wide?", "text": "Same *again*", "vo": "Ball after ball, and you can't see why."},
+{"type": "spots", "dur": 2.6, "spots": [2], "text": "Film it *front on*", "vo": "Film from the front-on bowling spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "arm", "label": "Arm drops ✗", "text": "The arm *drops*", "vo": "Slowed down, your arm drops away at the top."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Tall at top", "Arm by ear", "Arm through"], "vo": "Stand tall. Arm up by your ear. Then pull it through."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Arm high ✓", "text": "Arm *high*", "vo": "Now the arm stays high."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "On the *stumps*", "vo": "Next net, right on the stumps."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

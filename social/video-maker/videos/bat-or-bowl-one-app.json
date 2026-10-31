@@ -1,0 +1,9 @@
+{"id": "bat-or-bowl-one-app", "composition": "House", "seed": 361, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 3.0, "actor": "bowler", "label": "Bat or bowl?", "text": "Bat *or* bowl?", "vo": "Batter or bowler? It doesn't matter."},
+{"type": "drill", "dur": 2.8, "pick": 3, "text": "Pick your *drill*", "vo": "Pick what you're working on today."},
+{"type": "spots", "dur": 2.8, "spots": [3, 4], "text": "Batting *spots*", "vo": "Batting? Two spots, front on and side on."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2], "text": "Bowling *spots*", "vo": "Bowling? Two more, for your run and your action."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Match the *outline*", "vo": "Line yourself up with the outline and press record."},
+{"type": "tracks", "dur": 2.8, "text": "Watch it *back*", "vo": "Then watch it back, slowed right down."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "Free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
