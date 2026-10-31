@@ -128,9 +128,9 @@ subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", beat_wav, "-i", vo_w
 props = dict(spec, audio=mix)
 props_path = os.path.join(HERE, "build", f"{vid}-props.json")
 json.dump(props, open(props_path, "w"))
-chrome = subprocess.run("ls -d /opt/pw-browsers/chromium_headless_shell-*/*/ | head -1", shell=True, capture_output=True, text=True).stdout.strip()
+chrome = subprocess.run("ls /opt/pw-browsers/chromium_headless_shell-*/*/headless_shell /opt/pw-browsers/chromium_headless_shell-*/*/chrome-headless-shell 2>/dev/null | head -1", shell=True, capture_output=True, text=True).stdout.strip()
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)
 cmd = ["npx", "remotion", "render", "src/index.ts", spec.get("composition", "Spec"), f"out/{vid}.mp4", f"--props={props_path}", "--log=error"]
-if chrome: cmd.append(f"--browser-executable={chrome}headless_shell")
+if chrome: cmd.append(f"--browser-executable={chrome}")
 subprocess.run(cmd, cwd=HERE, check=True)
 print("done:", os.path.join(HERE, "out", f"{vid}.mp4"))

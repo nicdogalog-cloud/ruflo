@@ -1,0 +1,9 @@
+{"id": "see-what-a-coach-sees", "composition": "House", "seed": 367, "speed": 1.08, "scenes": [
+{"type": "tracks", "dur": 3.0, "text": "See it like a *coach*", "vo": "What if you could see your nets like a coach does?"},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Film *one* net", "vo": "Film one net from the guide spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Slow it *down*", "vo": "Slow it right down, frame by frame."},
+{"type": "tracks", "dur": 3.0, "text": "Draw the *lines*", "vo": "Draw lines to check where every ball pitched."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Aha!", "text": "Spot the *fix*", "vo": "Now you can see exactly what to fix."},
+{"type": "privacy", "dur": 2.6, "text": "Stays *private*", "vo": "And it all stays on your phone."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "Free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

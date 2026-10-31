@@ -1,0 +1,8 @@
+{"id": "nets-batter-front-foot", "composition": "House", "seed": 365, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 3.0, "actor": "batter", "outcome": "beaten", "text": "Bowled *again*?", "vo": "Batters, getting bowled through the gate again?"},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "foot", "label": "Foot across ✗", "text": "Look at the *foot*", "vo": "Slow it down. Your front foot goes across, not to the ball."},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the batting front spot to see it."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head first", "Step to line", "Bat by pad"], "vo": "Head leads. Step to the line of the ball. Bat comes down by the pad."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Foot to ball ✓", "text": "Step to the *ball*", "vo": "Now the foot goes to the ball."},
+{"type": "nets", "dur": 3.0, "actor": "batter", "outcome": "middle", "text": "Gate *closed*", "vo": "Next net, gate closed, right off the middle."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
