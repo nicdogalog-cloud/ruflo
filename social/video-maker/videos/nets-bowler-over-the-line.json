@@ -1,0 +1,9 @@
+{"id": "nets-bowler-over-the-line", "composition": "House", "seed": 373, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "No ball?!", "text": "*No ball* again?", "vo": "Bowlers, your mates keep shouting no ball?"},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Best ball *wasted*", "vo": "Your best ball of the night, and it doesn't count."},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "noball", "label": "Over the line ✗", "text": "Over the *line*", "vo": "Slowed down, your front foot lands over the crease."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Pace it out", "Mark it", "Same start"], "vo": "Pace out your run. Mark it. Start from the same spot every time."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "noball", "good": true, "label": "Behind it ✓", "text": "Foot *behind*", "vo": "Now your foot lands behind the line."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "That one *counts*", "vo": "Next net, beat the bat, and this one counts."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
