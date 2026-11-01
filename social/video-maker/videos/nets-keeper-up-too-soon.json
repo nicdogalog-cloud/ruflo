@@ -1,0 +1,9 @@
+{"id": "nets-keeper-up-too-soon", "composition": "House", "seed": 371, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 3.0, "actor": "keeper", "outcome": "beaten", "text": "Under the *gloves*?", "vo": "Keepers, low ones sneaking under your gloves?"},
+{"type": "think", "dur": 2.6, "actor": "keeper", "label": "How?!", "text": "Byes *again*", "vo": "Another four byes, and you can't see why."},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "keeper", "fault": "rise", "label": "Up too soon ✗", "text": "Up too *soon*", "vo": "Slowed down, you're standing up before the ball bounces."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Stay low", "Watch bounce", "Rise with it"], "vo": "Stay low. Watch it bounce. Then rise with the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "rise", "good": true, "label": "Stays low ✓", "text": "Stay *down*", "vo": "Now you stay down and rise with it."},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "middle", "text": "Clean *take*", "vo": "Next net, a clean take."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

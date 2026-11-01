@@ -1,0 +1,8 @@
+{"id": "green-means-lined-up", "composition": "House", "seed": 369, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Is this right?", "text": "Is my phone *right*?", "vo": "Ever wonder if your phone's even pointing the right way?"},
+{"type": "spots", "dur": 2.8, "spots": [4], "text": "Card shows the *spot*", "vo": "The guide card shows you exactly where it goes."},
+{"type": "guide", "dur": 3.2, "actor": "batter", "text": "Step into the *outline*", "vo": "Then step into the see-through outline on screen."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "*Green* means go", "vo": "When it turns green, you're lined up. Hit record."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Every clip *sharp*", "vo": "So every clip shows exactly what you need to see."},
+{"type": "privacy", "dur": 2.6, "text": "Stays *private*", "vo": "And it never leaves your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
