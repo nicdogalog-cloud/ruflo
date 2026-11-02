@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-01 19:38 UTC",
- "briefing": "Sunday briefing, 1 Nov. Since Friday: Buzz posted 4 reels a day with no errors, and I wrote the week review in the Meeting Hall. The city's save tool was down over the weekend, so these notes are late. The rest of the crew is still waiting on you. Your top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the...",
+ "updated": "2026-11-02 07:40 UTC",
+ "briefing": "Monday briefing, 2 Nov. Since yesterday: Buzz posted 4 reels with no errors, Ledger did the weekly numbers (views down a quarter on the week before), Atlas checked rivals, and Wicket checked the website (no changes, privacy and terms blanks still there). Your top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the...",
  "crew": [
   {
    "name": "Nova",
@@ -37,10 +37,12 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [],
+   "done": [
+    "Track Crease Cam Instagram views each week (next Monday 26 Oct)"
+   ],
    "open": 2,
-   "next": "Track Crease Cam Instagram views each week (next Monday 26 Oct)",
-   "latest": ""
+   "next": "Look at which reels kept people watching longest and tell Buzz",
+   "latest": "Trend check: no big new rival launch found this week. Closest apps are still CricVision: Pro Coach Tools and Ludimos on the App Store, plus PitchVision for nets (sources: App Store, appgoblin, pitchvision). Still..."
   },
   {
    "name": "Sol",
@@ -80,7 +82,7 @@
    "done": [],
    "open": 2,
    "next": "",
-   "latest": ""
+   "latest": "Website check: files unchanged since 14 Oct. The privacy and terms pages still have the blanks that need your company name, address, contact email and date."
   },
   {
    "name": "Buzz",
@@ -90,7 +92,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Saturday: 4 reels posted to Instagram with no errors (bat or bowl one app, dropping arm, front foot, see what a coach sees)."
+   "latest": "Last 24h: 4 reels posted to Instagram with no errors (green means lined up, keeper up too soon, no ball, what does it cost)."
   },
   {
    "name": "Meeting Hall",
