@@ -1,0 +1,9 @@
+{"id": "nets-bowler-no-zip", "composition": "House", "seed": 381, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 3.0, "actor": "bowler", "outcome": "middle", "text": "No *zip*?", "vo": "Bowlers, ball dying off the pitch and getting smashed?"},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "follow", "label": "Stops dead ✗", "text": "You stop *dead*", "vo": "Slowed down, you stop dead at the crease."},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Ohh!", "text": "Energy *lost*", "vo": "All that run-up energy, gone."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Drive through", "Chest forward", "Run past it"], "vo": "Drive through the crease. Chest forward. Run past it."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Follow through ✓", "text": "Keep *going*", "vo": "Now you keep going through the ball."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "Beat the *bat*", "vo": "Next net, it zips past the bat."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

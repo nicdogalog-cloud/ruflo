@@ -1,0 +1,8 @@
+{"id": "quick-questions", "composition": "House", "seed": 383, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "How's it work?", "text": "Your *questions*", "vo": "Got questions about Crease Cam? Quick answers."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Need a *tripod*?", "vo": "Need a tripod? No. The guide card shows where your phone goes."},
+{"type": "drill", "dur": 3.0, "pick": 4, "text": "Just for *batters*?", "vo": "Just for batters? No, there are bowling drills too."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Straight bat ✓", "text": "Slow-mo *too*?", "vo": "Can I slow it down? Yes, frame by frame."},
+{"type": "privacy", "dur": 3.0, "text": "Is it *private*?", "vo": "Is it private? Every clip stays on your phone."},
+{"type": "pricing", "dur": 2.8, "text": "What's it *cost*?", "vo": "And the cost? Free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
