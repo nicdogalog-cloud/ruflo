@@ -1,0 +1,8 @@
+{"id": "where-do-my-videos-go", "composition": "House", "seed": 377, "speed": 1.08, "scenes": [
+{"type": "privacy", "dur": 3.2, "text": "Where do clips *go*?", "vo": "Film your nets with Crease Cam. So where do the videos go?"}, 
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "The cloud?", "text": "Uploaded *where*?", "vo": "Uploaded to some server? Nope."}, 
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "*Your* phone films", "vo": "You film on your own phone."}, 
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Arm high ✓", "text": "*Your* phone plays", "vo": "You watch it back on your own phone."}, 
+{"type": "tracks", "dur": 2.8, "text": "Kept on *your* phone", "vo": "And it stays right there. Nothing uploaded."}, 
+{"type": "steps", "dur": 3.4, "text": "Good for *parents*", "items": ["No uploads", "No sharing", "Under-18s ok"], "vo": "No uploads, no sharing, safe for under eighteens."}, 
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

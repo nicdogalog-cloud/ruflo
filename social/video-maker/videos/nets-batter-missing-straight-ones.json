@@ -1,0 +1,9 @@
+{"id": "nets-batter-missing-straight-ones", "composition": "House", "seed": 379, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Missed it?!", "text": "Bowled *straight*?", "vo": "Batters, missing the straight ones in the nets?"}, 
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "beaten", "text": "Stumps *rattled*", "vo": "Stumps rattled, again."}, 
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the batting front spot."}, 
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "head", "label": "Head falls ✗", "text": "Head falls *over*", "vo": "Slowed down, your head falls over to the off side."}, 
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Eyes level", "Head on line", "Still at hit"], "vo": "Eyes level. Head on the line of the ball. Keep it still as you hit."}, 
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Head *still*", "vo": "Now the head stays still."}, 
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Straight *back*", "vo": "Next net, straight back past the bowler."}, 
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
