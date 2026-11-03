@@ -1,0 +1,8 @@
+{"id": "four-spots-every-angle", "composition": "House", "seed": 385, "speed": 1.08, "scenes": [
+{"type": "spots", "dur": 3.3, "spots": [1, 2, 3, 4], "text": "*4* phone spots", "vo": "Four spots. Every angle a coach would use."},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Batting *front*", "vo": "Batting front on shows your head and feet."},
+{"type": "spots", "dur": 2.8, "spots": [4], "text": "Batting *side*", "vo": "Side on shows your backlift and bat path."},
+{"type": "spots", "dur": 2.8, "spots": [2], "text": "Bowling *front*", "vo": "Bowling front on shows your arm and line."},
+{"type": "spots", "dur": 2.8, "spots": [1], "text": "Bowling *side*", "vo": "Side on shows your run-up and follow through."},
+{"type": "guide", "dur": 3.4, "actor": "batter", "text": "Card shows *where*", "vo": "The guide card shows exactly where your phone goes."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
