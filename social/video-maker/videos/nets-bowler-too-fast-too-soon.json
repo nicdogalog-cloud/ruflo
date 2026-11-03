@@ -1,0 +1,9 @@
+{"id": "nets-bowler-too-fast-too-soon", "composition": "House", "seed": 389, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Running in *flat out*?", "vo": "Bowlers, sprinting in flat out and still getting hit?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "So tired...", "text": "Gassed at the *crease*", "vo": "By the crease, you've got nothing left."},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "bowler", "fault": "runup", "label": "Too fast, too soon ✗", "text": "You *slow down*", "vo": "Slowed down, you sprint early, then fade into the crease."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Start smooth", "Build up", "Fastest last"], "vo": "Start smooth. Build up. Be fastest at the crease."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Building up ✓", "text": "Quick at the *end*", "vo": "Now you're quickest right at the end."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "Too quick for *them*", "vo": "Next net, it's too quick for the batter."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

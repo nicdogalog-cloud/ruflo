@@ -1,9 +1,8 @@
-{"id":"just-your-phone","composition":"House","seed":231,"speed":1.08,"scenes":[
-{"type":"steps","dur":3.0,"text":"No *fancy camera*","items":["No fancy camera","No laptop","Just your phone"],"vo":"No fancy camera. No laptop. Just your phone."},
-{"type":"drill","dur":2.6,"pick":4,"text":"Pick a *drill*","vo":"Open Crease Cam and pick a drill."},
-{"type":"spots","dur":2.6,"spots":[4],"text":"It shows the *spot*","vo":"It shows you where the phone goes."},
-{"type":"guide","dur":2.8,"actor":"batter","text":"Line up the *outline*","vo":"Line up the see-through outline, and record."},
-{"type":"slowmo","dur":3.0,"actor":"batter","good":true,"label":"Paused ✓","text":"Watch it in *slow-mo*","vo":"Then watch it back in slow-mo."},
-{"type":"privacy","dur":2.6,"text":"Stays on *your phone*","vo":"And it all stays on your phone."},
-{"type":"pricing","dur":2.6,"text":"*Free* to start","vo":"Free to start."},
-{"type":"end","dur":2.6,"vo":"Follow Crease Cam for the launch."}]}
+{"id": "just-your-phone", "composition": "House", "seed": 391, "speed": 1.08, "scenes": [
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "This is the *kit*", "vo": "This is all the kit you need. Your phone."},
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Tripod? Coach?", "text": "No *tripod*", "vo": "No tripod, no coach, no expensive camera."},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Prop it *here*", "vo": "The guide card shows where to prop it up."},
+{"type": "drill", "dur": 3.0, "pick": 1, "text": "Pick a *drill*", "vo": "Pick a drill and press record."},
+{"type": "tracks", "dur": 3.2, "text": "Draw the *lines*", "vo": "Then slow it down and draw the lines."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
