@@ -1,0 +1,9 @@
+{"id": "nets-batter-beaten-by-the-yorker", "composition": "House", "seed": 395, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "*Yorked* again?", "vo": "Batters, the full one keeps sneaking under your bat?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Too quick!", "text": "Bat's too *late*", "vo": "It feels like it's on you before you're ready."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Film it *side on*", "vo": "Film from the side-on batting spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "backlift", "label": "Bat still down ✗", "text": "Late *backlift*", "vo": "Slowed down, your bat's still down as the ball's released."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Lift early", "Bat ready", "Jam it down"], "vo": "Lift it early. Have it ready. Then jam it down."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Up in time ✓", "text": "Ready in *time*", "vo": "Now the bat's up in time."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Dug *out*", "vo": "Next net, you dig it out."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

@@ -1,0 +1,8 @@
+{"id": "the-logo-story", "composition": "House", "seed": 393, "speed": 1.08, "scenes": [
+{"type": "logo", "dur": 3.2, "text": "Look *closer*", "vo": "Look closer at the Crease Cam logo."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Stumps* inside", "vo": "The stumps are the nets, where you train."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "A *camera* frame", "vo": "The corners are your phone's camera frame."},
+{"type": "spots", "dur": 2.8, "spots": [1, 4], "text": "Framed *right*", "vo": "Because the app shows you where to frame it."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "arm", "good": true, "label": "In frame ✓", "text": "Every *clip*", "vo": "So every clip is worth watching back."},
+{"type": "privacy", "dur": 2.8, "text": "*Your* nets", "vo": "Your nets, your phone, your game."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
