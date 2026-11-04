@@ -1,0 +1,9 @@
+{"id": "nets-batter-stuck-in-the-crease", "composition": "House", "seed": 397, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Why can't I drive?", "text": "Can't *drive*?", "vo": "Batters, can't get anything away through the covers?"},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "Edge to *slip*", "vo": "Every drive flies off the edge."},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the front-on batting spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "foot", "label": "Feet stuck ✗", "text": "No *stride*", "vo": "Slowed down, your front foot never moves."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head leads", "Big stride", "Foot to ball"], "vo": "Lead with your head. Big stride. Get your foot to the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Foot to ball ✓", "text": "Get *forward*", "vo": "Now you get right forward."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Out of the *middle*", "vo": "Next net, it's out of the middle."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
