@@ -1,0 +1,9 @@
+{"id": "nets-keeper-byes-through", "composition": "House", "seed": 405, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Not again!", "text": "Byes *again*?", "vo": "Keepers, low ones flying through your legs at the nets?"},
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "beaten", "text": "Through the *legs*", "vo": "Beat the batter, then beat you too."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Film your *keeping*", "vo": "Prop your phone side on and film your keeping."},
+{"type": "slowmo", "dur": 3.4, "actor": "keeper", "fault": "rise", "label": "Up too early ✗", "text": "You stand *up*", "vo": "Slowed down, you're standing up before the bounce."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Stay down", "Watch it bounce", "Rise with it"], "vo": "Stay down. Watch it bounce. Rise with the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "rise", "good": true, "label": "Staying low ✓", "text": "Stay *low*", "vo": "Now you stay low and let it come."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Clean *take*", "vo": "Next net, a clean take."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

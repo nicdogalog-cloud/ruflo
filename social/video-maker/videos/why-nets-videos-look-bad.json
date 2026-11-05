@@ -1,0 +1,8 @@
+{"id": "why-nets-videos-look-bad", "composition": "House", "seed": 407, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Can't see a thing", "text": "Useless *clips*?", "vo": "Why do your nets videos look so useless?"},
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "Wrong *angle*", "vo": "Usually, it's the wrong angle."},
+{"type": "spots", "dur": 2.8, "spots": [2], "text": "Card shows *where*", "vo": "Crease Cam's guide card shows the right spot."},
+{"type": "guide", "dur": 3.2, "actor": "bowler", "text": "Step into the *outline*", "vo": "Then you step into the see-through outline."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Clear ✓", "text": "Now it's *clear*", "vo": "Now every clip is clear and in frame."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
