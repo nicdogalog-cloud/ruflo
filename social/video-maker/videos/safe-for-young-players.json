@@ -1,0 +1,8 @@
+{"id": "safe-for-young-players", "composition": "House", "seed": 415, "speed": 1.08, "scenes": [
+{"type": "privacy", "dur": 3.0, "text": "Parents, *read this*", "vo": "Parents, filming your kids at the nets?"},
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Where does it go?", "text": "Where do clips *go*?", "vo": "You want to know where those clips end up."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "*Your* phone films", "vo": "With Crease Cam, your phone films it."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Watch back ✓", "text": "*Your* phone plays", "vo": "Your phone plays it back."},
+{"type": "logo", "dur": 3.3, "text": "Nothing *uploaded*", "vo": "Nothing is uploaded or shared."},
+{"type": "pricing", "dur": 2.6, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
