@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-03 07:38 UTC",
- "briefing": "Tuesday briefing, 3 Nov. Since yesterday: Buzz posted 4 reels with no errors, and Atlas found that phone-placement and fault-fix reels do best, so Buzz is leaning that way. The rest of the crew is waiting on you. Your top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy and terms blanks.",
+ "updated": "2026-11-06 17:38 UTC",
+ "briefing": "",
  "crew": [
   {
    "name": "Nova",
@@ -38,12 +38,11 @@
    "status": "working",
    "job": "Watching competitors' prices",
    "done": [
-    "Track Crease Cam Instagram views each week (next Monday 26 Oct)",
-    "Look at which reels kept people watching longest and tell Buzz"
+    "Check in a week whether more phone-placement reels lift views"
    ],
    "open": 2,
-   "next": "Check in a week whether more phone-placement reels lift views",
-   "latest": "Looked at last week's 26 reels (Buffer, per-reel numbers). One stood out: 'Where does my phone go?' got 1,195 views and 2 saves, about ten times the others. Most reels stopped at 113-145 views. The nets fault-and-fix..."
+   "next": "Compare next week's phone-placement reels against this week's 3 breakouts",
+   "latest": "Checked a week of reels (30 Oct to 4 Nov, 24 posts, Buffer numbers). Phone-placement reels do best: 2 of the 3 that broke 1,000 views were about where to put the phone."
   },
   {
    "name": "Sol",
@@ -83,7 +82,7 @@
    "done": [],
    "open": 2,
    "next": "",
-   "latest": "Website check: files unchanged since 14 Oct. The privacy and terms pages still have the blanks that need your company name, address, contact email and date."
+   "latest": ""
   },
   {
    "name": "Buzz",
@@ -93,7 +92,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24h: 4 reels posted to Instagram with no errors (where do my videos go, missing the straight ones, no zip off the pitch, quick questions)."
+   "latest": ""
   },
   {
    "name": "Meeting Hall",
