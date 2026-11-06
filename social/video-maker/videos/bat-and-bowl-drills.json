@@ -1,0 +1,8 @@
+{"id": "bat-and-bowl-drills", "composition": "House", "seed": 409, "speed": 1.08, "scenes": [
+{"type": "drill", "dur": 3.0, "pick": 3, "text": "Bat *and* bowl", "vo": "Batter, bowler, or a bit of both? Crease Cam covers you."},
+{"type": "spots", "dur": 2.8, "spots": [3, 4], "text": "*2* batting spots", "vo": "Two batting drills, front on and side on."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Head and *feet*", "vo": "See your head, feet and bat path."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2], "text": "*2* bowling spots", "vo": "Two bowling drills, side on and front on."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Smooth ✓", "text": "Run-up and *action*", "vo": "See your run-up, action and line."},
+{"type": "pricing", "dur": 2.8, "text": "All *free* to start", "vo": "And it's all free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

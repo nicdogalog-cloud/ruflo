@@ -1,0 +1,9 @@
+{"id": "nets-batter-nicking-off", "composition": "House", "seed": 411, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "Nicked *again*?", "vo": "Batters, nicking the one outside off, every net?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Why do I chase it?", "text": "Chasing *wide* ones", "vo": "You feel like you're reaching for it."},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the front-on batting spot."},
+{"type": "slowmo", "dur": 3.4, "actor": "batter", "fault": "head", "label": "Head falls ✗", "text": "Head falls *over*", "vo": "Slowed down, your head falls over to the off side."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Eyes level", "Head on line", "Leave it"], "vo": "Eyes level. Head on the line. And leave the wide one."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Stay *balanced*", "vo": "Now you stay balanced and still."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Good *leave*", "vo": "Next net, you leave it, then middle the next one."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
