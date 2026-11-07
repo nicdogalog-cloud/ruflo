@@ -1,0 +1,9 @@
+{"id": "line-it-up-like-this", "composition": "House", "seed": 423, "speed": 1.08, "scenes": [
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Line it *up*", "vo": "Here's the trick behind every Crease Cam clip."},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Phone on the *spot*", "vo": "Put your phone where the guide card shows."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Where do I stand?", "text": "Then *stand* where?", "vo": "Then where do you stand?"},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Match the *outline*", "vo": "Step in until you match the see-through outline."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Lined up ✓", "text": "Framed *right*", "vo": "Now every clip is framed the same way."},
+{"type": "tracks", "dur": 2.8, "text": "Compare *sessions*", "vo": "So you can draw lines and compare sessions."},
+{"type": "privacy", "dur": 2.6, "text": "*Your* phone only", "vo": "And it all stays on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

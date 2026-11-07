@@ -1,0 +1,9 @@
+{"id": "nets-bowler-braking-at-the-crease", "composition": "House", "seed": 421, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Stopping *dead*?", "vo": "Bowlers, slamming on the brakes at the crease?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Where's the zip?", "text": "Feels *slow*", "vo": "It feels like the pace just disappears."},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "follow", "label": "Stops dead ✗", "text": "You *brake*", "vo": "Slowed down, you stop dead as you let go."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Run through it", "Chest follows", "Off the pitch"], "vo": "Run through the crease. Let your chest follow. Then step off the pitch."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Follow through ✓", "text": "Carry it *on*", "vo": "Now the momentum carries through."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "Hurry them *up*", "vo": "Next net, it's hurrying the batter."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
