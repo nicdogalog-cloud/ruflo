@@ -1,0 +1,9 @@
+{"id": "not-sure-what-to-film", "composition": "House", "seed": 417, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "What do I film?", "text": "What to *film*?", "vo": "At the nets and not sure what to film?"},
+{"type": "drill", "dur": 3.0, "pick": 1, "text": "Pick a *drill*", "vo": "Crease Cam starts with a drill. Just pick one."},
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "It shows the *spot*", "vo": "It tells you which of four spots to put your phone."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Step into the *outline*", "vo": "Step into the see-through outline and film."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Big stride ✓", "text": "Watch it *slow*", "vo": "Then watch it back in slow-mo."},
+{"type": "tracks", "dur": 2.8, "text": "Draw your *lines*", "vo": "Draw lines to check what changed."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

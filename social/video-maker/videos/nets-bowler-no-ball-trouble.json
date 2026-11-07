@@ -1,0 +1,9 @@
+{"id": "nets-bowler-no-ball-trouble", "composition": "House", "seed": 419, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "No-ball *again*?", "vo": "Bowlers, knocking them over in the nets, then hearing no-ball?"},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "noball", "label": "Over the line ✗", "text": "Foot *over*", "vo": "Slowed down, your front foot lands over the line."},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Where's my mark?", "text": "No *mark*", "vo": "Your run-up starts somewhere different every time."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Mark your start", "Same run-up", "Land behind it"], "vo": "Mark your start. Same run-up every ball. Land behind the line."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "noball", "good": true, "label": "Behind the line ✓", "text": "Legal *ball*", "vo": "Now your front foot lands behind it."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "It *counts*", "vo": "Next net, that wicket counts."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
