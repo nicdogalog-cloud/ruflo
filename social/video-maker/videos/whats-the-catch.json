@@ -1,0 +1,8 @@
+{"id": "whats-the-catch", "composition": "House", "seed": 425, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Sounds pricey...", "text": "What's the *catch*?", "vo": "So what's the catch with Crease Cam?"},
+{"type": "drill", "dur": 3.0, "pick": 3, "text": "Start *free*", "vo": "There isn't one. Start free and pick a drill."},
+{"type": "spots", "dur": 2.8, "spots": [2, 4], "text": "Phone on the *spot*", "vo": "Put your phone on the guide spot."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Slow-mo ✓", "text": "Watch it *back*", "vo": "Then watch it back in slow-mo."},
+{"type": "pricing", "dur": 3.6, "text": "Want *more*?", "vo": "Want more? Three ninety-nine a month, or thirty-nine ninety-nine a year."},
+{"type": "privacy", "dur": 2.8, "text": "No *uploads*", "vo": "Either way, your clips stay on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

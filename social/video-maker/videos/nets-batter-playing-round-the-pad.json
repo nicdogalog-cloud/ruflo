@@ -1,0 +1,9 @@
+{"id": "nets-batter-playing-round-the-pad", "composition": "House", "seed": 427, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Pad in the *way*?", "vo": "Batters, keep getting beaten round your front pad?"},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the front-on batting spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "foot", "label": "Foot across ✗", "text": "Pad *first*", "vo": "Slowed down, your front foot goes across and the pad gets there first."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Where's the bat?", "text": "Bat *behind*", "vo": "So the bat has to come round it."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head leads", "Foot to line", "Bat by pad"], "vo": "Lead with your head. Foot to the line. Bat next to the pad."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Bat and pad ✓", "text": "Bat *first*", "vo": "Now the bat meets it first."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Out of the *middle*", "vo": "Next net, straight out of the middle."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
