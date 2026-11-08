@@ -1,0 +1,9 @@
+{"id": "nets-batter-hurried-by-the-short-one", "composition": "House", "seed": 429, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "Hurried *again*?", "vo": "Batters, the short one keeps hurrying you in the nets?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Too quick!", "text": "No *time*", "vo": "It feels like you never have time."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Film it *side on*", "vo": "Film from the side-on batting spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "backlift", "label": "Bat still down ✗", "text": "Late *backlift*", "vo": "Slowed down, your bat is still down when the ball is bowled."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Bat up early", "Still head", "Watch it on"], "vo": "Bat up early. Keep your head still. Watch it on to the bat."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Bat ready ✓", "text": "*Ready* in time", "vo": "Now you're ready in time."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Time to *play*", "vo": "Next net, plenty of time to play it."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

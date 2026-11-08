@@ -1,0 +1,8 @@
+{"id": "which-spot-for-which-drill", "composition": "House", "seed": 431, "speed": 1.08, "scenes": [
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "Just *4* spots", "vo": "Every Crease Cam drill uses just four phone spots."},
+{"type": "spots", "dur": 2.8, "spots": [1], "text": "Bowling *side*", "vo": "Bowling side on, for your run-up and action."},
+{"type": "spots", "dur": 2.8, "spots": [2], "text": "Bowling *front*", "vo": "Bowling front on, for your line and front arm."},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Batting *front*", "vo": "Batting front on, for your head and feet."},
+{"type": "spots", "dur": 2.8, "spots": [4], "text": "Batting *side*", "vo": "Batting side on, for your bat path."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Card shows *where*", "vo": "The guide card shows you exactly where to put it."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
