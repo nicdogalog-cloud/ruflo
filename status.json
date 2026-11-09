@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-08 07:38 UTC",
- "briefing": "Morning briefing (Sun 8 Nov). Quiet day yesterday: every open task is waiting on nic or on next week's checks. Buzz posted 4 reels in the last 24 hours, no errors. Tomorrow (Monday) Ledger does the weekly numbers, Atlas the trend check and Wicket the website check. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts,...",
+ "updated": "2026-11-09 07:39 UTC",
+ "briefing": "Morning briefing (Mon 9 Nov). Quiet Sunday: every open task is waiting on nic. Buzz posted 4 reels in the last 24 hours, no errors. Ledger's week: views up about 30% on the week before, still 0 new follows. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy and terms blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -40,7 +40,7 @@
    "done": [],
    "open": 2,
    "next": "Compare next week's phone-placement reels against this week's 3 breakouts",
-   "latest": ""
+   "latest": "Monday trend check: the phone cricket apps showing up are AI shot-analysis ones (CricVision, Ludimos, Fulltrack AI, Clean Bowled). They analyse a clip once you have it; none I found sells itself on where to put the..."
   },
   {
    "name": "Sol",
@@ -80,7 +80,7 @@
    "done": [],
    "open": 2,
    "next": "",
-   "latest": ""
+   "latest": "Monday website check: no changes since 14 Oct. Home page still says the app is coming soon with Instagram waitlist. Privacy and terms are still draft 0.1 with blanks for company name, address, contact email, hosting..."
   },
   {
    "name": "Buzz",
@@ -90,7 +90,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24 hours on Instagram through Buffer: 4 reels sent, 0 errors (not sure what to film, no-ball trouble, braking at the crease, line it up like this)."
+   "latest": "Last 24 hours on Instagram through Buffer: 4 reels sent, 0 errors (what's the catch, playing round the pad, hurried by the short one, which spot for which drill)."
   },
   {
    "name": "Meeting Hall",
