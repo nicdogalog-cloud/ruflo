@@ -1,0 +1,9 @@
+{"id": "nets-batter-bowled-through-the-gate", "composition": "House", "seed": 435, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Through the *gate*?", "vo": "Batters, getting bowled through the gate in the nets?"},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the front-on batting spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "head", "label": "Head falls over ✗", "text": "Head goes *over*", "vo": "Slowed down, your head falls over and the bat swings round."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Where's the gap?", "text": "Bat and pad *gap*", "vo": "That opens a gap between bat and pad."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head still", "Eyes level", "Bat to pad"], "vo": "Keep your head still. Eyes level. Bat close to the pad."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Gate *shut*", "vo": "Now the gate is shut."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Blocked *solid*", "vo": "Next net, blocked solid."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

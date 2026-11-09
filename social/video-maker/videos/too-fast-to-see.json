@@ -1,0 +1,8 @@
+{"id": "too-fast-to-see", "composition": "House", "seed": 433, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Too *fast* to see?", "vo": "Some things happen too fast to see at the nets."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "label": "Slowed down", "text": "Slow it *down*", "vo": "Crease Cam slows your clip right down."},
+{"type": "tracks", "dur": 3.0, "text": "Draw on *it*", "vo": "Then you draw lines straight on the clip."},
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Ahh, that's it!", "text": "Spot the *fault*", "vo": "Suddenly you can see what's going wrong."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Fixed ✓", "text": "See the *fix*", "vo": "Film it again and see the fix."},
+{"type": "privacy", "dur": 2.8, "text": "*Your* phone only", "vo": "All on your phone. Nothing uploaded."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
