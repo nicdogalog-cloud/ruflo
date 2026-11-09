@@ -1,0 +1,8 @@
+{"id": "three-quick-answers", "composition": "House", "seed": 439, "speed": 1.08, "scenes": [
+{"type": "steps", "dur": 3.4, "text": "*3* quick questions", "items": ["What do I need?", "Where's my phone?", "Is it free?"], "vo": "Three quick questions about Crease Cam."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Just your *phone*", "vo": "What do you need? Just your phone."},
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "The card *shows*", "vo": "Where does it go? The guide card shows you."},
+{"type": "slowmo", "dur": 2.8, "actor": "bowler", "fault": "runup", "good": true, "label": "Slow-mo ✓", "text": "Watch it *back*", "vo": "Then you watch it back in slow-mo."},
+{"type": "pricing", "dur": 3.2, "text": "Free to *start*", "vo": "Is it free? Free to start, with more if you want it."},
+{"type": "privacy", "dur": 2.8, "text": "Clips stay *put*", "vo": "And your clips stay on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

@@ -1,8 +1,9 @@
-{"id": "nets-keeper-snatching-at-it", "composition": "House", "seed": 357, "speed": 1.08, "scenes": [
-{"type": "slowmo", "dur": 3.6, "actor": "keeper", "fault": "gloves", "label": "Snatching ✗", "text": "Keepers, *watch this*", "vo": "Keepers, why does it keep popping out?"},
-{"type": "nets", "dur": 2.6, "actor": "keeper", "outcome": "edge", "text": "*Dropped* again", "vo": "A thin edge, and it's on the floor."},
-{"type": "spots", "dur": 2.6, "spots": [2], "text": "Film from the *front*", "vo": "Film from the front-on bowling spot, facing you."},
-{"type": "steps", "dur": 3.6, "text": "Soft *hands*", "items": ["Fingers down", "Let it come", "Give with it"], "vo": "Fingers down. Let it come. Give with the ball."},
-{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Soft hands ✓", "text": "Let it *come*", "vo": "Now your gloves let it come to you."},
-{"type": "nets", "dur": 3.0, "actor": "keeper", "outcome": "middle", "text": "Clean *take*", "vo": "Next net, a clean take."},
+{"id": "nets-keeper-snatching-at-it", "composition": "House", "seed": 437, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "beaten", "text": "Dropping *takes*?", "vo": "Keepers, the ball keeps popping out of your gloves in the nets?"},
+{"type": "think", "dur": 2.6, "actor": "keeper", "label": "Why won't it stick?", "text": "Won't *stick*", "vo": "It just won't stick."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Film it *side on*", "vo": "Film from the side-on spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "keeper", "fault": "gloves", "label": "Up too early ✗", "text": "You *snatch*", "vo": "Slowed down, you come up early and snatch at it."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Stay low", "Soft hands", "Give with it"], "vo": "Stay low. Soft hands. Give with the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Low and soft ✓", "text": "Let it *come*", "vo": "Now you let it come to you."},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "middle", "text": "Clean *take*", "vo": "Next net, a clean take."},
 {"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
