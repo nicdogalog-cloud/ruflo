@@ -1,0 +1,8 @@
+{"id": "bat-or-bowl-its-both", "composition": "House", "seed": 447, "speed": 1.08, "scenes": [
+{"type": "drill", "dur": 3.0, "pick": 2, "text": "Bat *or* bowl?", "vo": "Batter or bowler? Crease Cam does both."},
+{"type": "spots", "dur": 2.8, "spots": [3, 4], "text": "Batting *spots*", "vo": "Two batting spots, front on and side on."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Head and *feet*", "vo": "For your head, feet and bat path."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2], "text": "Bowling *spots*", "vo": "Two bowling spots, side on and front on."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Smooth ✓", "text": "Run-up and *action*", "vo": "For your run-up, action and line."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "All of it free to start."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}

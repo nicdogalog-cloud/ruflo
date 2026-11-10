@@ -1,0 +1,9 @@
+{"id": "nets-batter-slicing-the-drive", "composition": "House", "seed": 445, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "Slicing *drives*?", "vo": "Batters, every drive slicing off towards point in the nets?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Why point?", "text": "Off the *toe*", "vo": "It keeps coming off the outside of the bat."},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the front-on batting spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "bat", "label": "Bat cuts across ✗", "text": "Bat goes *across*", "vo": "Slowed down, the bat cuts across the ball."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head over ball", "Full face", "Follow the line"], "vo": "Head over the ball. Show the full face. Follow the line."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Full face ✓", "text": "Through the *line*", "vo": "Now the bat goes through the line."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Middled *straight*", "vo": "Next net, middled straight down the ground."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
