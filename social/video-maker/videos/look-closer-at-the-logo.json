@@ -1,0 +1,8 @@
+{"id": "look-closer-at-the-logo", "composition": "House", "seed": 441, "speed": 1.08, "scenes": [
+{"type": "logo", "dur": 3.0, "text": "Look *closer*", "vo": "Look closely at the Crease Cam logo."},
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Are those stumps?", "text": "*Stumps* inside", "vo": "Those are the stumps at the nets."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Camera *corners*", "vo": "And the corners are your camera frame."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2, 3, 4], "text": "Framed *right*", "vo": "Because every drill frames you right."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "In frame ✓", "text": "Clips that *count*", "vo": "So every clip is worth watching."},
+{"type": "privacy", "dur": 2.8, "text": "*Your* phone only", "vo": "And it all stays on your phone."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
