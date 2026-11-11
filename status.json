@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-10 07:38 UTC",
- "briefing": "Morning briefing (Tue 10 Nov). Monday's checks are done: Ledger's week showed views up about 30% but still 0 new follows; Atlas found no rival app built around where to put the phone; Wicket found the website unchanged. Buzz posted 4 reels in the last 24 hours, no errors. Every other open task is waiting on nic. nic's top 3: 1) pick a net session night, 2)...",
+ "updated": "2026-11-11 07:38 UTC",
+ "briefing": "Morning briefing (Wed 11 Nov). Quiet day for the crew yesterday: every open task is waiting on nic or on this week's reels. Buzz posted 4 reels in the last 24 hours, no errors. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy and terms blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -40,7 +40,7 @@
    "done": [],
    "open": 2,
    "next": "Compare next week's phone-placement reels against this week's 3 breakouts",
-   "latest": "Monday trend check: the phone cricket apps showing up are AI shot-analysis ones (CricVision, Ludimos, Fulltrack AI, Clean Bowled). They analyse a clip once you have it; none I found sells itself on where to put the..."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -80,7 +80,7 @@
    "done": [],
    "open": 2,
    "next": "",
-   "latest": "Monday website check: no changes since 14 Oct. Home page still says the app is coming soon with Instagram waitlist. Privacy and terms are still draft 0.1 with blanks for company name, address, contact email, hosting..."
+   "latest": ""
   },
   {
    "name": "Buzz",
@@ -90,7 +90,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24 hours on Instagram through Buffer: 4 reels sent, 0 errors (too fast to see, bowled through the gate, keeper snatching at it, 3 quick answers)."
+   "latest": "Last 24 hours on Instagram through Buffer: 4 reels sent, 0 errors (look closer at the logo, bowler spraying it wide, batter slicing the drive, bat or bowl it's both)."
   },
   {
    "name": "Meeting Hall",
