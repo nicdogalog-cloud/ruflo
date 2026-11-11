@@ -1,0 +1,8 @@
+{"id": "nobody-else-sees-them", "composition": "House", "seed": 455, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Who sees my clips?", "text": "Who sees *them*?", "vo": "Worried who sees your nets clips?"},
+{"type": "privacy", "dur": 3.0, "text": "*Nobody* else", "vo": "With Crease Cam, nobody else does."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "*Your* phone films", "vo": "Your phone films it."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "On your phone ✓", "text": "Slow-mo *right there*", "vo": "You watch it in slow-mo, right there."},
+{"type": "tracks", "dur": 2.8, "text": "Draw it *there*", "vo": "And draw your lines on the same phone."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "Nothing uploaded, and free to start."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
