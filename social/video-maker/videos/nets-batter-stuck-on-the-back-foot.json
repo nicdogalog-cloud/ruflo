@@ -1,0 +1,9 @@
+{"id": "nets-batter-stuck-on-the-back-foot", "composition": "House", "seed": 451, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Back-foot *trap*?", "vo": "Batters, the full ones keep beating you in the nets?"},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Film it *side on*", "vo": "Film from the side-on batting spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "foot", "label": "No stride ✗", "text": "Weight goes *back*", "vo": "Slowed down, your weight goes back and the front foot never moves."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Too full!", "text": "Can't *reach*", "vo": "So you're reaching for everything."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head to ball", "Big stride", "Weight forward"], "vo": "Head to the ball. Big stride. Weight forward."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Big stride ✓", "text": "Get *forward*", "vo": "Now you get right forward."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Driven *hard*", "vo": "Next net, driven hard."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

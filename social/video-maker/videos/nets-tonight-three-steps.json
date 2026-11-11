@@ -1,0 +1,8 @@
+{"id": "nets-tonight-three-steps", "composition": "House", "seed": 449, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "How do I film it?", "text": "Nets *tonight*?", "vo": "Got nets tonight? Here's how to film it."},
+{"type": "steps", "dur": 3.6, "text": "Just *3* steps", "items": ["Pick a drill", "Phone on spot", "Watch it back"], "vo": "Three steps. Pick a drill, phone on the spot, watch it back."},
+{"type": "drill", "dur": 2.8, "pick": 4, "text": "Pick a *drill*", "vo": "Pick the drill you want to work on."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Line it *up*", "vo": "Put your phone down and line up the guide."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Big stride ✓", "text": "Watch it *back*", "vo": "Then watch it back in slow-mo."},
+{"type": "privacy", "dur": 2.6, "text": "*Your* phone only", "vo": "And it all stays on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
