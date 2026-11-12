@@ -1,0 +1,8 @@
+{"id": "nothing-else-to-buy", "composition": "House", "seed": 457, "speed": 1.08, "scenes": [
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Just a *phone*", "vo": "Filming your nets? All you need is your phone."},
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Tripod? Camera?", "text": "No *kit*", "vo": "No tripod, no camera, nothing else to buy."},
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "Card shows *where*", "vo": "A guide card shows where to put it."},
+{"type": "drill", "dur": 2.8, "pick": 3, "text": "Pick a *drill*", "vo": "Pick a drill and hit record."},
+{"type": "tracks", "dur": 3.0, "text": "Lines *built in*", "vo": "Slow-mo and drawing lines are built in."},
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
