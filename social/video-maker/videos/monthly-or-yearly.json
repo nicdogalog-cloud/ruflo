@@ -1,0 +1,8 @@
+{"id": "monthly-or-yearly", "composition": "House", "seed": 463, "speed": 1.08, "scenes": [
+{"type": "pricing", "dur": 3.0, "text": "Free to *start*", "vo": "Crease Cam is free to start. Here's what you get."},
+{"type": "drill", "dur": 2.8, "pick": 1, "text": "Pick a *drill*", "vo": "Pick a drill."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Line it *up*", "vo": "Line up the see-through guide."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Slow-mo ✓", "text": "Watch it *back*", "vo": "Watch it back in slow-mo."},
+{"type": "tracks", "dur": 2.8, "text": "Draw your *lines*", "vo": "And draw your lines on it."},
+{"type": "think", "dur": 3.4, "actor": "batter", "label": "All season?", "text": "Want *more*?", "vo": "Want it all season? Three ninety-nine a month, or thirty-nine ninety-nine a year."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
