@@ -1,0 +1,9 @@
+{"id": "nets-batter-top-edging-the-pull", "composition": "House", "seed": 467, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "Top *edge*?", "vo": "Batters, top-edging every short one in the nets?"},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "backlift", "label": "Bat still down ✗", "text": "Bat's *late*", "vo": "Slowed down, your bat's still down when the ball's let go."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Filmed *side on*", "vo": "That's from the side-on batting spot."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "No time!", "text": "*Rushed*", "vo": "So you're always rushed."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Bat up early", "Still head", "Roll it down"], "vo": "Get the bat up early. Keep your head still. Roll it down."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Ready early ✓", "text": "Ready *early*", "vo": "Now you're ready early."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Pulled *flat*", "vo": "Next net, pulled flat and hard."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

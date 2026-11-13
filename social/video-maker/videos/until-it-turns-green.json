@@ -1,0 +1,8 @@
+{"id": "until-it-turns-green", "composition": "House", "seed": 465, "speed": 1.08, "scenes": [
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Match the *guide*", "vo": "See that see-through guide? Match your player to it."},
+{"type": "spots", "dur": 2.8, "spots": [3], "text": "Card shows *where*", "vo": "The card shows where your phone goes."},
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Too close? Tilted?", "text": "Not *sure*?", "vo": "Too close, too far, or tilted?"},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Wait for *green*", "vo": "Move it until the guide turns green."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "Lined up ✓", "text": "Same *angle*", "vo": "Then every clip is filmed from the same angle."},
+{"type": "tracks", "dur": 2.8, "text": "Week to *week*", "vo": "So you can compare week to week."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
