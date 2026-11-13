@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13 07:38 UTC",
+ "updated": "2026-11-13 17:38 UTC",
  "briefing": "Morning briefing (Fri 13 Nov). Quiet again: every open task is still waiting on nic or on this week's reel numbers. Buzz posted 4 reels in the last 24 hours, no errors. Atlas compares this week's reels with last week's breakouts this evening, then I do the week review. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail...",
  "crew": [
   {
@@ -37,10 +37,12 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [],
-   "open": 2,
-   "next": "Compare next week's phone-placement reels against this week's 3 breakouts",
-   "latest": ""
+   "done": [
+    "Compare next week's phone-placement reels against this week's 3 breakouts"
+   ],
+   "open": 1,
+   "next": "",
+   "latest": "Checked this week's reels against last week's 3 breakouts. No reel broke out this time: the best got 193 views, against about 1,150 each for last week's top 3."
   },
   {
    "name": "Sol",
