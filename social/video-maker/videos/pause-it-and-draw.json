@@ -1,0 +1,8 @@
+{"id": "pause-it-and-draw", "composition": "House", "seed": 471, "speed": 1.08, "scenes": [
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Paused ✓", "text": "*Pause* it", "vo": "Ever wished you could pause your nets session?"},
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "What went wrong?", "text": "Too *quick*", "vo": "At full speed, it's all too quick to see."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Film it *first*", "vo": "Film it from the guide spot."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Slow-mo ✓", "text": "Slow it *down*", "vo": "Slow it right down."},
+{"type": "tracks", "dur": 3.0, "text": "Draw your *lines*", "vo": "Then draw lines to see exactly what happened."},
+{"type": "privacy", "dur": 2.8, "text": "On *your* phone", "vo": "All on your own phone."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}

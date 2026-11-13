@@ -1,0 +1,9 @@
+{"id": "nets-keeper-ball-through-the-legs", "composition": "House", "seed": 469, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "keeper", "label": "Not again!", "text": "Through your *legs*?", "vo": "Keepers, ball going straight through your legs in the nets?"},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "beaten", "text": "*Byes* again", "vo": "Byes, again."},
+{"type": "slowmo", "dur": 3.2, "actor": "keeper", "fault": "gloves", "label": "Standing up ✗", "text": "Up too *soon*", "vo": "Slowed down, you stand up before the ball arrives."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Filmed *side on*", "vo": "That's from the side-on spot."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Stay down", "Gloves low", "Rise with it"], "vo": "Stay down. Gloves low. Rise with the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Rising with it ✓", "text": "Rise *with it*", "vo": "Now you rise with it."},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "middle", "text": "*Safe* hands", "vo": "Next net, safe hands."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
