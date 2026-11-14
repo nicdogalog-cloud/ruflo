@@ -1,0 +1,8 @@
+{"id": "tap-the-drill-you-need", "composition": "House", "seed": 473, "speed": 1.08, "scenes": [
+{"type": "drill", "dur": 3.0, "pick": 2, "text": "Tap a *drill*", "vo": "Working on your bowling at the nets? Tap a drill."},
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Line or action?", "text": "Which *one*?", "vo": "Line? Pick front view. Action? Pick side view."},
+{"type": "spots", "dur": 2.8, "spots": [2], "text": "Spot *shown*", "vo": "It shows the spot for that drill."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Phone *there*", "vo": "Put your phone there and line it up."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Front view ✓", "text": "Right *angle*", "vo": "Every clip comes out from the right angle."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "Free to start."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
