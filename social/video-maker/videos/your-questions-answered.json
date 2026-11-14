@@ -1,0 +1,8 @@
+{"id": "your-questions-answered", "composition": "House", "seed": 479, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 3.0, "actor": "batter", "label": "Need a tripod?", "text": "Your *questions*", "vo": "Your Crease Cam questions. Need a tripod?"},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Just your *phone*", "vo": "No. Just your phone."},
+{"type": "spots", "dur": 3.0, "spots": [1, 2, 3, 4], "text": "Where does it *go*?", "vo": "Where does it go? The card shows the spot."},
+{"type": "tracks", "dur": 3.0, "text": "Can I *draw* on it?", "vo": "Can I draw on it? Yes, lines on every clip."},
+{"type": "privacy", "dur": 2.8, "text": "Who *sees* it?", "vo": "Who sees it? Only you."},
+{"type": "pricing", "dur": 3.0, "text": "What's the *cost*?", "vo": "What's the cost? It's free to start."},
+{"type": "end", "dur": 2.8, "vo": "Any more? Follow Crease Cam for the launch."}]}

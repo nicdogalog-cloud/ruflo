@@ -1,0 +1,9 @@
+{"id": "nets-bowler-reaching-for-the-crease", "composition": "House", "seed": 477, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Not another one!", "text": "*No-ball*?", "vo": "Bowlers, try to bowl quicker and it's a no-ball?"},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "noball", "label": "Reaching ✗", "text": "You *reach*", "vo": "Slowed down, you stretch the last stride and reach for the crease."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "*Wasted* ball", "vo": "Another wasted ball."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Mark your run", "Same rhythm", "Land behind"], "vo": "Mark your run. Keep the same rhythm. Land behind the line."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "noball", "good": true, "label": "Behind it ✓", "text": "Foot *behind*", "vo": "Now your foot lands behind."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "Fair *and* fast", "vo": "Next net, fair and fast."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
