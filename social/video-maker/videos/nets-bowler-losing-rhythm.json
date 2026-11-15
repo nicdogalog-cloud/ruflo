@@ -1,0 +1,9 @@
+{"id": "nets-bowler-losing-rhythm", "composition": "House", "seed": 485, "speed": 1.08, "scenes": [
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "runup", "label": "Stuttering ✗", "text": "Stop-*start*?", "vo": "Bowlers, stuttering into the crease in the nets?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Where's my stride?", "text": "No *rhythm*", "vo": "No rhythm, every single ball."},
+{"type": "spots", "dur": 2.6, "spots": [1], "text": "Film it *side on*", "vo": "Film from the side-on bowling spot."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Easy *pickings*", "vo": "And the batter picks you off."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Count steps", "Mark the start", "Build smoothly"], "vo": "Count your steps. Mark the start. Build up smoothly."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Smooth ✓", "text": "Smooth *run*", "vo": "Now it's one smooth run."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "*Beaten*", "vo": "Next net, the batter's beaten."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

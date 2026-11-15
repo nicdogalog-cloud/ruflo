@@ -1,0 +1,8 @@
+{"id": "tap-film-watch", "composition": "House", "seed": 487, "speed": 1.08, "scenes": [
+{"type": "logo", "dur": 3.0, "text": "*Three* taps", "vo": "Crease Cam, in three taps."},
+{"type": "drill", "dur": 2.8, "pick": 4, "text": "*Tap* a drill", "vo": "One. Tap a drill."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "*Line* it up", "vo": "Two. Put your phone on the spot and line it up."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Slow-mo ✓", "text": "*Watch* it back", "vo": "Three. Watch it back in slow-mo."},
+{"type": "tracks", "dur": 2.8, "text": "Draw your *lines*", "vo": "Then draw your lines on it."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
