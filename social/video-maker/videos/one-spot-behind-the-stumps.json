@@ -2,8 +2,8 @@
 {"type": "think", "dur": 2.6, "actor": "batter", "label": "Where?", "text": "Where does my *phone* go?", "vo": "Where does your phone go at the nets?"},
 {"type": "spots", "dur": 3.4, "spots": [5], "text": "Just *one* spot", "vo": "Just one spot. Behind the stumps, at the bowler's end."},
 {"type": "steps", "dur": 3.4, "text": "Set it *up*", "items": ["Tripod up", "1-2 m back", "Point it at the batter"], "vo": "Tripod up, one to two metres back."},
-{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Bowling? *1x* zoom", "vo": "Bowling? Keep it on one times zoom."},
-{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Batting? *3x* zoom", "vo": "Batting? Zoom in to three times."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Bowling? *1x* zoom", "vo": "Bowling? Keep it on one times zoom.", "drill": "Bowling \u00b7 1x zoom"},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Batting? *3x* zoom", "vo": "Batting? Zoom in to three times.", "drill": "Batting \u00b7 3x zoom"},
 {"type": "slowmo", "dur": 3.2, "actor": "batter", "text": "See what a *coach* sees", "vo": "Then slow it down, and see what a coach sees."},
 {"type": "pricing", "dur": 2.4, "text": "Free to *start*", "vo": "Free to start."},
 {"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

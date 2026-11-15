@@ -131,7 +131,7 @@ else:
     flag = "" if len(a) / vsr <= win else "  <-- TOO LONG, shorten this line"
     print(f"  {txt[:44]:44s} {len(a)/vsr:4.2f}s/{win:.2f}s x{sp:.2f}{flag}")
     j = int((st + 0.05) * vsr); vo[j:j + len(a)] += a[:len(vo) - j]
-vo /= np.max(np.abs(vo)) * 1.05
+vo /= max(np.max(np.abs(vo)), 1e-9) * 1.05
 vo_wav = os.path.join(HERE, "build", f"{vid}-vo.wav")
 sf.write(vo_wav, vo, vsr)
 
