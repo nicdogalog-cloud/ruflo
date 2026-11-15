@@ -386,3 +386,26 @@ h3 { font-size: 1.45rem; font-weight: 700; line-height: 1.1; }
 }
 .help-contact { margin-top: 56px; padding: 28px; border-radius: 8px; background: var(--navy); color: var(--off); display: grid; gap: 16px; justify-items: start; }
 .help-contact p { color: var(--muted-on-navy); }
+
+/* ---------- One camera spot ---------- */
+.spot-layout { display: grid; gap: 40px; }
+.lane { background: var(--navy); border-radius: 8px; padding: 20px; justify-self: center; width: min(100%, 360px); }
+.lane-svg { display: block; width: 100%; height: auto; border-radius: 6px; }
+.lane figcaption { margin-top: 12px; font-size: .85rem; color: var(--muted-on-navy); }
+.spot-detail h3 { font-size: 1.6rem; text-transform: uppercase; }
+.setup { counter-reset: s; display: grid; margin-top: 16px; border-top: 1px solid var(--line); }
+.setup li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.setup li::before { content: counter(s); width: 28px; height: 28px; border-radius: 50%; background: var(--yellow); color: var(--navy); display: grid; place-items: center; font: 800 1rem/1 var(--f-display); }
+.modes { display: grid; gap: 16px; margin-top: 32px; }
+.mode { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--yellow); border-radius: 6px; padding: 20px 22px; }
+.mode-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.mode-head b { font: 800 1.5rem/1 var(--f-display); font-stretch: 75%; text-transform: uppercase; }
+.mode-head span { font: 600 .74rem/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; background: var(--navy); color: var(--yellow); padding: 6px 8px; border-radius: 3px; }
+.mode-sub { margin-top: 6px; font-size: .92rem; color: var(--muted); }
+.mode ul { margin-top: 14px; padding-left: 18px; display: grid; gap: 6px; font-size: .97rem; }
+.spot-note { margin-top: 24px; font-size: .92rem; color: var(--muted); }
+@media (min-width: 640px) { .modes { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) { .spot-layout { grid-template-columns: 340px 1fr; gap: 64px; align-items: start; } .lane { position: sticky; top: 96px; } }
+.doc-body figure img[src$="guide-card.jpg"] { max-width: min(100%, 420px); }
+.steps-photo img[src$="guide-card.jpg"] { aspect-ratio: auto; outline: 1px solid var(--navy-line); }
+@media (max-width: 959px) { .lane { width: min(100%, 260px); } }
