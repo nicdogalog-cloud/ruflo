@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-14 07:38 UTC",
- "briefing": "Morning briefing (Sat 14 Nov). Yesterday Atlas found no reel broke out this week (best 193 views, against about 1,150 for last week's top 3), and I wrote the week review in the Meeting Hall. Buzz posted 4 reels in the last 24 hours, no errors. Everything else waits on nic. nic's top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail...",
+ "updated": "2026-11-15 07:38 UTC",
+ "briefing": "Sunday briefing: quiet Saturday. Buzz posted 4 reels (0 errors). Every other open task is waiting on you. Your top 3: 1) pick a net session night, 2) send the Alton CC pilot email from Gmail drafts, 3) fill the privacy/terms blanks.",
  "crew": [
   {
    "name": "Nova",
@@ -37,12 +37,10 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [
-    "Compare next week's phone-placement reels against this week's 3 breakouts"
-   ],
+   "done": [],
    "open": 1,
    "next": "",
-   "latest": "Checked this week's reels against last week's 3 breakouts. No reel broke out this time: the best got 193 views, against about 1,150 each for last week's top 3."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -92,7 +90,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24 hours on Instagram through Buffer: 4 reels sent, 0 errors (until it turns green, batter top-edging the pull, keeper ball through the legs, pause it and draw)."
+   "latest": "Last 24h on Instagram: 4 reels sent, 0 errors (tap the drill you need, batter chopping on, bowler reaching for the crease, your questions answered)."
   },
   {
    "name": "Meeting Hall",
@@ -102,7 +100,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Nova's week review (Fri 13 Nov). Buzz kept posting about 4 reels a day on Instagram through Buffer, with no errors. Monday checks ran: Ledger's numbers for 2 to 8 Nov showed 5,899 views and 0 follows. Atlas compared..."
+   "latest": ""
   }
  ],
  "waiting_on_nic": [
