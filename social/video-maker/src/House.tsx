@@ -283,7 +283,7 @@ const TracksScene: React.FC<{ s: HScene }> = ({ s }) => {
 };
 
 // Top-down lane with the 4 guide-card phone spots popping in
-const SPOTS: Record<number, [number, number, string]> = { 1: [260, 520, "Bowling side"], 2: [540, 1560, "Bowling front"], 3: [540, 380, "Batting front"], 4: [820, 1300, "Batting side"] };
+const SPOTS: Record<number, [number, number, string]> = { 1: [260, 520, "Bowling side"], 2: [540, 1560, "Bowling front"], 3: [540, 380, "Batting front"], 4: [820, 1300, "Batting side"], 5: [540, 1580, "Behind the stumps"] };
 const SpotsScene: React.FC<{ s: HScene }> = ({ s }) => {
   const f = useCurrentFrame();
   const list = s.spots ?? [1, 2, 3, 4];

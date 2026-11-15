@@ -96,11 +96,30 @@ w.writeframes((out * 32767).astype("<i2").tobytes()); w.close()
 
 # ---------- narrator ----------
 import soundfile as sf
-from kokoro_onnx import Kokoro
-kk = Kokoro(os.path.join(KOKORO, "kokoro-v1.0.onnx"), os.path.join(KOKORO, "voices-v1.0.bin"))
-voice = spec.get("voice", "bm_george")
-vsr = 24000; vo = np.zeros(int(vsr * (total + 0.2)))
-for st, s in zip(starts, scenes):
+# "vo_dir": pre-made narration (e.g. ElevenLabs), one file per scene named <index>.wav;
+# a line too long for its scene is sped up with ffmpeg atempo (max 1.35x).
+vo_dir = spec.get("vo_dir")
+if vo_dir:
+    vo_dir = os.path.join(HERE, vo_dir); vsr = 44100; vo = np.zeros(int(vsr * (total + 0.2)))
+    for i, (st, s) in enumerate(zip(starts, scenes)):
+        src = os.path.join(vo_dir, f"{i}.wav")
+        if not s.get("vo") or not os.path.exists(src): continue
+        a, r = sf.read(src, always_2d=True); a = a.mean(axis=1)
+        idx = np.where(np.abs(a) > 0.01)[0]; a = a[idx[0]:idx[-1] + 1]
+        win = s["dur"] - 0.15; tempo = min(1.35, max(1.0, len(a) / r / win))
+        if tempo > 1.0 or r != vsr:
+            tmp = os.path.join(HERE, "build", f"{vid}-vo{i}.wav"); sf.write(tmp, a, r)
+            raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", tmp, "-af", f"atempo={tempo:.3f}", "-ar", str(vsr), "-ac", "1", "-f", "f32le", "-"], capture_output=True, check=True).stdout
+            a = np.frombuffer(raw, dtype="<f4").astype(float)
+        flag = "" if len(a) / vsr <= win + 0.01 else "  <-- TOO LONG"
+        print(f"  {s['vo'][:44]:44s} {len(a)/vsr:4.2f}s/{win:.2f}s x{tempo:.2f}{flag}")
+        j = int((st + 0.05) * vsr); vo[j:j + len(a)] += a[:len(vo) - j]
+else:
+  from kokoro_onnx import Kokoro
+  kk = Kokoro(os.path.join(KOKORO, "kokoro-v1.0.onnx"), os.path.join(KOKORO, "voices-v1.0.bin"))
+  voice = spec.get("voice", "bm_george")
+  vsr = 24000; vo = np.zeros(int(vsr * (total + 0.2)))
+  for st, s in zip(starts, scenes):
     txt = s.get("vo")
     if not txt: continue
     win = s["dur"] - 0.15; sp = spec.get("speed", 1.15)
