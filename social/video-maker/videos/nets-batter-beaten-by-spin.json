@@ -1,0 +1,9 @@
+{"id": "nets-batter-beaten-by-spin", "composition": "House", "seed": 483, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Beaten by *spin*?", "vo": "Batters, the spinner keeps beating you in the nets?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "Where did it go?", "text": "It *turned*", "vo": "It turned past the bat again."},
+{"type": "spots", "dur": 2.6, "spots": [4], "text": "Film it *side on*", "vo": "Film from the side-on batting spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "foot", "label": "Stuck in crease ✗", "text": "Feet *stuck*", "vo": "Slowed down, your feet stay stuck in the crease."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Read the length", "Big stride", "Smother it"], "vo": "Read the length. Big stride. Get to the pitch and smother it."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "To the pitch ✓", "text": "Get *forward*", "vo": "Now you get right forward."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Smothered*", "vo": "Next net, smothered."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

@@ -1,0 +1,8 @@
+{"id": "two-for-bat-two-for-ball", "composition": "House", "seed": 481, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Where do I stand it?", "text": "Where's my *phone*?", "vo": "Where should your phone go at the nets?"},
+{"type": "spots", "dur": 2.8, "spots": [1, 2, 3, 4], "text": "*Four* spots", "vo": "Crease Cam has four spots."},
+{"type": "spots", "dur": 3.4, "spots": [1, 2], "text": "Two for *bowling*", "vo": "Two for bowling. Side on for your action, front on for your line."},
+{"type": "spots", "dur": 3.4, "spots": [3, 4], "text": "Two for *batting*", "vo": "Two for batting. Front on for your head, side on for your feet."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Card shows *where*", "vo": "The guide card shows exactly where."},
+{"type": "tracks", "dur": 2.6, "text": "Same *spot*", "vo": "Same spot, every session."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
