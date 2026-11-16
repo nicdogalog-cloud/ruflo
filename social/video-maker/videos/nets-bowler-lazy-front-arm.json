@@ -1,0 +1,9 @@
+{"id": "nets-bowler-lazy-front-arm", "composition": "House", "seed": 493, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "No *snap*?", "vo": "Bowlers, the ball's coming out with no snap in the nets?"},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "arm", "label": "Arm dropping ✗", "text": "Lazy *arm*", "vo": "Slowed down, your front arm drops before you've even let go."},
+{"type": "spots", "dur": 2.6, "spots": [2], "text": "Filmed *front on*", "vo": "That's from the front-on bowling spot."},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Where's it gone?", "text": "No *zip*", "vo": "So there's no zip on it."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Arm up high", "Pull it down", "Chest through"], "vo": "Front arm up high. Pull it down hard. Drive your chest through."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Strong arm ✓", "text": "Pull it *down*", "vo": "Now the arm pulls down strong."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "*Zipped* past", "vo": "Next net, it zips past the bat."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

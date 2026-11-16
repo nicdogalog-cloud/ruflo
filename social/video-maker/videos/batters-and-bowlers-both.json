@@ -1,0 +1,8 @@
+{"id": "batters-and-bowlers-both", "composition": "House", "seed": 495, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Is it just for batting?", "text": "Bat *or* bowl?", "vo": "Is Crease Cam just for batters?"},
+{"type": "drill", "dur": 2.8, "pick": 1, "text": "*Bowlers* too", "vo": "No. Bowlers get two drills."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Action ✓", "text": "Your *action*", "vo": "See your action and your line."},
+{"type": "drill", "dur": 2.8, "pick": 3, "text": "*Batters* too", "vo": "Batters get two as well."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Bat path ✓", "text": "Your *bat*", "vo": "See your head, your feet and your bat."},
+{"type": "spots", "dur": 2.8, "spots": [1, 2, 3, 4], "text": "*Four* spots", "vo": "Four spots, one app."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
