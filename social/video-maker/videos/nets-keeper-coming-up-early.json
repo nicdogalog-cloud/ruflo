@@ -1,0 +1,9 @@
+{"id": "nets-keeper-coming-up-early", "composition": "House", "seed": 501, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "edge", "text": "Edged... and *dropped*", "vo": "Keepers, the edge comes and it bounces straight out."},
+{"type": "think", "dur": 2.6, "actor": "keeper", "label": "Had it covered!", "text": "How did *that* go?", "vo": "You thought you had it covered."},
+{"type": "spots", "dur": 2.6, "spots": [3], "text": "Film it *front on*", "vo": "Film from the front-on spot."},
+{"type": "slowmo", "dur": 3.2, "actor": "keeper", "fault": "gloves", "label": "Rising early ✗", "text": "Up too *soon*", "vo": "Slowed down, you're rising before the ball gets there."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Stay down", "Watch it in", "Rise with it"], "vo": "Stay down. Watch it all the way in. Rise with the bounce."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Soft hands ✓", "text": "*Rising* with it", "vo": "Now your gloves rise with the ball."},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "middle", "text": "*Taken* cleanly", "vo": "Next net, taken cleanly."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

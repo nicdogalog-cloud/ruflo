@@ -1,0 +1,8 @@
+{"id": "just-a-phone-and-a-net", "composition": "House", "seed": 503, "speed": 1.08, "scenes": [
+{"type": "pricing", "dur": 2.8, "text": "No *expensive* kit", "vo": "You don't need expensive kit to film your nets."},
+{"type": "drill", "dur": 3.0, "pick": 4, "text": "Your *phone*", "vo": "Just your phone with the Crease Cam app."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "A *net* session", "vo": "Take it to your next net session."},
+{"type": "spots", "dur": 2.8, "spots": [1], "text": "The card shows *where*", "vo": "The guide card shows where to put it."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Watch back ✓", "text": "Then *watch* it", "vo": "Then watch yourself back in slow motion."},
+{"type": "privacy", "dur": 2.8, "text": "Stays on your *phone*", "vo": "And your clips stay on your phone."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
