@@ -1,0 +1,8 @@
+{"id": "frame-by-frame", "composition": "House", "seed": 497, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "Over in a *blink*", "vo": "A whole delivery is over in a blink."},
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "What just happened?", "text": "Can't *see* it?", "vo": "So how do you see what went wrong?"},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "*Film* it", "vo": "Film it with Crease Cam."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "label": "There it is", "text": "*Slow* it down", "vo": "Slow it right down."},
+{"type": "tracks", "dur": 3.0, "text": "*Draw* on it", "vo": "Draw lines on the frame to check it."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Spotted ✓", "text": "Now you *know*", "vo": "Now you know exactly what to work on."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}

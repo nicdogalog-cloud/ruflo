@@ -1,0 +1,76 @@
+{
+"id": "nets-bowler-no-run-through",
+"composition": "House",
+"seed": 499,
+"speed": 1.08,
+"scenes": [
+{
+"type": "think",
+"dur": 2.8,
+"actor": "bowler",
+"label": "Where's it going?",
+"text": "Losing your *line*?",
+"vo": "Bowlers, losing your line every time in the nets?"
+},
+{
+"type": "nets",
+"dur": 2.6,
+"actor": "bowler",
+"outcome": "edge",
+"text": "*Easy* runs",
+"vo": "Easy pickings for the batter."
+},
+{
+"type": "spots",
+"dur": 2.6,
+"spots": [
+2
+],
+"text": "Film it *front on*",
+"vo": "Film from the front-on bowling spot."
+},
+{
+"type": "slowmo",
+"dur": 3.2,
+"actor": "bowler",
+"fault": "follow",
+"label": "Falling away \u2717",
+"text": "No *follow* through",
+"vo": "Slowed down, you fall away and stop dead after release."
+},
+{
+"type": "steps",
+"dur": 3.6,
+"text": "Fix it in *3*",
+"items": [
+"Chest to target",
+"Run through",
+"Finish straight"
+],
+"vo": "Chest to the target. Run through the crease. Finish straight."
+},
+{
+"type": "slowmo",
+"dur": 3.0,
+"actor": "bowler",
+"fault": "follow",
+"good": true,
+"label": "Straight \u2713",
+"text": "*Driving* through",
+"vo": "Now you're driving through to the batter."
+},
+{
+"type": "nets",
+"dur": 2.8,
+"actor": "bowler",
+"outcome": "beaten",
+"text": "On the *stumps*",
+"vo": "Next net, right on the stumps."
+},
+{
+"type": "end",
+"dur": 2.6,
+"vo": "Follow Crease Cam for the launch."
+}
+]
+}
