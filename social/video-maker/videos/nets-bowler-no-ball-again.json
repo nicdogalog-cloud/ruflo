@@ -1,0 +1,9 @@
+{"id": "nets-bowler-no-ball-again", "composition": "House", "seed": 509, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Was that over?", "text": "No ball *again*?", "vo": "Bowlers, someone in the nets shouts no ball again?"},
+{"type": "nets", "dur": 2.6, "actor": "bowler", "outcome": "middle", "text": "Doesn't *count*", "vo": "That delivery doesn't count."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Tripod *behind* the stumps", "vo": "Put your phone on a tripod behind the stumps."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "noball", "label": "Over the line ✗", "text": "Front foot *over*", "vo": "Slowed down, your front foot lands over the line."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Mark your run", "Same start", "Land behind"], "vo": "Mark your run up. Start from the same spot. Land behind the line."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "noball", "good": true, "label": "Behind it ✓", "text": "*Legal*", "vo": "Now your front foot lands behind it."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "And it *counts*", "vo": "Next net, beaten, and it counts."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

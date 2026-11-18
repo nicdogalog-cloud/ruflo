@@ -1,0 +1,8 @@
+{"id": "one-spot-behind-the-stumps", "composition": "House", "seed": 511, "speed": 1.0, "voice": "bm_fable", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Where do I put it?", "text": "Where's the *phone* go?", "vo": "Not sure where to put your phone at the nets?"},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "*Behind* the stumps", "vo": "There's one spot. A tripod just behind the stumps at the bowler's end."},
+{"type": "steps", "dur": 3.4, "text": "Just *two* zooms", "items": ["Bowling: 1x", "Batting: 3x"], "vo": "One times zoom for bowling. Three times for batting."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Bowling ✓", "text": "See your *action*", "vo": "See your whole bowling action."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Batting ✓", "text": "See your *shot*", "vo": "Or zoom in on your batting."},
+{"type": "privacy", "dur": 2.6, "text": "On *your* phone", "vo": "And it all stays on your phone."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
