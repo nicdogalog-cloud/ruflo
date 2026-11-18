@@ -1,0 +1,9 @@
+{"id": "nets-batter-bat-coming-down-late", "composition": "House", "seed": 507, "speed": 1.08, "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "*Too* late again", "vo": "Batters, the ball's past you before the bat comes down?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "It's too quick!", "text": "Rushed every *ball*?", "vo": "Feels like you're rushed every ball."},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Film it *side on*", "vo": "Film it side on with Crease Cam."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "backlift", "label": "Bat still down ✗", "text": "*Late* backlift", "vo": "Slowed down, your bat only lifts as the ball is bowled."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Lift early", "Hands high", "Then watch it"], "vo": "Lift early. Hands up high. Then watch the ball."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Ready ✓", "text": "*Ready* in time", "vo": "Now the bat's up and ready in time."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Timed* it", "vo": "Next net, timed it sweetly."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

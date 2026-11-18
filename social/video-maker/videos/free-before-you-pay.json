@@ -1,0 +1,8 @@
+{"id": "free-before-you-pay", "composition": "House", "seed": 505, "speed": 1.08, "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Is it worth it?", "text": "Pay *before* you try?", "vo": "Don't want to pay before you've tried it?"},
+{"type": "pricing", "dur": 3.0, "text": "*Free* to start", "vo": "Crease Cam is free to start."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "Film your *nets*", "vo": "Film your nets with the guide."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Try it ✓", "text": "Watch it *back*", "vo": "Watch it back in slow motion."},
+{"type": "pricing", "dur": 3.0, "text": "Want more? *£3.99*", "vo": "Want more? It's three ninety-nine a month, or thirty-nine ninety-nine a year."},
+{"type": "privacy", "dur": 2.6, "text": "*Your* clips, your phone", "vo": "And your clips stay on your phone."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
