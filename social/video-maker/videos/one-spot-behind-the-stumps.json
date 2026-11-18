@@ -1,9 +1,9 @@
-{"id": "one-spot-behind-the-stumps", "composition": "House", "seed": 412, "vo_dir": "vo/one-spot-behind-the-stumps", "scenes": [
-{"type": "think", "dur": 3.7, "actor": "batter", "label": "Where?", "text": "Filming your *nets*?", "vo": "Where does your phone go at the nets?"},
+{"id": "one-spot-behind-the-stumps", "composition": "House", "seed": 412, "scenes": [
+{"type": "think", "dur": 3.7, "actor": "batter", "label": "Where?", "text": "Filming your *nets*?", "vo": "Filming your nets? Here's where your phone actually goes."},
 {"type": "spots", "dur": 3.58, "spots": [5], "text": "Just *one* spot", "vo": "Just one spot. Behind the stumps, at the bowler's end."},
-{"type": "steps", "dur": 2.74, "text": "Set it *up*", "items": ["Tripod up", "1-2 m back", "Point it at the batter"], "vo": "Tripod up, one to two metres back."},
-{"type": "guide", "dur": 2.62, "actor": "bowler", "text": "Bowling? *1x* zoom", "vo": "Bowling? Keep it on one times zoom.", "drill": "Bowling \u00b7 1x zoom"},
-{"type": "guide", "dur": 2.12, "actor": "batter", "text": "Batting? *3x* zoom", "vo": "Batting? Zoom in to three times.", "drill": "Batting \u00b7 3x zoom"},
-{"type": "slowmo", "dur": 3.54, "actor": "batter", "text": "See what a *coach* sees", "vo": "Then slow it down, and see what a coach sees."},
-{"type": "pricing", "dur": 1.46, "text": "Free to *start*", "vo": "Free to start."},
-{"type": "end", "dur": 3.24, "vo": "Follow Crease Cam for the launch."}]}
+{"type": "steps", "dur": 2.74, "text": "Set it *up*", "items": ["Tripod up", "1-2 m back", "Point it at the batter"], "vo": "Pop it on a tripod, a metre or two back."},
+{"type": "guide", "dur": 2.62, "actor": "bowler", "text": "Bowling? *1x* zoom", "vo": "Bowling? Leave it on one times zoom.", "drill": "Bowling \u00b7 1x zoom"},
+{"type": "guide", "dur": 2.12, "actor": "batter", "text": "Batting? *3x* zoom", "vo": "Batting? Zoom in to three.", "drill": "Batting \u00b7 3x zoom"},
+{"type": "slowmo", "dur": 3.54, "actor": "batter", "text": "See what a *coach* sees", "vo": "Then slow it right down, and see what your coach sees."},
+{"type": "pricing", "dur": 1.46, "text": "Free to *start*", "vo": "It's free to start."},
+{"type": "end", "dur": 3.24, "vo": "Follow Crease Cam for the launch."}], "voice": "bf_emma", "speed": 1.0}
