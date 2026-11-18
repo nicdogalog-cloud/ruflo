@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-17 07:38 UTC",
- "briefing": "Good morning, sir. Buzz posted 4 reels yesterday with no errors. Every other open task is prepped and waiting on you. One problem: last night's reel said 'four spots' again, which clashes with your one-spot guide. Your top 3: pick a net session night, send the Alton CC pilot email from Gmail drafts, and fill the 5 blanks in the privacy and terms pages.",
+ "updated": "2026-11-18 07:37 UTC",
+ "briefing": "Good morning, sir. Buzz posted 4 reels yesterday with no errors. Every other open task is prepped and waiting on you. Two of yesterday's reels told people to film from the front, which doesn't match your one-spot guide behind the bowler's stumps. Your top 3: pick a net session night, send the Alton CC pilot email from Gmail drafts, and fill the 5 blanks in...",
  "crew": [
   {
    "name": "Nova",
@@ -8,8 +8,8 @@
    "status": "working",
    "job": "Leading the Crease Cam launch (Jarvis runs the crew daily)",
    "done": [
-    "Monday 16 Nov briefing",
-    "Tuesday 17 Nov briefing"
+    "Tuesday 17 Nov briefing",
+    "Wednesday 18 Nov briefing"
    ],
    "open": 2,
    "next": "",
@@ -40,12 +40,10 @@
    "place": "Research Lab",
    "status": "working",
    "job": "Watching competitors' prices",
-   "done": [
-    "Competitor and trend check 16 Nov"
-   ],
+   "done": [],
    "open": 1,
    "next": "",
-   "latest": "Competitor check: phone cricket apps are now mostly AI shot analysis, such as CricVision, Fulltrack AI, Ludimos and Clean Bowled. None of the listings I found lead with where to put the phone at the nets, so that is..."
+   "latest": ""
   },
   {
    "name": "Sol",
@@ -82,12 +80,10 @@
    "place": "Crease Cam",
    "status": "working",
    "job": "Getting the Crease Cam site ready",
-   "done": [
-    "Weekly website check 16 Nov"
-   ],
+   "done": [],
    "open": 2,
    "next": "",
-   "latest": "Website check: all pages and images are there, and the home page matches the one camera spot (tripod 1-2 m behind the bowler's stumps, 3x batting, 1x bowling). Still open: 4 blanks in privacy (company name, email..."
+   "latest": ""
   },
   {
    "name": "Buzz",
@@ -97,7 +93,7 @@
    "done": [],
    "open": 0,
    "next": "",
-   "latest": "Last 24h on Instagram: 4 reels sent, 0 errors (videos stay private, toppling batter, lazy front arm, batters and bowlers both). The 7pm reel says 'four spots, one app', which goes against nic's one-spot guide. Scripts..."
+   "latest": "Last 24h on Instagram: 4 reels sent, 0 errors (frame by frame, bowler not running through, keeper coming up early, just a phone and a net). The bowler and keeper captions say to film from the front, which goes against..."
   },
   {
    "name": "Meeting Hall",
