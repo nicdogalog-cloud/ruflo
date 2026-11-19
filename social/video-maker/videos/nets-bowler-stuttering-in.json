@@ -1,0 +1,9 @@
+{"id": "nets-bowler-stuttering-in", "composition": "House", "seed": 517, "speed": 1.0, "voice": "bm_george", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "*Smashed* again", "vo": "Bowlers, getting smashed in the nets again?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Felt clunky...", "text": "No *rhythm*?", "vo": "Your run up just feels clunky."},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Tripod *behind* the stumps", "vo": "Film it from a tripod behind the stumps."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "runup", "label": "Stutter step ✗", "text": "*Stuttering* in", "vo": "Slowed down, you stutter just before the crease."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Count steps", "Mark the start", "Build up speed"], "vo": "Count your steps. Mark the start. Build up speed smoothly."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Smooth ✓", "text": "*Smooth* run up", "vo": "Now it's smooth all the way in."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "*Beaten*", "vo": "Next net, the batter's beaten."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

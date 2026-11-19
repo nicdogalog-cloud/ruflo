@@ -1,0 +1,8 @@
+{"id": "three-taps-to-better-nets", "composition": "House", "seed": 519, "speed": 1.0, "voice": "bf_alice", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Sounds complicated...", "text": "Too *much* faff?", "vo": "Think filming your nets is too much faff?"},
+{"type": "steps", "dur": 3.4, "text": "Just *three* steps", "items": ["Line it up", "Hit record", "Watch it back"], "vo": "It's three steps. Line it up, hit record, watch it back."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "*Line* it up", "vo": "Your phone goes on a tripod behind the stumps."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "Hit *record*", "vo": "Then just play."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Slow-mo ✓", "text": "Watch it *back*", "vo": "And watch it back in slow motion."},
+{"type": "privacy", "dur": 2.6, "text": "Stays on your *phone*", "vo": "It all stays on your phone."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
