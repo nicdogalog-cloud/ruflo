@@ -1,0 +1,8 @@
+{"id": "line-it-up-and-film", "composition": "House", "seed": 513, "speed": 1.0, "voice": "bf_isabella", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Half of me is missing!", "text": "Wonky *clips*?", "vo": "Ever filmed your nets and cut half of yourself out?"},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "See-through *guide*", "vo": "Crease Cam shows a see-through guide on your screen."},
+{"type": "steps", "dur": 3.4, "text": "Line it *up*", "items": ["Tripod set up", "Match outline", "Wait for green"], "vo": "Tripod behind the stumps. Match the outline. Wait for it to turn green."},
+{"type": "guide", "dur": 2.8, "actor": "batter", "text": "*Lined* up", "vo": "Now you're lined up every time."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "All in shot ✓", "text": "*All* of you", "vo": "So the whole action is in shot."},
+{"type": "tracks", "dur": 2.8, "text": "Ready to *check*", "vo": "Ready to slow down and check."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
