@@ -1,0 +1,9 @@
+{"id": "nets-batter-bat-coming-across", "composition": "House", "seed": 523, "speed": 1.0, "voice": "bf_lily", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "*Dragged* it on", "vo": "Batters, dragging straight balls onto your stumps?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "It was straight!", "text": "How'd that *happen*?", "vo": "It was straight, so how did that happen?"},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film from behind the stumps at three times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "bat", "label": "Across the line ✗", "text": "Bat comes *across*", "vo": "Slowed down, your bat comes across the line."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["High elbow", "Straight bat", "Full face"], "vo": "High front elbow. Straight bat. Show the full face."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Straight ✓", "text": "*Straight* through", "vo": "Now it comes down straight."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Driven*", "vo": "Next net, driven straight back."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

@@ -1,0 +1,8 @@
+{"id": "you-asked-we-answered", "composition": "House", "seed": 521, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Wait, how does it work?", "text": "Got *questions*?", "vo": "Got questions about Crease Cam? Here are the quick answers."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Where's the *phone*?", "vo": "Where does the phone go? On a tripod behind the stumps."},
+{"type": "pricing", "dur": 3.0, "text": "What's it *cost*?", "vo": "What does it cost? It's free to start."},
+{"type": "privacy", "dur": 2.8, "text": "Who *sees* it?", "vo": "Who sees your clips? Just you. They stay on your phone."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Both ✓", "text": "Bat *or* bowl?", "vo": "Batting or bowling? It works for both."},
+{"type": "tracks", "dur": 2.8, "text": "Can I *draw*?", "vo": "And yes, you can draw lines on your clips."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
