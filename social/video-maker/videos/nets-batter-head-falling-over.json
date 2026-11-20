@@ -1,0 +1,9 @@
+{"id": "nets-batter-head-falling-over", "composition": "House", "seed": 525, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "*Bowled* again?", "vo": "Batters, bowled through the gate again?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "I watched it!", "text": "But I *watched* it", "vo": "You swear you watched it all the way."},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Film it at *3x*", "vo": "Film from behind the stumps at three times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "label": "Head falling ✗", "text": "Head falls *over*", "vo": "Slowed down, your head falls over to the off side."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Eyes level", "Head first", "Stay still"], "vo": "Keep your eyes level. Lead with your head. Stay still."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "good": true, "label": "Head over it ✓", "text": "Head *over* the ball", "vo": "Now your head stays right over the ball."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Middled*", "vo": "Next net, middled."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

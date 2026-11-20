@@ -1,0 +1,8 @@
+{"id": "the-yellow-stumps", "composition": "House", "seed": 527, "speed": 1.0, "voice": "bm_george", "scenes": [
+{"type": "logo", "dur": 3.0, "text": "Spot the *stumps*?", "vo": "Ever spotted the stumps hiding in our logo?"},
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Why a camera frame?", "text": "Why the *frame*?", "vo": "They sit inside a camera frame, and here's why."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Stumps in *frame*", "vo": "Your phone sits behind the stumps, so they're always in shot."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "In frame ✓", "text": "Every ball, *framed*", "vo": "Every ball you bowl, framed and ready to watch back."},
+{"type": "privacy", "dur": 2.8, "text": "Kept on *your phone*", "vo": "And every clip stays on your phone."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "Free to start when we launch."},
+{"type": "end", "dur": 2.8, "vo": "Follow Crease Cam for the launch."}]}
