@@ -1,0 +1,8 @@
+{"id": "slow-it-down-draw-on-it", "composition": "House", "seed": 529, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "Too fast to see!", "text": "Blink and it's *gone*", "vo": "Your action happens in a blink. Too fast to see."},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Tripod *behind* the stumps", "vo": "So film it from a tripod behind the stumps."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "follow", "label": "Stops short ✗", "text": "Slow it *down*", "vo": "Then slow it right down to a quarter speed."},
+{"type": "tracks", "dur": 3.0, "text": "Draw your *lines*", "vo": "Draw lines on the clip to see where it goes wrong."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Carries through ✓", "text": "Check the *fix*", "vo": "Film again and check the fix, side by side."},
+{"type": "privacy", "dur": 2.8, "text": "Only *you* see it", "vo": "Every clip stays on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

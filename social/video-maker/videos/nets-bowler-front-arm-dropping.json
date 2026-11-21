@@ -1,0 +1,9 @@
+{"id": "nets-bowler-front-arm-dropping", "composition": "House", "seed": 531, "speed": 1.0, "voice": "bm_fable", "scenes": [
+{"type": "tracks", "dur": 2.8, "text": "All over the *place*", "vo": "Bowlers, spraying it down leg every net?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Felt fine to me", "text": "Felt *fine*", "vo": "It felt fine, so what's going wrong?"},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Film at *1x*", "vo": "Prop your phone behind the stumps at normal zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "arm", "label": "Arm drops ✗", "text": "Front arm *drops*", "vo": "Slowed down, your front arm drops away early."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Arm up high", "Pull it down", "Eyes on target"], "vo": "Front arm up high. Pull it down hard. Eyes on the target."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Arm high ✓", "text": "Arm *up*", "vo": "Now the front arm stays up and leads you in."},
+{"type": "tracks", "dur": 2.8, "good": true, "text": "On the *stumps*", "vo": "Next net, every ball on the stumps."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
