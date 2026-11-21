@@ -1,0 +1,9 @@
+{"id": "nets-bowler-stopping-dead", "composition": "House", "seed": 533, "speed": 1.0, "voice": "bf_isabella", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "*No* pace?", "vo": "Bowlers, putting in the effort but no pace at all?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "I'm trying so hard!", "text": "Trying *hard*", "vo": "You're trying so hard, so where's it going?"},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Tripod *behind* the stumps", "vo": "Film it from behind the stumps at normal zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "follow", "label": "Stops dead ✗", "text": "You *stop* dead", "vo": "Slowed down, you stop dead as you let go."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Keep moving", "Chest through", "Run it off"], "vo": "Keep moving. Drive your chest through. Run it off."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Carries on ✓", "text": "Follow *through*", "vo": "Now your whole body carries through."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "*Beaten* for pace", "vo": "Next net, beaten for pace."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
