@@ -1,0 +1,9 @@
+{"id": "nets-batter-bat-stuck-down", "composition": "House", "seed": 541, "speed": 1.0, "voice": "bm_george", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Too quick for me!", "text": "Always *late*?", "vo": "Batters, always late on the quick ones?"},
+{"type": "nets", "dur": 2.6, "actor": "batter", "outcome": "beaten", "text": "*Beaten* again", "vo": "Beaten again, before the bat even moves."},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film from behind the stumps at three times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "backlift", "label": "Bat stuck down ✗", "text": "Bat stays *down*", "vo": "Slowed down, your bat is still by your pads."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Pick it up", "Hands high", "Ready early"], "vo": "Pick it up early. Hands high. Be ready as they land."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "backlift", "good": true, "label": "Up early ✓", "text": "Up *early*", "vo": "Now the bat is up and waiting."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*On* time", "vo": "Next net, right on time."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

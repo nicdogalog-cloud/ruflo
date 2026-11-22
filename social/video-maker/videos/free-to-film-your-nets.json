@@ -1,0 +1,8 @@
+{"id": "free-to-film-your-nets", "composition": "House", "seed": 543, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "pricing", "dur": 3.0, "text": "*Free* to start", "vo": "Crease Cam is free to start. Here is what you get."},
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "What do I get free?", "text": "What's *free*?", "vo": "So what do you get for free?"},
+{"type": "guide", "dur": 2.8, "actor": "bowler", "text": "Line it *up*", "vo": "The guide to line up your phone behind the stumps."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Smooth ✓", "text": "Slow-mo *replays*", "vo": "And slow-mo replays of every ball."},
+{"type": "steps", "dur": 3.4, "text": "Want *more*?", "items": ["£3.99 a month", "£39.99 a year", "Or stay free"], "vo": "Want more? Three ninety nine a month, or thirty nine ninety nine a year."},
+{"type": "privacy", "dur": 2.8, "text": "Clips stay *yours*", "vo": "Either way, your clips stay on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
