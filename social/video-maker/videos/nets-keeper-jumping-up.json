@@ -1,0 +1,9 @@
+{"id": "nets-keeper-jumping-up", "composition": "House", "seed": 539, "speed": 1.0, "voice": "bf_alice", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "edge", "text": "Edged and *spilled*", "vo": "Keepers, the nick comes and it's straight back out."},
+{"type": "think", "dur": 2.6, "actor": "keeper", "label": "Soft hands, I swear!", "text": "Soft *hands*?", "vo": "You thought your hands were soft."},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film from behind the stumps, zoomed in three times."},
+{"type": "slowmo", "dur": 3.2, "actor": "keeper", "fault": "gloves", "label": "Jumps up ✗", "text": "Up too *early*", "vo": "Slowed down, you jump up before the ball arrives."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Stay low", "Eyes on it", "Give with it"], "vo": "Stay low. Eyes on the ball. Give with it."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Stays low ✓", "text": "Low and *late*", "vo": "Now you stay low and rise late."},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "middle", "text": "*Pouched*", "vo": "Next net, pouched."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

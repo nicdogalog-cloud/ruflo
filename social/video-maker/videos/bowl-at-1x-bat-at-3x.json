@@ -1,0 +1,8 @@
+{"id": "bowl-at-1x-bat-at-3x", "composition": "House", "seed": 537, "speed": 1.0, "voice": "bm_george", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "batter", "label": "Batting or bowling?", "text": "Bat *or* bowl?", "vo": "Batting or bowling? Crease Cam films both."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Bowling? *1x*", "vo": "Bowling? Tripod behind the stumps, normal zoom."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "noball", "good": true, "label": "Behind the line ✓", "text": "See your *action*", "vo": "You see your whole action, right to the crease."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Batting? *3x*", "vo": "Batting? Same spot, zoom in three times."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Straight bat ✓", "text": "See every *shot*", "vo": "Now every shot fills the screen."},
+{"type": "privacy", "dur": 2.8, "text": "Kept on *your phone*", "vo": "And every clip stays on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
