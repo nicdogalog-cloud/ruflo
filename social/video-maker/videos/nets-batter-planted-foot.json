@@ -1,0 +1,9 @@
+{"id": "nets-batter-planted-foot", "composition": "House", "seed": 549, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "edge", "text": "Nicked *again*", "vo": "Batters, nicking the full ones again and again?"},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "I'm moving my feet!", "text": "Feet *moving*?", "vo": "You'd swear your feet are moving."},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film from behind the stumps at three times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "foot", "label": "Foot planted ✗", "text": "Foot *stuck* at home", "vo": "Slowed down, your front foot stays planted at home."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Read length", "Big stride", "Knee bent"], "vo": "Watch the length. Take a big stride. Bend that front knee."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "foot", "good": true, "label": "To the pitch ✓", "text": "Get *forward*", "vo": "Now your foot gets right to the pitch of it."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Driven*", "vo": "Next net, driven down the ground."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
