@@ -1,0 +1,9 @@
+{"id": "nets-bowler-front-foot-over", "composition": "House", "seed": 547, "speed": 1.0, "voice": "bm_fable", "scenes": [
+{"type": "think", "dur": 2.8, "actor": "bowler", "label": "No ball? Again?", "text": "No ball *again*?", "vo": "Bowlers, hearing no ball again and again?"},
+{"type": "tracks", "dur": 2.6, "text": "Wasted *balls*", "vo": "Every one is a wasted ball."},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Film at *1x*", "vo": "Prop your phone behind the stumps at normal zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "noball", "label": "Over the line ✗", "text": "Foot *over* the line", "vo": "Slowed down, your front foot lands over the line."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Measure it", "Mark it", "Same start"], "vo": "Measure your run. Mark it. Start from the same spot."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "noball", "good": true, "label": "Behind it ✓", "text": "*Behind* the line", "vo": "Now your foot lands behind the line."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "*Legal* and quick", "vo": "Next net, legal and beating the bat."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
