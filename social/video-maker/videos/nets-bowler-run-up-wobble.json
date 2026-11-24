@@ -1,0 +1,9 @@
+{"id": "nets-bowler-run-up-wobble", "composition": "House", "seed": 555, "speed": 1.0, "voice": "bf_alice", "scenes": [
+{"type": "tracks", "dur": 2.8, "text": "Can't find your *line*?", "vo": "Bowlers, can't find your line however hard you try?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Something feels off", "text": "Feels *off*", "vo": "Something feels off, but what?"},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Film at *1x*", "vo": "Film from behind the stumps at normal zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "runup", "label": "Wobbly run ✗", "text": "Run-up *wobbles*", "vo": "Slowed down, your run-up wobbles all over."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Run straight", "Eyes ahead", "Even strides"], "vo": "Run in straight. Eyes ahead. Keep your strides even."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "runup", "good": true, "label": "Straight run ✓", "text": "Straight *in*", "vo": "Now you run straight at the target."},
+{"type": "tracks", "dur": 2.8, "good": true, "text": "Back on *line*", "vo": "Next net, back on line."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

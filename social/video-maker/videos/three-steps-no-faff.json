@@ -1,0 +1,8 @@
+{"id": "three-steps-no-faff", "composition": "House", "seed": 553, "speed": 1.0, "voice": "bm_george", "scenes": [
+{"type": "steps", "dur": 3.4, "text": "Better nets in *3*", "items": ["Line it up", "Hit record", "Watch it back"], "vo": "Better nets in three steps. Line it up, hit record, watch it back."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "*1.* Line it up", "vo": "One. Tripod behind the stumps, match the outline."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*2.* Hit record", "vo": "Two. Hit record and bat as normal."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "*3.* Watch it back", "vo": "Three. Watch it back in slow-mo."},
+{"type": "tracks", "dur": 2.8, "text": "Draw your *lines*", "vo": "Draw lines to see exactly what happened."},
+{"type": "privacy", "dur": 2.8, "text": "On *your* phone", "vo": "And it all stays on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
