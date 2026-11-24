@@ -1,0 +1,8 @@
+{"id": "quick-answers-at-the-nets", "composition": "House", "seed": 559, "speed": 1.0, "voice": "bm_fable", "scenes": [
+{"type": "steps", "dur": 3.4, "text": "*Quick* answers", "items": ["What kit?", "Phone where?", "Is it free?"], "vo": "Got questions about Crease Cam? Here are quick answers."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Phone + *tripod*", "vo": "What kit do you need? Just your phone and a tripod."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Behind the *stumps*", "vo": "Where does it go? Behind the stumps at the bowler's end."},
+{"type": "slowmo", "dur": 2.8, "actor": "bowler", "fault": "runup", "good": true, "label": "Slow-mo ✓", "text": "Watch it *back*", "vo": "Then watch it back in slow-mo."},
+{"type": "pricing", "dur": 3.2, "text": "Free to *start*", "vo": "Is it free? Yes, it's free to start."},
+{"type": "privacy", "dur": 2.8, "text": "Who sees it? *You*", "vo": "And who sees your clips? Just you."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

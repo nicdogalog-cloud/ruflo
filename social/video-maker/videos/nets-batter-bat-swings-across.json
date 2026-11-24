@@ -1,0 +1,9 @@
+{"id": "nets-batter-bat-swings-across", "composition": "House", "seed": 557, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Bowled *again*", "vo": "Batters, keep getting bowled through the gate?"},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film it from behind the stumps at three times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "fault": "bat", "label": "Bat across ✗", "text": "Bat comes *across*", "vo": "Slowed down, your bat swings across the line."},
+{"type": "tracks", "dur": 2.6, "text": "Draw the *line*", "vo": "Draw a line and you can see the gap."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Hands high", "Elbow up", "Swing straight"], "vo": "Hands high. Front elbow up. Swing straight down the line."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "bat", "good": true, "label": "Straight bat ✓", "text": "Gate *closed*", "vo": "Now the bat comes down straight."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Middled*", "vo": "Next net, right out of the middle."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
