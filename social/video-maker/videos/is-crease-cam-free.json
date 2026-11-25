@@ -1,0 +1,8 @@
+{"id": "is-crease-cam-free", "composition": "House", "seed": 567, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "think", "dur": 3.0, "actor": "batter", "label": "Is it free though?", "text": "Is it *free*?", "vo": "Is Crease Cam free? Yes, to start."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Free: the *guide*", "vo": "Free gets you the guide to line up behind the stumps."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Free: *slow-mo*", "vo": "And slow-mo replays of your nets."},
+{"type": "pricing", "dur": 3.2, "text": "Free to *start*", "vo": "Start free, then upgrade only if you want to."},
+{"type": "steps", "dur": 3.4, "text": "Want *more*?", "items": ["£3.99 a month", "£39.99 a year", "Or stay free"], "vo": "Three ninety nine a month, or thirty nine ninety nine a year."},
+{"type": "privacy", "dur": 2.8, "text": "Always *private*", "vo": "Whatever you pick, your clips stay on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

@@ -1,0 +1,9 @@
+{"id": "nets-keeper-fingers-pointing", "composition": "House", "seed": 565, "speed": 1.0, "voice": "bm_george", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "edge", "text": "Ouch, *again*", "vo": "Keepers, the ball keeps stinging your fingers?"},
+{"type": "think", "dur": 2.6, "actor": "keeper", "label": "Bad luck, that's all!", "text": "Just *bad luck*?", "vo": "You'd put it down to bad luck."},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film it from behind the stumps at three times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "keeper", "fault": "gloves", "label": "Fingers at ball ✗", "text": "Fingers *pointing*", "vo": "Slowed down, your fingers point straight at the ball."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Fingers down", "Palms open", "Soft hands"], "vo": "Fingers down. Palms open to the ball. Soft hands."},
+{"type": "slowmo", "dur": 3.0, "actor": "keeper", "fault": "gloves", "good": true, "label": "Palms open ✓", "text": "Into the *palms*", "vo": "Now it goes right into your palms."},
+{"type": "nets", "dur": 2.8, "actor": "keeper", "outcome": "middle", "text": "*Clean* take", "vo": "Next net, a clean take."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
