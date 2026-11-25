@@ -1,0 +1,8 @@
+{"id": "draw-on-your-nets-videos", "composition": "House", "seed": 561, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "tracks", "dur": 3.2, "text": "Draw on your *nets*", "vo": "What if you could draw on your nets videos?"},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Tripod behind the *stumps*", "vo": "Set your phone up behind the stumps and film."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "arm", "label": "Quarter speed", "text": "Slow it *right down*", "vo": "Then slow it right down to quarter speed."},
+{"type": "tracks", "dur": 3.0, "good": true, "text": "Draw your *lines*", "vo": "Draw your lines and see exactly where it went."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Check the *fix*", "vo": "Next session, check the fix has worked."},
+{"type": "privacy", "dur": 2.8, "text": "Only *you* see it", "vo": "And only you ever see it."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

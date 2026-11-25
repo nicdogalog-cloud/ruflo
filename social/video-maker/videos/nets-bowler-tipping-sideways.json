@@ -1,0 +1,9 @@
+{"id": "nets-bowler-tipping-sideways", "composition": "House", "seed": 563, "speed": 1.0, "voice": "bf_lily", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Easy *runs*", "vo": "Bowlers, feeding the batter easy balls all session?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "Felt fine to me!", "text": "Feels *fine*?", "vo": "It feels fine when you let go."},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Film at *1x*", "vo": "Film it from behind the stumps at one times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "follow", "label": "Tipping over ✗", "text": "Tipping *sideways*", "vo": "Slowed down, you tip sideways as you let go."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Eyes on target", "Head tall", "Run through"], "vo": "Eyes on the target. Head tall. Run straight through."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "follow", "good": true, "label": "Tall and straight ✓", "text": "Stay *tall*", "vo": "Now you stay tall and run straight through."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "*Beaten*", "vo": "Next net, the batter's beaten."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
