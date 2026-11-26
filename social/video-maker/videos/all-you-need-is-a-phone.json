@@ -1,0 +1,8 @@
+{"id": "all-you-need-is-a-phone", "composition": "House", "seed": 569, "speed": 1.0, "voice": "bm_fable", "scenes": [
+{"type": "think", "dur": 3.0, "actor": "batter", "label": "Need fancy kit?", "text": "Fancy *kit*?", "vo": "Think you need fancy kit to film your nets?"},
+{"type": "steps", "dur": 3.4, "text": "All you *need*", "items": ["Your phone", "A tripod", "A net"], "vo": "All you need is your phone, a tripod and a net."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Tripod behind the *stumps*", "vo": "Put the tripod behind the stumps at the bowler's end."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "*3x* for batting", "vo": "One times zoom for bowling, three times for batting."},
+{"type": "slowmo", "dur": 2.8, "actor": "batter", "fault": "head", "good": true, "label": "Head still ✓", "text": "Watch it *slow*", "vo": "Then watch it back in slow-mo."},
+{"type": "privacy", "dur": 2.8, "text": "Stays on your *phone*", "vo": "And it all stays on your phone."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

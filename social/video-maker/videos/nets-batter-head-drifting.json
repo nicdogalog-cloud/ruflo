@@ -1,0 +1,9 @@
+{"id": "nets-batter-head-drifting", "composition": "House", "seed": 571, "speed": 1.0, "voice": "bf_isabella", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "beaten", "text": "Beaten *again*", "vo": "Batters, keep missing the straight ones?"},
+{"type": "guide", "dur": 2.6, "actor": "batter", "text": "Zoom in *3x*", "vo": "Film it from behind the stumps at three times zoom."},
+{"type": "think", "dur": 2.6, "actor": "batter", "label": "My eyes are on it!", "text": "Watching the *ball*?", "vo": "You'd swear you're watching it all the way."},
+{"type": "slowmo", "dur": 3.2, "actor": "batter", "label": "Head falls over ✗", "text": "Head falls *over*", "vo": "Slowed down, your head falls over to the off side."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Head still", "Eyes level", "Lead with head"], "vo": "Keep your head still. Eyes level. Lead with your head."},
+{"type": "slowmo", "dur": 3.0, "actor": "batter", "good": true, "label": "Head still ✓", "text": "Head *still*", "vo": "Now your head stays still over the ball."},
+{"type": "nets", "dur": 2.8, "actor": "batter", "outcome": "middle", "text": "*Driven*", "vo": "Next net, driven straight back."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
