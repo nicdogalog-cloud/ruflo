@@ -1,0 +1,9 @@
+{"id": "nets-bowler-arm-flying-out", "composition": "House", "seed": 573, "speed": 1.0, "voice": "bf_alice", "scenes": [
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "middle", "text": "Down *leg* again", "vo": "Bowlers, slipping down the leg side all session?"},
+{"type": "think", "dur": 2.6, "actor": "bowler", "label": "My arm's fine!", "text": "Arm *fine*?", "vo": "You'd swear your arm is doing its job."},
+{"type": "guide", "dur": 2.6, "actor": "bowler", "text": "Film at *1x*", "vo": "Film it from behind the stumps at one times zoom."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "arm", "label": "Arm flies out ✗", "text": "Arm flies *out*", "vo": "Slowed down, your front arm flies out wide."},
+{"type": "steps", "dur": 3.6, "text": "Fix it in *3*", "items": ["Arm up high", "Pull it in", "Eyes on target"], "vo": "Front arm up high. Pull it in tight. Eyes on the target."},
+{"type": "slowmo", "dur": 3.0, "actor": "bowler", "fault": "arm", "good": true, "label": "Arm tucked ✓", "text": "Pulled *in*", "vo": "Now the front arm pulls in tight."},
+{"type": "nets", "dur": 2.8, "actor": "bowler", "outcome": "beaten", "text": "On the *stumps*", "vo": "Next net, right on the stumps."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}

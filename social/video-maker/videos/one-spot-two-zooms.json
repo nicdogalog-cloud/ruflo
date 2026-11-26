@@ -1,0 +1,8 @@
+{"id": "one-spot-two-zooms", "composition": "House", "seed": 575, "speed": 1.0, "voice": "bf_emma", "scenes": [
+{"type": "logo", "dur": 3.2, "text": "Just *one* spot", "vo": "One camera spot. That's all Crease Cam needs."},
+{"type": "guide", "dur": 3.0, "actor": "bowler", "text": "Behind the *stumps*", "vo": "Your tripod goes behind the stumps at the bowler's end."},
+{"type": "slowmo", "dur": 3.2, "actor": "bowler", "fault": "runup", "good": true, "label": "Whole run-up ✓", "text": "Bowling? *1x*", "vo": "Bowling? Keep it at one times to see the whole run-up."},
+{"type": "guide", "dur": 3.0, "actor": "batter", "text": "Batting? *3x*", "vo": "Batting? Zoom to three times to fill the screen."},
+{"type": "tracks", "dur": 2.8, "good": true, "text": "*Same* spot", "vo": "Same spot every session, so you can compare."},
+{"type": "pricing", "dur": 2.8, "text": "Free to *start*", "vo": "And it's free to start."},
+{"type": "end", "dur": 2.6, "vo": "Follow Crease Cam for the launch."}]}
